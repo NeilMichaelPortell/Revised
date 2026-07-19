@@ -1,0 +1,5 @@
+[
+  {"EventID": 4624, "Channel": "Security", "TargetUserName": "alice"},
+  {"EventID": 4688, "Channel": "Security", "NewProcessName": "C:\\Program Files\\Notepad\\notepad.exe"},
+  {"EventID": 4634, "Channel": "Security", "TargetUserName": "alice"}
+]

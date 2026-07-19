@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Endpoint Study - Domain-Only Logger",
+  "version": "1.0",
+  "description": "Privacy-preserving research extension. Sends ONLY the registrable domain and scheme of top-level page navigations to a local (127.0.0.1) collector for a controlled dissertation dataset. Never sends full URLs, paths, query strings, titles, cookies, tokens, or page content.",
+  "permissions": ["webNavigation"],
+  "host_permissions": ["http://127.0.0.1:5000/*"],
+  "background": {
+    "service_worker": "background.js"
+  }
+}

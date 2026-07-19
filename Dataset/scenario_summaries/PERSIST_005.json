@@ -1,0 +1,99 @@
+{
+  "scenario_id": "PERSIST_005",
+  "category": "PERSIST",
+  "scenario_name": "Harmless scheduled task created for test",
+  "scenario_source": "collected",
+  "collection_date": "2026-07-09",
+  "window_start": "2026-07-09T13:13:56.261163",
+  "window_end": "2026-07-09T13:15:38.820214",
+  "event_summary": {
+    "apps_opened": [
+      "notepad.exe",
+      "code.exe",
+      "mmc.exe"
+    ],
+    "benign_background_processes": [
+      "code.exe",
+      "notepad.exe"
+    ],
+    "failed_logins": 0,
+    "failed_login_activity": false,
+    "failed_login_count_band": "none",
+    "usb_connection_count": 0,
+    "removable_drive_details": [],
+    "risky_processes": [],
+    "process_details": [],
+    "elevated_processes": [],
+    "defender_disabled": false,
+    "defender_events": [],
+    "firewall_events": [],
+    "network_profile": "none",
+    "scheduled_task_change": true,
+    "scheduled_task_details": [
+      {
+        "object_name": "Dissertation_Test_Task",
+        "action": "created",
+        "source": "manual_review"
+      }
+    ],
+    "service_change": false,
+    "service_change_details": [],
+    "startup_item_change": false,
+    "startup_item_details": [],
+    "file_downloaded": false,
+    "download_details": [],
+    "web_domains": [],
+    "collector_generated_events_filtered": 2,
+    "operator_notes": [
+      "Harmless scheduled task created for test."
+    ],
+    "manual_review_indicators": [
+      "abnormal_endpoint_activity",
+      "scheduled_task_activity"
+    ],
+    "verified_activity_context": {
+      "manual_verification_used": false,
+      "verification_note": "",
+      "device_trust": "not_applicable",
+      "usb_files_browsed": false,
+      "usb_content_type": "none",
+      "archive_accessed": false,
+      "archive_type": "",
+      "command_activity": "none",
+      "verified_commands": [],
+      "script_name": "",
+      "scanner_tool": "",
+      "scan_target": "",
+      "suspicious_process_context": false,
+      "startup_item_change": false,
+      "startup_action": "",
+      "startup_item": "",
+      "defender_change": "none",
+      "network_context": "none",
+      "failed_login_activity": false,
+      "failed_login_count_band": "none"
+    },
+    "manual_review_corrections": [
+      {
+        "field": "scheduled_task_change",
+        "reason": "Operator note states Dissertation_Test_Task was created; event log did not capture 4698 in the window."
+      }
+    ],
+    "viewed_interface": "none"
+  },
+  "observed_events": [
+    "Applications used: notepad.exe, code.exe, mmc.exe.",
+    "Benign background activity present (context, not risky): code.exe, notepad.exe.",
+    "2 collector-generated process event(s) were excluded from this scenario.",
+    "Manual review: harmless scheduled task creation recorded from operator note; Windows event log did not capture it in the scenario window."
+  ],
+  "context_state": {},
+  "ground_truth": {
+    "classification": "abnormal",
+    "risk_level": "high",
+    "expected_indicators": [
+      "scheduled_task_created"
+    ],
+    "label_reason": "Creating a scheduled task establishes an automatic execution mechanism that can be abused for persistence, even when the test action is harmless."
+  }
+}

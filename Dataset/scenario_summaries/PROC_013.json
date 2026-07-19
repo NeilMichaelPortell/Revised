@@ -1,0 +1,88 @@
+{
+  "scenario_id": "PROC_013",
+  "category": "PROC",
+  "scenario_name": "PowerShell activity while Defender is disabled",
+  "scenario_source": "augmented",
+  "collection_date": "",
+  "window_start": "",
+  "window_end": "",
+  "event_summary": {
+    "apps_opened": [],
+    "benign_background_processes": [],
+    "failed_logins": 0,
+    "failed_login_activity": false,
+    "failed_login_count_band": "none",
+    "usb_connection_count": 0,
+    "removable_drive_details": [],
+    "risky_processes": [
+      "powershell.exe"
+    ],
+    "process_details": [],
+    "elevated_processes": [],
+    "defender_disabled": true,
+    "defender_events": [
+      {
+        "kind": "manual_review_defender_disabled",
+        "event_id": null
+      }
+    ],
+    "firewall_events": [],
+    "network_profile": "none",
+    "scheduled_task_change": false,
+    "scheduled_task_details": [],
+    "service_change": false,
+    "service_change_details": [],
+    "startup_item_change": false,
+    "startup_item_details": [],
+    "file_downloaded": false,
+    "download_details": [],
+    "web_domains": [],
+    "collector_generated_events_filtered": 0,
+    "operator_notes": [
+      "PowerShell activity while Defender is disabled."
+    ],
+    "manual_review_indicators": [
+      "abnormal_endpoint_activity",
+      "defender_activity",
+      "defender_disabled",
+      "powershell_activity"
+    ],
+    "verified_activity_context": {
+      "manual_verification_used": false,
+      "verification_note": "",
+      "device_trust": "not_applicable",
+      "usb_files_browsed": false,
+      "usb_content_type": "none",
+      "archive_accessed": false,
+      "archive_type": "",
+      "command_activity": "none",
+      "verified_commands": [],
+      "script_name": "",
+      "scanner_tool": "",
+      "scan_target": "",
+      "suspicious_process_context": false,
+      "startup_item_change": false,
+      "startup_action": "",
+      "startup_item": "",
+      "defender_change": "disabled",
+      "network_context": "none",
+      "failed_login_activity": false,
+      "failed_login_count_band": "none"
+    },
+    "viewed_interface": "none"
+  },
+  "observed_events": [
+    "Augmented scenario representing: PowerShell activity while Defender is disabled.",
+    "This scenario was hand-constructed (augmented) because the activity cannot be safely or ethically performed on a live endpoint. It was not captured by the collector."
+  ],
+  "context_state": {},
+  "ground_truth": {
+    "classification": "abnormal",
+    "risk_level": "critical",
+    "expected_indicators": [
+      "defender_disabled",
+      "powershell_activity"
+    ],
+    "label_reason": "PowerShell activity during a Defender-disabled period combines a capable scripting environment with reduced monitoring."
+  }
+}

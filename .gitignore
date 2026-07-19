@@ -1,0 +1,31 @@
+# --------------------------------------------------------------------------- #
+# OTRF external-validation workspace (external_validation/): generated,       #
+# caches and temporary artefacts ONLY. Manifests, configuration, source       #
+# documentation (README.md), and evaluation summaries/reports intended for    #
+# version control are intentionally NOT listed here -- see external_validation/
+# README.md "Safe folder cleanup" for the distinction between "safe to delete
+# and regenerate" (handled by scripts/runs_otrf/12-cleanup-otrf-workspace.py)
+# and "safe to gitignore" (this file): evaluation/, outputs_baseline/,
+# outputs_rag/ and retrieval/ hold run evidence and dissertation-relevant
+# summaries and are deliberately tracked, not ignored.
+external_validation/prepared/neutral_inputs/
+external_validation/logs/
+external_validation/archive/
+external_validation/tests/tmp/
+external_validation/tests/_tmp/
+
+# Raw third-party OTRF Security-Datasets clone (a ~600MB download, not
+# authored content). Kept on disk at the repo root as the source pool that
+# scenarios are selected/copied from into external_validation/source/; not
+# meant for version control.
+/Security-Datasets-master/
+
+# Python caches for the OTRF external-validation code only. Scoped
+# deliberately: this task's remit is the OTRF workspace, so caches elsewhere
+# in the repository (e.g. scripts/runs/__pycache__, prototype/) are left
+# untouched rather than swept by a broad top-level __pycache__/ rule.
+scripts/runs_otrf/__pycache__/
+external_validation/tests/__pycache__/
+.pytest_cache/
+external_validation/.pytest_cache/
+external_validation/tests/.pytest_cache/

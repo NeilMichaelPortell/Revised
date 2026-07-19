@@ -1,0 +1,19 @@
+{
+  "config_version": "otrf-external-1.0.0",
+  "description": "Configuration for the SUPPLEMENTARY OTRF external-validation workflow. This is fully separate from the frozen 120-scenario primary experiment.",
+  "dataset_manifest_csv": "external_validation/config/otrf_dataset_manifest.csv",
+  "source_dir": "external_validation/source",
+  "window": {
+    "max_events_per_scenario": 5000,
+    "note": "Deterministic cap on events per scenario after time-ordering. The adapter orders events by (timestamp, file index) and keeps the earliest max_events. Absent evidence is never turned into positive evidence."
+  },
+  "models": ["llama3", "deepseek-r1:8b", "gemma3:12b", "qwen3:8b", "gpt-oss:20b"],
+  "top_k": 3,
+  "seed": 2026,
+  "bootstrap_iters": 10000,
+  "notes": [
+    "OTRF is controlled public adversary-simulation telemetry, not organisational production data.",
+    "OTRF results are supplementary and are NOT compared to the 120-scenario accuracy numbers.",
+    "Severity is reported descriptively unless the source provides a defensible severity label."
+  ]
+}

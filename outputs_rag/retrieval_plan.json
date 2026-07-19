@@ -1,0 +1,5697 @@
+{
+  "R001": {
+    "scenario_id": "NET_016",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "network_context",
+      "viewed_interface"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "code.exe",
+      "powershell.exe (vscode shell integration)",
+      "network_profile=private",
+      "private",
+      "network_context=private",
+      "viewed_interface=network_settings",
+      "network_settings"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_003",
+        "score": 20,
+        "rank": 1
+      },
+      {
+        "document_id": "NET_001",
+        "score": 19,
+        "rank": 2
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 17,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R002": {
+    "scenario_id": "NORMAL_008",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "code.exe",
+      "powershell.exe (known background task.bat)",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_002",
+        "score": 8,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R003": {
+    "scenario_id": "USB_001",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "removable_drive_details",
+      "drive_letter",
+      "filesystem",
+      "volume_name",
+      "usb_connection_count",
+      "network_context"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "network_profile=private",
+      "private",
+      "drive_letter=d:",
+      "d:",
+      "filesystem=fat32",
+      "fat32",
+      "volume_name=neil",
+      "neil",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "USB_001",
+        "score": 10,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R004": {
+    "scenario_id": "PERSIST_005",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "scheduled_task_change",
+      "scheduled_task_details",
+      "action",
+      "object_name",
+      "source",
+      "defender_disabled"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "code.exe",
+      "mmc.exe",
+      "action=created",
+      "created",
+      "object_name=dissertation_test_task",
+      "dissertation_test_task",
+      "source=manual_review",
+      "manual_review",
+      "firewall_domain=off",
+      "firewall_private=off",
+      "firewall_public=off"
+    ],
+    "documents": [
+      {
+        "document_id": "PERSIST_002",
+        "score": 24,
+        "rank": 1
+      },
+      {
+        "document_id": "SEC_003",
+        "score": 18,
+        "rank": 2
+      },
+      {
+        "document_id": "PERSIST_003",
+        "score": 17,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R005": {
+    "scenario_id": "NORMAL_014",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "defender_disabled"
+    ],
+    "query_values": [
+      "code.exe",
+      "winword.exe",
+      "opera.exe",
+      "1password-browsersupport.exe",
+      "mbambgnativemsg.exe",
+      "firewall_domain=off",
+      "firewall_private=off",
+      "firewall_public=off"
+    ],
+    "documents": [
+      {
+        "document_id": "SEC_003",
+        "score": 18,
+        "rank": 1
+      },
+      {
+        "document_id": "SEC_004",
+        "score": 14,
+        "rank": 2
+      },
+      {
+        "document_id": "AUTH_005",
+        "score": 11,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R006": {
+    "scenario_id": "SEC_017",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "code.exe",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_002",
+        "score": 8,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R007": {
+    "scenario_id": "PERSIST_012",
+    "query_fields": [
+      "download_details",
+      "manual_review",
+      "file_downloaded",
+      "scheduled_task_change",
+      "scheduled_task_details",
+      "defender_disabled"
+    ],
+    "query_values": [
+      "manual_review=controlled download documented by scenario note",
+      "controlled download documented by scenario note",
+      "manual_review=scheduled task activity documented by scenario note",
+      "scheduled task activity documented by scenario note",
+      "firewall_domain=off",
+      "firewall_private=off",
+      "firewall_public=off"
+    ],
+    "documents": [
+      {
+        "document_id": "SEC_003",
+        "score": 17,
+        "rank": 1
+      },
+      {
+        "document_id": "PERSIST_002",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "SEC_004",
+        "score": 14,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R008": {
+    "scenario_id": "USB_016",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "usb_connection_count",
+      "network_context"
+    ],
+    "query_values": [
+      "code.exe",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "USB_002",
+        "score": 9,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R009": {
+    "scenario_id": "NET_015",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "process_details",
+      "exe_path",
+      "pid",
+      "process_name",
+      "start_time",
+      "risky_processes",
+      "network_context"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "opera.exe",
+      "1password-browsersupport.exe",
+      "mbambgnativemsg.exe",
+      "network_profile=private",
+      "private",
+      "exe_path=c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "process_name=powershell.exe",
+      "powershell.exe",
+      "start_time=2026-07-10t13:12:22.283597",
+      "2026-07-10t13:12:22.283597",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 17,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 17,
+        "rank": 2
+      },
+      {
+        "document_id": "NORMAL_001",
+        "score": 11,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R010": {
+    "scenario_id": "NORMAL_012",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "code.exe",
+      "steamwebhelper.exe",
+      "ms-teams.exe",
+      "epicgameslauncher.exe",
+      "msedge.exe",
+      "excel.exe",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_002",
+        "score": 8,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R011": {
+    "scenario_id": "PROC_005",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "process_details",
+      "command_line",
+      "exe_path",
+      "parent_pid",
+      "parent_process_name",
+      "pid",
+      "process_name",
+      "start_time",
+      "risky_processes",
+      "command_activity",
+      "verified_commands",
+      "defender_disabled"
+    ],
+    "query_values": [
+      "code.exe",
+      "windowsterminal.exe",
+      "command_line=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "exe_path=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "parent_process_name=svchost.exe",
+      "svchost.exe",
+      "process_name=windowsterminal.exe",
+      "start_time=2026-07-09t13:11:05.513637",
+      "2026-07-09t13:11:05.513637",
+      "command_line=c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "exe_path=c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "parent_process_name=explorer.exe",
+      "explorer.exe",
+      "process_name=powershell.exe",
+      "powershell.exe",
+      "start_time=2026-07-09t13:11:05.392864",
+      "2026-07-09t13:11:05.392864",
+      "command_activity=process_listing",
+      "process_listing",
+      "get-process | select-object -first 10",
+      "firewall_domain=off",
+      "firewall_private=off",
+      "firewall_public=off"
+    ],
+    "documents": [
+      {
+        "document_id": "PROC_001",
+        "score": 20,
+        "rank": 1
+      },
+      {
+        "document_id": "SEC_003",
+        "score": 20,
+        "rank": 2
+      },
+      {
+        "document_id": "PROC_005",
+        "score": 18,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R012": {
+    "scenario_id": "SEC_003",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "code.exe",
+      "1password-browsersupport.exe",
+      "powershell.exe (ambiguous/no command line)",
+      "powershell.exe (vscode shell integration)",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "PROC_001",
+        "score": 15,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R013": {
+    "scenario_id": "SEC_015",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "network_context",
+      "viewed_interface"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "code.exe",
+      "powershell.exe (vscode shell integration)",
+      "network_profile=private",
+      "private",
+      "network_context=private",
+      "viewed_interface=windows_security",
+      "windows_security"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 18,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 18,
+        "rank": 2
+      },
+      {
+        "document_id": "SEC_001",
+        "score": 17,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R014": {
+    "scenario_id": "PERSIST_004",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "startup_item_details",
+      "action",
+      "object_name",
+      "source",
+      "network_context",
+      "startup_action",
+      "startup_item"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "code.exe",
+      "1password-browsersupport.exe",
+      "powershell.exe (vscode shell integration)",
+      "network_profile=private",
+      "private",
+      "action=viewed",
+      "viewed",
+      "object_name=startup applications",
+      "startup applications",
+      "source=operator_note",
+      "operator_note",
+      "network_context=private",
+      "startup_action=viewed",
+      "startup_item=startup applications"
+    ],
+    "documents": [
+      {
+        "document_id": "PERSIST_004",
+        "score": 18,
+        "rank": 1
+      },
+      {
+        "document_id": "NET_001",
+        "score": 17,
+        "rank": 2
+      },
+      {
+        "document_id": "NORMAL_004",
+        "score": 17,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R015": {
+    "scenario_id": "AUTH_006",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "defender_events",
+      "event_id",
+      "kind",
+      "failed_login_activity",
+      "failed_login_count_band",
+      "failed_logins",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "kind=configuration_changed",
+      "configuration_changed",
+      "failed_login_count_band=high",
+      "high",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "AUTH_004",
+        "score": 24,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 20,
+        "rank": 2
+      },
+      {
+        "document_id": "AUTH_003",
+        "score": 17,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R016": {
+    "scenario_id": "SEC_014",
+    "query_fields": [
+      "collector_generated_events_filtered",
+      "defender_disabled",
+      "defender_events",
+      "event_id",
+      "kind",
+      "defender_change"
+    ],
+    "query_values": [
+      "kind=configuration_changed",
+      "configuration_changed",
+      "kind=realtime_protection_disabled",
+      "realtime_protection_disabled",
+      "kind=status_snapshot",
+      "status_snapshot",
+      "defender_change=disabled",
+      "disabled",
+      "firewall_domain=off",
+      "firewall_private=off",
+      "firewall_public=off"
+    ],
+    "documents": [
+      {
+        "document_id": "SEC_003",
+        "score": 22,
+        "rank": 1
+      },
+      {
+        "document_id": "PERSIST_005",
+        "score": 15,
+        "rank": 2
+      },
+      {
+        "document_id": "SEC_004",
+        "score": 15,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R017": {
+    "scenario_id": "SEC_016",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "code.exe",
+      "notepad.exe",
+      "powershell.exe (vscode shell integration)",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "PROC_001",
+        "score": 9,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R018": {
+    "scenario_id": "SEC_005",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "defender_disabled",
+      "defender_events",
+      "event_id",
+      "kind",
+      "realtime_protection_enabled",
+      "elevated_processes",
+      "network_profile",
+      "defender_change",
+      "network_context"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "code.exe",
+      "powershell.exe (known background task.bat)",
+      "kind=realtime_protection_disabled",
+      "realtime_protection_disabled",
+      "kind=status_snapshot",
+      "status_snapshot",
+      "kind=realtime_protection_enabled",
+      "realtime_protection_enabled",
+      "powershell.exe",
+      "network_profile=private",
+      "private",
+      "defender_change=disabled",
+      "disabled",
+      "network_context=private",
+      "firewall_domain=off",
+      "firewall_private=off",
+      "firewall_public=off"
+    ],
+    "documents": [
+      {
+        "document_id": "SEC_003",
+        "score": 31,
+        "rank": 1
+      },
+      {
+        "document_id": "PROC_005",
+        "score": 19,
+        "rank": 2
+      },
+      {
+        "document_id": "AUTH_005",
+        "score": 18,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R019": {
+    "scenario_id": "USB_002",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "usb_connection_count",
+      "network_context"
+    ],
+    "query_values": [
+      "code.exe",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "USB_002",
+        "score": 9,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R020": {
+    "scenario_id": "AUTH_015",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "defender_events",
+      "event_id",
+      "kind",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "code.exe",
+      "lockapp.exe",
+      "powershell.exe (vscode shell integration)",
+      "kind=configuration_changed",
+      "configuration_changed",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "PROC_001",
+        "score": 9,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R021": {
+    "scenario_id": "NET_004",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "code.exe",
+      "rundll32.exe",
+      "rundll32.exe (windows settings/control panel)",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 17,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_002",
+        "score": 8,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R022": {
+    "scenario_id": "PROC_007",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "process_details",
+      "command_line",
+      "exe_path",
+      "parent_pid",
+      "parent_process_name",
+      "pid",
+      "process_name",
+      "start_time",
+      "risky_processes",
+      "command_activity",
+      "network_context",
+      "script_name",
+      "verified_commands"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "windowsterminal.exe",
+      "network_profile=private",
+      "private",
+      "command_line=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "exe_path=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "parent_process_name=svchost.exe",
+      "svchost.exe",
+      "process_name=windowsterminal.exe",
+      "start_time=2026-07-09t17:09:16.925239",
+      "2026-07-09t17:09:16.925239",
+      "command_line=c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "exe_path=c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "parent_process_name=explorer.exe",
+      "explorer.exe",
+      "process_name=powershell.exe",
+      "powershell.exe",
+      "start_time=2026-07-09t17:09:16.833674",
+      "2026-07-09t17:09:16.833674",
+      "command_activity=script_execution",
+      "script_execution",
+      "network_context=private",
+      "script_name=test_script.ps1",
+      "test_script.ps1",
+      "powershell script executed from local test folder"
+    ],
+    "documents": [
+      {
+        "document_id": "PROC_003",
+        "score": 28,
+        "rank": 1
+      },
+      {
+        "document_id": "PROC_001",
+        "score": 22,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_001",
+        "score": 19,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R023": {
+    "scenario_id": "PROC_003",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "process_details",
+      "command_line",
+      "exe_path",
+      "parent_pid",
+      "parent_process_name",
+      "pid",
+      "process_name",
+      "start_time",
+      "risky_processes",
+      "network_context"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "windowsterminal.exe",
+      "network_profile=private",
+      "private",
+      "command_line=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "exe_path=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "parent_process_name=explorer.exe",
+      "explorer.exe",
+      "process_name=windowsterminal.exe",
+      "start_time=2026-07-09t10:55:52.953419",
+      "2026-07-09t10:55:52.953419",
+      "command_line=c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "exe_path=c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "parent_process_name=windowsterminal.exe",
+      "process_name=powershell.exe",
+      "powershell.exe",
+      "start_time=2026-07-09t10:55:53.342009",
+      "2026-07-09t10:55:53.342009",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 17,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 17,
+        "rank": 2
+      },
+      {
+        "document_id": "PROC_001",
+        "score": 15,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R024": {
+    "scenario_id": "PROC_010",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "process_details",
+      "command_line",
+      "exe_path",
+      "parent_pid",
+      "parent_process_name",
+      "pid",
+      "process_name",
+      "start_time",
+      "risky_processes",
+      "command_activity",
+      "network_context",
+      "scanner_tool",
+      "verified_commands"
+    ],
+    "query_values": [
+      "code.exe",
+      "windowsterminal.exe",
+      "network_profile=private",
+      "private",
+      "command_line=c:\\windows\\system32\\cmd.exe",
+      "c:\\windows\\system32\\cmd.exe",
+      "exe_path=c:\\windows\\system32\\cmd.exe",
+      "parent_process_name=explorer.exe",
+      "explorer.exe",
+      "process_name=cmd.exe",
+      "cmd.exe",
+      "start_time=2026-07-09t17:12:54.798696",
+      "2026-07-09t17:12:54.798696",
+      "command_line=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "exe_path=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "parent_process_name=svchost.exe",
+      "svchost.exe",
+      "process_name=windowsterminal.exe",
+      "start_time=2026-07-09t17:12:54.894269",
+      "2026-07-09t17:12:54.894269",
+      "command_line=nmap 127.0.0.1",
+      "nmap 127.0.0.1",
+      "exe_path=c:\\program files (x86)\\nmap\\nmap.exe",
+      "c:\\program files (x86)\\nmap\\nmap.exe",
+      "parent_process_name=cmd.exe",
+      "process_name=nmap.exe",
+      "nmap.exe",
+      "start_time=2026-07-09t17:12:57.595498",
+      "2026-07-09t17:12:57.595498",
+      "command_line=nmap -sv 127.0.0.1",
+      "nmap -sv 127.0.0.1",
+      "start_time=2026-07-09t17:13:12.295633",
+      "2026-07-09t17:13:12.295633",
+      "command_activity=local_network_scan",
+      "local_network_scan",
+      "network_context=private",
+      "scanner_tool=nmap",
+      "nmap"
+    ],
+    "documents": [
+      {
+        "document_id": "PROC_001",
+        "score": 19,
+        "rank": 1
+      },
+      {
+        "document_id": "NET_001",
+        "score": 18,
+        "rank": 2
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 18,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R025": {
+    "scenario_id": "PERSIST_016",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "code.exe",
+      "mmc.exe",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_002",
+        "score": 8,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R026": {
+    "scenario_id": "AUTH_008",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "defender_events",
+      "event_id",
+      "kind",
+      "failed_login_activity",
+      "failed_login_count_band",
+      "failed_logins",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "code.exe",
+      "lockapp.exe",
+      "excel.exe",
+      "winword.exe",
+      "opera.exe",
+      "pickerhost.exe",
+      "1password-browsersupport.exe",
+      "known benign environment/background process",
+      "mbambgnativemsg.exe",
+      "kind=configuration_changed",
+      "configuration_changed",
+      "failed_login_count_band=multiple",
+      "multiple",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "AUTH_003",
+        "score": 22,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 19,
+        "rank": 2
+      },
+      {
+        "document_id": "AUTH_004",
+        "score": 16,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R027": {
+    "scenario_id": "SEC_008",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "defender_disabled",
+      "defender_events",
+      "kind",
+      "network_profile",
+      "defender_change",
+      "network_context"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "opera.exe",
+      "1password-browsersupport.exe",
+      "mbambgnativemsg.exe",
+      "kind=manual_review_realtime_protection_disabled_and_restored",
+      "manual_review_realtime_protection_disabled_and_restored",
+      "network_profile=private",
+      "private",
+      "defender_change=disabled",
+      "disabled",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "SEC_003",
+        "score": 24,
+        "rank": 1
+      },
+      {
+        "document_id": "AUTH_005",
+        "score": 19,
+        "rank": 2
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 19,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R028": {
+    "scenario_id": "AUTH_005",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "defender_events",
+      "kind",
+      "realtime_protection_enabled",
+      "event_id",
+      "failed_login_activity",
+      "failed_login_count_band",
+      "failed_logins",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "lockapp.exe",
+      "powershell.exe (ambiguous/background during auth scenario)",
+      "kind=status_snapshot",
+      "status_snapshot",
+      "kind=configuration_changed",
+      "configuration_changed",
+      "failed_login_count_band=high",
+      "high",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "AUTH_004",
+        "score": 27,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 23,
+        "rank": 2
+      },
+      {
+        "document_id": "AUTH_003",
+        "score": 19,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R029": {
+    "scenario_id": "USB_007",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "usb_connection_count",
+      "network_context",
+      "usb_content_type"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "network_profile=private",
+      "private",
+      "network_context=private",
+      "usb_content_type=script_or_executable_visible",
+      "script_or_executable_visible"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "USB_004",
+        "score": 14,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R030": {
+    "scenario_id": "USB_012",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "defender_disabled",
+      "defender_events",
+      "event_id",
+      "kind",
+      "usb_connection_count",
+      "defender_change"
+    ],
+    "query_values": [
+      "code.exe",
+      "kind=realtime_protection_disabled",
+      "realtime_protection_disabled",
+      "kind=status_snapshot",
+      "status_snapshot",
+      "defender_change=disabled",
+      "disabled",
+      "firewall_domain=off",
+      "firewall_private=off",
+      "firewall_public=off"
+    ],
+    "documents": [
+      {
+        "document_id": "SEC_003",
+        "score": 23,
+        "rank": 1
+      },
+      {
+        "document_id": "USB_005",
+        "score": 19,
+        "rank": 2
+      },
+      {
+        "document_id": "AUTH_005",
+        "score": 16,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R031": {
+    "scenario_id": "AUTH_017",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "defender_events",
+      "event_id",
+      "kind",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "code.exe",
+      "winword.exe",
+      "opera.exe",
+      "1password-browsersupport.exe",
+      "mbambgnativemsg.exe",
+      "powershell.exe (vscode shell integration)",
+      "kind=configuration_changed",
+      "configuration_changed",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "PROC_001",
+        "score": 9,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R032": {
+    "scenario_id": "PERSIST_015",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "mmc.exe",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_002",
+        "score": 8,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R033": {
+    "scenario_id": "USB_004",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "usb_connection_count",
+      "network_context"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "code.exe",
+      "photos.exe",
+      "1password-browsersupport.exe",
+      "powershell.exe (vscode shell integration)",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "PROC_001",
+        "score": 9,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R034": {
+    "scenario_id": "NET_014",
+    "query_fields": [
+      "failed_login_activity",
+      "failed_login_count_band",
+      "failed_logins",
+      "network_profile",
+      "risky_processes",
+      "network_context",
+      "defender_disabled"
+    ],
+    "query_values": [
+      "failed_login_count_band=single",
+      "single",
+      "network_profile=public",
+      "public",
+      "nmap.exe",
+      "network_context=public",
+      "firewall_domain=off",
+      "firewall_private=off",
+      "firewall_public=off"
+    ],
+    "documents": [
+      {
+        "document_id": "AUTH_005",
+        "score": 28,
+        "rank": 1
+      },
+      {
+        "document_id": "AUTH_002",
+        "score": 19,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_002",
+        "score": 19,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R035": {
+    "scenario_id": "PERSIST_001",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "network_context",
+      "viewed_interface"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "mmc.exe",
+      "network_profile=private",
+      "private",
+      "network_context=private",
+      "viewed_interface=task_scheduler",
+      "task_scheduler"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 18,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 17,
+        "rank": 2
+      },
+      {
+        "document_id": "PERSIST_001",
+        "score": 16,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R036": {
+    "scenario_id": "USB_005",
+    "query_fields": [
+      "apps_opened",
+      "collector_generated_events_filtered",
+      "defender_events",
+      "kind",
+      "realtime_protection_enabled",
+      "removable_drive_details",
+      "drive_letter",
+      "filesystem",
+      "volume_name",
+      "usb_connection_count",
+      "defender_disabled"
+    ],
+    "query_values": [
+      "shellhost.exe",
+      "kind=status_snapshot",
+      "status_snapshot",
+      "drive_letter=d:",
+      "d:",
+      "filesystem=fat32",
+      "fat32",
+      "volume_name=corsair",
+      "corsair",
+      "firewall_domain=off",
+      "firewall_private=off",
+      "firewall_public=off"
+    ],
+    "documents": [
+      {
+        "document_id": "SEC_003",
+        "score": 20,
+        "rank": 1
+      },
+      {
+        "document_id": "USB_005",
+        "score": 14,
+        "rank": 2
+      },
+      {
+        "document_id": "SEC_004",
+        "score": 13,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R037": {
+    "scenario_id": "USB_015",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "removable_drive_details",
+      "drive_letter",
+      "filesystem",
+      "volume_name",
+      "usb_connection_count",
+      "network_context"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "code.exe",
+      "powershell.exe (vscode shell integration)",
+      "network_profile=private",
+      "private",
+      "drive_letter=d:",
+      "d:",
+      "filesystem=fat32",
+      "fat32",
+      "volume_name=neil",
+      "neil",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "USB_001",
+        "score": 10,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R038": {
+    "scenario_id": "NORMAL_015",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "defender_events",
+      "kind",
+      "realtime_protection_enabled",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "opera.exe",
+      "1password-browsersupport.exe",
+      "mbambgnativemsg.exe",
+      "kind=status_snapshot",
+      "status_snapshot",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NORMAL_003",
+        "score": 17,
+        "rank": 1
+      },
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_002",
+        "score": 9,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R039": {
+    "scenario_id": "NORMAL_002",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "code.exe",
+      "opera.exe",
+      "1password-browsersupport.exe",
+      "mbambgnativemsg.exe",
+      "powershell.exe (vscode shell integration)",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "PROC_001",
+        "score": 9,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R040": {
+    "scenario_id": "NET_006",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "download_details",
+      "created_time",
+      "extension",
+      "filename",
+      "full_path",
+      "size_bytes",
+      "file_downloaded",
+      "network_profile",
+      "network_context",
+      "defender_disabled"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "opera.exe",
+      "1password-browsersupport.exe",
+      "mbambgnativemsg.exe",
+      "created_time=2026-07-09t13:13:23.311810",
+      "2026-07-09t13:13:23.311810",
+      "extension=.zip",
+      ".zip",
+      "filename=round2_actions_checklist.zip",
+      "round2_actions_checklist.zip",
+      "full_path=c:\\users\\lenovo legion\\downloads\\round2_actions_checklist.zip",
+      "c:\\users\\lenovo legion\\downloads\\round2_actions_checklist.zip",
+      "network_profile=public",
+      "public",
+      "network_context=public",
+      "firewall_domain=off",
+      "firewall_private=off",
+      "firewall_public=off"
+    ],
+    "documents": [
+      {
+        "document_id": "SEC_003",
+        "score": 19,
+        "rank": 1
+      },
+      {
+        "document_id": "AUTH_005",
+        "score": 18,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_002",
+        "score": 18,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R041": {
+    "scenario_id": "NET_008",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "defender_events",
+      "event_id",
+      "kind",
+      "failed_login_activity",
+      "failed_login_count_band",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "code.exe",
+      "lockapp.exe",
+      "kind=configuration_changed",
+      "configuration_changed",
+      "failed_login_count_band=multiple_count_not_captured",
+      "multiple_count_not_captured",
+      "network_profile=public",
+      "public",
+      "network_context=public"
+    ],
+    "documents": [
+      {
+        "document_id": "AUTH_005",
+        "score": 17,
+        "rank": 1
+      },
+      {
+        "document_id": "NET_002",
+        "score": 17,
+        "rank": 2
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R042": {
+    "scenario_id": "NET_007",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "defender_events",
+      "event_id",
+      "kind",
+      "failed_login_activity",
+      "failed_login_count_band",
+      "failed_logins",
+      "network_profile",
+      "process_details",
+      "command_line",
+      "exe_path",
+      "parent_pid",
+      "parent_process_name",
+      "pid",
+      "process_name",
+      "start_time",
+      "risky_processes",
+      "network_context"
+    ],
+    "query_values": [
+      "code.exe",
+      "windowsterminal.exe",
+      "lockapp.exe",
+      "known benign environment/background process",
+      "service change ignored: background intelligent transfer service",
+      "kind=configuration_changed",
+      "configuration_changed",
+      "failed_login_count_band=single",
+      "single",
+      "network_profile=public",
+      "public",
+      "command_line=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "exe_path=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "parent_process_name=svchost.exe",
+      "svchost.exe",
+      "process_name=windowsterminal.exe",
+      "start_time=2026-07-09t17:15:42.505307",
+      "2026-07-09t17:15:42.505307",
+      "command_line=c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "exe_path=c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "parent_process_name=explorer.exe",
+      "explorer.exe",
+      "process_name=powershell.exe",
+      "powershell.exe",
+      "start_time=2026-07-09t17:15:42.398953",
+      "2026-07-09t17:15:42.398953",
+      "network_context=public"
+    ],
+    "documents": [
+      {
+        "document_id": "AUTH_002",
+        "score": 22,
+        "rank": 1
+      },
+      {
+        "document_id": "AUTH_005",
+        "score": 22,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_002",
+        "score": 19,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R043": {
+    "scenario_id": "NORMAL_018",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "elevated_processes",
+      "network_profile",
+      "process_details",
+      "command_line",
+      "exe_path",
+      "is_elevated",
+      "parent_pid",
+      "parent_process_name",
+      "pid",
+      "process_name",
+      "start_time",
+      "risky_processes",
+      "network_context"
+    ],
+    "query_values": [
+      "code.exe",
+      "opera.exe",
+      "winword.exe",
+      "1password-browsersupport.exe",
+      "mbambgnativemsg.exe",
+      "powershell.exe",
+      "network_profile=private",
+      "private",
+      "command_line=c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe -command start-process -windowstyle hidden task.bat",
+      "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe -command start-process -windowstyle hidden task.bat",
+      "exe_path=c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "is_elevated=true",
+      "true",
+      "parent_process_name=svchost.exe",
+      "svchost.exe",
+      "process_name=powershell.exe",
+      "start_time=2026-07-10t12:57:42.328565",
+      "2026-07-10t12:57:42.328565",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 17,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 17,
+        "rank": 2
+      },
+      {
+        "document_id": "PROC_001",
+        "score": 15,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R044": {
+    "scenario_id": "NORMAL_017",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "code.exe",
+      "notepad.exe",
+      "powershell.exe (vscode shell integration)",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "PROC_001",
+        "score": 9,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R045": {
+    "scenario_id": "NET_002",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "code.exe",
+      "opera.exe",
+      "1password-browsersupport.exe",
+      "mbambgnativemsg.exe",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_002",
+        "score": 8,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R046": {
+    "scenario_id": "NET_005",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "network_context",
+      "defender_disabled"
+    ],
+    "query_values": [
+      "code.exe",
+      "network_profile=public",
+      "public",
+      "network_context=public",
+      "firewall_domain=off",
+      "firewall_private=off",
+      "firewall_public=off"
+    ],
+    "documents": [
+      {
+        "document_id": "AUTH_005",
+        "score": 18,
+        "rank": 1
+      },
+      {
+        "document_id": "NET_002",
+        "score": 18,
+        "rank": 2
+      },
+      {
+        "document_id": "SEC_003",
+        "score": 18,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R047": {
+    "scenario_id": "NET_009",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "process_details",
+      "command_line",
+      "exe_path",
+      "parent_pid",
+      "parent_process_name",
+      "pid",
+      "process_name",
+      "start_time",
+      "risky_processes",
+      "command_activity",
+      "network_context",
+      "scanner_tool",
+      "verified_commands"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "code.exe",
+      "windowsterminal.exe",
+      "1password-browsersupport.exe",
+      "powershell.exe (vscode shell integration)",
+      "network_profile=private",
+      "private",
+      "command_line=c:\\windows\\system32\\cmd.exe",
+      "c:\\windows\\system32\\cmd.exe",
+      "exe_path=c:\\windows\\system32\\cmd.exe",
+      "parent_process_name=explorer.exe",
+      "explorer.exe",
+      "process_name=cmd.exe",
+      "cmd.exe",
+      "start_time=2026-07-09t17:22:11.806559",
+      "2026-07-09t17:22:11.806559",
+      "command_line=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "exe_path=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "parent_process_name=svchost.exe",
+      "svchost.exe",
+      "process_name=windowsterminal.exe",
+      "start_time=2026-07-09t17:22:11.956835",
+      "2026-07-09t17:22:11.956835",
+      "command_activity=scanner_version_check",
+      "scanner_version_check",
+      "network_context=private",
+      "scanner_tool=nmap",
+      "nmap",
+      "nmap --version"
+    ],
+    "documents": [
+      {
+        "document_id": "PROC_001",
+        "score": 21,
+        "rank": 1
+      },
+      {
+        "document_id": "NET_004",
+        "score": 18,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_001",
+        "score": 17,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R048": {
+    "scenario_id": "AUTH_002",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "defender_events",
+      "event_id",
+      "kind",
+      "realtime_protection_enabled",
+      "failed_login_activity",
+      "failed_login_count_band",
+      "failed_logins",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "lockapp.exe",
+      "opera.exe",
+      "1password-browsersupport.exe",
+      "kind=configuration_changed",
+      "configuration_changed",
+      "kind=status_snapshot",
+      "status_snapshot",
+      "failed_login_count_band=multiple",
+      "multiple",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "AUTH_003",
+        "score": 22,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 20,
+        "rank": 2
+      },
+      {
+        "document_id": "AUTH_004",
+        "score": 17,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R049": {
+    "scenario_id": "PROC_004",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "code.exe",
+      "notepad.exe",
+      "1password-browsersupport.exe",
+      "powershell.exe (vscode shell integration)",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "PROC_001",
+        "score": 9,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R050": {
+    "scenario_id": "AUTH_003",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "defender_events",
+      "event_id",
+      "kind",
+      "failed_login_activity",
+      "failed_login_count_band",
+      "failed_logins",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "code.exe",
+      "lockapp.exe",
+      "kind=configuration_changed",
+      "configuration_changed",
+      "failed_login_count_band=multiple",
+      "multiple",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "AUTH_003",
+        "score": 22,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 19,
+        "rank": 2
+      },
+      {
+        "document_id": "AUTH_004",
+        "score": 16,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R051": {
+    "scenario_id": "SEC_010",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "defender_disabled",
+      "defender_events",
+      "kind",
+      "network_profile",
+      "process_details",
+      "command_line",
+      "exe_path",
+      "parent_pid",
+      "parent_process_name",
+      "pid",
+      "process_name",
+      "start_time",
+      "risky_processes",
+      "defender_change",
+      "network_context"
+    ],
+    "query_values": [
+      "code.exe",
+      "windowsterminal.exe",
+      "kind=manual_review_realtime_protection_disabled_and_restored",
+      "manual_review_realtime_protection_disabled_and_restored",
+      "network_profile=private",
+      "private",
+      "command_line=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "exe_path=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "parent_process_name=svchost.exe",
+      "svchost.exe",
+      "process_name=windowsterminal.exe",
+      "start_time=2026-07-09t17:06:15.836326",
+      "2026-07-09t17:06:15.836326",
+      "command_line=c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "exe_path=c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "parent_process_name=explorer.exe",
+      "explorer.exe",
+      "process_name=powershell.exe",
+      "powershell.exe",
+      "start_time=2026-07-09t17:06:15.727801",
+      "2026-07-09t17:06:15.727801",
+      "defender_change=disabled",
+      "disabled",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "SEC_003",
+        "score": 26,
+        "rank": 1
+      },
+      {
+        "document_id": "PROC_005",
+        "score": 22,
+        "rank": 2
+      },
+      {
+        "document_id": "USB_005",
+        "score": 21,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R052": {
+    "scenario_id": "NORMAL_004",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "defender_events",
+      "kind",
+      "realtime_protection_enabled",
+      "defender_disabled"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "ms-teams.exe",
+      "kind=status_snapshot",
+      "status_snapshot",
+      "firewall_domain=off",
+      "firewall_private=off",
+      "firewall_public=off"
+    ],
+    "documents": [
+      {
+        "document_id": "SEC_003",
+        "score": 21,
+        "rank": 1
+      },
+      {
+        "document_id": "SEC_004",
+        "score": 14,
+        "rank": 2
+      },
+      {
+        "document_id": "PROC_005",
+        "score": 12,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R053": {
+    "scenario_id": "PERSIST_011",
+    "query_fields": [
+      "risky_processes",
+      "scheduled_task_change",
+      "scheduled_task_details",
+      "manual_review",
+      "defender_disabled"
+    ],
+    "query_values": [
+      "powershell.exe",
+      "manual_review=scheduled task activity documented by scenario note",
+      "scheduled task activity documented by scenario note",
+      "firewall_domain=off",
+      "firewall_private=off",
+      "firewall_public=off"
+    ],
+    "documents": [
+      {
+        "document_id": "PERSIST_002",
+        "score": 17,
+        "rank": 1
+      },
+      {
+        "document_id": "SEC_003",
+        "score": 17,
+        "rank": 2
+      },
+      {
+        "document_id": "SEC_004",
+        "score": 15,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R054": {
+    "scenario_id": "SEC_006",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "defender_config_changed",
+      "defender_events",
+      "detail",
+      "kind",
+      "source",
+      "defender_change",
+      "defender_disabled"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "service change ignored: background intelligent transfer service",
+      "detail=defender setting changed temporarily and restored",
+      "defender setting changed temporarily and restored",
+      "kind=configuration_changed",
+      "configuration_changed",
+      "source=manual_review",
+      "manual_review",
+      "defender_change=configuration_changed_then_restored",
+      "configuration_changed_then_restored",
+      "firewall_domain=off",
+      "firewall_private=off",
+      "firewall_public=off"
+    ],
+    "documents": [
+      {
+        "document_id": "SEC_003",
+        "score": 22,
+        "rank": 1
+      },
+      {
+        "document_id": "SEC_002",
+        "score": 19,
+        "rank": 2
+      },
+      {
+        "document_id": "SEC_004",
+        "score": 19,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R055": {
+    "scenario_id": "USB_011",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "process_details",
+      "command_line",
+      "exe_path",
+      "parent_pid",
+      "parent_process_name",
+      "pid",
+      "process_name",
+      "start_time",
+      "risky_processes",
+      "usb_connection_count",
+      "defender_disabled"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "windowsterminal.exe",
+      "command_line=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "exe_path=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "parent_process_name=svchost.exe",
+      "svchost.exe",
+      "process_name=windowsterminal.exe",
+      "start_time=2026-07-10t09:29:56.090131",
+      "2026-07-10t09:29:56.090131",
+      "command_line=c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "exe_path=c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "parent_process_name=explorer.exe",
+      "explorer.exe",
+      "process_name=powershell.exe",
+      "powershell.exe",
+      "start_time=2026-07-10t09:29:55.997221",
+      "2026-07-10t09:29:55.997221",
+      "firewall_domain=off",
+      "firewall_private=off",
+      "firewall_public=off"
+    ],
+    "documents": [
+      {
+        "document_id": "SEC_003",
+        "score": 20,
+        "rank": 1
+      },
+      {
+        "document_id": "USB_005",
+        "score": 18,
+        "rank": 2
+      },
+      {
+        "document_id": "NORMAL_001",
+        "score": 16,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R056": {
+    "scenario_id": "PROC_002",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "process_details",
+      "command_line",
+      "exe_path",
+      "parent_pid",
+      "parent_process_name",
+      "pid",
+      "process_name",
+      "start_time",
+      "risky_processes",
+      "network_context"
+    ],
+    "query_values": [
+      "code.exe",
+      "windowsterminal.exe",
+      "network_profile=private",
+      "private",
+      "command_line=c:\\windows\\system32\\cmd.exe",
+      "c:\\windows\\system32\\cmd.exe",
+      "exe_path=c:\\windows\\system32\\cmd.exe",
+      "parent_process_name=explorer.exe",
+      "explorer.exe",
+      "process_name=cmd.exe",
+      "cmd.exe",
+      "start_time=2026-07-09t10:55:05.404083",
+      "2026-07-09t10:55:05.404083",
+      "command_line=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "exe_path=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "parent_process_name=svchost.exe",
+      "svchost.exe",
+      "process_name=windowsterminal.exe",
+      "start_time=2026-07-09t10:55:05.509667",
+      "2026-07-09t10:55:05.509667",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 17,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 17,
+        "rank": 2
+      },
+      {
+        "document_id": "PROC_001",
+        "score": 15,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R057": {
+    "scenario_id": "NORMAL_010",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "code.exe",
+      "onedrive.exe",
+      "service change ignored: background intelligent transfer service",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_002",
+        "score": 8,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R058": {
+    "scenario_id": "PERSIST_007",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "scheduled_task_change",
+      "scheduled_task_details",
+      "action",
+      "object_name",
+      "source",
+      "network_context"
+    ],
+    "query_values": [
+      "code.exe",
+      "mmc.exe",
+      "network_profile=private",
+      "private",
+      "action=deleted",
+      "deleted",
+      "object_name=dissertation_test_task",
+      "dissertation_test_task",
+      "source=manual_review_operator_note",
+      "manual_review_operator_note",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "PERSIST_003",
+        "score": 17,
+        "rank": 1
+      },
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R059": {
+    "scenario_id": "NORMAL_003",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_002",
+        "score": 8,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R060": {
+    "scenario_id": "NET_012",
+    "query_fields": [
+      "network_profile",
+      "risky_processes",
+      "network_context",
+      "defender_disabled"
+    ],
+    "query_values": [
+      "network_profile=public",
+      "public",
+      "nmap.exe",
+      "network_context=public",
+      "firewall_domain=off",
+      "firewall_private=off",
+      "firewall_public=off"
+    ],
+    "documents": [
+      {
+        "document_id": "AUTH_005",
+        "score": 17,
+        "rank": 1
+      },
+      {
+        "document_id": "NET_002",
+        "score": 17,
+        "rank": 2
+      },
+      {
+        "document_id": "SEC_003",
+        "score": 16,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R061": {
+    "scenario_id": "AUTH_001",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "defender_events",
+      "event_id",
+      "kind",
+      "failed_login_activity",
+      "failed_login_count_band",
+      "failed_logins",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "powershell.exe (ambiguous/no command line)",
+      "kind=configuration_changed",
+      "configuration_changed",
+      "failed_login_count_band=single",
+      "single",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "AUTH_002",
+        "score": 20,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 19,
+        "rank": 2
+      },
+      {
+        "document_id": "AUTH_004",
+        "score": 17,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R062": {
+    "scenario_id": "NORMAL_009",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "code.exe",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_002",
+        "score": 8,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R063": {
+    "scenario_id": "PERSIST_008",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "startup_item_change",
+      "startup_item_details",
+      "action",
+      "object_name",
+      "source",
+      "network_context",
+      "startup_action",
+      "startup_item"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "code.exe",
+      "network_profile=private",
+      "private",
+      "action=added",
+      "added",
+      "object_name=notepad startup shortcut",
+      "notepad startup shortcut",
+      "source=manual_review_operator_note",
+      "manual_review_operator_note",
+      "network_context=private",
+      "startup_action=added",
+      "startup_item=notepad startup shortcut"
+    ],
+    "documents": [
+      {
+        "document_id": "PERSIST_004",
+        "score": 23,
+        "rank": 1
+      },
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R064": {
+    "scenario_id": "PROC_008",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "process_details",
+      "command_line",
+      "exe_path",
+      "parent_pid",
+      "parent_process_name",
+      "pid",
+      "process_name",
+      "start_time",
+      "risky_processes",
+      "command_activity",
+      "network_context",
+      "verified_commands"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "windowsterminal.exe",
+      "network_profile=private",
+      "private",
+      "command_line=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "exe_path=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "parent_process_name=svchost.exe",
+      "svchost.exe",
+      "process_name=windowsterminal.exe",
+      "start_time=2026-07-09t17:10:49.303560",
+      "2026-07-09t17:10:49.303560",
+      "command_line=c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "exe_path=c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "parent_process_name=explorer.exe",
+      "explorer.exe",
+      "process_name=powershell.exe",
+      "powershell.exe",
+      "start_time=2026-07-09t17:10:49.209497",
+      "2026-07-09t17:10:49.209497",
+      "command_activity=unusual_powershell_command",
+      "unusual_powershell_command",
+      "network_context=private",
+      "controlled unusual or encoded-looking powershell command"
+    ],
+    "documents": [
+      {
+        "document_id": "PROC_001",
+        "score": 22,
+        "rank": 1
+      },
+      {
+        "document_id": "NET_001",
+        "score": 17,
+        "rank": 2
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 17,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R065": {
+    "scenario_id": "NET_013",
+    "query_fields": [
+      "defender_disabled",
+      "defender_events",
+      "kind",
+      "network_profile",
+      "defender_change",
+      "network_context"
+    ],
+    "query_values": [
+      "kind=manual_review_defender_disabled",
+      "manual_review_defender_disabled",
+      "network_profile=public",
+      "public",
+      "defender_change=disabled",
+      "disabled",
+      "network_context=public",
+      "firewall_domain=off",
+      "firewall_private=off",
+      "firewall_public=off"
+    ],
+    "documents": [
+      {
+        "document_id": "AUTH_005",
+        "score": 21,
+        "rank": 1
+      },
+      {
+        "document_id": "SEC_003",
+        "score": 21,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_002",
+        "score": 16,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R066": {
+    "scenario_id": "AUTH_007",
+    "query_fields": [
+      "collector_generated_events_filtered",
+      "defender_events",
+      "kind",
+      "realtime_protection_enabled",
+      "event_id",
+      "failed_login_activity",
+      "failed_login_count_band",
+      "failed_logins",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "kind=status_snapshot",
+      "status_snapshot",
+      "kind=configuration_changed",
+      "configuration_changed",
+      "failed_login_count_band=multiple",
+      "multiple",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "AUTH_003",
+        "score": 20,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 18,
+        "rank": 2
+      },
+      {
+        "document_id": "AUTH_004",
+        "score": 15,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R067": {
+    "scenario_id": "AUTH_009",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "defender_events",
+      "event_id",
+      "kind",
+      "failed_login_activity",
+      "failed_login_count_band",
+      "failed_logins",
+      "network_profile",
+      "process_details",
+      "command_line",
+      "exe_path",
+      "parent_pid",
+      "parent_process_name",
+      "pid",
+      "process_name",
+      "start_time",
+      "risky_processes",
+      "network_context"
+    ],
+    "query_values": [
+      "windowsterminal.exe",
+      "notepad.exe",
+      "kind=configuration_changed",
+      "configuration_changed",
+      "failed_login_count_band=multiple",
+      "multiple",
+      "network_profile=private",
+      "private",
+      "command_line=c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "exe_path=c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "parent_process_name=explorer.exe",
+      "explorer.exe",
+      "process_name=powershell.exe",
+      "powershell.exe",
+      "start_time=2026-07-09t16:50:25.895318",
+      "2026-07-09t16:50:25.895318",
+      "command_line=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "exe_path=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "parent_process_name=svchost.exe",
+      "svchost.exe",
+      "process_name=windowsterminal.exe",
+      "start_time=2026-07-09t16:50:25.992757",
+      "2026-07-09t16:50:25.992757",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "AUTH_003",
+        "score": 23,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 20,
+        "rank": 2
+      },
+      {
+        "document_id": "NORMAL_001",
+        "score": 18,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R068": {
+    "scenario_id": "NORMAL_001",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "defender_events",
+      "kind",
+      "realtime_protection_enabled",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "code.exe",
+      "winword.exe",
+      "kind=status_snapshot",
+      "status_snapshot",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NORMAL_003",
+        "score": 17,
+        "rank": 1
+      },
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_002",
+        "score": 9,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R069": {
+    "scenario_id": "PROC_012",
+    "query_fields": [
+      "download_details",
+      "manual_review",
+      "file_downloaded",
+      "network_profile",
+      "risky_processes",
+      "network_context",
+      "defender_disabled"
+    ],
+    "query_values": [
+      "manual_review=controlled download documented by scenario note",
+      "controlled download documented by scenario note",
+      "network_profile=private",
+      "private",
+      "powershell.exe",
+      "network_context=private",
+      "firewall_domain=off",
+      "firewall_private=off",
+      "firewall_public=off"
+    ],
+    "documents": [
+      {
+        "document_id": "NORMAL_003",
+        "score": 18,
+        "rank": 1
+      },
+      {
+        "document_id": "SEC_003",
+        "score": 17,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R070": {
+    "scenario_id": "PERSIST_010",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "defender_events",
+      "kind",
+      "realtime_protection_enabled",
+      "service_change",
+      "service_change_details",
+      "action",
+      "object_name",
+      "source",
+      "defender_disabled"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "mmc.exe",
+      "kind=status_snapshot",
+      "status_snapshot",
+      "action=viewed_or_changed",
+      "viewed_or_changed",
+      "object_name=test service / service start-type setting",
+      "test service / service start-type setting",
+      "source=manual_review_from_operator_note",
+      "manual_review_from_operator_note",
+      "firewall_domain=off",
+      "firewall_private=off",
+      "firewall_public=off"
+    ],
+    "documents": [
+      {
+        "document_id": "SEC_003",
+        "score": 22,
+        "rank": 1
+      },
+      {
+        "document_id": "PERSIST_005",
+        "score": 20,
+        "rank": 2
+      },
+      {
+        "document_id": "SEC_004",
+        "score": 15,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R071": {
+    "scenario_id": "AUTH_004",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "defender_events",
+      "event_id",
+      "kind",
+      "realtime_protection_enabled",
+      "failed_login_activity",
+      "failed_login_count_band",
+      "failed_logins",
+      "defender_disabled"
+    ],
+    "query_values": [
+      "code.exe",
+      "lockapp.exe",
+      "opera.exe",
+      "1password-browsersupport.exe",
+      "mbambgnativemsg.exe",
+      "kind=configuration_changed",
+      "configuration_changed",
+      "kind=status_snapshot",
+      "status_snapshot",
+      "failed_login_count_band=single",
+      "single",
+      "firewall_domain=off",
+      "firewall_private=off",
+      "firewall_public=off"
+    ],
+    "documents": [
+      {
+        "document_id": "SEC_003",
+        "score": 23,
+        "rank": 1
+      },
+      {
+        "document_id": "AUTH_005",
+        "score": 22,
+        "rank": 2
+      },
+      {
+        "document_id": "AUTH_002",
+        "score": 20,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R072": {
+    "scenario_id": "SEC_004",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "code.exe",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_002",
+        "score": 8,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R073": {
+    "scenario_id": "AUTH_011",
+    "query_fields": [
+      "apps_opened",
+      "defender_events",
+      "event_id",
+      "kind",
+      "failed_login_activity",
+      "failed_login_count_band",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "lockapp.exe",
+      "kind=configuration_changed",
+      "configuration_changed",
+      "failed_login_count_band=multiple_count_not_captured",
+      "multiple_count_not_captured",
+      "network_profile=public",
+      "public",
+      "network_context=public"
+    ],
+    "documents": [
+      {
+        "document_id": "AUTH_005",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NET_002",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 15,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R074": {
+    "scenario_id": "NORMAL_005",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_002",
+        "score": 8,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R075": {
+    "scenario_id": "NET_017",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "opera.exe",
+      "1password-browsersupport.exe",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_002",
+        "score": 8,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R076": {
+    "scenario_id": "PERSIST_002",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "network_context",
+      "viewed_interface"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "mmc.exe",
+      "network_profile=private",
+      "private",
+      "network_context=private",
+      "viewed_interface=task_scheduler",
+      "task_scheduler"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 18,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 17,
+        "rank": 2
+      },
+      {
+        "document_id": "PERSIST_001",
+        "score": 16,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R077": {
+    "scenario_id": "AUTH_012",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "defender_events",
+      "event_id",
+      "kind",
+      "failed_login_activity",
+      "failed_login_count_band",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "code.exe",
+      "kind=configuration_changed",
+      "configuration_changed",
+      "failed_login_count_band=high_count_not_captured",
+      "high_count_not_captured",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NORMAL_003",
+        "score": 19,
+        "rank": 1
+      },
+      {
+        "document_id": "NET_001",
+        "score": 17,
+        "rank": 2
+      },
+      {
+        "document_id": "AUTH_004",
+        "score": 16,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R078": {
+    "scenario_id": "NET_010",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "process_details",
+      "command_line",
+      "exe_path",
+      "parent_pid",
+      "parent_process_name",
+      "pid",
+      "process_name",
+      "start_time",
+      "risky_processes",
+      "command_activity",
+      "network_context",
+      "scan_target",
+      "scanner_tool",
+      "verified_commands"
+    ],
+    "query_values": [
+      "code.exe",
+      "windowsterminal.exe",
+      "network_profile=private",
+      "private",
+      "command_line=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "exe_path=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "parent_process_name=svchost.exe",
+      "svchost.exe",
+      "process_name=windowsterminal.exe",
+      "start_time=2026-07-09t17:23:04.329531",
+      "2026-07-09t17:23:04.329531",
+      "command_line=c:\\windows\\system32\\cmd.exe",
+      "c:\\windows\\system32\\cmd.exe",
+      "exe_path=c:\\windows\\system32\\cmd.exe",
+      "parent_process_name=explorer.exe",
+      "explorer.exe",
+      "process_name=cmd.exe",
+      "cmd.exe",
+      "start_time=2026-07-09t17:23:04.234112",
+      "2026-07-09t17:23:04.234112",
+      "command_activity=local_network_scan",
+      "local_network_scan",
+      "network_context=private",
+      "scan_target=127.0.0.1",
+      "127.0.0.1",
+      "scanner_tool=nmap",
+      "nmap",
+      "nmap 127.0.0.1"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_004",
+        "score": 20,
+        "rank": 1
+      },
+      {
+        "document_id": "PROC_001",
+        "score": 19,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_001",
+        "score": 18,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R079": {
+    "scenario_id": "USB_017",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "usb_connection_count",
+      "network_context"
+    ],
+    "query_values": [
+      "code.exe",
+      "notepad.exe",
+      "powershell.exe (vscode shell integration)",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "PROC_001",
+        "score": 9,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R080": {
+    "scenario_id": "PERSIST_013",
+    "query_fields": [
+      "defender_disabled",
+      "defender_events",
+      "kind",
+      "startup_item_change",
+      "defender_change",
+      "startup_action",
+      "startup_item"
+    ],
+    "query_values": [
+      "kind=manual_review_defender_disabled",
+      "manual_review_defender_disabled",
+      "defender_change=disabled_then_restored",
+      "disabled_then_restored",
+      "startup_action=added",
+      "added",
+      "startup_item=notepad startup shortcut",
+      "notepad startup shortcut",
+      "firewall_domain=off",
+      "firewall_private=off",
+      "firewall_public=off"
+    ],
+    "documents": [
+      {
+        "document_id": "PERSIST_004",
+        "score": 21,
+        "rank": 1
+      },
+      {
+        "document_id": "SEC_003",
+        "score": 17,
+        "rank": 2
+      },
+      {
+        "document_id": "PERSIST_005",
+        "score": 13,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R081": {
+    "scenario_id": "AUTH_014",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "defender_events",
+      "kind",
+      "realtime_protection_enabled",
+      "event_id",
+      "failed_login_activity",
+      "failed_login_count_band",
+      "failed_logins",
+      "process_details",
+      "command_line",
+      "exe_path",
+      "parent_pid",
+      "parent_process_name",
+      "pid",
+      "process_name",
+      "start_time",
+      "risky_processes",
+      "defender_disabled"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "windowsterminal.exe",
+      "lockapp.exe",
+      "kind=status_snapshot",
+      "status_snapshot",
+      "kind=configuration_changed",
+      "configuration_changed",
+      "failed_login_count_band=single",
+      "single",
+      "command_line=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "exe_path=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "parent_process_name=svchost.exe",
+      "svchost.exe",
+      "process_name=windowsterminal.exe",
+      "start_time=2026-07-10t09:28:34.733689",
+      "2026-07-10t09:28:34.733689",
+      "command_line=c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "exe_path=c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "parent_process_name=explorer.exe",
+      "explorer.exe",
+      "process_name=powershell.exe",
+      "powershell.exe",
+      "start_time=2026-07-10t09:28:34.637582",
+      "2026-07-10t09:28:34.637582",
+      "firewall_domain=off",
+      "firewall_private=off",
+      "firewall_public=off"
+    ],
+    "documents": [
+      {
+        "document_id": "SEC_003",
+        "score": 25,
+        "rank": 1
+      },
+      {
+        "document_id": "AUTH_005",
+        "score": 23,
+        "rank": 2
+      },
+      {
+        "document_id": "AUTH_002",
+        "score": 22,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R082": {
+    "scenario_id": "PERSIST_009",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "startup_item_change",
+      "startup_item_details",
+      "action",
+      "object_name",
+      "source",
+      "network_context",
+      "startup_action",
+      "startup_item"
+    ],
+    "query_values": [
+      "code.exe",
+      "network_profile=private",
+      "private",
+      "action=removed",
+      "removed",
+      "object_name=notepad startup shortcut",
+      "notepad startup shortcut",
+      "source=manual_review_operator_note",
+      "manual_review_operator_note",
+      "network_context=private",
+      "startup_action=removed",
+      "startup_item=notepad startup shortcut"
+    ],
+    "documents": [
+      {
+        "document_id": "PERSIST_004",
+        "score": 23,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_004",
+        "score": 17,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R083": {
+    "scenario_id": "USB_013",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "usb_connection_count",
+      "archive_accessed",
+      "archive_type",
+      "usb_content_type",
+      "usb_files_browsed",
+      "defender_disabled"
+    ],
+    "query_values": [
+      "code.exe",
+      "archive_type=zip",
+      "zip",
+      "usb_content_type=compressed_archive",
+      "compressed_archive",
+      "firewall_domain=off",
+      "firewall_private=off",
+      "firewall_public=off"
+    ],
+    "documents": [
+      {
+        "document_id": "SEC_003",
+        "score": 18,
+        "rank": 1
+      },
+      {
+        "document_id": "USB_002",
+        "score": 18,
+        "rank": 2
+      },
+      {
+        "document_id": "USB_003",
+        "score": 16,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R084": {
+    "scenario_id": "USB_008",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "process_details",
+      "command_line",
+      "exe_path",
+      "parent_pid",
+      "parent_process_name",
+      "pid",
+      "process_name",
+      "start_time",
+      "risky_processes",
+      "usb_connection_count",
+      "network_context"
+    ],
+    "query_values": [
+      "code.exe",
+      "windowsterminal.exe",
+      "network_profile=private",
+      "private",
+      "command_line=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "exe_path=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "parent_process_name=svchost.exe",
+      "svchost.exe",
+      "process_name=windowsterminal.exe",
+      "start_time=2026-07-09t16:56:15.619081",
+      "2026-07-09t16:56:15.619081",
+      "command_line=c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe -file  d:\\test_script.ps1",
+      "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe -file  d:\\test_script.ps1",
+      "exe_path=c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "parent_process_name=explorer.exe",
+      "explorer.exe",
+      "process_name=powershell.exe",
+      "powershell.exe",
+      "start_time=2026-07-09t16:56:15.525434",
+      "2026-07-09t16:56:15.525434",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 17,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 17,
+        "rank": 2
+      },
+      {
+        "document_id": "PROC_001",
+        "score": 16,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R085": {
+    "scenario_id": "PROC_009",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "process_details",
+      "command_line",
+      "exe_path",
+      "parent_pid",
+      "parent_process_name",
+      "pid",
+      "process_name",
+      "start_time",
+      "risky_processes",
+      "command_activity",
+      "network_context",
+      "scanner_tool",
+      "verified_commands"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "windowsterminal.exe",
+      "network_profile=private",
+      "private",
+      "command_line=c:\\windows\\system32\\cmd.exe",
+      "c:\\windows\\system32\\cmd.exe",
+      "exe_path=c:\\windows\\system32\\cmd.exe",
+      "parent_process_name=explorer.exe",
+      "explorer.exe",
+      "process_name=cmd.exe",
+      "cmd.exe",
+      "start_time=2026-07-09t17:11:56.274675",
+      "2026-07-09t17:11:56.274675",
+      "command_line=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "exe_path=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "parent_process_name=svchost.exe",
+      "svchost.exe",
+      "process_name=windowsterminal.exe",
+      "start_time=2026-07-09t17:11:56.394748",
+      "2026-07-09t17:11:56.394748",
+      "command_line=nmap --version",
+      "nmap --version",
+      "exe_path=c:\\program files (x86)\\nmap\\nmap.exe",
+      "c:\\program files (x86)\\nmap\\nmap.exe",
+      "parent_process_name=cmd.exe",
+      "process_name=nmap.exe",
+      "nmap.exe",
+      "start_time=2026-07-09t17:12:01.385130",
+      "2026-07-09t17:12:01.385130",
+      "command_activity=scanner_version_check",
+      "scanner_version_check",
+      "network_context=private",
+      "scanner_tool=nmap",
+      "nmap"
+    ],
+    "documents": [
+      {
+        "document_id": "PROC_001",
+        "score": 19,
+        "rank": 1
+      },
+      {
+        "document_id": "NET_004",
+        "score": 18,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_001",
+        "score": 17,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R086": {
+    "scenario_id": "PROC_016",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "process_details",
+      "command_line",
+      "exe_path",
+      "parent_pid",
+      "parent_process_name",
+      "pid",
+      "process_name",
+      "start_time",
+      "risky_processes",
+      "network_context"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "windowsterminal.exe",
+      "network_profile=private",
+      "private",
+      "command_line=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "exe_path=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "parent_process_name=svchost.exe",
+      "svchost.exe",
+      "process_name=windowsterminal.exe",
+      "start_time=2026-07-10t13:17:37.963005",
+      "2026-07-10t13:17:37.963005",
+      "command_line=c:\\windows\\system32\\cmd.exe",
+      "c:\\windows\\system32\\cmd.exe",
+      "exe_path=c:\\windows\\system32\\cmd.exe",
+      "parent_process_name=explorer.exe",
+      "explorer.exe",
+      "process_name=cmd.exe",
+      "cmd.exe",
+      "start_time=2026-07-10t13:17:37.854346",
+      "2026-07-10t13:17:37.854346",
+      "command_line=c:\\windows\\system32\\cmd.exe /c c:\\users\\lenovo legion\\appdata\\local\\programs\\ollama\\ollama app.exe --hide --fast-startup",
+      "c:\\windows\\system32\\cmd.exe /c c:\\users\\lenovo legion\\appdata\\local\\programs\\ollama\\ollama app.exe --hide --fast-startup",
+      "parent_process_name=ollama.exe",
+      "ollama.exe",
+      "start_time=2026-07-10t13:17:57.075192",
+      "2026-07-10t13:17:57.075192",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 17,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 17,
+        "rank": 2
+      },
+      {
+        "document_id": "PROC_001",
+        "score": 15,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R087": {
+    "scenario_id": "SEC_007",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "defender_disabled",
+      "defender_events",
+      "event_id",
+      "kind",
+      "firewall_events",
+      "source",
+      "network_profile",
+      "defender_change",
+      "network_context"
+    ],
+    "query_values": [
+      "code.exe",
+      "kind=realtime_protection_disabled",
+      "realtime_protection_disabled",
+      "kind=status_snapshot",
+      "status_snapshot",
+      "kind=manual_review_firewall_setting_changed_and_restored",
+      "manual_review_firewall_setting_changed_and_restored",
+      "source=operator_note",
+      "operator_note",
+      "network_profile=private",
+      "private",
+      "defender_change=disabled",
+      "disabled",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "SEC_003",
+        "score": 25,
+        "rank": 1
+      },
+      {
+        "document_id": "AUTH_005",
+        "score": 20,
+        "rank": 2
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 20,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R088": {
+    "scenario_id": "USB_014",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "process_details",
+      "command_line",
+      "exe_path",
+      "parent_pid",
+      "parent_process_name",
+      "pid",
+      "process_name",
+      "start_time",
+      "risky_processes",
+      "usb_connection_count",
+      "command_activity",
+      "suspicious_process_context",
+      "verified_commands",
+      "defender_disabled"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "code.exe",
+      "windowsterminal.exe",
+      "powershell.exe (vscode shell integration)",
+      "command_line=c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "exe_path=c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "parent_process_name=explorer.exe",
+      "explorer.exe",
+      "process_name=powershell.exe",
+      "powershell.exe",
+      "start_time=2026-07-10t09:34:54.361988",
+      "2026-07-10t09:34:54.361988",
+      "command_line=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "exe_path=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "parent_process_name=svchost.exe",
+      "svchost.exe",
+      "process_name=windowsterminal.exe",
+      "start_time=2026-07-10t09:34:54.481982",
+      "2026-07-10t09:34:54.481982",
+      "command_activity=powershell_with_usb",
+      "powershell_with_usb",
+      "get-childitem",
+      "firewall_domain=off",
+      "firewall_private=off",
+      "firewall_public=off"
+    ],
+    "documents": [
+      {
+        "document_id": "PROC_001",
+        "score": 21,
+        "rank": 1
+      },
+      {
+        "document_id": "SEC_003",
+        "score": 20,
+        "rank": 2
+      },
+      {
+        "document_id": "USB_005",
+        "score": 19,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R089": {
+    "scenario_id": "SEC_009",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "defender_disabled",
+      "defender_events",
+      "kind",
+      "download_details",
+      "created_time",
+      "extension",
+      "filename",
+      "full_path",
+      "size_bytes",
+      "file_downloaded",
+      "network_profile",
+      "defender_change",
+      "network_context"
+    ],
+    "query_values": [
+      "code.exe",
+      "notepad.exe",
+      "opera.exe",
+      "1password-browsersupport.exe",
+      "mbambgnativemsg.exe",
+      "powershell.exe (vscode shell integration)",
+      "kind=manual_review_realtime_protection_disabled_and_restored",
+      "manual_review_realtime_protection_disabled_and_restored",
+      "created_time=2026-07-09t17:04:28.181218",
+      "2026-07-09t17:04:28.181218",
+      "extension=.zip",
+      ".zip",
+      "filename=dissertation_test_files (2).zip",
+      "dissertation_test_files (2).zip",
+      "full_path=c:\\users\\lenovo legion\\downloads\\dissertation_test_files (2).zip",
+      "c:\\users\\lenovo legion\\downloads\\dissertation_test_files (2).zip",
+      "network_profile=private",
+      "private",
+      "defender_change=disabled",
+      "disabled",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "SEC_003",
+        "score": 25,
+        "rank": 1
+      },
+      {
+        "document_id": "AUTH_005",
+        "score": 19,
+        "rank": 2
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 19,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R090": {
+    "scenario_id": "USB_009",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "removable_drive_details",
+      "drive_letter",
+      "filesystem",
+      "volume_name",
+      "usb_connection_count",
+      "network_context"
+    ],
+    "query_values": [
+      "code.exe",
+      "network_profile=private",
+      "private",
+      "drive_letter=e:",
+      "e:",
+      "filesystem=fat32",
+      "fat32",
+      "volume_name=corsair",
+      "corsair",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "USB_001",
+        "score": 10,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R091": {
+    "scenario_id": "PROC_011",
+    "query_fields": [
+      "download_details",
+      "manual_review",
+      "file_downloaded",
+      "network_profile",
+      "network_context",
+      "defender_disabled"
+    ],
+    "query_values": [
+      "manual_review=controlled download documented by scenario note",
+      "controlled download documented by scenario note",
+      "network_profile=private",
+      "private",
+      "network_context=private",
+      "firewall_domain=off",
+      "firewall_private=off",
+      "firewall_public=off"
+    ],
+    "documents": [
+      {
+        "document_id": "NORMAL_003",
+        "score": 17,
+        "rank": 1
+      },
+      {
+        "document_id": "SEC_003",
+        "score": 17,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_001",
+        "score": 15,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R092": {
+    "scenario_id": "SEC_013",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "defender_disabled",
+      "defender_events",
+      "kind",
+      "source",
+      "process_details",
+      "command_line",
+      "exe_path",
+      "parent_pid",
+      "parent_process_name",
+      "pid",
+      "process_name",
+      "start_time",
+      "risky_processes",
+      "defender_change",
+      "suspicious_process_context"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "windowsterminal.exe",
+      "kind=manual_verified_realtime_protection_disabled",
+      "manual_verified_realtime_protection_disabled",
+      "source=operator_note",
+      "operator_note",
+      "command_line=c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "exe_path=c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "parent_process_name=explorer.exe",
+      "explorer.exe",
+      "process_name=powershell.exe",
+      "powershell.exe",
+      "start_time=2026-07-10t09:48:28.979824",
+      "2026-07-10t09:48:28.979824",
+      "command_line=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "exe_path=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "parent_process_name=svchost.exe",
+      "svchost.exe",
+      "process_name=windowsterminal.exe",
+      "start_time=2026-07-10t09:48:29.075788",
+      "2026-07-10t09:48:29.075788",
+      "defender_change=disabled_then_restored",
+      "disabled_then_restored",
+      "firewall_domain=off",
+      "firewall_private=off",
+      "firewall_public=off"
+    ],
+    "documents": [
+      {
+        "document_id": "SEC_003",
+        "score": 21,
+        "rank": 1
+      },
+      {
+        "document_id": "PROC_005",
+        "score": 18,
+        "rank": 2
+      },
+      {
+        "document_id": "NORMAL_001",
+        "score": 17,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R093": {
+    "scenario_id": "NORMAL_013",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "code.exe",
+      "opera.exe",
+      "1password-browsersupport.exe",
+      "mbambgnativemsg.exe",
+      "powershell.exe (known background task.bat)",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_002",
+        "score": 8,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R094": {
+    "scenario_id": "PERSIST_003",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "code.exe",
+      "mmc.exe",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_002",
+        "score": 8,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R095": {
+    "scenario_id": "PERSIST_006",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "scheduled_task_change",
+      "scheduled_task_details",
+      "action",
+      "object_name",
+      "source",
+      "defender_disabled"
+    ],
+    "query_values": [
+      "code.exe",
+      "mmc.exe",
+      "action=updated",
+      "updated",
+      "object_name=dissertation_test_task",
+      "dissertation_test_task",
+      "source=manual_review",
+      "manual_review",
+      "firewall_domain=off",
+      "firewall_private=off",
+      "firewall_public=off"
+    ],
+    "documents": [
+      {
+        "document_id": "SEC_003",
+        "score": 18,
+        "rank": 1
+      },
+      {
+        "document_id": "PERSIST_002",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "PERSIST_003",
+        "score": 16,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R096": {
+    "scenario_id": "AUTH_016",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "lockapp.exe",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_002",
+        "score": 8,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R097": {
+    "scenario_id": "SEC_002",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "code.exe",
+      "windowsterminal.exe",
+      "powershell.exe (security status check context)",
+      "windowsterminal.exe (security status check context)",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NORMAL_003",
+        "score": 17,
+        "rank": 1
+      },
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "PROC_001",
+        "score": 9,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R098": {
+    "scenario_id": "PROC_006",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "process_details",
+      "command_line",
+      "exe_path",
+      "parent_pid",
+      "parent_process_name",
+      "pid",
+      "process_name",
+      "start_time",
+      "risky_processes",
+      "defender_disabled"
+    ],
+    "query_values": [
+      "code.exe",
+      "windowsterminal.exe",
+      "command_line=c:\\windows\\system32\\cmd.exe",
+      "c:\\windows\\system32\\cmd.exe",
+      "exe_path=c:\\windows\\system32\\cmd.exe",
+      "parent_process_name=explorer.exe",
+      "explorer.exe",
+      "process_name=cmd.exe",
+      "cmd.exe",
+      "start_time=2026-07-09t13:11:43.580325",
+      "2026-07-09t13:11:43.580325",
+      "command_line=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "exe_path=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "parent_process_name=svchost.exe",
+      "svchost.exe",
+      "process_name=windowsterminal.exe",
+      "start_time=2026-07-09t13:11:43.682573",
+      "2026-07-09t13:11:43.682573",
+      "firewall_domain=off",
+      "firewall_private=off",
+      "firewall_public=off"
+    ],
+    "documents": [
+      {
+        "document_id": "SEC_003",
+        "score": 20,
+        "rank": 1
+      },
+      {
+        "document_id": "PROC_001",
+        "score": 15,
+        "rank": 2
+      },
+      {
+        "document_id": "PROC_005",
+        "score": 15,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R099": {
+    "scenario_id": "PERSIST_017",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "taskmgr.exe",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_002",
+        "score": 8,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R100": {
+    "scenario_id": "PROC_015",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "process_details",
+      "command_line",
+      "exe_path",
+      "parent_pid",
+      "parent_process_name",
+      "pid",
+      "process_name",
+      "start_time",
+      "risky_processes",
+      "network_context"
+    ],
+    "query_values": [
+      "code.exe",
+      "notepad.exe",
+      "windowsterminal.exe",
+      "powershell.exe (vscode shell integration)",
+      "network_profile=private",
+      "private",
+      "command_line=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "exe_path=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "parent_process_name=svchost.exe",
+      "svchost.exe",
+      "process_name=windowsterminal.exe",
+      "start_time=2026-07-10t13:17:07.105776",
+      "2026-07-10t13:17:07.105776",
+      "command_line=c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "exe_path=c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "parent_process_name=explorer.exe",
+      "explorer.exe",
+      "process_name=powershell.exe",
+      "powershell.exe",
+      "start_time=2026-07-10t13:17:06.979248",
+      "2026-07-10t13:17:06.979248",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 17,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 17,
+        "rank": 2
+      },
+      {
+        "document_id": "PROC_001",
+        "score": 16,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R101": {
+    "scenario_id": "SEC_011",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "defender_disabled",
+      "defender_events",
+      "event_id",
+      "kind",
+      "defender_change"
+    ],
+    "query_values": [
+      "code.exe",
+      "kind=configuration_changed",
+      "configuration_changed",
+      "kind=realtime_protection_disabled",
+      "realtime_protection_disabled",
+      "kind=status_snapshot",
+      "status_snapshot",
+      "defender_change=disabled",
+      "disabled",
+      "firewall_domain=off",
+      "firewall_private=off",
+      "firewall_public=off"
+    ],
+    "documents": [
+      {
+        "document_id": "SEC_003",
+        "score": 24,
+        "rank": 1
+      },
+      {
+        "document_id": "PERSIST_005",
+        "score": 17,
+        "rank": 2
+      },
+      {
+        "document_id": "SEC_004",
+        "score": 17,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R102": {
+    "scenario_id": "PROC_017",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "opera.exe",
+      "1password-browsersupport.exe",
+      "mbambgnativemsg.exe",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_002",
+        "score": 8,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R103": {
+    "scenario_id": "NORMAL_007",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "opera.exe",
+      "1password-browsersupport.exe",
+      "mbambgnativemsg.exe",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_002",
+        "score": 8,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R104": {
+    "scenario_id": "AUTH_013",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "defender_events",
+      "event_id",
+      "kind",
+      "failed_login_activity",
+      "failed_login_count_band",
+      "failed_logins",
+      "network_profile",
+      "removable_drive_details",
+      "drive_letter",
+      "filesystem",
+      "volume_name",
+      "usb_connection_count",
+      "network_context"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "code.exe",
+      "powershell.exe (vscode shell integration)",
+      "kind=configuration_changed",
+      "configuration_changed",
+      "failed_login_count_band=single",
+      "single",
+      "network_profile=private",
+      "private",
+      "drive_letter=d:",
+      "d:",
+      "filesystem=fat32",
+      "fat32",
+      "volume_name=neil",
+      "neil",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "AUTH_002",
+        "score": 20,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 19,
+        "rank": 2
+      },
+      {
+        "document_id": "AUTH_004",
+        "score": 17,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R105": {
+    "scenario_id": "PERSIST_014",
+    "query_fields": [
+      "network_profile",
+      "risky_processes",
+      "service_change",
+      "service_change_details",
+      "manual_review",
+      "network_context",
+      "defender_disabled"
+    ],
+    "query_values": [
+      "network_profile=private",
+      "private",
+      "powershell.exe",
+      "manual_review=service/persistence activity documented by scenario note",
+      "service/persistence activity documented by scenario note",
+      "network_context=private",
+      "firewall_domain=off",
+      "firewall_private=off",
+      "firewall_public=off"
+    ],
+    "documents": [
+      {
+        "document_id": "PERSIST_005",
+        "score": 19,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 18,
+        "rank": 2
+      },
+      {
+        "document_id": "SEC_003",
+        "score": 18,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R106": {
+    "scenario_id": "USB_010",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "defender_events",
+      "event_id",
+      "kind",
+      "failed_login_activity",
+      "failed_login_count_band",
+      "failed_logins",
+      "network_profile",
+      "usb_connection_count",
+      "network_context"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "lockapp.exe",
+      "kind=configuration_changed",
+      "configuration_changed",
+      "failed_login_count_band=single",
+      "single",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "AUTH_002",
+        "score": 20,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 19,
+        "rank": 2
+      },
+      {
+        "document_id": "AUTH_004",
+        "score": 17,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R107": {
+    "scenario_id": "NORMAL_011",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "code.exe",
+      "photos.exe",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_002",
+        "score": 8,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R108": {
+    "scenario_id": "PROC_013",
+    "query_fields": [
+      "defender_disabled",
+      "defender_events",
+      "kind",
+      "risky_processes",
+      "defender_change"
+    ],
+    "query_values": [
+      "kind=manual_review_defender_disabled",
+      "manual_review_defender_disabled",
+      "powershell.exe",
+      "defender_change=disabled",
+      "disabled",
+      "firewall_domain=off",
+      "firewall_private=off",
+      "firewall_public=off"
+    ],
+    "documents": [
+      {
+        "document_id": "SEC_003",
+        "score": 21,
+        "rank": 1
+      },
+      {
+        "document_id": "AUTH_005",
+        "score": 15,
+        "rank": 2
+      },
+      {
+        "document_id": "PROC_005",
+        "score": 15,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R109": {
+    "scenario_id": "AUTH_010",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "defender_events",
+      "event_id",
+      "kind",
+      "failed_login_activity",
+      "failed_login_count_band",
+      "failed_logins",
+      "network_profile",
+      "process_details",
+      "command_line",
+      "exe_path",
+      "parent_pid",
+      "parent_process_name",
+      "pid",
+      "process_name",
+      "start_time",
+      "risky_processes",
+      "network_context"
+    ],
+    "query_values": [
+      "code.exe",
+      "windowsterminal.exe",
+      "lockapp.exe",
+      "kind=configuration_changed",
+      "configuration_changed",
+      "failed_login_count_band=multiple",
+      "multiple",
+      "network_profile=private",
+      "private",
+      "command_line=c:\\windows\\system32\\cmd.exe",
+      "c:\\windows\\system32\\cmd.exe",
+      "exe_path=c:\\windows\\system32\\cmd.exe",
+      "parent_process_name=explorer.exe",
+      "explorer.exe",
+      "process_name=cmd.exe",
+      "cmd.exe",
+      "start_time=2026-07-09t16:51:31.025017",
+      "2026-07-09t16:51:31.025017",
+      "command_line=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "exe_path=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "parent_process_name=svchost.exe",
+      "svchost.exe",
+      "process_name=windowsterminal.exe",
+      "start_time=2026-07-09t16:51:31.120856",
+      "2026-07-09t16:51:31.120856",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "AUTH_003",
+        "score": 23,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 20,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_001",
+        "score": 17,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R110": {
+    "scenario_id": "NET_001",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "ms-teams.exe",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_002",
+        "score": 8,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R111": {
+    "scenario_id": "USB_003",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "usb_connection_count",
+      "network_context"
+    ],
+    "query_values": [
+      "code.exe",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "USB_002",
+        "score": 9,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R112": {
+    "scenario_id": "NET_011",
+    "query_fields": [
+      "network_profile",
+      "risky_processes",
+      "network_context",
+      "defender_disabled"
+    ],
+    "query_values": [
+      "network_profile=private",
+      "private",
+      "nmap.exe",
+      "network_context=private",
+      "firewall_domain=off",
+      "firewall_private=off",
+      "firewall_public=off"
+    ],
+    "documents": [
+      {
+        "document_id": "NORMAL_003",
+        "score": 17,
+        "rank": 1
+      },
+      {
+        "document_id": "SEC_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_001",
+        "score": 15,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R113": {
+    "scenario_id": "NORMAL_016",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "code.exe",
+      "winword.exe",
+      "1password-browsersupport.exe",
+      "mbambgnativemsg.exe",
+      "powershell.exe (vscode shell integration)",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "PROC_001",
+        "score": 9,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R114": {
+    "scenario_id": "NORMAL_006",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "code.exe",
+      "msedge.exe",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_002",
+        "score": 8,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R115": {
+    "scenario_id": "PROC_001",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "process_details",
+      "command_line",
+      "exe_path",
+      "parent_pid",
+      "parent_process_name",
+      "pid",
+      "process_name",
+      "start_time",
+      "risky_processes",
+      "network_context"
+    ],
+    "query_values": [
+      "code.exe",
+      "windowsterminal.exe",
+      "network_profile=private",
+      "private",
+      "command_line=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe -embedding",
+      "exe_path=c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "c:\\program files\\windowsapps\\microsoft.windowsterminal_1.24.11321.0_x64__8wekyb3d8bbwe\\windowsterminal.exe",
+      "parent_process_name=svchost.exe",
+      "svchost.exe",
+      "process_name=windowsterminal.exe",
+      "start_time=2026-07-09t10:54:00.640159",
+      "2026-07-09t10:54:00.640159",
+      "command_line=c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "exe_path=c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe",
+      "parent_process_name=explorer.exe",
+      "explorer.exe",
+      "process_name=powershell.exe",
+      "powershell.exe",
+      "start_time=2026-07-09t10:54:00.542087",
+      "2026-07-09t10:54:00.542087",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 17,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 17,
+        "rank": 2
+      },
+      {
+        "document_id": "PROC_001",
+        "score": 15,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R116": {
+    "scenario_id": "NET_003",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "network_profile",
+      "network_context"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "systemsettingsadminflows.exe",
+      "network_profile=private",
+      "private",
+      "network_context=private"
+    ],
+    "documents": [
+      {
+        "document_id": "NET_001",
+        "score": 16,
+        "rank": 1
+      },
+      {
+        "document_id": "NORMAL_003",
+        "score": 16,
+        "rank": 2
+      },
+      {
+        "document_id": "NET_002",
+        "score": 8,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R117": {
+    "scenario_id": "SEC_012",
+    "query_fields": [
+      "collector_generated_events_filtered",
+      "defender_disabled",
+      "defender_events",
+      "event_id",
+      "kind",
+      "usb_connection_count",
+      "defender_change"
+    ],
+    "query_values": [
+      "kind=realtime_protection_disabled",
+      "realtime_protection_disabled",
+      "kind=status_snapshot",
+      "status_snapshot",
+      "defender_change=disabled",
+      "disabled",
+      "firewall_domain=off",
+      "firewall_private=off",
+      "firewall_public=off"
+    ],
+    "documents": [
+      {
+        "document_id": "SEC_003",
+        "score": 21,
+        "rank": 1
+      },
+      {
+        "document_id": "USB_005",
+        "score": 17,
+        "rank": 2
+      },
+      {
+        "document_id": "AUTH_005",
+        "score": 14,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R118": {
+    "scenario_id": "SEC_001",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "defender_disabled"
+    ],
+    "query_values": [
+      "code.exe",
+      "notepad.exe",
+      "1password-browsersupport.exe",
+      "mbambgnativemsg.exe",
+      "powershell.exe (vscode shell integration)",
+      "firewall_domain=off",
+      "firewall_private=off",
+      "firewall_public=off"
+    ],
+    "documents": [
+      {
+        "document_id": "SEC_003",
+        "score": 18,
+        "rank": 1
+      },
+      {
+        "document_id": "SEC_004",
+        "score": 14,
+        "rank": 2
+      },
+      {
+        "document_id": "PROC_005",
+        "score": 12,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R119": {
+    "scenario_id": "PROC_014",
+    "query_fields": [
+      "failed_login_activity",
+      "failed_login_count_band",
+      "failed_logins",
+      "risky_processes",
+      "defender_disabled"
+    ],
+    "query_values": [
+      "failed_login_count_band=single",
+      "single",
+      "powershell.exe",
+      "cmd.exe",
+      "firewall_domain=off",
+      "firewall_private=off",
+      "firewall_public=off"
+    ],
+    "documents": [
+      {
+        "document_id": "AUTH_005",
+        "score": 21,
+        "rank": 1
+      },
+      {
+        "document_id": "AUTH_002",
+        "score": 19,
+        "rank": 2
+      },
+      {
+        "document_id": "SEC_003",
+        "score": 17,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "R120": {
+    "scenario_id": "USB_006",
+    "query_fields": [
+      "apps_opened",
+      "benign_background_processes",
+      "collector_generated_events_filtered",
+      "usb_connection_count",
+      "usb_content_type",
+      "usb_files_browsed",
+      "defender_disabled"
+    ],
+    "query_values": [
+      "notepad.exe",
+      "usb_content_type=general_files",
+      "general_files",
+      "firewall_domain=off",
+      "firewall_private=off",
+      "firewall_public=off"
+    ],
+    "documents": [
+      {
+        "document_id": "SEC_003",
+        "score": 18,
+        "rank": 1
+      },
+      {
+        "document_id": "USB_002",
+        "score": 17,
+        "rank": 2
+      },
+      {
+        "document_id": "SEC_004",
+        "score": 14,
+        "rank": 3
+      }
+    ],
+    "num_docs_retrieved": 3,
+    "no_document_found": false
+  },
+  "_meta": {
+    "top_k": 3,
+    "kb_documents_hash": "fcd4d15b3205cbbd",
+    "dataset_inputs_hash": "b1cf1fb8fb436f54",
+    "runner_script_hash": "9fb3b94e832eab5f",
+    "kb_document_count": 34,
+    "record_count": 120,
+    "generated_utc": "2026-07-12T09:19:04.114617+00:00"
+  }
+}

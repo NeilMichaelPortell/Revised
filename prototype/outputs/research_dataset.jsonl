@@ -1,0 +1,5 @@
+{"timestamp": "2026-07-13T20:11:52.024571", "event_type": "usb_connected", "severity": "medium", "risk_score": 2, "source": "usb:USB Composite Device"}
+{"timestamp": "2026-07-13T20:19:21.160464", "event_type": "usb_connected", "severity": "medium", "risk_score": 2, "source": "usb:USB Composite Device"}
+{"timestamp": "2026-07-13T20:20:09.588529", "event_type": "usb_connected", "severity": "medium", "risk_score": 2, "source": "usb:USB Composite Device"}
+{"timestamp": "2026-07-13T20:20:26.357072", "event_type": "login_failed", "severity": "medium", "risk_score": 1, "source": "eventlog:Security:4625"}
+{"timestamp": "2026-07-13T20:22:31.340496", "event_type": "defender_disabled", "severity": "critical", "risk_score": 10, "source": "security:defender_disabled"}

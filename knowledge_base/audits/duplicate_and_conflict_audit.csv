@@ -1,0 +1,5 @@
+document_ids,issue_type,description,resolution,final_document_id
+AUTH/credential_spraying.md,unsupported_telemetry,requires per-account evidence not collected by the schema,removed; replaced by count-band guidance,AUTH_003;AUTH_004
+PERSIST/registry_or_wmi_persistence.md,unsupported_telemetry,registry/WMI events are not collected,excluded,-
+PROC/living_off_the_land_binaries.md,unsupported_telemetry,relies on command-line arguments not present in input,merged into contrastive PROC guidance,PROC_003;PROC_004
+NORMAL/*;technical categories,retrieval_bias,old KB had no benign counterpart inside technical categories,added benign baseline doc per technical category,*_001

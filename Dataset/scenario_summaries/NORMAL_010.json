@@ -1,0 +1,105 @@
+{
+  "scenario_id": "NORMAL_010",
+  "category": "NORMAL",
+  "scenario_name": "Normal cloud folder or local folder browsing",
+  "scenario_source": "collected",
+  "collection_date": "2026-07-09",
+  "window_start": "2026-07-09T10:26:22.534119",
+  "window_end": "2026-07-09T10:27:50.419543",
+  "event_summary": {
+    "apps_opened": [
+      "code.exe",
+      "onedrive.exe"
+    ],
+    "benign_background_processes": [
+      "code.exe",
+      "service change ignored: Background Intelligent Transfer Service"
+    ],
+    "failed_logins": 0,
+    "failed_login_activity": false,
+    "failed_login_count_band": "none",
+    "usb_connection_count": 0,
+    "removable_drive_details": [],
+    "risky_processes": [],
+    "process_details": [],
+    "elevated_processes": [],
+    "defender_disabled": false,
+    "defender_events": [],
+    "firewall_events": [],
+    "network_profile": "private",
+    "scheduled_task_change": false,
+    "scheduled_task_details": [],
+    "service_change": false,
+    "service_change_details": [],
+    "startup_item_change": false,
+    "startup_item_details": [],
+    "file_downloaded": false,
+    "download_details": [],
+    "web_domains": [],
+    "collector_generated_events_filtered": 2,
+    "operator_notes": [
+      "Normal cloud folder or local folder browsing."
+    ],
+    "manual_review_indicators": [
+      "benign_activity"
+    ],
+    "verified_activity_context": {
+      "manual_verification_used": false,
+      "verification_note": "",
+      "device_trust": "not_applicable",
+      "usb_files_browsed": false,
+      "usb_content_type": "none",
+      "archive_accessed": false,
+      "archive_type": "",
+      "command_activity": "none",
+      "verified_commands": [],
+      "script_name": "",
+      "scanner_tool": "",
+      "scan_target": "",
+      "suspicious_process_context": false,
+      "startup_item_change": false,
+      "startup_action": "",
+      "startup_item": "",
+      "defender_change": "none",
+      "network_context": "private",
+      "failed_login_activity": false,
+      "failed_login_count_band": "none"
+    },
+    "viewed_interface": "none"
+  },
+  "observed_events": [
+    "Applications used: code.exe, onedrive.exe.",
+    "Network profile (context at scenario start): private.",
+    "Benign background activity present (context, not risky): code.exe, service change ignored: Background Intelligent Transfer Service.",
+    "2 collector-generated process event(s) were excluded from this scenario."
+  ],
+  "context_state": {
+    "network_profile": "private",
+    "network_category": 0,
+    "defender": {
+      "realtime_protection_enabled": true,
+      "antivirus_enabled": true,
+      "am_service_enabled": true
+    },
+    "firewall": {
+      "Domain": true,
+      "Private": true,
+      "Public": true
+    },
+    "running_monitored_processes": [
+      "cmd.exe",
+      "powershell.exe",
+      "python.exe"
+    ],
+    "removable_drives": [],
+    "collector_is_admin": true
+  },
+  "ground_truth": {
+    "classification": "normal",
+    "risk_level": "low",
+    "expected_indicators": [
+      "file_browsing"
+    ],
+    "label_reason": "Browsing local or cloud-synchronised folders is routine file-management activity when no suspicious file is executed."
+  }
+}

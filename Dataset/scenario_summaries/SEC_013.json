@@ -1,0 +1,118 @@
+{
+  "scenario_id": "SEC_013",
+  "category": "SEC",
+  "scenario_name": "Defender disabled combined with suspicious process activity",
+  "scenario_source": "collected",
+  "collection_date": "2026-07-10",
+  "window_start": "2026-07-10T09:48:22.487315",
+  "window_end": "2026-07-10T09:49:04.743032",
+  "event_summary": {
+    "apps_opened": [
+      "notepad.exe",
+      "windowsterminal.exe"
+    ],
+    "benign_background_processes": [
+      "notepad.exe"
+    ],
+    "failed_logins": 0,
+    "failed_login_activity": false,
+    "failed_login_count_band": "none",
+    "usb_connection_count": 0,
+    "removable_drive_details": [],
+    "risky_processes": [
+      "powershell.exe",
+      "windowsterminal.exe"
+    ],
+    "process_details": [
+      {
+        "process_name": "powershell.exe",
+        "pid": 18064,
+        "exe_path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "command_line": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "parent_process_name": "explorer.exe",
+        "parent_pid": 19816,
+        "start_time": "2026-07-10T09:48:28.979824",
+        "is_elevated": "unknown"
+      },
+      {
+        "process_name": "windowsterminal.exe",
+        "pid": 42172,
+        "exe_path": "C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminal_1.24.11321.0_x64__8wekyb3d8bbwe\\WindowsTerminal.exe",
+        "command_line": "C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminal_1.24.11321.0_x64__8wekyb3d8bbwe\\WindowsTerminal.exe -Embedding",
+        "parent_process_name": "svchost.exe",
+        "parent_pid": 1832,
+        "start_time": "2026-07-10T09:48:29.075788",
+        "is_elevated": "unknown"
+      }
+    ],
+    "elevated_processes": [],
+    "defender_disabled": true,
+    "defender_events": [
+      {
+        "kind": "manual_verified_realtime_protection_disabled",
+        "event_id": null,
+        "source": "operator_note"
+      }
+    ],
+    "firewall_events": [],
+    "network_profile": "none",
+    "scheduled_task_change": false,
+    "scheduled_task_details": [],
+    "service_change": false,
+    "service_change_details": [],
+    "startup_item_change": false,
+    "startup_item_details": [],
+    "file_downloaded": false,
+    "download_details": [],
+    "web_domains": [],
+    "collector_generated_events_filtered": 0,
+    "operator_notes": [
+      "Defender disabled combined with suspicious process activity."
+    ],
+    "manual_review_indicators": [
+      "abnormal_endpoint_activity",
+      "defender_activity",
+      "defender_disabled",
+      "powershell_activity"
+    ],
+    "verified_activity_context": {
+      "manual_verification_used": true,
+      "verification_note": "Operator note verified that Defender was temporarily disabled while PowerShell activity was present.",
+      "device_trust": "not_applicable",
+      "usb_files_browsed": false,
+      "usb_content_type": "none",
+      "archive_accessed": false,
+      "archive_type": "",
+      "command_activity": "none",
+      "verified_commands": [],
+      "script_name": "",
+      "scanner_tool": "",
+      "scan_target": "",
+      "suspicious_process_context": true,
+      "startup_item_change": false,
+      "startup_action": "",
+      "startup_item": "",
+      "defender_change": "disabled_then_restored",
+      "network_context": "none",
+      "failed_login_activity": false,
+      "failed_login_count_band": "none"
+    },
+    "viewed_interface": "none"
+  },
+  "observed_events": [
+    "Applications used: notepad.exe, windowsterminal.exe.",
+    "Monitored-list processes observed: powershell.exe, windowsterminal.exe.",
+    "Note: powershell.exe are common in normal work and are not judged here; classification is manual.",
+    "Benign background activity present (context, not risky): notepad.exe."
+  ],
+  "context_state": {},
+  "ground_truth": {
+    "classification": "abnormal",
+    "risk_level": "high",
+    "expected_indicators": [
+      "powershell_activity",
+      "defender_disabled"
+    ],
+    "label_reason": "PowerShell activity while endpoint protection is disabled is high risk. Critical severity is not justified without stronger evidence of execution impact or compromise."
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "scenario_id": "USB_007",
+  "category": "USB",
+  "scenario_name": "USB contains executable or script file visible",
+  "scenario_source": "collected",
+  "collection_date": "2026-07-09",
+  "window_start": "2026-07-09T16:54:26.911919",
+  "window_end": "2026-07-09T16:55:09.999043",
+  "event_summary": {
+    "apps_opened": [
+      "notepad.exe"
+    ],
+    "benign_background_processes": [
+      "notepad.exe"
+    ],
+    "failed_logins": 0,
+    "failed_login_activity": false,
+    "failed_login_count_band": "none",
+    "usb_connection_count": 1,
+    "removable_drive_details": [],
+    "risky_processes": [],
+    "process_details": [],
+    "elevated_processes": [],
+    "defender_disabled": false,
+    "defender_events": [],
+    "firewall_events": [],
+    "network_profile": "private",
+    "scheduled_task_change": false,
+    "scheduled_task_details": [],
+    "service_change": false,
+    "service_change_details": [],
+    "startup_item_change": false,
+    "startup_item_details": [],
+    "file_downloaded": false,
+    "download_details": [],
+    "web_domains": [],
+    "collector_generated_events_filtered": 3,
+    "operator_notes": [
+      "USB contains executable or script file visible."
+    ],
+    "manual_review_indicators": [
+      "usb_script_or_executable_visible",
+      "abnormal_endpoint_activity",
+      "usb_activity",
+      "executable_or_script_context",
+      "script_activity",
+      "script_or_executable_visible"
+    ],
+    "verified_activity_context": {
+      "manual_verification_used": true,
+      "verification_note": "The operator note verified that a script or executable-type file was visible on the USB. Filename collection was disabled by design.",
+      "device_trust": "unknown",
+      "usb_files_browsed": false,
+      "usb_content_type": "script_or_executable_visible",
+      "archive_accessed": false,
+      "archive_type": "",
+      "command_activity": "none",
+      "verified_commands": [],
+      "script_name": "",
+      "scanner_tool": "",
+      "scan_target": "",
+      "suspicious_process_context": false,
+      "startup_item_change": false,
+      "startup_action": "",
+      "startup_item": "",
+      "defender_change": "none",
+      "network_context": "private",
+      "failed_login_activity": false,
+      "failed_login_count_band": "none"
+    },
+    "manual_review_corrections": [
+      {
+        "field": "manual_review_indicators",
+        "reason": "Operator note states USB contained executable/script visible; collector does not list USB filenames by default."
+      }
+    ],
+    "viewed_interface": "none"
+  },
+  "observed_events": [
+    "Applications used: notepad.exe.",
+    "1 USB connection(s) recorded (after debounce).",
+    "Network profile (context at scenario start): private.",
+    "Benign background activity present (context, not risky): notepad.exe.",
+    "3 collector-generated process event(s) were excluded from this scenario.",
+    "Manual review: USB script/executable visibility added from operator note; USB filename listing was disabled by design."
+  ],
+  "context_state": {
+    "network_profile": "private",
+    "network_category": 1,
+    "defender": {
+      "realtime_protection_enabled": true,
+      "antivirus_enabled": true,
+      "am_service_enabled": true
+    },
+    "firewall": {
+      "Domain": true,
+      "Private": true,
+      "Public": true
+    },
+    "running_monitored_processes": [
+      "cmd.exe",
+      "powershell.exe",
+      "python.exe"
+    ],
+    "removable_drives": [],
+    "collector_is_admin": true
+  },
+  "ground_truth": {
+    "classification": "abnormal",
+    "risk_level": "medium",
+    "expected_indicators": [
+      "usb_connected",
+      "usb_script_or_executable_present",
+      "no_file_execution"
+    ],
+    "label_reason": "Seeing an executable or script on removable media creates moderate concern, but no execution occurred. The file-type context must be present in the model input."
+  }
+}

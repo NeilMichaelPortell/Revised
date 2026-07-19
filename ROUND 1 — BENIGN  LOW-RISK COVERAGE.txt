@@ -1,0 +1,422 @@
+ROUND 1 — BENIGN / LOW-RISK COVERAGEs
+
+START_SCENARIO NORMAL_001
+NOTE Normal Word document activity.
+END_SCENARIO NORMAL_001
+
+START_SCENARIO NORMAL_002
+NOTE Normal browser activity.
+END_SCENARIO NORMAL_002
+
+START_SCENARIO NORMAL_003
+NOTE Normal VS Code activity.
+END_SCENARIO NORMAL_003
+
+START_SCENARIO NORMAL_004
+NOTE Normal Teams activity.
+END_SCENARIO NORMAL_004
+
+START_SCENARIO NORMAL_005
+NOTE Normal file browsing in Documents.
+END_SCENARIO NORMAL_005
+
+START_SCENARIO NORMAL_006
+NOTE Normal PDF or document viewing.
+END_SCENARIO NORMAL_006
+
+START_SCENARIO NORMAL_007
+NOTE Normal browser research with multiple tabs.
+END_SCENARIO NORMAL_007
+
+START_SCENARIO NORMAL_008
+NOTE Normal Notepad text editing.
+END_SCENARIO NORMAL_008
+
+START_SCENARIO NORMAL_009
+NOTE Normal settings viewing without making changes.
+END_SCENARIO NORMAL_009
+
+START_SCENARIO NORMAL_010
+NOTE Normal cloud folder or local folder browsing.
+END_SCENARIO NORMAL_010
+
+START_SCENARIO NORMAL_011
+NOTE Normal media or image viewing.
+END_SCENARIO NORMAL_011
+
+START_SCENARIO NORMAL_012
+NOTE Normal opening and closing of common applications.
+END_SCENARIO NORMAL_012
+
+START_SCENARIO NORMAL_013
+NOTE Normal email or communication activity.
+END_SCENARIO NORMAL_013
+
+START_SCENARIO NORMAL_014
+NOTE Normal low-risk desktop session with no security-relevant action.
+END_SCENARIO NORMAL_014
+
+START_SCENARIO AUTH_001
+NOTE One failed login attempt followed by normal use.
+END_SCENARIO AUTH_001
+
+START_SCENARIO AUTH_002
+NOTE Two failed login attempts followed by normal use.
+END_SCENARIO AUTH_002
+
+START_SCENARIO AUTH_003
+NOTE Failed login activity on private network.
+END_SCENARIO AUTH_003
+
+START_SCENARIO AUTH_004
+NOTE Minor authentication mistake during normal session.
+END_SCENARIO AUTH_004
+
+START_SCENARIO USB_001
+NOTE Authorised USB inserted with no suspicious file activity.
+END_SCENARIO USB_001
+
+START_SCENARIO USB_002
+NOTE Authorised USB inserted and folder viewed.
+END_SCENARIO USB_002
+
+START_SCENARIO USB_003
+NOTE Authorised USB inserted and normal file copied.
+END_SCENARIO USB_003
+
+START_SCENARIO USB_004
+NOTE Single USB use during normal work.
+END_SCENARIO USB_004
+
+START_SCENARIO SEC_001
+NOTE Windows Security dashboard opened with no changes.
+END_SCENARIO SEC_001
+
+START_SCENARIO SEC_002
+NOTE Defender status checked only.
+END_SCENARIO SEC_002
+
+START_SCENARIO SEC_003
+NOTE Firewall settings viewed with no changes.
+END_SCENARIO SEC_003
+
+START_SCENARIO SEC_004
+NOTE Security history viewed with no changes.
+END_SCENARIO SEC_004
+
+START_SCENARIO PROC_001
+NOTE PowerShell opened for normal command use.
+END_SCENARIO PROC_001
+
+START_SCENARIO PROC_002
+NOTE CMD opened for normal command use.
+END_SCENARIO PROC_002
+
+START_SCENARIO PROC_003
+NOTE Windows Terminal opened for normal command use.
+END_SCENARIO PROC_003
+
+START_SCENARIO PROC_004
+NOTE VS Code terminal used for normal development activity.
+END_SCENARIO PROC_004
+
+START_SCENARIO NET_001
+NOTE Private network normal work session.
+END_SCENARIO NET_001
+
+START_SCENARIO NET_002
+NOTE Public network normal browsing session.
+END_SCENARIO NET_002
+
+START_SCENARIO NET_003
+NOTE Network profile checked without changes.
+END_SCENARIO NET_003
+
+START_SCENARIO NET_004
+NOTE Wi-Fi or network settings viewed without changes.
+END_SCENARIO NET_004
+
+START_SCENARIO PERSIST_001
+NOTE Task Scheduler opened with no changes.
+END_SCENARIO PERSIST_001
+
+START_SCENARIO PERSIST_002
+NOTE Existing scheduled tasks viewed only.
+END_SCENARIO PERSIST_002
+
+START_SCENARIO PERSIST_003
+NOTE Services list viewed only.
+END_SCENARIO PERSIST_003
+
+START_SCENARIO PERSIST_004
+NOTE Startup apps viewed only.
+END_SCENARIO PERSIST_004
+
+
+
+
+
+
+
+
+ROUND 2 — MEDIUM-RISK SINGLE-SIGNAL SCENARIOS
+
+START_SCENARIO AUTH_005
+NOTE Multiple failed login attempts.
+END_SCENARIO AUTH_005
+
+START_SCENARIO AUTH_006
+NOTE Repeated failed login attempts in short time.
+END_SCENARIO AUTH_006
+
+START_SCENARIO USB_005
+NOTE Unknown USB inserted with no file opened.
+END_SCENARIO USB_005
+
+START_SCENARIO USB_006
+NOTE Unknown USB inserted and files browsed.
+END_SCENARIO USB_006
+
+START_SCENARIO SEC_005
+NOTE Defender real-time protection temporarily disabled and restored.
+END_SCENARIO SEC_005
+
+START_SCENARIO SEC_006
+NOTE Defender setting changed temporarily and restored.
+END_SCENARIO SEC_006
+
+START_SCENARIO PROC_005
+NOTE PowerShell used to list local processes.
+Get-Process
+END_SCENARIO PROC_005
+
+START_SCENARIO PROC_006
+NOTE CMD used to check network configuration.
+END_SCENARIO PROC_006
+
+START_SCENARIO NET_005
+NOTE Public network profile detected.
+END_SCENARIO NET_005
+
+START_SCENARIO NET_006
+NOTE Public network activity with controlled browser download.
+END_SCENARIO NET_006
+
+START_SCENARIO PERSIST_005
+NOTE Harmless scheduled task created for test.
+END_SCENARIO PERSIST_005
+
+START_SCENARIO PERSIST_006
+NOTE Harmless scheduled task modified for test.
+END_SCENARIO PERSIST_006
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ROUND 3 — HIGH-RISK SCENARIOS
+
+START_SCENARIO AUTH_007
+NOTE High number of failed login attempts.
+END_SCENARIO AUTH_007
+
+START_SCENARIO AUTH_008
+NOTE Repeated failed logins followed by successful normal use.
+END_SCENARIO AUTH_008
+
+START_SCENARIO AUTH_009
+NOTE Failed login activity while PowerShell is open.
+END_SCENARIO AUTH_009
+
+START_SCENARIO AUTH_010
+NOTE Failed login activity while CMD is open.
+END_SCENARIO AUTH_010
+
+START_SCENARIO USB_007
+NOTE USB contains executable or script file visible.
+END_SCENARIO USB_007
+
+START_SCENARIO USB_008
+NOTE USB executable or script accessed in controlled test.
+END_SCENARIO USB_008
+
+START_SCENARIO USB_009
+NOTE Multiple USB insertion events.
+END_SCENARIO USB_009
+
+START_SCENARIO USB_010
+NOTE USB activity after failed login activity.
+END_SCENARIO USB_010
+
+START_SCENARIO SEC_007
+NOTE Firewall setting changed temporarily and restored.
+END_SCENARIO SEC_007
+
+START_SCENARIO SEC_008
+NOTE Defender disabled while browser is open.
+END_SCENARIO SEC_008
+
+START_SCENARIO SEC_009
+NOTE Defender disabled before controlled download.
+END_SCENARIO SEC_009
+
+START_SCENARIO SEC_010
+NOTE Defender disabled while PowerShell is open.
+END_SCENARIO SEC_010
+
+START_SCENARIO PROC_007
+NOTE PowerShell script run from local test folder.
+END_SCENARIO PROC_007
+
+START_SCENARIO PROC_008
+NOTE PowerShell unusual or encoded-looking command used in controlled test.
+END_SCENARIO PROC_008
+
+START_SCENARIO PROC_009
+NOTE Nmap opened or version checked.
+END_SCENARIO PROC_009
+
+START_SCENARIO PROC_010
+NOTE Nmap scan run against local authorised test target.
+END_SCENARIO PROC_010
+
+START_SCENARIO NET_007
+NOTE Public network activity while PowerShell is open.
+END_SCENARIO NET_007
+
+START_SCENARIO NET_008
+NOTE Public network activity combined with failed login activity.
+END_SCENARIO NET_008
+
+START_SCENARIO NET_009
+NOTE Network scanner opened or version checked.
+END_SCENARIO NET_009
+
+START_SCENARIO NET_010
+NOTE Network scan run against local authorised test target.
+END_SCENARIO NET_010
+
+START_SCENARIO PERSIST_007
+NOTE Harmless scheduled task deleted after test.
+END_SCENARIO PERSIST_007
+
+START_SCENARIO PERSIST_008
+NOTE Harmless startup shortcut added for test.
+END_SCENARIO PERSIST_008
+
+START_SCENARIO PERSIST_009
+NOTE Harmless startup shortcut removed after test.
+END_SCENARIO PERSIST_009
+
+START_SCENARIO PERSIST_010
+NOTE Test service start type viewed or changed in controlled test.
+END_SCENARIO PERSIST_010
+
+
+
+ROUND 4 — COMBINED / CRITICAL SCENARIOS
+
+START_SCENARIO AUTH_011
+NOTE Failed login activity while connected to public network.
+END_SCENARIO AUTH_011
+
+START_SCENARIO AUTH_012
+NOTE High failed login count in a short time window.
+END_SCENARIO AUTH_012
+
+START_SCENARIO AUTH_013
+NOTE Failed login activity combined with USB activity.
+END_SCENARIO AUTH_013
+
+START_SCENARIO AUTH_014
+NOTE Failed login activity combined with suspicious process activity.
+END_SCENARIO AUTH_014
+
+START_SCENARIO USB_011
+NOTE USB activity while PowerShell is open.
+END_SCENARIO USB_011
+
+START_SCENARIO USB_012
+NOTE USB activity while Defender protection is disabled.
+END_SCENARIO USB_012
+
+START_SCENARIO USB_013
+NOTE USB activity with compressed archive accessed.
+END_SCENARIO USB_013
+
+START_SCENARIO USB_014
+NOTE USB activity combined with suspicious process activity.
+END_SCENARIO USB_014
+
+START_SCENARIO SEC_011
+NOTE Defender configuration changed.
+END_SCENARIO SEC_011
+
+START_SCENARIO SEC_012
+NOTE Security protection disabled combined with USB activity.
+END_SCENARIO SEC_012
+
+START_SCENARIO SEC_013
+NOTE Defender disabled combined with suspicious process activity.
+END_SCENARIO SEC_013
+
+START_SCENARIO SEC_014
+NOTE Multiple security control changes performed and restored.
+END_SCENARIO SEC_014
+
+START_SCENARIO PROC_011
+NOTE Unknown executable from Downloads opened in controlled test.
+END_SCENARIO PROC_011
+
+START_SCENARIO PROC_012
+NOTE Script run after controlled file download.
+END_SCENARIO PROC_012
+
+START_SCENARIO PROC_013
+NOTE PowerShell activity while Defender is disabled.
+END_SCENARIO PROC_013
+
+START_SCENARIO PROC_014
+NOTE PowerShell or CMD activity combined with failed login activity.
+END_SCENARIO PROC_014
+
+START_SCENARIO NET_011
+NOTE Network scanning tool opened during endpoint session.
+END_SCENARIO NET_011
+
+START_SCENARIO NET_012
+NOTE Network scanner activity while on public network profile.
+END_SCENARIO NET_012
+
+START_SCENARIO NET_013
+NOTE Public network profile combined with Defender disabled.
+END_SCENARIO NET_013
+
+START_SCENARIO NET_014
+NOTE Public network profile combined with failed logins and scanner activity.
+END_SCENARIO NET_014
+
+START_SCENARIO PERSIST_011
+NOTE Scheduled task created while PowerShell is open.
+END_SCENARIO PERSIST_011
+
+START_SCENARIO PERSIST_012
+NOTE Scheduled task created after controlled file download.
+END_SCENARIO PERSIST_012
+
+START_SCENARIO PERSIST_013
+NOTE Startup item added while Defender is disabled.
+END_SCENARIO PERSIST_013
+
+START_SCENARIO PERSIST_014
+NOTE Service or persistence-related change combined with suspicious process activity.
+END_SCENARIO PERSIST_014

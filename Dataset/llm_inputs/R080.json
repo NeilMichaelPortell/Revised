@@ -1,0 +1,72 @@
+{
+  "context_state": {
+    "collector_is_admin": false,
+    "defender": {
+      "am_service_enabled": false,
+      "antivirus_enabled": false,
+      "realtime_protection_enabled": false
+    },
+    "firewall": {
+      "Domain": false,
+      "Private": false,
+      "Public": false
+    },
+    "network_category": 0,
+    "network_profile": "none",
+    "removable_drives": [],
+    "running_monitored_processes": []
+  },
+  "event_summary": {
+    "apps_opened": [],
+    "benign_background_processes": [],
+    "collector_generated_events_filtered": 0,
+    "defender_config_changed": false,
+    "defender_disabled": true,
+    "defender_events": [
+      {
+        "event_id": null,
+        "kind": "manual_review_defender_disabled"
+      }
+    ],
+    "download_details": [],
+    "elevated_processes": [],
+    "failed_login_activity": false,
+    "failed_login_count_band": "none",
+    "failed_logins": 0,
+    "file_downloaded": false,
+    "firewall_events": [],
+    "network_profile": "none",
+    "process_details": [],
+    "removable_drive_details": [],
+    "risky_processes": [],
+    "scheduled_task_change": false,
+    "scheduled_task_details": [],
+    "service_change": false,
+    "service_change_details": [],
+    "startup_item_change": true,
+    "startup_item_details": [],
+    "usb_connection_count": 0,
+    "verified_activity_context": {
+      "archive_accessed": false,
+      "archive_type": "",
+      "command_activity": "none",
+      "defender_change": "disabled_then_restored",
+      "device_trust": "not_applicable",
+      "failed_login_activity": false,
+      "failed_login_count_band": "none",
+      "network_context": "none",
+      "scan_target": "",
+      "scanner_tool": "",
+      "script_name": "",
+      "startup_action": "added",
+      "startup_item": "Notepad startup shortcut",
+      "startup_item_change": true,
+      "suspicious_process_context": false,
+      "usb_content_type": "none",
+      "usb_files_browsed": false,
+      "verified_commands": []
+    },
+    "web_domains": [],
+    "viewed_interface": "none"
+  }
+}

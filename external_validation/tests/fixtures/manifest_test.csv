@@ -1,0 +1,3 @@
+external_scenario_id,source_dataset_id,source_title,source_relative_path,source_url_if_known,platform,attack_or_benign_label,attack_technique_if_provided,severity_if_provided,selection_reason,telemetry_format
+EXT_001,SYNTH-ABN-01,Synthetic credential+defender abnormal,ext_abnormal_01.jsonl,,windows,attack,T1110/T1562,,synthetic abnormal for offline pipeline test,jsonl
+EXT_002,SYNTH-BEN-01,Synthetic benign logon,ext_benign_01.json,,windows,benign,,,synthetic benign for offline pipeline test,json

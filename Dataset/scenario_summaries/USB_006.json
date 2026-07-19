@@ -1,0 +1,87 @@
+{
+  "scenario_id": "USB_006",
+  "category": "USB",
+  "scenario_name": "Unknown USB inserted and files browsed",
+  "scenario_source": "collected",
+  "collection_date": "2026-07-09",
+  "window_start": "2026-07-09T13:07:08.877698",
+  "window_end": "2026-07-09T13:07:46.060577",
+  "event_summary": {
+    "apps_opened": [
+      "notepad.exe"
+    ],
+    "benign_background_processes": [
+      "notepad.exe"
+    ],
+    "failed_logins": 0,
+    "failed_login_activity": false,
+    "failed_login_count_band": "none",
+    "usb_connection_count": 1,
+    "removable_drive_details": [],
+    "risky_processes": [],
+    "process_details": [],
+    "elevated_processes": [],
+    "defender_disabled": false,
+    "defender_events": [],
+    "firewall_events": [],
+    "network_profile": "none",
+    "scheduled_task_change": false,
+    "scheduled_task_details": [],
+    "service_change": false,
+    "service_change_details": [],
+    "startup_item_change": false,
+    "startup_item_details": [],
+    "file_downloaded": false,
+    "download_details": [],
+    "web_domains": [],
+    "collector_generated_events_filtered": 4,
+    "operator_notes": [
+      "Unknown USB inserted and files browsed."
+    ],
+    "manual_review_indicators": [
+      "abnormal_endpoint_activity",
+      "usb_activity",
+      "unknown_usb",
+      "usb_files_browsed"
+    ],
+    "verified_activity_context": {
+      "manual_verification_used": true,
+      "verification_note": "Operator note verified that an unknown USB was inserted and its files were browsed.",
+      "device_trust": "unknown",
+      "usb_files_browsed": true,
+      "usb_content_type": "general_files",
+      "archive_accessed": false,
+      "archive_type": "",
+      "command_activity": "none",
+      "verified_commands": [],
+      "script_name": "",
+      "scanner_tool": "",
+      "scan_target": "",
+      "suspicious_process_context": false,
+      "startup_item_change": false,
+      "startup_action": "",
+      "startup_item": "",
+      "defender_change": "none",
+      "network_context": "none",
+      "failed_login_activity": false,
+      "failed_login_count_band": "none"
+    },
+    "viewed_interface": "none"
+  },
+  "observed_events": [
+    "Applications used: notepad.exe.",
+    "1 USB connection(s) recorded (after debounce).",
+    "Benign background activity present (context, not risky): notepad.exe.",
+    "4 collector-generated process event(s) were excluded from this scenario."
+  ],
+  "context_state": {},
+  "ground_truth": {
+    "classification": "abnormal",
+    "risk_level": "medium",
+    "expected_indicators": [
+      "unknown_usb",
+      "usb_files_viewed"
+    ],
+    "label_reason": "Browsing an unknown USB increases exposure to untrusted content. Both the unknown-device and browsing context must be visible in the input."
+  }
+}

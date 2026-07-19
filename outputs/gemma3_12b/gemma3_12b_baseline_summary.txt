@@ -1,0 +1,23 @@
+BASELINE SUMMARY - gemma3:12b
+============================================================
+Scenarios run          : 120
+Valid JSON outputs     : 120/120 (100%)
+Scored (valid+labelled): 120
+Confusion matrix (positive class = risky/abnormal)
+  TP=58  FP=20  FN=0  TN=42
+Accuracy          : 0.833
+Precision         : 0.744   (guards against alert fatigue)
+Recall            : 1.000   (KEY: misses = real risks not caught)
+F1-score          : 0.853
+Risk-level accuracy: 0.525
+Indicator overlap  : 0.104
+Mean latency (s)   : 11.05
+PER-CATEGORY (accuracy | P | R | F1 | n scored)
+------------------------------------------------------------
+  AUTH     0.765 | 0.714 | 1.000 | 0.833 | n=17
+  NET      0.882 | 0.818 | 1.000 | 0.900 | n=17
+  NORMAL   0.833 | 0.000 | 0.000 | 0.000 | n=18
+  PERSIST  0.824 | 0.750 | 1.000 | 0.857 | n=17
+  PROC     0.706 | 0.667 | 1.000 | 0.800 | n=17
+  SEC      0.824 | 0.769 | 1.000 | 0.870 | n=17
+  USB      1.000 | 1.000 | 1.000 | 1.000 | n=17

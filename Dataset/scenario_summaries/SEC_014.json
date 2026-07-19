@@ -1,0 +1,102 @@
+{
+  "scenario_id": "SEC_014",
+  "category": "SEC",
+  "scenario_name": "Multiple security control changes performed and restored",
+  "scenario_source": "collected",
+  "collection_date": "2026-07-10",
+  "window_start": "2026-07-10T09:50:01.079274",
+  "window_end": "2026-07-10T09:51:30.839439",
+  "event_summary": {
+    "apps_opened": [],
+    "benign_background_processes": [],
+    "failed_logins": 0,
+    "failed_login_activity": false,
+    "failed_login_count_band": "none",
+    "usb_connection_count": 0,
+    "removable_drive_details": [],
+    "risky_processes": [],
+    "process_details": [],
+    "elevated_processes": [],
+    "defender_disabled": true,
+    "defender_events": [
+      {
+        "kind": "configuration_changed",
+        "event_id": 5007
+      },
+      {
+        "kind": "configuration_changed",
+        "event_id": 5007
+      },
+      {
+        "kind": "configuration_changed",
+        "event_id": 5007
+      },
+      {
+        "kind": "realtime_protection_disabled",
+        "event_id": 5001
+      },
+      {
+        "kind": "status_snapshot",
+        "realtime_protection_enabled": false
+      }
+    ],
+    "firewall_events": [],
+    "network_profile": "none",
+    "scheduled_task_change": false,
+    "scheduled_task_details": [],
+    "service_change": false,
+    "service_change_details": [],
+    "startup_item_change": false,
+    "startup_item_details": [],
+    "file_downloaded": false,
+    "download_details": [],
+    "web_domains": [],
+    "collector_generated_events_filtered": 1,
+    "operator_notes": [
+      "Multiple security control changes performed and restored.",
+      "Multiple security cMultiple security control changes performed and restored."
+    ],
+    "manual_review_indicators": [
+      "abnormal_endpoint_activity",
+      "security_settings_viewed"
+    ],
+    "verified_activity_context": {
+      "manual_verification_used": false,
+      "verification_note": "",
+      "device_trust": "not_applicable",
+      "usb_files_browsed": false,
+      "usb_content_type": "none",
+      "archive_accessed": false,
+      "archive_type": "",
+      "command_activity": "none",
+      "verified_commands": [],
+      "script_name": "",
+      "scanner_tool": "",
+      "scan_target": "",
+      "suspicious_process_context": false,
+      "startup_item_change": false,
+      "startup_action": "",
+      "startup_item": "",
+      "defender_change": "disabled",
+      "network_context": "none",
+      "failed_login_activity": false,
+      "failed_login_count_band": "none"
+    },
+    "viewed_interface": "none"
+  },
+  "observed_events": [
+    "Defender real-time protection was recorded as disabled.",
+    "1 collector-generated process event(s) were excluded from this scenario."
+  ],
+  "context_state": {},
+  "ground_truth": {
+    "classification": "abnormal",
+    "risk_level": "high",
+    "expected_indicators": [
+      "defender_configuration_changed",
+      "defender_disabled",
+      "security_setting_restored"
+    ],
+    "label_reason": "Several security-control changes, including temporary protection disablement, create substantial exposure. High risk is proportionate because the controls were restored and no compromise was observed."
+  }
+}

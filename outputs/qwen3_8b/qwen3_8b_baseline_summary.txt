@@ -1,0 +1,23 @@
+BASELINE SUMMARY - qwen3:8b
+============================================================
+Scenarios run          : 120
+Valid JSON outputs     : 120/120 (100%)
+Scored (valid+labelled): 120
+Confusion matrix (positive class = risky/abnormal)
+  TP=44  FP=4  FN=14  TN=58
+Accuracy          : 0.850
+Precision         : 0.917   (guards against alert fatigue)
+Recall            : 0.759   (KEY: misses = real risks not caught)
+F1-score          : 0.830
+Risk-level accuracy: 0.575
+Indicator overlap  : 0.117
+Mean latency (s)   : 4.83
+PER-CATEGORY (accuracy | P | R | F1 | n scored)
+------------------------------------------------------------
+  AUTH     0.765 | 0.714 | 1.000 | 0.833 | n=17
+  NET      0.882 | 1.000 | 0.778 | 0.875 | n=17
+  NORMAL   1.000 | 0.000 | 0.000 | 0.000 | n=18
+  PERSIST  0.882 | 1.000 | 0.778 | 0.875 | n=17
+  PROC     0.706 | 1.000 | 0.500 | 0.667 | n=17
+  SEC      0.882 | 1.000 | 0.800 | 0.889 | n=17
+  USB      0.824 | 1.000 | 0.700 | 0.824 | n=17

@@ -1,0 +1,113 @@
+{
+  "scenario_id": "USB_011",
+  "category": "USB",
+  "scenario_name": "USB activity while PowerShell is open",
+  "scenario_source": "collected",
+  "collection_date": "2026-07-10",
+  "window_start": "2026-07-10T09:29:48.257920",
+  "window_end": "2026-07-10T09:30:29.334451",
+  "event_summary": {
+    "apps_opened": [
+      "notepad.exe",
+      "windowsterminal.exe"
+    ],
+    "benign_background_processes": [
+      "notepad.exe"
+    ],
+    "failed_logins": 0,
+    "failed_login_activity": false,
+    "failed_login_count_band": "none",
+    "usb_connection_count": 1,
+    "removable_drive_details": [],
+    "risky_processes": [
+      "powershell.exe",
+      "windowsterminal.exe"
+    ],
+    "process_details": [
+      {
+        "process_name": "windowsterminal.exe",
+        "pid": 11048,
+        "exe_path": "C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminal_1.24.11321.0_x64__8wekyb3d8bbwe\\WindowsTerminal.exe",
+        "command_line": "C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminal_1.24.11321.0_x64__8wekyb3d8bbwe\\WindowsTerminal.exe -Embedding",
+        "parent_process_name": "svchost.exe",
+        "parent_pid": 1832,
+        "start_time": "2026-07-10T09:29:56.090131",
+        "is_elevated": "unknown"
+      },
+      {
+        "process_name": "powershell.exe",
+        "pid": 30492,
+        "exe_path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "command_line": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "parent_process_name": "explorer.exe",
+        "parent_pid": 19816,
+        "start_time": "2026-07-10T09:29:55.997221",
+        "is_elevated": "unknown"
+      }
+    ],
+    "elevated_processes": [],
+    "defender_disabled": false,
+    "defender_events": [],
+    "firewall_events": [],
+    "network_profile": "none",
+    "scheduled_task_change": false,
+    "scheduled_task_details": [],
+    "service_change": false,
+    "service_change_details": [],
+    "startup_item_change": false,
+    "startup_item_details": [],
+    "file_downloaded": false,
+    "download_details": [],
+    "web_domains": [],
+    "collector_generated_events_filtered": 2,
+    "operator_notes": [
+      "USB activity while PowerShell is open."
+    ],
+    "manual_review_indicators": [
+      "abnormal_endpoint_activity",
+      "usb_activity",
+      "powershell_activity"
+    ],
+    "verified_activity_context": {
+      "manual_verification_used": false,
+      "verification_note": "",
+      "device_trust": "not_applicable",
+      "usb_files_browsed": false,
+      "usb_content_type": "none",
+      "archive_accessed": false,
+      "archive_type": "",
+      "command_activity": "none",
+      "verified_commands": [],
+      "script_name": "",
+      "scanner_tool": "",
+      "scan_target": "",
+      "suspicious_process_context": false,
+      "startup_item_change": false,
+      "startup_action": "",
+      "startup_item": "",
+      "defender_change": "none",
+      "network_context": "none",
+      "failed_login_activity": false,
+      "failed_login_count_band": "none"
+    },
+    "viewed_interface": "none"
+  },
+  "observed_events": [
+    "Applications used: notepad.exe, windowsterminal.exe.",
+    "1 USB connection(s) recorded (after debounce).",
+    "Monitored-list processes observed: powershell.exe, windowsterminal.exe.",
+    "Note: powershell.exe are common in normal work and are not judged here; classification is manual.",
+    "Benign background activity present (context, not risky): notepad.exe.",
+    "2 collector-generated process event(s) were excluded from this scenario."
+  ],
+  "context_state": {},
+  "ground_truth": {
+    "classification": "abnormal",
+    "risk_level": "high",
+    "expected_indicators": [
+      "usb_connected",
+      "powershell_activity"
+    ],
+    "label_reason": "USB activity combined with an active PowerShell environment creates a credible route from removable media to command execution, supporting high risk."
+  }
+}

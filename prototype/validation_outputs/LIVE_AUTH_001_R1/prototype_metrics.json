@@ -1,0 +1,64 @@
+{
+  "validation_run_id": "LIVE_AUTH_001_R1",
+  "scenario_id": "LIVE_AUTH_001",
+  "repetition": 1,
+  "mode": "independent_validation",
+  "events_captured": 190,
+  "expected_events_captured": [
+    "login_failed"
+  ],
+  "unexpected_events": [
+    "application_started",
+    "network_profile_changed",
+    "process_started",
+    "usb_connected"
+  ],
+  "alerts_generated": 0,
+  "alerts_expected": true,
+  "false_alerts": 0,
+  "missed_alerts": 1,
+  "cooldown_suppressions": 5,
+  "duplicate_events": 209,
+  "llm_calls": 0,
+  "json_parse_valid_count": 0,
+  "strict_schema_valid_count": 0,
+  "fallback_count": 0,
+  "timeout_count": 0,
+  "retry_count": 0,
+  "genuine_llm_responses": 0,
+  "mean_detection_latency_ms": 0.0,
+  "median_detection_latency_ms": 0.0,
+  "p95_detection_latency_ms": 0.0,
+  "mean_llm_latency_ms": 0.0,
+  "median_llm_latency_ms": 0.0,
+  "p95_llm_latency_ms": 0.0,
+  "mean_end_to_end_latency_ms": 0.0,
+  "median_end_to_end_latency_ms": 0.0,
+  "p95_end_to_end_latency_ms": 0.0,
+  "_latency_detail": {
+    "detection": {
+      "count": 0,
+      "mean": 0.0,
+      "median": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "p95": 0.0
+    },
+    "llm": {
+      "count": 0,
+      "mean": 0.0,
+      "median": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "p95": 0.0
+    },
+    "end_to_end": {
+      "count": 0,
+      "mean": 0.0,
+      "median": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "p95": 0.0
+    }
+  }
+}

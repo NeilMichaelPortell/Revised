@@ -1,0 +1,160 @@
+{
+  "scenario_id": "PROC_010",
+  "category": "PROC",
+  "scenario_name": "Nmap scan run against local authorised test target",
+  "scenario_source": "collected",
+  "collection_date": "2026-07-09",
+  "window_start": "2026-07-09T17:12:40.422151",
+  "window_end": "2026-07-09T17:13:41.578646",
+  "event_summary": {
+    "apps_opened": [
+      "code.exe",
+      "windowsterminal.exe"
+    ],
+    "benign_background_processes": [
+      "code.exe"
+    ],
+    "failed_logins": 0,
+    "failed_login_activity": false,
+    "failed_login_count_band": "none",
+    "usb_connection_count": 0,
+    "removable_drive_details": [],
+    "risky_processes": [
+      "cmd.exe",
+      "nmap.exe",
+      "windowsterminal.exe"
+    ],
+    "process_details": [
+      {
+        "process_name": "cmd.exe",
+        "pid": 8988,
+        "exe_path": "C:\\Windows\\System32\\cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe",
+        "parent_process_name": "explorer.exe",
+        "parent_pid": 11576,
+        "start_time": "2026-07-09T17:12:54.798696",
+        "is_elevated": "unknown"
+      },
+      {
+        "process_name": "windowsterminal.exe",
+        "pid": 34596,
+        "exe_path": "C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminal_1.24.11321.0_x64__8wekyb3d8bbwe\\WindowsTerminal.exe",
+        "command_line": "C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminal_1.24.11321.0_x64__8wekyb3d8bbwe\\WindowsTerminal.exe -Embedding",
+        "parent_process_name": "svchost.exe",
+        "parent_pid": 1832,
+        "start_time": "2026-07-09T17:12:54.894269",
+        "is_elevated": "unknown"
+      },
+      {
+        "process_name": "nmap.exe",
+        "pid": 10928,
+        "exe_path": "C:\\Program Files (x86)\\Nmap\\nmap.exe",
+        "command_line": "nmap 127.0.0.1",
+        "parent_process_name": "cmd.exe",
+        "parent_pid": 8988,
+        "start_time": "2026-07-09T17:12:57.595498",
+        "is_elevated": "unknown"
+      },
+      {
+        "process_name": "nmap.exe",
+        "pid": 9392,
+        "exe_path": "C:\\Program Files (x86)\\Nmap\\nmap.exe",
+        "command_line": "nmap -sV 127.0.0.1",
+        "parent_process_name": "cmd.exe",
+        "parent_pid": 8988,
+        "start_time": "2026-07-09T17:13:12.295633",
+        "is_elevated": "unknown"
+      }
+    ],
+    "elevated_processes": [],
+    "defender_disabled": false,
+    "defender_events": [],
+    "firewall_events": [],
+    "network_profile": "private",
+    "scheduled_task_change": false,
+    "scheduled_task_details": [],
+    "service_change": false,
+    "service_change_details": [],
+    "startup_item_change": false,
+    "startup_item_details": [],
+    "file_downloaded": false,
+    "download_details": [],
+    "web_domains": [],
+    "collector_generated_events_filtered": 3,
+    "operator_notes": [
+      "Nmap scan run against local authorised test target."
+    ],
+    "manual_review_indicators": [
+      "abnormal_endpoint_activity",
+      "network_scanner_activity"
+    ],
+    "verified_activity_context": {
+      "manual_verification_used": false,
+      "verification_note": "",
+      "device_trust": "not_applicable",
+      "usb_files_browsed": false,
+      "usb_content_type": "none",
+      "archive_accessed": false,
+      "archive_type": "",
+      "command_activity": "none",
+      "verified_commands": [],
+      "script_name": "",
+      "scanner_tool": "",
+      "scan_target": "",
+      "suspicious_process_context": false,
+      "startup_item_change": false,
+      "startup_action": "",
+      "startup_item": "",
+      "defender_change": "none",
+      "network_context": "private",
+      "failed_login_activity": false,
+      "failed_login_count_band": "none"
+    },
+    "viewed_interface": "none"
+  },
+  "observed_events": [
+    "Applications used: code.exe, windowsterminal.exe.",
+    "Monitored-list processes observed: cmd.exe, nmap.exe, windowsterminal.exe.",
+    "Note: cmd.exe are common in normal work and are not judged here; classification is manual.",
+    "Network profile (context at scenario start): private.",
+    "Benign background activity present (context, not risky): code.exe.",
+    "3 collector-generated process event(s) were excluded from this scenario."
+  ],
+  "context_state": {
+    "network_profile": "private",
+    "network_category": 1,
+    "defender": {
+      "realtime_protection_enabled": true,
+      "antivirus_enabled": true,
+      "am_service_enabled": true
+    },
+    "firewall": {
+      "Domain": true,
+      "Private": true,
+      "Public": true
+    },
+    "running_monitored_processes": [
+      "cmd.exe",
+      "powershell.exe",
+      "python.exe"
+    ],
+    "removable_drives": [
+      {
+        "drive_letter": "D:",
+        "volume_name": "NEIL",
+        "filesystem": "FAT32"
+      }
+    ],
+    "collector_is_admin": true
+  },
+  "ground_truth": {
+    "classification": "abnormal",
+    "risk_level": "high",
+    "expected_indicators": [
+      "network_scanner_activity",
+      "network_scan",
+      "authorised_local_target"
+    ],
+    "label_reason": "The captured Nmap commands performed a scan against an authorised local target, which is more consequential than a version check and supports high risk."
+  }
+}

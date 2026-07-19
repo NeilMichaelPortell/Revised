@@ -1,0 +1,46 @@
+{
+  "events": [
+    {
+      "ts": "2026-07-13 20:09",
+      "threat_type": "usb_connected",
+      "severity": "medium",
+      "summary": "A USB device was just plugged in: USB Composite Device",
+      "repeat": false
+    },
+    {
+      "ts": "2026-07-13 20:16",
+      "threat_type": "usb_connected",
+      "severity": "medium",
+      "summary": "A USB device was just plugged in: USB Composite Device",
+      "repeat": true
+    },
+    {
+      "ts": "2026-07-13 20:19",
+      "threat_type": "usb_connected",
+      "severity": "medium",
+      "summary": "A USB device was just plugged in: USB Composite Device",
+      "repeat": true
+    },
+    {
+      "ts": "2026-07-13 20:20",
+      "threat_type": "usb_connected",
+      "severity": "medium",
+      "summary": "A USB device was just plugged in: USB Composite Device",
+      "repeat": true
+    },
+    {
+      "ts": "2026-07-13 20:20",
+      "threat_type": "login_failed",
+      "severity": "medium",
+      "summary": "Someone just failed to log into this computer",
+      "repeat": false
+    },
+    {
+      "ts": "2026-07-13 20:22",
+      "threat_type": "defender_disabled",
+      "severity": "critical",
+      "summary": "Windows Defender real-time protection was just turned off",
+      "repeat": false
+    }
+  ]
+}

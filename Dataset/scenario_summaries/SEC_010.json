@@ -1,0 +1,152 @@
+{
+  "scenario_id": "SEC_010",
+  "category": "SEC",
+  "scenario_name": "Defender disabled while PowerShell is open",
+  "scenario_source": "collected",
+  "collection_date": "2026-07-09",
+  "window_start": "2026-07-09T17:06:05.237221",
+  "window_end": "2026-07-09T17:06:44.597258",
+  "event_summary": {
+    "apps_opened": [
+      "code.exe",
+      "windowsterminal.exe"
+    ],
+    "benign_background_processes": [
+      "code.exe"
+    ],
+    "failed_logins": 0,
+    "failed_login_activity": false,
+    "failed_login_count_band": "none",
+    "usb_connection_count": 0,
+    "removable_drive_details": [],
+    "risky_processes": [
+      "powershell.exe",
+      "windowsterminal.exe"
+    ],
+    "process_details": [
+      {
+        "process_name": "windowsterminal.exe",
+        "pid": 17856,
+        "exe_path": "C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminal_1.24.11321.0_x64__8wekyb3d8bbwe\\WindowsTerminal.exe",
+        "command_line": "C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminal_1.24.11321.0_x64__8wekyb3d8bbwe\\WindowsTerminal.exe -Embedding",
+        "parent_process_name": "svchost.exe",
+        "parent_pid": 1832,
+        "start_time": "2026-07-09T17:06:15.836326",
+        "is_elevated": "unknown"
+      },
+      {
+        "process_name": "powershell.exe",
+        "pid": 34640,
+        "exe_path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "command_line": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "parent_process_name": "explorer.exe",
+        "parent_pid": 11576,
+        "start_time": "2026-07-09T17:06:15.727801",
+        "is_elevated": "unknown"
+      }
+    ],
+    "elevated_processes": [],
+    "defender_disabled": true,
+    "defender_events": [
+      {
+        "kind": "manual_review_realtime_protection_disabled_and_restored",
+        "event_id": null
+      }
+    ],
+    "firewall_events": [],
+    "network_profile": "private",
+    "scheduled_task_change": false,
+    "scheduled_task_details": [],
+    "service_change": false,
+    "service_change_details": [],
+    "startup_item_change": false,
+    "startup_item_details": [],
+    "file_downloaded": false,
+    "download_details": [],
+    "web_domains": [],
+    "collector_generated_events_filtered": 3,
+    "operator_notes": [
+      "Defender disabled while PowerShell is open."
+    ],
+    "manual_review_indicators": [
+      "abnormal_endpoint_activity",
+      "defender_activity",
+      "defender_disabled",
+      "powershell_activity"
+    ],
+    "verified_activity_context": {
+      "manual_verification_used": false,
+      "verification_note": "",
+      "device_trust": "not_applicable",
+      "usb_files_browsed": false,
+      "usb_content_type": "none",
+      "archive_accessed": false,
+      "archive_type": "",
+      "command_activity": "none",
+      "verified_commands": [],
+      "script_name": "",
+      "scanner_tool": "",
+      "scan_target": "",
+      "suspicious_process_context": false,
+      "startup_item_change": false,
+      "startup_action": "",
+      "startup_item": "",
+      "defender_change": "disabled",
+      "network_context": "private",
+      "failed_login_activity": false,
+      "failed_login_count_band": "none"
+    },
+    "manual_review_corrections": [
+      {
+        "field": "defender_disabled",
+        "reason": "Operator note states Defender was disabled and restored; Defender event monitor did not capture the disable event."
+      }
+    ],
+    "viewed_interface": "none"
+  },
+  "observed_events": [
+    "Applications used: code.exe, windowsterminal.exe.",
+    "Monitored-list processes observed: powershell.exe, windowsterminal.exe.",
+    "Note: powershell.exe are common in normal work and are not judged here; classification is manual.",
+    "Network profile (context at scenario start): private.",
+    "Benign background activity present (context, not risky): code.exe.",
+    "3 collector-generated process event(s) were excluded from this scenario.",
+    "Manual review: Defender disable/restore action added from operator note because monitor did not capture the Defender event inside the window."
+  ],
+  "context_state": {
+    "network_profile": "private",
+    "network_category": 1,
+    "defender": {
+      "realtime_protection_enabled": true,
+      "antivirus_enabled": true,
+      "am_service_enabled": true
+    },
+    "firewall": {
+      "Domain": true,
+      "Private": true,
+      "Public": true
+    },
+    "running_monitored_processes": [
+      "cmd.exe",
+      "powershell.exe",
+      "python.exe"
+    ],
+    "removable_drives": [
+      {
+        "drive_letter": "D:",
+        "volume_name": "NEIL",
+        "filesystem": "FAT32"
+      }
+    ],
+    "collector_is_admin": true
+  },
+  "ground_truth": {
+    "classification": "abnormal",
+    "risk_level": "high",
+    "expected_indicators": [
+      "defender_disabled",
+      "powershell_activity"
+    ],
+    "label_reason": "PowerShell activity during a Defender-disabled window combines a powerful administrative shell with reduced endpoint protection."
+  }
+}

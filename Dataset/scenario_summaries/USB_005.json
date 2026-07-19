@@ -1,0 +1,95 @@
+{
+  "scenario_id": "USB_005",
+  "category": "USB",
+  "scenario_name": "Unknown USB inserted with no file opened",
+  "scenario_source": "collected",
+  "collection_date": "2026-07-09",
+  "window_start": "2026-07-09T13:06:28.151275",
+  "window_end": "2026-07-09T13:06:57.971320",
+  "event_summary": {
+    "apps_opened": [
+      "shellhost.exe"
+    ],
+    "benign_background_processes": [],
+    "failed_logins": 0,
+    "failed_login_activity": false,
+    "failed_login_count_band": "none",
+    "usb_connection_count": 1,
+    "removable_drive_details": [
+      {
+        "drive_letter": "D:",
+        "volume_name": "CORSAIR",
+        "filesystem": "FAT32"
+      }
+    ],
+    "risky_processes": [],
+    "process_details": [],
+    "elevated_processes": [],
+    "defender_disabled": false,
+    "defender_events": [
+      {
+        "kind": "status_snapshot",
+        "realtime_protection_enabled": true
+      }
+    ],
+    "firewall_events": [],
+    "network_profile": "none",
+    "scheduled_task_change": false,
+    "scheduled_task_details": [],
+    "service_change": false,
+    "service_change_details": [],
+    "startup_item_change": false,
+    "startup_item_details": [],
+    "file_downloaded": false,
+    "download_details": [],
+    "web_domains": [],
+    "collector_generated_events_filtered": 1,
+    "operator_notes": [
+      "Unknown USB inserted with no file opened."
+    ],
+    "manual_review_indicators": [
+      "abnormal_endpoint_activity",
+      "usb_activity",
+      "unknown_usb"
+    ],
+    "verified_activity_context": {
+      "manual_verification_used": true,
+      "verification_note": "Operator note verified that the inserted device was treated as unknown and no file was opened.",
+      "device_trust": "unknown",
+      "usb_files_browsed": false,
+      "usb_content_type": "none",
+      "archive_accessed": false,
+      "archive_type": "",
+      "command_activity": "none",
+      "verified_commands": [],
+      "script_name": "",
+      "scanner_tool": "",
+      "scan_target": "",
+      "suspicious_process_context": false,
+      "startup_item_change": false,
+      "startup_action": "",
+      "startup_item": "",
+      "defender_change": "none",
+      "network_context": "none",
+      "failed_login_activity": false,
+      "failed_login_count_band": "none"
+    },
+    "viewed_interface": "none"
+  },
+  "observed_events": [
+    "Applications used: shellhost.exe.",
+    "1 USB connection(s) recorded (after debounce).",
+    "Defender event(s) recorded (not a disable): status_snapshot.",
+    "1 collector-generated process event(s) were excluded from this scenario."
+  ],
+  "context_state": {},
+  "ground_truth": {
+    "classification": "abnormal",
+    "risk_level": "medium",
+    "expected_indicators": [
+      "unknown_usb",
+      "no_file_execution"
+    ],
+    "label_reason": "An unknown removable device creates moderate exposure even when no file is opened, but the untrusted-device context must be explicit in the input."
+  }
+}

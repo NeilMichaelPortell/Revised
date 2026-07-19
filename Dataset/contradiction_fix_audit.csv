@@ -1,0 +1,7 @@
+﻿scenario_id,before,after,reason
+SEC_006,"('abnormal', 'medium', 'defender_configuration_changed;security_setting_restored')","('abnormal', 'medium', 'defender_configuration_changed;security_setting_restored')",Brief section 4 required interpretation applied
+NORMAL_004,"('normal', 'low', 'communication_app_activity;normal_app_activity')","('normal', 'low', 'communication_app_activity;normal_app_activity')",Brief section 4 required interpretation applied
+PERSIST_004,"('normal', 'low', 'startup_items_viewed;no_persistence_change')","('normal', 'low', 'startup_items_viewed;no_persistence_change')",Brief section 4 required interpretation applied
+PERSIST_009,"('normal', 'low', 'startup_item_removed;cleanup_activity')","('normal', 'low', 'startup_item_removed;cleanup_activity')",Brief section 4 required interpretation applied
+PERSIST_001;PERSIST_002,Same evidence but different expected-indicator sets.,Both use task_scheduler_viewed;no_persistence_change.,Identical observable evidence requires the same answer key.
+NET_016;SEC_015,Identical model evidence despite different documented interfaces.,Added viewed_interface=network_settings/windows_security.,Distinction is supported by the existing operator notes.

@@ -1,0 +1,84 @@
+{
+  "scenario_id": "PROC_014",
+  "category": "PROC",
+  "scenario_name": "PowerShell or CMD activity combined with failed login activity",
+  "scenario_source": "augmented",
+  "collection_date": "",
+  "window_start": "",
+  "window_end": "",
+  "event_summary": {
+    "apps_opened": [],
+    "benign_background_processes": [],
+    "failed_logins": 1,
+    "failed_login_activity": true,
+    "failed_login_count_band": "single",
+    "usb_connection_count": 0,
+    "removable_drive_details": [],
+    "risky_processes": [
+      "powershell.exe",
+      "cmd.exe"
+    ],
+    "process_details": [],
+    "elevated_processes": [],
+    "defender_disabled": false,
+    "defender_events": [],
+    "firewall_events": [],
+    "network_profile": "none",
+    "scheduled_task_change": false,
+    "scheduled_task_details": [],
+    "service_change": false,
+    "service_change_details": [],
+    "startup_item_change": false,
+    "startup_item_details": [],
+    "file_downloaded": false,
+    "download_details": [],
+    "web_domains": [],
+    "collector_generated_events_filtered": 0,
+    "operator_notes": [
+      "PowerShell or CMD activity combined with failed login activity."
+    ],
+    "manual_review_indicators": [
+      "abnormal_endpoint_activity",
+      "failed_logins",
+      "powershell_activity",
+      "cmd_activity"
+    ],
+    "verified_activity_context": {
+      "manual_verification_used": false,
+      "verification_note": "",
+      "device_trust": "not_applicable",
+      "usb_files_browsed": false,
+      "usb_content_type": "none",
+      "archive_accessed": false,
+      "archive_type": "",
+      "command_activity": "none",
+      "verified_commands": [],
+      "script_name": "",
+      "scanner_tool": "",
+      "scan_target": "",
+      "suspicious_process_context": false,
+      "startup_item_change": false,
+      "startup_action": "",
+      "startup_item": "",
+      "defender_change": "none",
+      "network_context": "none",
+      "failed_login_activity": true,
+      "failed_login_count_band": "single"
+    },
+    "viewed_interface": "none"
+  },
+  "observed_events": [
+    "Augmented scenario representing: PowerShell or CMD activity combined with failed login activity.",
+    "This scenario was hand-constructed (augmented) because the activity cannot be safely or ethically performed on a live endpoint. It was not captured by the collector."
+  ],
+  "context_state": {},
+  "ground_truth": {
+    "classification": "abnormal",
+    "risk_level": "critical",
+    "expected_indicators": [
+      "failed_login",
+      "terminal_activity"
+    ],
+    "label_reason": "Command-line activity combined with failed logins links authentication anomalies to active endpoint interaction and is treated as critical."
+  }
+}

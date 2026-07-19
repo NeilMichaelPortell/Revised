@@ -1,0 +1,23 @@
+BASELINE SUMMARY - gpt-oss:20b
+============================================================
+Scenarios run          : 120
+Valid JSON outputs     : 120/120 (100%)
+Scored (valid+labelled): 120
+Confusion matrix (positive class = risky/abnormal)
+  TP=41  FP=5  FN=17  TN=57
+Accuracy          : 0.817
+Precision         : 0.891   (guards against alert fatigue)
+Recall            : 0.707   (KEY: misses = real risks not caught)
+F1-score          : 0.788
+Risk-level accuracy: 0.608
+Indicator overlap  : 0.040
+Mean latency (s)   : 12.15
+PER-CATEGORY (accuracy | P | R | F1 | n scored)
+------------------------------------------------------------
+  AUTH     0.765 | 0.875 | 0.700 | 0.778 | n=17
+  NET      0.706 | 0.833 | 0.556 | 0.667 | n=17
+  NORMAL   0.889 | 0.000 | 0.000 | 0.000 | n=18
+  PERSIST  0.882 | 1.000 | 0.778 | 0.875 | n=17
+  PROC     0.824 | 1.000 | 0.700 | 0.824 | n=17
+  SEC      0.882 | 0.900 | 0.900 | 0.900 | n=17
+  USB      0.765 | 1.000 | 0.600 | 0.750 | n=17

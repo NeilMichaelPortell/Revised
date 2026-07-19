@@ -1,0 +1,245 @@
+
+══════════════════════════════════════════════════════════════════════
+  Alert #1   🟠  MEDIUM
+  Monday, 13 July 2026 at 20:11:52
+══════════════════════════════════════════════════════════════════════
+  A USB device was just plugged in: USB Composite Device
+
+──────────────────────────────────────────────────────────────────────
+  📋  WHAT WAS DETECTED
+──────────────────────────────────────────────────────────────────────
+  Device Name                 : USB Composite Device
+  Device Id                   : USB\VID_1A2C&PID_4C5E\5&304440B1&0&13
+  Usb Plugged In Today        : 1
+  Why Flagged:
+      USB devices can introduce malware or be used to steal files
+
+──────────────────────────────────────────────────────────────────────
+  📌  Security alert detected
+
+──────────────────────────────────────────────────────────────────────
+  🔍  WHAT HAPPENED
+──────────────────────────────────────────────────────────────────────
+  A security event was flagged on your computer.
+
+──────────────────────────────────────────────────────────────────────
+  ⚠   WHY THIS IS RISKY
+──────────────────────────────────────────────────────────────────────
+  Review the WHAT WAS DETECTED section above for the specific
+  details.
+
+──────────────────────────────────────────────────────────────────────
+  ✅  HOW TO PREVENT THIS
+──────────────────────────────────────────────────────────────────────
+  • Make sure Ollama is running: ollama serve
+  • Review the full alert in outputs/security_alerts.txt
+
+──────────────────────────────────────────────────────────────────────
+  💡  LEARNING TIP
+──────────────────────────────────────────────────────────────────────
+  AI coach unavailable: Ollama timed out after 120s. Is Ollama
+  running?  Try: ollama serve
+
+  Risk score: 2  │  Source: usb:USB Composite Device
+══════════════════════════════════════════════════════════════════════
+
+══════════════════════════════════════════════════════════════════════
+  Alert #1   🟠  MEDIUM
+  Monday, 13 July 2026 at 20:19:21
+══════════════════════════════════════════════════════════════════════
+  A USB device was just plugged in: USB Composite Device
+
+──────────────────────────────────────────────────────────────────────
+  📋  WHAT WAS DETECTED
+──────────────────────────────────────────────────────────────────────
+  Device Name                 : USB Composite Device
+  Device Id                   : USB\VID_1A2C&PID_4C5E\5&304440B1&0&13
+  Usb Plugged In Today        : 1
+  Why Flagged:
+      USB devices can introduce malware or be used to steal files
+
+──────────────────────────────────────────────────────────────────────
+  📌  A USB device, 'USB Composite Device', was just plugged in.
+
+──────────────────────────────────────────────────────────────────────
+  🔍  WHAT HAPPENED
+──────────────────────────────────────────────────────────────────────
+  This is the third time today a suspicious USB device has been
+  connected to your computer. The device's name is 'USB Composite
+  Device'.
+
+──────────────────────────────────────────────────────────────────────
+  ⚠   WHY THIS IS RISKY
+──────────────────────────────────────────────────────────────────────
+  You're at risk of having malware auto-run on connection,
+  stealing files silently, or being used as a fake keyboard to
+  type malicious commands.
+
+──────────────────────────────────────────────────────────────────────
+  ✅  HOW TO PREVENT THIS
+──────────────────────────────────────────────────────────────────────
+  • Never plug in an unknown USB drive
+  • Disable USB AutoRun in Windows
+  • Scan the drive with Windows Defender before opening any files
+
+──────────────────────────────────────────────────────────────────────
+  💡  LEARNING TIP
+──────────────────────────────────────────────────────────────────────
+  This is your third repeated behaviour today. Be extra cautious
+  when plugging in new devices.
+
+  Risk score: 2  │  Source: usb:USB Composite Device
+══════════════════════════════════════════════════════════════════════
+
+══════════════════════════════════════════════════════════════════════
+  Alert #2   🟠  MEDIUM
+  Monday, 13 July 2026 at 20:20:09
+══════════════════════════════════════════════════════════════════════
+  A USB device was just plugged in: USB Composite Device
+
+──────────────────────────────────────────────────────────────────────
+  📋  WHAT WAS DETECTED
+──────────────────────────────────────────────────────────────────────
+  Device Name                 : USB Composite Device
+  Device Id                   : USB\VID_1A2C&PID_4C5E\5&304440B1&0&13
+  Usb Plugged In Today        : 4
+  Why Flagged:
+      USB devices can introduce malware or be used to steal files
+
+──────────────────────────────────────────────────────────────────────
+  📌  A USB Composite Device was plugged in, for the 5th time today.
+
+──────────────────────────────────────────────────────────────────────
+  🔍  WHAT HAPPENED
+──────────────────────────────────────────────────────────────────────
+  You just connected a USB device named 'USB Composite Device' to
+  your computer. This is not the first time you've done this today
+  - it's happened four times already.
+
+──────────────────────────────────────────────────────────────────────
+  ⚠   WHY THIS IS RISKY
+──────────────────────────────────────────────────────────────────────
+  This repeated behavior creates a high risk of introducing
+  malware or stealing files from your computer, which could lead
+  to identity theft or financial loss.
+
+──────────────────────────────────────────────────────────────────────
+  ✅  HOW TO PREVENT THIS
+──────────────────────────────────────────────────────────────────────
+  • Never plug in unknown USB drives
+  • Disable USB AutoRun in Windows
+  • Scan the drive with Windows Defender before opening any files
+  • Use a dedicated 'quarantine' computer to inspect unknown drives
+
+──────────────────────────────────────────────────────────────────────
+  💡  LEARNING TIP
+──────────────────────────────────────────────────────────────────────
+  Since you've repeated this behavior multiple times today, it's
+  essential to be more mindful of what you're plugging into your
+  computer.
+
+  Risk score: 2  │  Source: usb:USB Composite Device
+══════════════════════════════════════════════════════════════════════
+
+══════════════════════════════════════════════════════════════════════
+  Alert #3   🟠  MEDIUM
+  Monday, 13 July 2026 at 20:20:26
+══════════════════════════════════════════════════════════════════════
+  Someone just failed to log into this computer
+
+──────────────────────────────────────────────────────────────────────
+  📋  WHAT WAS DETECTED
+──────────────────────────────────────────────────────────────────────
+  Event Id                    : 4625
+  Log                         : Security
+  What Happened:
+      A Windows login attempt was rejected — wrong password or unknown
+      user
+
+──────────────────────────────────────────────────────────────────────
+  📌  Someone just failed to log into this computer with an incorrect password.
+
+──────────────────────────────────────────────────────────────────────
+  🔍  WHAT HAPPENED
+──────────────────────────────────────────────────────────────────────
+  A Windows login attempt was rejected because of a wrong password
+  or unknown user. This is the second time today someone has tried
+  to access your account without success.
+
+──────────────────────────────────────────────────────────────────────
+  ⚠   WHY THIS IS RISKY
+──────────────────────────────────────────────────────────────────────
+  This could be a sign that someone is trying to guess your
+  password, which can lead to unauthorized access and potentially
+  serious consequences, such as stolen files or identity theft.
+
+──────────────────────────────────────────────────────────────────────
+  ✅  HOW TO PREVENT THIS
+──────────────────────────────────────────────────────────────────────
+  • Use a strong, unique password for your Windows account
+  • Enable Windows account lockout policy to lock after 5 wrong attempts
+  • Disable Remote Desktop (RDP) if remote access is not needed
+
+──────────────────────────────────────────────────────────────────────
+  💡  LEARNING TIP
+──────────────────────────────────────────────────────────────────────
+  If you notice repeated failed login attempts, it's likely a
+  brute-force attack. Review event viewer and consider changing
+  your password immediately.
+
+  Risk score: 1  │  Source: eventlog:Security:4625
+══════════════════════════════════════════════════════════════════════
+
+══════════════════════════════════════════════════════════════════════
+  Alert #4   🚨  CRITICAL — Act immediately
+  Monday, 13 July 2026 at 20:22:31
+══════════════════════════════════════════════════════════════════════
+  Windows Defender real-time protection was just turned off
+
+──────────────────────────────────────────────────────────────────────
+  📋  WHAT WAS DETECTED
+──────────────────────────────────────────────────────────────────────
+  What Was Disabled           : Windows Defender real-time protection
+  Why This Is Serious:
+      Your computer is now unprotected from viruses and malware
+  Message:
+      Windows Defender real-time monitoring was disabled.
+
+──────────────────────────────────────────────────────────────────────
+  📌  Windows Defender real-time protection was just turned off.
+
+──────────────────────────────────────────────────────────────────────
+  🔍  WHAT HAPPENED
+──────────────────────────────────────────────────────────────────────
+  Your Windows Defender real-time monitoring was disabled, leaving
+  your computer unprotected from viruses and malware. This means
+  any file you open or website you visit can be scanned by
+  nothing, allowing malware to execute freely without detection.
+
+──────────────────────────────────────────────────────────────────────
+  ⚠   WHY THIS IS RISKY
+──────────────────────────────────────────────────────────────────────
+  This is serious because your computer is now vulnerable to
+  infections that can steal your personal data, compromise your
+  online accounts, or even take control of your device. As the
+  attacker's goal is often to disable Defender as their first
+  step, this is a classic indicator of an active infection or a
+  compromised administrator account.
+
+──────────────────────────────────────────────────────────────────────
+  ✅  HOW TO PREVENT THIS
+──────────────────────────────────────────────────────────────────────
+  • Re-enable real-time protection immediately: Start → Windows Security → Virus & threat protection → turn on.
+  • Do not download or open anything until protection is restored.
+  • Check if any software 'required' you to disable it — that software is malicious.
+  • If you cannot re-enable it, run the Windows Defender Offline scan from a restart.
+
+──────────────────────────────────────────────────────────────────────
+  💡  LEARNING TIP
+──────────────────────────────────────────────────────────────────────
+  Be cautious of repeated patterns like USB devices being plugged
+  in multiple times. This could be an indication of malware
+  activity.
+
+  Risk score: 10  │  Source: security:defender_disabled
+══════════════════════════════════════════════════════════════════════

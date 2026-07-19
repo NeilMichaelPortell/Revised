@@ -1,0 +1,1 @@
+scenario_id,scenario_title,validation_mode,repetition,expected_event_types,alert_expected,expected_category,acceptable_severity,required_output_fields,researcher_notes

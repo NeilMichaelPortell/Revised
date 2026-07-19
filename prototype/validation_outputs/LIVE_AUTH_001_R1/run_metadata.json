@@ -1,0 +1,37 @@
+{
+  "validation_run_id": "LIVE_AUTH_001_R1",
+  "scenario_id": "LIVE_AUTH_001",
+  "repetition": 1,
+  "scenario_title": "Repeated failed logins",
+  "expected_event_types": [
+    "login_failed"
+  ],
+  "alert_expected": true,
+  "expected_category": "AUTH",
+  "acceptable_severity": [
+    "medium",
+    "high"
+  ],
+  "validation_mode": "independent_validation",
+  "mode": "independent_validation",
+  "session_id": "d76621ff6a83486faa82eb52506523e7",
+  "session_started_at": "2026-07-13T17:35:44.059229+00:00",
+  "started_at_utc": "2026-07-13T17:35:44.059752+00:00",
+  "status": "completed",
+  "adaptive_history_supplied": [],
+  "reset_record": {
+    "mode": "independent_validation",
+    "cleared": [
+      "risk_score",
+      "event_counters",
+      "usb_count",
+      "failed_login_count",
+      "web_state",
+      "downloads",
+      "adaptive_user_history"
+    ],
+    "preserved": []
+  },
+  "scenario_boundary": "scenario_completed",
+  "completed_at_utc": "2026-07-13T17:37:33.158023+00:00"
+}

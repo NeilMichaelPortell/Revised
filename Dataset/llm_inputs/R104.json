@@ -1,0 +1,88 @@
+{
+  "context_state": {
+    "collector_is_admin": true,
+    "defender": {
+      "am_service_enabled": true,
+      "antivirus_enabled": true,
+      "realtime_protection_enabled": true
+    },
+    "firewall": {
+      "Domain": true,
+      "Private": true,
+      "Public": true
+    },
+    "network_category": 0,
+    "network_profile": "private",
+    "removable_drives": [],
+    "running_monitored_processes": [
+      "powershell.exe",
+      "python.exe"
+    ]
+  },
+  "event_summary": {
+    "apps_opened": [
+      "notepad.exe",
+      "code.exe"
+    ],
+    "benign_background_processes": [
+      "code.exe",
+      "notepad.exe",
+      "powershell.exe (vscode shell integration)"
+    ],
+    "collector_generated_events_filtered": 4,
+    "defender_config_changed": false,
+    "defender_disabled": false,
+    "defender_events": [
+      {
+        "event_id": 5007,
+        "kind": "configuration_changed"
+      }
+    ],
+    "download_details": [],
+    "elevated_processes": [],
+    "failed_login_activity": true,
+    "failed_login_count_band": "single",
+    "failed_logins": 1,
+    "file_downloaded": false,
+    "firewall_events": [],
+    "network_profile": "private",
+    "process_details": [],
+    "removable_drive_details": [
+      {
+        "drive_letter": "D:",
+        "filesystem": "FAT32",
+        "volume_name": "NEIL"
+      }
+    ],
+    "risky_processes": [],
+    "scheduled_task_change": false,
+    "scheduled_task_details": [],
+    "service_change": false,
+    "service_change_details": [],
+    "startup_item_change": false,
+    "startup_item_details": [],
+    "usb_connection_count": 1,
+    "verified_activity_context": {
+      "archive_accessed": false,
+      "archive_type": "",
+      "command_activity": "none",
+      "defender_change": "none",
+      "device_trust": "not_applicable",
+      "failed_login_activity": true,
+      "failed_login_count_band": "single",
+      "network_context": "private",
+      "scan_target": "",
+      "scanner_tool": "",
+      "script_name": "",
+      "startup_action": "",
+      "startup_item": "",
+      "startup_item_change": false,
+      "suspicious_process_context": false,
+      "usb_content_type": "none",
+      "usb_files_browsed": false,
+      "verified_commands": []
+    },
+    "web_domains": [],
+    "viewed_interface": "none"
+  }
+}

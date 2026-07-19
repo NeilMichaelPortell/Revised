@@ -1,0 +1,121 @@
+scenario_id,scenario_source,note
+AUTH_001,collected,collected
+AUTH_002,collected,collected
+AUTH_003,collected,collected
+AUTH_004,collected,collected
+AUTH_005,collected,collected
+AUTH_006,collected,collected
+AUTH_007,collected,collected
+AUTH_008,collected,collected
+AUTH_009,collected,collected
+AUTH_010,collected,collected
+AUTH_011,collected,collected
+AUTH_012,collected,collected
+AUTH_013,collected,collected
+AUTH_014,collected,collected
+AUTH_015,collected,collected
+AUTH_016,collected,collected
+AUTH_017,collected,collected
+NET_001,collected,collected
+NET_002,collected,collected
+NET_003,collected,collected
+NET_004,collected,collected
+NET_005,collected,collected
+NET_006,collected,collected
+NET_007,collected,collected
+NET_008,collected,collected
+NET_009,collected,collected
+NET_010,collected,collected
+NET_011,augmented,augmented - not collected live
+NET_012,augmented,augmented - not collected live
+NET_013,augmented,augmented - not collected live
+NET_014,augmented,augmented - not collected live
+NET_015,collected,collected
+NET_016,collected,collected
+NET_017,collected,collected
+NORMAL_001,collected,collected
+NORMAL_002,collected,collected
+NORMAL_003,collected,collected
+NORMAL_004,collected,collected
+NORMAL_005,collected,collected
+NORMAL_006,collected,collected
+NORMAL_007,collected,collected
+NORMAL_008,collected,collected
+NORMAL_009,collected,collected
+NORMAL_010,collected,collected
+NORMAL_011,collected,collected
+NORMAL_012,collected,collected
+NORMAL_013,collected,collected
+NORMAL_014,collected,collected
+NORMAL_015,collected,collected
+NORMAL_016,collected,collected
+NORMAL_017,collected,collected
+NORMAL_018,collected,collected
+PERSIST_001,collected,collected
+PERSIST_002,collected,collected
+PERSIST_003,collected,collected
+PERSIST_004,collected,collected
+PERSIST_005,collected,collected
+PERSIST_006,collected,collected
+PERSIST_007,collected,collected
+PERSIST_008,collected,collected
+PERSIST_009,collected,collected
+PERSIST_010,collected,collected
+PERSIST_011,augmented,augmented - not collected live
+PERSIST_012,augmented,augmented - not collected live
+PERSIST_013,augmented,augmented - not collected live
+PERSIST_014,augmented,augmented - not collected live
+PERSIST_015,collected,collected
+PERSIST_016,collected,collected
+PERSIST_017,collected,collected
+PROC_001,collected,collected
+PROC_002,collected,collected
+PROC_003,collected,collected
+PROC_004,collected,collected
+PROC_005,collected,collected
+PROC_006,collected,collected
+PROC_007,collected,collected
+PROC_008,collected,collected
+PROC_009,collected,collected
+PROC_010,collected,collected
+PROC_011,augmented,augmented - not collected live
+PROC_012,augmented,augmented - not collected live
+PROC_013,augmented,augmented - not collected live
+PROC_014,augmented,augmented - not collected live
+PROC_015,collected,collected
+PROC_016,collected,collected
+PROC_017,collected,collected
+SEC_001,collected,collected
+SEC_002,collected,collected
+SEC_003,collected,collected
+SEC_004,collected,collected
+SEC_005,collected,collected
+SEC_006,collected,collected
+SEC_007,collected,collected
+SEC_008,collected,collected
+SEC_009,collected,collected
+SEC_010,collected,collected
+SEC_011,collected,collected
+SEC_012,collected,collected
+SEC_013,collected,collected
+SEC_014,collected,collected
+SEC_015,collected,collected
+SEC_016,collected,collected
+SEC_017,collected,collected
+USB_001,collected,collected
+USB_002,collected,collected
+USB_003,collected,collected
+USB_004,collected,collected
+USB_005,collected,collected
+USB_006,collected,collected
+USB_007,collected,collected
+USB_008,collected,collected
+USB_009,collected,collected
+USB_010,collected,collected
+USB_011,collected,collected
+USB_012,collected,collected
+USB_013,collected,collected
+USB_014,collected,collected
+USB_015,collected,collected
+USB_016,collected,collected
+USB_017,collected,collected

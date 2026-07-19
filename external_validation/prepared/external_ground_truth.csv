@@ -1,0 +1,19 @@
+external_scenario_id,external_class,external_label_raw,attack_technique_if_provided,severity_if_provided,source_title
+EXT_001,abnormal,attack,T1003.003,not_provided,Dumping NTDS.dit using NTDSutil
+EXT_002,abnormal,attack,T1003.001,not_provided,Lsass Memory Dump via Comsvcs.dll
+EXT_003,abnormal,attack,T1003.001,not_provided,Empire Mimikatz LogonPasswords
+EXT_004,abnormal,attack,T1003.004,not_provided,Psexec Reg LSA Secrets Dump
+EXT_005,abnormal,attack,T1021.002,not_provided,Empire Invoke PsExec
+EXT_006,abnormal,attack,T1053.005,not_provided,Remote Scheduled Task Creation
+EXT_007,abnormal,attack,T1047,not_provided,Covenant Remote WMI Eventing ActiveScriptEventConsumers
+EXT_008,abnormal,attack,T1547.001,not_provided,Empire Elevated Registry Run Keys
+EXT_009,abnormal,attack,T1037.001,not_provided,Logon Scripts via UserInitMprLogonScript
+EXT_010,abnormal,attack,T1053.005,not_provided,Empire Userland Scheduled Tasks
+EXT_011,abnormal,attack,T1562.004,not_provided,Netsh Open FW Proxy Ports
+EXT_012,abnormal,attack,T1562.002,not_provided,Stopping Event Log Service via Modification of Start Up Type
+EXT_013,abnormal,attack,T1055,not_provided,Mavinject Process DLL Injection
+EXT_014,abnormal,attack,T1087.002,not_provided,Empire Net Domain Users
+EXT_015,abnormal,attack,T1059.001,not_provided,PowerShell HTTP Listener
+EXT_016,abnormal,attack,T1548.002,not_provided,Invoke BypassUAC FodHelper
+EXT_017,abnormal,attack,T1123,not_provided,MSF Record Mic
+EXT_018,abnormal,attack,T1003.001,not_provided,LSASS Memory - comsvcs.dll (compound capture)

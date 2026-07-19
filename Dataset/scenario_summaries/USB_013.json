@@ -1,0 +1,87 @@
+{
+  "scenario_id": "USB_013",
+  "category": "USB",
+  "scenario_name": "USB activity with compressed archive accessed",
+  "scenario_source": "collected",
+  "collection_date": "2026-07-10",
+  "window_start": "2026-07-10T09:33:28.840970",
+  "window_end": "2026-07-10T09:34:13.179515",
+  "event_summary": {
+    "apps_opened": [
+      "code.exe"
+    ],
+    "benign_background_processes": [
+      "code.exe"
+    ],
+    "failed_logins": 0,
+    "failed_login_activity": false,
+    "failed_login_count_band": "none",
+    "usb_connection_count": 1,
+    "removable_drive_details": [],
+    "risky_processes": [],
+    "process_details": [],
+    "elevated_processes": [],
+    "defender_disabled": false,
+    "defender_events": [],
+    "firewall_events": [],
+    "network_profile": "none",
+    "scheduled_task_change": false,
+    "scheduled_task_details": [],
+    "service_change": false,
+    "service_change_details": [],
+    "startup_item_change": false,
+    "startup_item_details": [],
+    "file_downloaded": false,
+    "download_details": [],
+    "web_domains": [],
+    "collector_generated_events_filtered": 3,
+    "operator_notes": [
+      "USB activity with compressed archive accessed."
+    ],
+    "manual_review_indicators": [
+      "abnormal_endpoint_activity",
+      "usb_activity",
+      "archive_accessed",
+      "compressed_archive_accessed"
+    ],
+    "verified_activity_context": {
+      "manual_verification_used": true,
+      "verification_note": "Operator note verified that a harmless compressed archive on the USB was accessed.",
+      "device_trust": "unknown",
+      "usb_files_browsed": true,
+      "usb_content_type": "compressed_archive",
+      "archive_accessed": true,
+      "archive_type": "zip",
+      "command_activity": "none",
+      "verified_commands": [],
+      "script_name": "",
+      "scanner_tool": "",
+      "scan_target": "",
+      "suspicious_process_context": false,
+      "startup_item_change": false,
+      "startup_action": "",
+      "startup_item": "",
+      "defender_change": "none",
+      "network_context": "none",
+      "failed_login_activity": false,
+      "failed_login_count_band": "none"
+    },
+    "viewed_interface": "none"
+  },
+  "observed_events": [
+    "Applications used: code.exe.",
+    "1 USB connection(s) recorded (after debounce).",
+    "Benign background activity present (context, not risky): code.exe.",
+    "3 collector-generated process event(s) were excluded from this scenario."
+  ],
+  "context_state": {},
+  "ground_truth": {
+    "classification": "abnormal",
+    "risk_level": "high",
+    "expected_indicators": [
+      "usb_connected",
+      "usb_archive_accessed"
+    ],
+    "label_reason": "Accessing a compressed archive from removable media is high risk because archives can conceal scripts or executables. The archive-access signal must be included in the input."
+  }
+}

@@ -1,0 +1,197 @@
+ENDPOINT FEEDBACK PROTOTYPE — VALIDATION IMPLEMENTATION REPORT
+=============================================================
+
+Scope
+-----
+This report documents the changes that added a supplementary real-time
+validation study layer to the prototype. The frozen offline experiment
+(120 scenarios, five models, baseline and RAG conditions) was NOT modified,
+replaced or recalculated. No frozen dataset, baseline output, RAG output or
+evaluation script is present in or touched by this project.
+
+
+FILES CHANGED
+-------------
+core/threat_detection.py
+    - Fixed the USB connection double-count. record_event() already increments
+      session.usb_connections before evaluate_threat() runs, so the previous
+      "session.usb_connections + 1" over-reported by one. Now reports the true
+      observed count.
+    - (From the earlier reconciliation) every threat carries a seven-category
+      label via THREAT_CATEGORY / _tag_category.
+
+monitors/browser_endpoint.py
+    - Privacy: _sanitize() now returns scheme + domain ONLY. The full original
+      URL, path, query string and fragment are discarded and never stored.
+    - Sensitive-path URLs are dropped entirely (domain not retained either).
+    - The /download payload no longer stores the full URL; only source_domain.
+
+ai/ollama_client.py
+    - _parse_and_validate() now preserves the exact raw model text as "_raw_text"
+      on the parsed response so the validation layer can measure JSON-parse vs
+      strict-schema validity. The normal display path is unchanged.
+
+ai/user_history.py
+    - Added reset_history(), which clears persistent adaptive history and returns
+      a count of cleared events (used by independent_validation mode). It does
+      not delete any validation output.
+
+requirements.txt
+    - Documented that the validation layer, tests and analysis tool are
+      standard-library only; live monitoring still needs psutil/pywin32/wmi;
+      inference remains local via Ollama; no cloud services.
+
+README.md
+    - Rewritten to cover purpose, event sources, privacy boundaries, the
+      validation workflow, independent vs adaptive modes, output folder layout,
+      latency definitions, JSON-vs-schema validity, fallback handling, the
+      rule-trigger vs LLM-prediction distinction, how to run/reset/analyse, known
+      limitations, and the required methodological-limitation statement.
+
+
+FILES ADDED
+-----------
+validation/__init__.py
+validation/validation_config.py     - modes, schema tokens, severity ladder,
+                                       latency percentile/summary helpers.
+validation/schema_validation.py     - JSON-parse / required-field / semantic /
+                                       fallback validity; raw-value preserved
+                                       before risky->abnormal normalisation.
+validation/rule_triggers.py         - defensible, evidence-combining rule layer
+                                       (AUTH/USB/NET/PROC/SEC/PERSIST), separate
+                                       from LLM classification; records exact
+                                       rule id that fired.
+validation/validation_run.py        - one isolated output folder per run; raw/
+                                       alert/llm writers; monotonic latency;
+                                       process dedup; cooldown logging; per-run
+                                       metrics; readable report.
+validation/state_reset.py           - mode-aware reset; zeroed per-scenario risk
+                                       scoring with before/added/after audit.
+validation/validation_llm.py        - instrumented LLM call: five latency
+                                       segments, schema validation, explicit
+                                       fallback marking, limited retry.
+validation/scenario_runner.py       - ties plan + run + reset + rules + LLM;
+                                       keeps plan metadata out of the prompt.
+run_validation.py                   - CLI launcher for one live scenario with
+                                       start/stop; bridges existing monitors.
+tools/analyse_validation_runs.py    - aggregates completed runs into
+                                       validation_results.csv and
+                                       validation_summary.txt (not merged with
+                                       frozen offline metrics).
+tests/__init__.py
+tests/test_validation.py            - 15 automated tests (stdlib unittest).
+validation_plan_template.csv        - empty template with required columns.
+example_validation_plan.csv         - 12 controlled scenarios.
+CHANGELOG.md
+validation_implementation_report.txt (this file)
+
+
+BUGS CORRECTED
+--------------
+1. USB connection double-count (reported count was observed + 1). Fixed; a
+   regression test asserts first connection -> 1 and second -> 2.
+2. Full browser URL retention (privacy). Removed; only scheme + domain retained,
+   sensitive paths dropped entirely.
+3. Cumulative session risk making longer sessions look more severe. Risk is now
+   zeroed per scenario and recorded as before/added/after; it is not used as
+   ground truth.
+
+
+PRIVACY IMPROVEMENTS
+--------------------
+- Full URLs, paths, query strings, fragments and page titles are never stored.
+- Only scheme + domain are retained; sensitive-path visits drop the domain too.
+- Coarse grouping is local only; no external lookup service is used.
+- No passwords, keystrokes, clipboard contents, screenshots, file contents or
+  authentication tokens are stored.
+
+
+NEW LOGGING FIELDS
+------------------
+Per raw event (raw_events.jsonl): event_id, validation_run_id, scenario_id,
+repetition, session_id, session_started_at, timestamp_utc, event_type,
+monitor_source, raw_event_data, normalised_event, collector_generated,
+duplicate_event, duplicate_of_event_id.
+
+Per alert (alerts.jsonl) and per LLM call (llm_calls.jsonl): the identifiers
+above plus event_type, event/detection/queue/llm_request/llm_response/popup UTC
+timestamps, model, prompt_mode, raw_event_summary, rule_trigger, rule_severity,
+rule_category, raw_model_response, parsed_model_response, json_parse_valid,
+required_fields_valid, classification_valid, risk_level_valid,
+indicator_list_valid, strict_schema_valid, fallback_used, timeout, retry_count,
+error, cooldown_suppressed, duplicate_event, and the risk audit fields
+risk_score_before_event / risk_score_added / risk_score_after_event.
+
+Cooldown suppressions record: cooldown_key, cooldown_duration_seconds,
+cooldown_remaining_seconds, suppressed_at_utc, source_event_id.
+
+
+NEW LATENCY FIELDS
+------------------
+detection_latency_ms, queue_delay_ms, llm_generation_latency_ms, popup_delay_ms,
+end_to_end_latency_ms — captured with a monotonic high-resolution timer and
+aggregated per run (count, mean, median, min, max, p95). UTC timestamps are
+recorded alongside for audit. A guard clamps implausible deltas (negative or
+> 1 hour) to 0.0 so a mis-fed event time cannot masquerade as observed latency.
+
+
+NEW RELIABILITY CHECKS
+----------------------
+- JSON parse validity distinguished from required-field validity, semantic/
+  schema validity, and fallback.
+- Strict schema: classification in {normal, abnormal, risky}; risk_level in
+  {low, medium, high, critical}; indicators a list of strings; non-empty
+  explanation and recommended_action.
+- Raw classification preserved before risky -> abnormal normalisation.
+- Fallback responses explicitly marked and never counted as successful or
+  schema-valid.
+- Retry limited (MAX_LLM_RETRIES = 1) and recorded (retry_count); first-attempt
+  and post-retry outcomes are both observable in the records.
+- Process/application deduplication over a short window; first observation
+  preserved, later matches flagged with duplicate_of_event_id.
+
+
+TESTS EXECUTED
+--------------
+Command: python -m unittest tests.test_validation
+Coverage: run-id propagation, scenario-id propagation, output-directory
+isolation, state reset, history reset (independent vs adaptive), USB count
+regression, process deduplication, cooldown logging, browser URL sanitisation,
+JSON-parse validation, strict-schema validation, fallback-not-counted-as-success,
+latency-field generation, metrics/report written, public-network-alone-no-alert,
+single-failed-login-no-alert, risk-scoring audit fields.
+
+TESTS PASSED
+------------
+15 of 15 tests passed.
+
+Additional final checks performed (all passed):
+- All Python files compile.
+- Aggregate analysis script runs on sample data and writes CSV + summary.
+- No full URLs written to research logs.
+- Each validation run has an isolated output folder.
+- Every raw event includes run and scenario identifiers.
+- Every LLM call records latency.
+- Parse validity is distinguished from schema validity.
+- Fallback responses are explicitly marked.
+- Independent runs reset session state and adaptive history.
+- No frozen offline experiment files are present or modified.
+
+
+REMAINING LIMITATIONS
+---------------------
+- Live event capture requires a Windows test machine with the listed packages
+  and (for full event-log/USB coverage) administrative rights. On other
+  platforms the run folder and pipeline are created and the plumbing can be
+  exercised, but no live OS events are captured; run_validation.py prints a
+  clear warning in that case.
+- The rule-trigger severity is a conservative provisional assessment, not
+  validated ground truth, and is deliberately separate from the LLM output.
+- The validation plan is a test plan, not an answer key; it is never inserted
+  into the LLM prompt. Metrics compare observed behaviour to that explicit plan
+  and never auto-decide pass/fail from hidden ground truth.
+- Popup display timing is measured around the display call; on headless/non-
+  Windows dry runs the popup step is a no-op and popup_delay_ms is ~0.
+- These controlled live sessions improve evidence of operational feasibility and
+  ecological validity but do NOT constitute independent organisational or
+  population-level real-world validation.

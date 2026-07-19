@@ -1,0 +1,50 @@
+ENDPOINT PROTOTYPE - RUN VALIDATION REPORT
+============================================================
+Run ID          : LIVE_AUTH_001_R1
+Scenario        : LIVE_AUTH_001  (Repeated failed logins)
+Mode            : independent_validation
+Repetition      : 1
+Start (UTC)     : 2026-07-13T17:35:44.059752+00:00
+End   (UTC)     : 2026-07-13T17:37:33.158023+00:00
+Status          : completed
+
+EVENTS
+------------------------------------------------------------
+Events captured        : 190
+Expected types present : login_failed
+Unexpected types       : application_started, network_profile_changed, process_started, usb_connected
+Duplicate events       : 209
+
+ALERTS
+------------------------------------------------------------
+Alerts generated       : 0
+Alert expected (plan)  : True
+False alerts           : 0
+Missed alerts          : 1
+Cooldown suppressions  : 5
+
+LLM OUTPUT RELIABILITY
+------------------------------------------------------------
+LLM calls              : 0
+JSON-parse valid       : 0
+Strict-schema valid    : 0
+Fallbacks (not success): 0
+Timeouts               : 0
+Retries                : 0
+
+LATENCY (ms)
+------------------------------------------------------------
+Detection        n=0   mean=0.0       median=0.0       p95=0.0
+LLM generation   n=0   mean=0.0       median=0.0       p95=0.0
+End-to-end       n=0   mean=0.0       median=0.0       p95=0.0
+
+WARNINGS AND LIMITATIONS
+------------------------------------------------------------
+* Observed events are compared to the EXPLICIT validation plan,
+  not to any hidden ground truth. The plan is a test plan only.
+* Rule severity is the prototype's provisional trigger, NOT
+  ground truth and NOT the LLM classification.
+* This is a controlled test on a limited Windows environment.
+  It supports operational feasibility and ecological validity
+  but is NOT independent organisational/real-world validation.
+* An expected alert did not fire - review raw_events.jsonl.

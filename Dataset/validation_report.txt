@@ -1,0 +1,43 @@
+FINAL VERIFIED RUN-READY VALIDATION
+====================================================================
+Ground-truth rows: 120
+Full scenario summaries: 120
+Neutral LLM inputs: 120
+JSONL records: 120
+Evaluation-ready scenarios: 120
+Unknown vocabulary tokens: 0
+Ground-truth leakage fields in LLM inputs: 0
+Input schema variants: 1
+Runner mapping rows: 120
+Duplicate neutral record IDs: 0
+Exact duplicate-input groups after correction: 1
+Resolved duplicate-input groups with aligned ground truth: 1
+Unresolved contradictory duplicate-input groups: 0
+JSONL/file mismatches: 0
+
+Normal count: 62
+Abnormal count: 58
+Low count: 62
+Medium count: 15
+High count: 32
+Critical count: 11
+Collected scenario count: 108
+Augmented scenario count: 12
+Manually verified evidence count: 17
+
+Final corrections:
+- PERSIST_001 and PERSIST_002 now use the same expected indicators.
+- NET_016 and SEC_015 now have a supported structured interface distinction.
+- The manual-evidence audit now contains the 17 manually verified scenarios.
+- The validation report now reports manual evidence and duplicates accurately.
+
+Methodology warning:
+- The 12 augmented scenarios remain explicitly marked as augmented.
+- The manually verified fields remain separate from raw collector counts.
+- Do not send ground_truth_FINAL.csv, runner_mapping.csv, or scenario_summaries/
+  to the model. Use only llm_inputs/ or the event payload from JSONL.
+
+Duplicate clarification:
+- PERSIST_001 and PERSIST_002 intentionally remain evidence-identical.
+- Their class, risk, and expected indicators are now identical, so the
+  duplicate does not create an evaluation contradiction.

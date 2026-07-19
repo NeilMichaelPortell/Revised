@@ -1,0 +1,114 @@
+{
+  "scenario_id": "SEC_011",
+  "category": "SEC",
+  "scenario_name": "Defender configuration changed",
+  "scenario_source": "collected",
+  "collection_date": "2026-07-10",
+  "window_start": "2026-07-10T09:44:51.405223",
+  "window_end": "2026-07-10T09:45:48.403245",
+  "event_summary": {
+    "apps_opened": [
+      "code.exe"
+    ],
+    "benign_background_processes": [
+      "code.exe"
+    ],
+    "failed_logins": 0,
+    "failed_login_activity": false,
+    "failed_login_count_band": "none",
+    "usb_connection_count": 0,
+    "removable_drive_details": [],
+    "risky_processes": [],
+    "process_details": [],
+    "elevated_processes": [],
+    "defender_disabled": true,
+    "defender_events": [
+      {
+        "kind": "configuration_changed",
+        "event_id": 5007
+      },
+      {
+        "kind": "configuration_changed",
+        "event_id": 5007
+      },
+      {
+        "kind": "configuration_changed",
+        "event_id": 5007
+      },
+      {
+        "kind": "configuration_changed",
+        "event_id": 5007
+      },
+      {
+        "kind": "configuration_changed",
+        "event_id": 5007
+      },
+      {
+        "kind": "realtime_protection_disabled",
+        "event_id": 5001
+      },
+      {
+        "kind": "status_snapshot",
+        "realtime_protection_enabled": false
+      }
+    ],
+    "firewall_events": [],
+    "network_profile": "none",
+    "scheduled_task_change": false,
+    "scheduled_task_details": [],
+    "service_change": false,
+    "service_change_details": [],
+    "startup_item_change": false,
+    "startup_item_details": [],
+    "file_downloaded": false,
+    "download_details": [],
+    "web_domains": [],
+    "collector_generated_events_filtered": 2,
+    "operator_notes": [
+      "Defender configuration changed."
+    ],
+    "manual_review_indicators": [
+      "abnormal_endpoint_activity",
+      "defender_activity"
+    ],
+    "verified_activity_context": {
+      "manual_verification_used": false,
+      "verification_note": "",
+      "device_trust": "not_applicable",
+      "usb_files_browsed": false,
+      "usb_content_type": "none",
+      "archive_accessed": false,
+      "archive_type": "",
+      "command_activity": "none",
+      "verified_commands": [],
+      "script_name": "",
+      "scanner_tool": "",
+      "scan_target": "",
+      "suspicious_process_context": false,
+      "startup_item_change": false,
+      "startup_action": "",
+      "startup_item": "",
+      "defender_change": "disabled",
+      "network_context": "none",
+      "failed_login_activity": false,
+      "failed_login_count_band": "none"
+    },
+    "viewed_interface": "none"
+  },
+  "observed_events": [
+    "Applications used: code.exe.",
+    "Defender real-time protection was recorded as disabled.",
+    "Benign background activity present (context, not risky): code.exe.",
+    "2 collector-generated process event(s) were excluded from this scenario."
+  ],
+  "context_state": {},
+  "ground_truth": {
+    "classification": "abnormal",
+    "risk_level": "high",
+    "expected_indicators": [
+      "defender_configuration_changed",
+      "defender_disabled"
+    ],
+    "label_reason": "The captured Defender configuration changes include real-time protection being disabled, which justifies a high-risk security-control event."
+  }
+}

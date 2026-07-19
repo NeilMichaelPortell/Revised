@@ -1,0 +1,12 @@
+# Live monitoring on the Windows test machine requires:
+psutil
+pywin32
+wmi
+
+# NOTE:
+# The validation layer (validation/), the automated tests (tests/) and the
+# aggregate analysis tool (tools/analyse_validation_runs.py) use ONLY the
+# Python standard library, so they run on any platform for dry runs, testing
+# and analysis. Model inference is performed locally via Ollama (no Python
+# package dependency; the 'ollama' CLI / local HTTP endpoint is used).
+# No cloud services are used.

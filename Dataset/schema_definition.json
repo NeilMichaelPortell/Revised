@@ -1,0 +1,78 @@
+{
+  "seed": 20260710,
+  "schema": {
+    "context_state": {
+      "collector_is_admin": "bool",
+      "defender": {
+        "am_service_enabled": "bool",
+        "antivirus_enabled": "bool",
+        "realtime_protection_enabled": "bool"
+      },
+      "firewall": {
+        "Domain": "bool",
+        "Private": "bool",
+        "Public": "bool"
+      },
+      "network_category": "int",
+      "network_profile": "str",
+      "removable_drives": "[]",
+      "running_monitored_processes": "[]"
+    },
+    "event_summary": {
+      "apps_opened": "[]",
+      "benign_background_processes": "[]",
+      "collector_generated_events_filtered": "int",
+      "defender_config_changed": "bool",
+      "defender_disabled": "bool",
+      "defender_events": "[]",
+      "download_details": "[]",
+      "elevated_processes": "[]",
+      "failed_login_activity": "bool",
+      "failed_login_count_band": "str",
+      "failed_logins": "int",
+      "file_downloaded": "bool",
+      "firewall_events": "[]",
+      "network_profile": "str",
+      "process_details": "[]",
+      "removable_drive_details": "[]",
+      "risky_processes": "[]",
+      "scheduled_task_change": "bool",
+      "scheduled_task_details": "[]",
+      "service_change": "bool",
+      "service_change_details": "[]",
+      "startup_item_change": "bool",
+      "startup_item_details": "[]",
+      "usb_connection_count": "int",
+      "verified_activity_context": {
+        "archive_accessed": "bool",
+        "archive_type": "str",
+        "command_activity": "str",
+        "defender_change": "str",
+        "device_trust": "str",
+        "failed_login_activity": "bool",
+        "failed_login_count_band": "str",
+        "network_context": "str",
+        "scan_target": "str",
+        "scanner_tool": "str",
+        "script_name": "str",
+        "startup_action": "str",
+        "startup_item": "str",
+        "startup_item_change": "bool",
+        "suspicious_process_context": "bool",
+        "usb_content_type": "str",
+        "usb_files_browsed": "bool",
+        "verified_commands": "[]"
+      },
+      "web_domains": "[]",
+      "viewed_interface": "str"
+    }
+  },
+  "controlled_values": {
+    "viewed_interface": [
+      "none",
+      "task_scheduler",
+      "network_settings",
+      "windows_security"
+    ]
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "scenario_id": "SEC_006",
+  "category": "SEC",
+  "scenario_name": "Defender setting changed temporarily and restored",
+  "scenario_source": "collected",
+  "collection_date": "2026-07-09",
+  "window_start": "2026-07-09T13:09:35.452586",
+  "window_end": "2026-07-09T13:10:39.021285",
+  "event_summary": {
+    "apps_opened": [
+      "notepad.exe"
+    ],
+    "benign_background_processes": [
+      "notepad.exe",
+      "service change ignored: Background Intelligent Transfer Service"
+    ],
+    "failed_logins": 0,
+    "failed_login_activity": false,
+    "failed_login_count_band": "none",
+    "usb_connection_count": 0,
+    "removable_drive_details": [],
+    "risky_processes": [],
+    "process_details": [],
+    "elevated_processes": [],
+    "defender_disabled": false,
+    "defender_events": [
+      {
+        "kind": "configuration_changed",
+        "detail": "Defender setting changed temporarily and restored",
+        "event_id": null,
+        "source": "manual_review"
+      }
+    ],
+    "firewall_events": [],
+    "network_profile": "none",
+    "scheduled_task_change": false,
+    "scheduled_task_details": [],
+    "service_change": false,
+    "service_change_details": [],
+    "startup_item_change": false,
+    "startup_item_details": [],
+    "file_downloaded": false,
+    "download_details": [],
+    "web_domains": [],
+    "collector_generated_events_filtered": 3,
+    "operator_notes": [
+      "Defender setting changed temporarily and restored."
+    ],
+    "manual_review_indicators": [
+      "defender_configuration_changed",
+      "security_setting_restored"
+    ],
+    "verified_activity_context": {
+      "manual_verification_used": true,
+      "verification_note": "Operator note confirms that a Defender setting was changed temporarily and restored; the Windows event log did not provide a complete structured record.",
+      "device_trust": "not_applicable",
+      "usb_files_browsed": false,
+      "usb_content_type": "none",
+      "archive_accessed": false,
+      "archive_type": "",
+      "command_activity": "none",
+      "verified_commands": [],
+      "script_name": "",
+      "scanner_tool": "",
+      "scan_target": "",
+      "suspicious_process_context": false,
+      "startup_item_change": false,
+      "startup_action": "",
+      "startup_item": "",
+      "defender_change": "configuration_changed_then_restored",
+      "network_context": "none",
+      "failed_login_activity": false,
+      "failed_login_count_band": "none"
+    },
+    "manual_review_corrections": [
+      {
+        "field": "service_change",
+        "reason": "Ignored BITS start-type change as background Windows maintenance noise."
+      },
+      {
+        "field": "defender_events",
+        "reason": "Operator note states Defender setting was changed and restored; event log did not capture a structured Defender event."
+      }
+    ],
+    "defender_config_changed": true,
+    "viewed_interface": "none"
+  },
+  "observed_events": [
+    "Applications used: notepad.exe.",
+    "A service change was recorded.",
+    "Benign background activity present (context, not risky): notepad.exe.",
+    "3 collector-generated process event(s) were excluded from this scenario.",
+    "Manual review: Background Intelligent Transfer Service change treated as Windows background maintenance, not scenario evidence.",
+    "Manual review: Defender setting change/restoration recorded from operator note; no disable event was captured."
+  ],
+  "context_state": {},
+  "ground_truth": {
+    "classification": "abnormal",
+    "risk_level": "medium",
+    "expected_indicators": [
+      "defender_configuration_changed",
+      "security_setting_restored"
+    ],
+    "label_reason": "A temporary Defender configuration change alters the protection baseline. Restoration limits the exposure, making medium risk appropriate."
+  }
+}

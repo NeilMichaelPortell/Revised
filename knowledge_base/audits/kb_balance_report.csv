@@ -1,0 +1,8 @@
+category,benign_documents,mixed_or_contrastive_documents,abnormal_documents,low_coverage,medium_coverage,high_coverage,critical_coverage,total_documents
+NORMAL,4,0,0,4,1,2,0,4
+AUTH,2,0,3,3,4,3,3,5
+USB,1,0,4,3,4,5,4,5
+SEC,1,0,4,1,2,5,4,5
+PROC,2,0,3,2,4,5,4,5
+NET,3,0,2,4,2,4,3,5
+PERSIST,2,0,3,3,4,5,4,5

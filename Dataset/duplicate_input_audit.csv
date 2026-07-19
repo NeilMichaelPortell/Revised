@@ -1,0 +1,3 @@
+﻿scenario_ids,issue_before,resolution,status_after
+NET_016;SEC_015,Exact same model input but different expected indicators.,"Added the schema-wide factual field viewed_interface. NET_016=network_settings and SEC_015=windows_security, based on their existing operator notes.",resolved
+PERSIST_001;PERSIST_002,Exact same model input and inconsistent expected indicators.,Aligned both expected-indicator sets to task_scheduler_viewed;no_persistence_change and set viewed_interface=task_scheduler.,resolved: exact duplicate retained with identical ground truth

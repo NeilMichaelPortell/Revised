@@ -1,0 +1,16 @@
+{
+  "config_version": "otrf-test-1.0.0",
+  "dataset_manifest_csv": "external_validation/tests/fixtures/manifest_test.csv",
+  "source_dir": "external_validation/tests/fixtures/source",
+  "prepared_dir": "external_validation/tests/_tmp/prepared",
+  "retrieval_dir": "external_validation/tests/_tmp/retrieval",
+  "outputs_baseline_dir": "external_validation/tests/_tmp/outputs_baseline",
+  "outputs_rag_dir": "external_validation/tests/_tmp/outputs_rag",
+  "evaluation_dir": "external_validation/tests/_tmp/evaluation",
+  "window": {"max_events_per_scenario": 5000},
+  "models": ["llama3"],
+  "top_k": 3,
+  "seed": 2026,
+  "bootstrap_iters": 10000,
+  "notes": "offline test config"
+}

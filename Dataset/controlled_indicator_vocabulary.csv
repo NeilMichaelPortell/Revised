@@ -1,0 +1,63 @@
+indicator_token,definition
+normal_app_activity,Ordinary use of standard desktop applications.
+browser_activity,Normal web-browser use without a security-relevant action.
+document_activity,"Viewing, editing, or saving a normal document or text file."
+communication_app_activity,"Use of Teams, email, or another communication application."
+file_browsing,Viewing local folders or files without executing suspicious content.
+development_activity,Normal development activity using VS Code or its terminal.
+settings_viewed,A settings interface was opened for viewing only.
+media_viewing,"Viewing normal image, audio, or video content."
+successful_login,A successful login or unlock occurred.
+screen_lock_activity,The endpoint was locked or unlocked normally.
+failed_login,At least one failed login attempt occurred.
+repeated_failed_logins,Multiple failed login attempts occurred.
+high_failed_login_count,A high number of failed login attempts occurred.
+rapid_activity_window,Repeated activity occurred within a short time window.
+private_network,The endpoint used a private network profile.
+public_network,The endpoint used a public network profile.
+normal_network_activity,Ordinary network use without scanning or another risky action.
+network_profile_viewed,Network profile or connection settings were viewed.
+network_profile_unchanged,The network profile was inspected but not changed.
+file_download,A file was downloaded during the scenario.
+authorised_usb,An authorised removable device was used.
+unknown_usb,A removable device was treated as unknown or untrusted.
+usb_connected,A removable USB device was connected.
+usb_files_viewed,Files or folders on a USB device were viewed.
+usb_file_copied,A normal file was copied to or from a USB device.
+usb_script_or_executable_present,A script or executable-type file was visible on USB media.
+usb_script_or_executable_accessed,A script or executable-type file on USB media was accessed.
+multiple_usb_connections,The USB device was inserted more than once.
+usb_archive_accessed,A compressed archive on USB media was accessed.
+defender_enabled,Microsoft Defender protection remained enabled.
+defender_disabled,Microsoft Defender real-time protection was disabled.
+defender_configuration_changed,A Microsoft Defender configuration setting changed.
+security_setting_restored,A changed security setting was restored.
+firewall_configuration_changed,A firewall configuration setting changed.
+security_history_viewed,Windows security history was viewed.
+powershell_activity,User-relevant PowerShell activity occurred.
+cmd_activity,User-relevant Command Prompt activity occurred.
+terminal_activity,Command-line or terminal activity occurred.
+basic_command_use,A harmless basic command was executed.
+process_enumeration,A command was used to list running processes.
+network_configuration_query,A command was used to inspect network configuration.
+script_execution,A script was executed.
+suspicious_command_pattern,"A command used an unusual, encoded, or suspicious-looking pattern."
+network_scanner_activity,A network-scanning tool was opened or checked.
+network_scan,An authorised network scan was executed.
+authorised_local_target,The scan target was an authorised local or loopback address.
+executable_execution,An executable file was opened or executed.
+unknown_executable,The executable was treated as unknown or untrusted.
+task_scheduler_viewed,Task Scheduler or existing tasks were viewed.
+scheduled_task_created,A scheduled task was created.
+scheduled_task_modified,A scheduled task was modified.
+scheduled_task_deleted,A scheduled task was deleted.
+services_viewed,The Windows Services interface was viewed.
+service_configuration_changed,A service configuration or start type changed.
+startup_items_viewed,Startup applications or the Startup folder were viewed.
+startup_item_added,A startup item was added.
+startup_item_removed,A startup item was removed.
+cleanup_activity,The action removed or reverted a harmless test artefact.
+no_security_change,Security controls were viewed but not changed.
+no_file_execution,A file was visible or viewed but was not executed.
+no_persistence_change,Persistence-related settings were viewed but not changed.
+no_additional_risky_activity,No additional risky endpoint action occurred.

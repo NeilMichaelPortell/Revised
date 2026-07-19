@@ -1,0 +1,70 @@
+CONSISTENCY SUMMARY - BASELINE
+============================================================
+
+MODEL: deepseek-r1:8b (20 scenarios)
+  classification agreement : 1.000   (all-reps identical: 100%)
+  risk agreement           : 1.000
+  indicator Jaccard        : 0.872
+  explanation similarity   : 0.840
+  json parse validity      : 1.000
+  strict schema validity   : 0.950
+  vocab compliance         : 0.000
+  accuracy across reps     : 0.750   <-- correctness
+  risk accuracy across reps: 0.550
+  GT indicator P/R/F1      : 0.000 / 0.000 / 0.000
+  latency mean / CV        : 5.85s / 0.045
+
+MODEL: gemma3:12b (20 scenarios)
+  classification agreement : 0.990   (all-reps identical: 95%)
+  risk agreement           : 1.000
+  indicator Jaccard        : 0.970
+  explanation similarity   : 0.901
+  json parse validity      : 1.000
+  strict schema validity   : 1.000
+  vocab compliance         : 0.000
+  accuracy across reps     : 0.790   <-- correctness
+  risk accuracy across reps: 0.450
+  GT indicator P/R/F1      : 0.060 / 0.030 / 0.040
+  latency mean / CV        : 10.84s / 0.048
+
+MODEL: gpt-oss:20b (20 scenarios)
+  classification agreement : 1.000   (all-reps identical: 100%)
+  risk agreement           : 0.960
+  indicator Jaccard        : 0.775
+  explanation similarity   : 0.800
+  json parse validity      : 1.000
+  strict schema validity   : 1.000
+  vocab compliance         : 0.000
+  accuracy across reps     : 0.800   <-- correctness
+  risk accuracy across reps: 0.710
+  GT indicator P/R/F1      : 0.010 / 0.005 / 0.007
+  latency mean / CV        : 12.22s / 0.060
+
+MODEL: llama3 (20 scenarios)
+  classification agreement : 1.000   (all-reps identical: 100%)
+  risk agreement           : 1.000
+  indicator Jaccard        : 0.823
+  explanation similarity   : 0.825
+  json parse validity      : 1.000
+  strict schema validity   : 1.000
+  vocab compliance         : 0.000
+  accuracy across reps     : 0.700   <-- correctness
+  risk accuracy across reps: 0.400
+  GT indicator P/R/F1      : 0.000 / 0.000 / 0.000
+  latency mean / CV        : 5.01s / 0.054
+
+MODEL: qwen3:8b (20 scenarios)
+  classification agreement : 1.000   (all-reps identical: 100%)
+  risk agreement           : 1.000
+  indicator Jaccard        : 0.953
+  explanation similarity   : 0.970
+  json parse validity      : 1.000
+  strict schema validity   : 1.000
+  vocab compliance         : 0.000
+  accuracy across reps     : 0.850   <-- correctness
+  risk accuracy across reps: 0.600
+  GT indicator P/R/F1      : 0.100 / 0.050 / 0.067
+  latency mean / CV        : 4.75s / 0.044
+
+Consistency (stability) and accuracy (correctness) are separate:
+a model can be consistently wrong or inconsistently correct.

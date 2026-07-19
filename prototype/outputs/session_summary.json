@@ -1,0 +1,145 @@
+{
+  "generated_at": "2026-07-13T20:27:15.114148",
+  "session_window": {
+    "first_event": "2026-07-13T20:19:08.532703",
+    "last_event": "2026-07-13T20:27:14.077438"
+  },
+  "total_events": 539,
+  "threat_count": 4,
+  "risk_analysis": {
+    "risk_score": 15,
+    "risk_level": "high",
+    "risk_events": [
+      {
+        "type": "usb_connected",
+        "score": 2
+      },
+      {
+        "type": "usb_connected",
+        "score": 2
+      },
+      {
+        "type": "login_failed",
+        "score": 1
+      },
+      {
+        "type": "defender_disabled",
+        "score": 10
+      }
+    ]
+  },
+  "web_activity": {
+    "total_requests": 0,
+    "protocol_counts": {},
+    "https_ratio": 0.0,
+    "top_domains": {},
+    "top_tlds": {}
+  },
+  "recent_downloads": [
+    {
+      "filename": "test.zip",
+      "ext": ".zip",
+      "source": "",
+      "ts": "2026-07-13T20:26:48.594957"
+    },
+    {
+      "filename": "test (1).zip",
+      "ext": ".zip",
+      "source": "",
+      "ts": "2026-07-13T20:26:58.597687"
+    },
+    {
+      "filename": "test (2).zip",
+      "ext": ".zip",
+      "source": "",
+      "ts": "2026-07-13T20:26:58.598313"
+    },
+    {
+      "filename": "test (3).zip",
+      "ext": ".zip",
+      "source": "",
+      "ts": "2026-07-13T20:26:58.600069"
+    },
+    {
+      "filename": "test (4).zip",
+      "ext": ".zip",
+      "source": "",
+      "ts": "2026-07-13T20:26:58.601296"
+    },
+    {
+      "filename": "test (5).zip",
+      "ext": ".zip",
+      "source": "",
+      "ts": "2026-07-13T20:27:03.602798"
+    }
+  ],
+  "top_applications": [
+    {
+      "name": "Code.exe",
+      "launches": 1,
+      "first_seen": "2026-07-13T20:19:08.532703",
+      "last_seen": "2026-07-13T20:19:08.532703"
+    },
+    {
+      "name": "python3.13.exe",
+      "launches": 1,
+      "first_seen": "2026-07-13T20:19:22.537077",
+      "last_seen": "2026-07-13T20:19:22.537077"
+    },
+    {
+      "name": "SearchHost.exe",
+      "launches": 1,
+      "first_seen": "2026-07-13T20:20:36.556601",
+      "last_seen": "2026-07-13T20:20:36.556601"
+    },
+    {
+      "name": "WindowsTerminal.exe",
+      "launches": 1,
+      "first_seen": "2026-07-13T20:20:38.558030",
+      "last_seen": "2026-07-13T20:20:38.558030"
+    },
+    {
+      "name": "mmc.exe",
+      "launches": 1,
+      "first_seen": "2026-07-13T20:21:06.565233",
+      "last_seen": "2026-07-13T20:21:06.565233"
+    },
+    {
+      "name": "StartMenuExperienceHost.exe",
+      "launches": 1,
+      "first_seen": "2026-07-13T20:21:14.568331",
+      "last_seen": "2026-07-13T20:21:14.568331"
+    },
+    {
+      "name": "explorer.exe",
+      "launches": 1,
+      "first_seen": "2026-07-13T20:21:36.573878",
+      "last_seen": "2026-07-13T20:21:36.573878"
+    },
+    {
+      "name": "ApplicationFrameHost.exe",
+      "launches": 1,
+      "first_seen": "2026-07-13T20:22:10.583279",
+      "last_seen": "2026-07-13T20:22:10.583279"
+    },
+    {
+      "name": "opera.exe",
+      "launches": 1,
+      "first_seen": "2026-07-13T20:24:52.624036",
+      "last_seen": "2026-07-13T20:24:52.624036"
+    }
+  ],
+  "security_events": {
+    "process_started": 515,
+    "network_profile_changed": 1,
+    "login_failed": 3,
+    "defender_disabled": 1
+  },
+  "usb_connections": 4,
+  "risk_indicators": [
+    "4 USB device(s) connected: USB Composite Device, USB Composite Device, USB Composite Device.",
+    "3 failed login attempts.",
+    "Windows Defender was disabled this session.",
+    "4 threat(s) flagged (risk score: 15 \u2014 high)."
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "scenario_id": "SEC_001",
+  "category": "SEC",
+  "scenario_name": "Windows Security dashboard opened with no changes",
+  "scenario_source": "collected",
+  "collection_date": "2026-07-09",
+  "window_start": "2026-07-09T11:20:20.944995",
+  "window_end": "2026-07-09T11:20:57.175613",
+  "event_summary": {
+    "apps_opened": [
+      "code.exe",
+      "notepad.exe"
+    ],
+    "benign_background_processes": [
+      "1password-browsersupport.exe",
+      "code.exe",
+      "mbambgnativemsg.exe",
+      "notepad.exe",
+      "powershell.exe (vscode shell integration)"
+    ],
+    "failed_logins": 0,
+    "failed_login_activity": false,
+    "failed_login_count_band": "none",
+    "usb_connection_count": 0,
+    "removable_drive_details": [],
+    "risky_processes": [],
+    "process_details": [],
+    "elevated_processes": [],
+    "defender_disabled": false,
+    "defender_events": [],
+    "firewall_events": [],
+    "network_profile": "none",
+    "scheduled_task_change": false,
+    "scheduled_task_details": [],
+    "service_change": false,
+    "service_change_details": [],
+    "startup_item_change": false,
+    "startup_item_details": [],
+    "file_downloaded": false,
+    "download_details": [],
+    "web_domains": [],
+    "collector_generated_events_filtered": 3,
+    "operator_notes": [
+      "Windows Security dashboard opened with no changes."
+    ],
+    "manual_review_indicators": [
+      "benign_activity",
+      "security_settings_viewed"
+    ],
+    "verified_activity_context": {
+      "manual_verification_used": false,
+      "verification_note": "",
+      "device_trust": "not_applicable",
+      "usb_files_browsed": false,
+      "usb_content_type": "none",
+      "archive_accessed": false,
+      "archive_type": "",
+      "command_activity": "none",
+      "verified_commands": [],
+      "script_name": "",
+      "scanner_tool": "",
+      "scan_target": "",
+      "suspicious_process_context": false,
+      "startup_item_change": false,
+      "startup_action": "",
+      "startup_item": "",
+      "defender_change": "none",
+      "network_context": "none",
+      "failed_login_activity": false,
+      "failed_login_count_band": "none"
+    },
+    "viewed_interface": "none"
+  },
+  "observed_events": [
+    "Applications used: code.exe, notepad.exe.",
+    "Benign background activity present (context, not risky): 1password-browsersupport.exe, code.exe, mbambgnativemsg.exe, notepad.exe, powershell.exe (vscode shell integration).",
+    "3 collector-generated process event(s) were excluded from this scenario."
+  ],
+  "context_state": {},
+  "ground_truth": {
+    "classification": "normal",
+    "risk_level": "low",
+    "expected_indicators": [
+      "settings_viewed"
+    ],
+    "label_reason": "Opening the Windows Security dashboard is a normal administrative check when no protection setting is changed."
+  }
+}

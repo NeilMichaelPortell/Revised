@@ -1,0 +1,110 @@
+{
+  "scenario_id": "PROC_006",
+  "category": "PROC",
+  "scenario_name": "CMD used to check network configuration",
+  "scenario_source": "collected",
+  "collection_date": "2026-07-09",
+  "window_start": "2026-07-09T13:11:34.513446",
+  "window_end": "2026-07-09T13:12:14.201639",
+  "event_summary": {
+    "apps_opened": [
+      "code.exe",
+      "windowsterminal.exe"
+    ],
+    "benign_background_processes": [
+      "code.exe"
+    ],
+    "failed_logins": 0,
+    "failed_login_activity": false,
+    "failed_login_count_band": "none",
+    "usb_connection_count": 0,
+    "removable_drive_details": [],
+    "risky_processes": [
+      "cmd.exe",
+      "windowsterminal.exe"
+    ],
+    "process_details": [
+      {
+        "process_name": "cmd.exe",
+        "pid": 9724,
+        "exe_path": "C:\\Windows\\System32\\cmd.exe",
+        "command_line": "C:\\WINDOWS\\system32\\cmd.exe",
+        "parent_process_name": "explorer.exe",
+        "parent_pid": 11576,
+        "start_time": "2026-07-09T13:11:43.580325",
+        "is_elevated": "unknown"
+      },
+      {
+        "process_name": "windowsterminal.exe",
+        "pid": 18024,
+        "exe_path": "C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminal_1.24.11321.0_x64__8wekyb3d8bbwe\\WindowsTerminal.exe",
+        "command_line": "C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminal_1.24.11321.0_x64__8wekyb3d8bbwe\\WindowsTerminal.exe -Embedding",
+        "parent_process_name": "svchost.exe",
+        "parent_pid": 1832,
+        "start_time": "2026-07-09T13:11:43.682573",
+        "is_elevated": "unknown"
+      }
+    ],
+    "elevated_processes": [],
+    "defender_disabled": false,
+    "defender_events": [],
+    "firewall_events": [],
+    "network_profile": "none",
+    "scheduled_task_change": false,
+    "scheduled_task_details": [],
+    "service_change": false,
+    "service_change_details": [],
+    "startup_item_change": false,
+    "startup_item_details": [],
+    "file_downloaded": false,
+    "download_details": [],
+    "web_domains": [],
+    "collector_generated_events_filtered": 2,
+    "operator_notes": [
+      "CMD used to check network configuration."
+    ],
+    "manual_review_indicators": [
+      "abnormal_endpoint_activity",
+      "cmd_activity"
+    ],
+    "verified_activity_context": {
+      "manual_verification_used": false,
+      "verification_note": "",
+      "device_trust": "not_applicable",
+      "usb_files_browsed": false,
+      "usb_content_type": "none",
+      "archive_accessed": false,
+      "archive_type": "",
+      "command_activity": "none",
+      "verified_commands": [],
+      "script_name": "",
+      "scanner_tool": "",
+      "scan_target": "",
+      "suspicious_process_context": false,
+      "startup_item_change": false,
+      "startup_action": "",
+      "startup_item": "",
+      "defender_change": "none",
+      "network_context": "none",
+      "failed_login_activity": false,
+      "failed_login_count_band": "none"
+    },
+    "viewed_interface": "none"
+  },
+  "observed_events": [
+    "Applications used: code.exe, windowsterminal.exe.",
+    "Monitored-list processes observed: cmd.exe, windowsterminal.exe.",
+    "Note: cmd.exe are common in normal work and are not judged here; classification is manual.",
+    "Benign background activity present (context, not risky): code.exe.",
+    "2 collector-generated process event(s) were excluded from this scenario."
+  ],
+  "context_state": {},
+  "ground_truth": {
+    "classification": "abnormal",
+    "risk_level": "medium",
+    "expected_indicators": [
+      "network_configuration_query"
+    ],
+    "label_reason": "Querying detailed network configuration is a legitimate diagnostic action but can also support host reconnaissance; the test therefore labels it abnormal at medium risk."
+  }
+}

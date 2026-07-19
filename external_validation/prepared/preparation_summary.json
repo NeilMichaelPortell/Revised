@@ -1,0 +1,16 @@
+{
+  "prepared_scenarios": 18,
+  "skipped_rows": 0,
+  "abnormal_scenarios": 18,
+  "defensibly_benign_scenarios": 0,
+  "unknown_label_scenarios": 0,
+  "stale_neutral_inputs_removed": [],
+  "adapter_version": "otrf-adapter-1.2.0",
+  "manifest_version": "otrf-manifest-1.1.0",
+  "max_events_per_scenario": 5000,
+  "config_hash": "0c6ed9b4a7c08c1e708d1811d3b133dade05a7e9c89b125e0ce009ab03aafb7b",
+  "generated_utc": "2026-07-18T16:17:04.532002+00:00",
+  "frozen_manifest": "external_validation\\prepared\\frozen_external_manifest.csv",
+  "external_ground_truth": "external_validation\\prepared\\external_ground_truth.csv",
+  "note": "OTRF is controlled public adversary-simulation telemetry, not production data."
+}

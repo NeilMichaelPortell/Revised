@@ -1,0 +1,36 @@
+VALIDATION AGGREGATE SUMMARY (supplementary live study)
+============================================================
+Completed runs                 : 1
+
+CAPTURE / DETECTION
+------------------------------------------------------------
+Total events captured          : 190
+Alert detection rate (planned) : 0.0 (0/1)
+Benign false-alert rate        : 0.0 (0/0)
+Duplicate-event count          : 209
+Cooldown suppressions          : 5
+
+LLM OUTPUT RELIABILITY
+------------------------------------------------------------
+LLM calls                      : 0
+JSON validity rate             : 0.0
+Strict schema-compliance rate  : 0.0
+Fallback rate                  : 0.0
+Timeout rate                   : 0.0
+
+LATENCY across runs (ms, mean of per-run means)
+------------------------------------------------------------
+Detection        n=0   mean=0.0       median=0.0       p95=0.0
+LLM generation   n=0   mean=0.0       median=0.0       p95=0.0
+End-to-end       n=0   mean=0.0       median=0.0       p95=0.0
+
+RESULTS BY SCENARIO TYPE
+------------------------------------------------------------
+  AUTH       runs=1   alerts=0   strict_schema_rate=0.0
+
+RESULTS BY VALIDATION MODE
+------------------------------------------------------------
+  independent_validation         runs=1   fallback_rate=0.0
+
+NOTE: These supplementary metrics are NOT merged with the frozen
+offline 120-scenario baseline/RAG results.

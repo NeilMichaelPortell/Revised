@@ -1,0 +1,115 @@
+{
+  "scenario_id": "AUTH_007",
+  "category": "AUTH",
+  "scenario_name": "High number of failed login attempts",
+  "scenario_source": "collected",
+  "collection_date": "2026-07-09",
+  "window_start": "2026-07-09T16:45:51.755191",
+  "window_end": "2026-07-09T16:46:40.039739",
+  "event_summary": {
+    "apps_opened": [],
+    "benign_background_processes": [],
+    "failed_logins": 3,
+    "failed_login_activity": true,
+    "failed_login_count_band": "multiple",
+    "usb_connection_count": 0,
+    "removable_drive_details": [],
+    "risky_processes": [],
+    "process_details": [],
+    "elevated_processes": [],
+    "defender_disabled": false,
+    "defender_events": [
+      {
+        "kind": "status_snapshot",
+        "realtime_protection_enabled": true
+      },
+      {
+        "kind": "configuration_changed",
+        "event_id": 5007
+      }
+    ],
+    "firewall_events": [],
+    "network_profile": "private",
+    "scheduled_task_change": false,
+    "scheduled_task_details": [],
+    "service_change": false,
+    "service_change_details": [],
+    "startup_item_change": false,
+    "startup_item_details": [],
+    "file_downloaded": false,
+    "download_details": [],
+    "web_domains": [],
+    "collector_generated_events_filtered": 2,
+    "operator_notes": [
+      "High number of failed login attempts."
+    ],
+    "manual_review_indicators": [
+      "abnormal_endpoint_activity",
+      "failed_logins"
+    ],
+    "verified_activity_context": {
+      "manual_verification_used": false,
+      "verification_note": "",
+      "device_trust": "not_applicable",
+      "usb_files_browsed": false,
+      "usb_content_type": "none",
+      "archive_accessed": false,
+      "archive_type": "",
+      "command_activity": "none",
+      "verified_commands": [],
+      "script_name": "",
+      "scanner_tool": "",
+      "scan_target": "",
+      "suspicious_process_context": false,
+      "startup_item_change": false,
+      "startup_action": "",
+      "startup_item": "",
+      "defender_change": "none",
+      "network_context": "private",
+      "failed_login_activity": true,
+      "failed_login_count_band": "multiple"
+    },
+    "viewed_interface": "none"
+  },
+  "observed_events": [
+    "3 failed login event(s) recorded.",
+    "Defender event(s) recorded (not a disable): configuration_changed, status_snapshot.",
+    "Network profile (context at scenario start): private.",
+    "2 collector-generated process event(s) were excluded from this scenario."
+  ],
+  "context_state": {
+    "network_profile": "private",
+    "network_category": 1,
+    "defender": {
+      "realtime_protection_enabled": true,
+      "antivirus_enabled": true,
+      "am_service_enabled": true
+    },
+    "firewall": {
+      "Domain": true,
+      "Private": true,
+      "Public": true
+    },
+    "running_monitored_processes": [
+      "cmd.exe",
+      "powershell.exe",
+      "python.exe"
+    ],
+    "removable_drives": [
+      {
+        "drive_letter": "D:",
+        "volume_name": "NEIL",
+        "filesystem": "FAT32"
+      }
+    ],
+    "collector_is_admin": true
+  },
+  "ground_truth": {
+    "classification": "abnormal",
+    "risk_level": "high",
+    "expected_indicators": [
+      "high_failed_login_count"
+    ],
+    "label_reason": "A high number of failed logins is unlikely to be a simple typing mistake and is consistent with brute-force or password-guessing behaviour."
+  }
+}

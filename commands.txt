@@ -1,0 +1,23 @@
+.\venv\Scripts\Activate.ps1
+
+
+cd scripts\dataset
+python 1-endpoint_collector.py
+python 2-segment_logs.py
+
+cd scripts\runs
+python 0-test.py
+python 1-run_baseline.py
+python 2-evaluate_results.py
+python 3-run_rag.py
+python 4-compare_baseline_vs_rag.py
+
+# Consistency experiment (20 fixed scenarios x 5 repetitions x 5 models)
+# Run baseline and RAG separately; each command makes 500 model calls.
+python 5-run_consistency_baseline.py
+python 6-run_consistency_rag.py
+python 7-evaluate_consistency.py
+
+
+cd prototype
+python main.py

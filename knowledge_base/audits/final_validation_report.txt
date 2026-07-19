@@ -1,0 +1,38 @@
+KNOWLEDGE BASE CLEANING - VALIDATION REPORT
+==================================================
+
+Active documents indexed: 34
+Per category: NORMAL=4, AUTH=5, USB=5, SEC=5, PROC=5, NET=5, PERSIST=5
+Legacy documents archived (not indexed): 21
+Unknown indicator tokens in active docs: 0
+Unsupported-telemetry references in active docs: 0
+Documents rewritten to concise analyst format: 34
+Severity decision table present in every active doc: yes
+Topic-specific false-positive checks present: yes
+catalog.csv lists exactly the active docs: yes
+Indexed folders: seven category folders only
+GLOBAL / _documentation / audits / _archive_not_indexed indexed: no
+Compatible with 3-run_rag.py (loads exactly 34): yes
+
+Legacy documents moved to _archive_not_indexed/:
+  AUTH__credential_spraying.md
+  AUTH__failed_login_bursts.md
+  AUTH__unusual_success_after_failures.md
+  NET__port_scanning.md
+  NET__public_network_exposure.md
+  NET__suspicious_external_connections.md
+  NORMAL__approved_admin_activity.md
+  NORMAL__benign_device_and_network_use.md
+  NORMAL__routine_user_activity.md
+  PERSIST__registry_or_wmi_persistence.md
+  PERSIST__scheduled_task_persistence.md
+  PERSIST__service_persistence.md
+  PROC__credential_and_discovery_tools.md
+  PROC__living_off_the_land_binaries.md
+  PROC__suspicious_powershell.md
+  SEC__defender_tampering.md
+  SEC__firewall_profile_changes.md
+  SEC__log_and_policy_tampering.md
+  USB__data_copy_to_removable_media.md
+  USB__unauthorized_removable_media.md
+  USB__usb_malware_execution.md

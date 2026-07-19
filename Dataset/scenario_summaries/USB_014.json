@@ -1,0 +1,118 @@
+{
+  "scenario_id": "USB_014",
+  "category": "USB",
+  "scenario_name": "USB activity combined with suspicious process activity",
+  "scenario_source": "collected",
+  "collection_date": "2026-07-10",
+  "window_start": "2026-07-10T09:34:41.295753",
+  "window_end": "2026-07-10T09:35:21.727528",
+  "event_summary": {
+    "apps_opened": [
+      "notepad.exe",
+      "code.exe",
+      "windowsterminal.exe"
+    ],
+    "benign_background_processes": [
+      "code.exe",
+      "notepad.exe",
+      "powershell.exe (vscode shell integration)"
+    ],
+    "failed_logins": 0,
+    "failed_login_activity": false,
+    "failed_login_count_band": "none",
+    "usb_connection_count": 1,
+    "removable_drive_details": [],
+    "risky_processes": [
+      "powershell.exe",
+      "windowsterminal.exe"
+    ],
+    "process_details": [
+      {
+        "process_name": "powershell.exe",
+        "pid": 24968,
+        "exe_path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "command_line": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "parent_process_name": "explorer.exe",
+        "parent_pid": 19816,
+        "start_time": "2026-07-10T09:34:54.361988",
+        "is_elevated": "unknown"
+      },
+      {
+        "process_name": "windowsterminal.exe",
+        "pid": 27888,
+        "exe_path": "C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminal_1.24.11321.0_x64__8wekyb3d8bbwe\\WindowsTerminal.exe",
+        "command_line": "C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminal_1.24.11321.0_x64__8wekyb3d8bbwe\\WindowsTerminal.exe -Embedding",
+        "parent_process_name": "svchost.exe",
+        "parent_pid": 1832,
+        "start_time": "2026-07-10T09:34:54.481982",
+        "is_elevated": "unknown"
+      }
+    ],
+    "elevated_processes": [],
+    "defender_disabled": false,
+    "defender_events": [],
+    "firewall_events": [],
+    "network_profile": "none",
+    "scheduled_task_change": false,
+    "scheduled_task_details": [],
+    "service_change": false,
+    "service_change_details": [],
+    "startup_item_change": false,
+    "startup_item_details": [],
+    "file_downloaded": false,
+    "download_details": [],
+    "web_domains": [],
+    "collector_generated_events_filtered": 4,
+    "operator_notes": [
+      "USB activity combined with suspicious process activity."
+    ],
+    "manual_review_indicators": [
+      "abnormal_endpoint_activity",
+      "usb_activity",
+      "powershell_activity"
+    ],
+    "verified_activity_context": {
+      "manual_verification_used": true,
+      "verification_note": "Operator note verified combined USB activity and user-launched PowerShell activity.",
+      "device_trust": "unknown",
+      "usb_files_browsed": false,
+      "usb_content_type": "none",
+      "archive_accessed": false,
+      "archive_type": "",
+      "command_activity": "powershell_with_usb",
+      "verified_commands": [
+        "Get-ChildItem"
+      ],
+      "script_name": "",
+      "scanner_tool": "",
+      "scan_target": "",
+      "suspicious_process_context": true,
+      "startup_item_change": false,
+      "startup_action": "",
+      "startup_item": "",
+      "defender_change": "none",
+      "network_context": "none",
+      "failed_login_activity": false,
+      "failed_login_count_band": "none"
+    },
+    "viewed_interface": "none"
+  },
+  "observed_events": [
+    "Applications used: notepad.exe, code.exe, windowsterminal.exe.",
+    "1 USB connection(s) recorded (after debounce).",
+    "Monitored-list processes observed: powershell.exe, windowsterminal.exe.",
+    "Note: powershell.exe are common in normal work and are not judged here; classification is manual.",
+    "Benign background activity present (context, not risky): code.exe, notepad.exe, powershell.exe (vscode shell integration).",
+    "4 collector-generated process event(s) were excluded from this scenario."
+  ],
+  "context_state": {},
+  "ground_truth": {
+    "classification": "abnormal",
+    "risk_level": "high",
+    "expected_indicators": [
+      "usb_connected",
+      "suspicious_command_pattern"
+    ],
+    "label_reason": "The scenario is intended to combine USB activity with suspicious process execution. High risk is appropriate, but the specific suspicious command or process must be visible to distinguish it from ordinary PowerShell activity."
+  }
+}

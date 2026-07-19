@@ -1,0 +1,107 @@
+{
+  "scenario_id": "PERSIST_010",
+  "category": "PERSIST",
+  "scenario_name": "Test service start type viewed or changed in controlled test",
+  "scenario_source": "collected",
+  "collection_date": "2026-07-09",
+  "window_start": "2026-07-09T17:38:03.467419",
+  "window_end": "2026-07-09T17:38:50.032089",
+  "event_summary": {
+    "apps_opened": [
+      "notepad.exe",
+      "mmc.exe"
+    ],
+    "benign_background_processes": [
+      "notepad.exe"
+    ],
+    "failed_logins": 0,
+    "failed_login_activity": false,
+    "failed_login_count_band": "none",
+    "usb_connection_count": 0,
+    "removable_drive_details": [],
+    "risky_processes": [],
+    "process_details": [],
+    "elevated_processes": [],
+    "defender_disabled": false,
+    "defender_events": [
+      {
+        "kind": "status_snapshot",
+        "realtime_protection_enabled": true
+      }
+    ],
+    "firewall_events": [],
+    "network_profile": "none",
+    "scheduled_task_change": false,
+    "scheduled_task_details": [],
+    "service_change": true,
+    "service_change_details": [
+      {
+        "object_name": "test service / service start-type setting",
+        "action": "viewed_or_changed",
+        "source": "manual_review_from_operator_note",
+        "old_value": "",
+        "new_value": ""
+      }
+    ],
+    "startup_item_change": false,
+    "startup_item_details": [],
+    "file_downloaded": false,
+    "download_details": [],
+    "web_domains": [],
+    "collector_generated_events_filtered": 2,
+    "operator_notes": [
+      "Test service start type viewed or changed in controlled test."
+    ],
+    "manual_review_indicators": [
+      "abnormal_endpoint_activity",
+      "service_activity",
+      "view_only_activity"
+    ],
+    "verified_activity_context": {
+      "manual_verification_used": false,
+      "verification_note": "",
+      "device_trust": "not_applicable",
+      "usb_files_browsed": false,
+      "usb_content_type": "none",
+      "archive_accessed": false,
+      "archive_type": "",
+      "command_activity": "none",
+      "verified_commands": [],
+      "script_name": "",
+      "scanner_tool": "",
+      "scan_target": "",
+      "suspicious_process_context": false,
+      "startup_item_change": false,
+      "startup_action": "",
+      "startup_item": "",
+      "defender_change": "none",
+      "network_context": "none",
+      "failed_login_activity": false,
+      "failed_login_count_band": "none"
+    },
+    "manual_review_corrections": [
+      {
+        "field": "service_change",
+        "reason": "Operator note states test service start type was viewed or changed; Windows event log did not capture exact old/new service values inside the window."
+      }
+    ],
+    "viewed_interface": "none"
+  },
+  "observed_events": [
+    "Applications used: notepad.exe, mmc.exe.",
+    "Defender event(s) recorded (not a disable): status_snapshot.",
+    "Benign background activity present (context, not risky): notepad.exe.",
+    "2 collector-generated process event(s) were excluded from this scenario.",
+    "Manual review: Operator note states test service start type was viewed or changed; Windows event log did not capture exact old/new service values inside the window.",
+    "A service/startup-type activity was recorded through manual review of the operator note."
+  ],
+  "context_state": {},
+  "ground_truth": {
+    "classification": "abnormal",
+    "risk_level": "high",
+    "expected_indicators": [
+      "service_configuration_changed"
+    ],
+    "label_reason": "Changing a service start type can cause software to execute automatically or disable a service, making it a high-risk configuration action."
+  }
+}

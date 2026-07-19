@@ -1,0 +1,23 @@
+BASELINE SUMMARY - deepseek-r1:8b
+============================================================
+Scenarios run          : 120
+Valid JSON outputs     : 120/120 (100%)
+Scored (valid+labelled): 119
+Confusion matrix (positive class = risky/abnormal)
+  TP=51  FP=10  FN=7  TN=51
+Accuracy          : 0.857
+Precision         : 0.836   (guards against alert fatigue)
+Recall            : 0.879   (KEY: misses = real risks not caught)
+F1-score          : 0.857
+Risk-level accuracy: 0.588
+Indicator overlap  : 0.080
+Mean latency (s)   : 6.04
+PER-CATEGORY (accuracy | P | R | F1 | n scored)
+------------------------------------------------------------
+  AUTH     0.765 | 0.714 | 1.000 | 0.833 | n=17
+  NET      0.765 | 0.778 | 0.778 | 0.778 | n=17
+  NORMAL   0.833 | 0.000 | 0.000 | 0.000 | n=18
+  PERSIST  0.882 | 1.000 | 0.778 | 0.875 | n=17
+  PROC     1.000 | 1.000 | 1.000 | 1.000 | n=16
+  SEC      0.941 | 0.909 | 1.000 | 0.952 | n=17
+  USB      0.824 | 1.000 | 0.700 | 0.824 | n=17

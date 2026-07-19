@@ -1,0 +1,37 @@
+Following are the recommendations for improvement by the mentor and board:
+
+"The idea is sound, but the dataset is too small and imbalanced to support reliable conclusions. 
+This should be expanded. 
+Comparisons should be strictly like with like, ideally using the same dataset (not a subset). 
+Improvements are also needed in real-world validation (maybe a real-world dataset), 
+output reliability and perhaps statistical robustness."
+
+Mentor on Classter:
+The dissertation addresses a relevant problem by investigating the use of Retrieval-Augmented Generation (RAG) 
+for networking issue diagnosis. 
+The implementation is good. The primary weakness of the dissertation lies is the forumlated data set due 
+to the limited size and imbalanced across the different networking categories. 
+This raises concerns regarding the reliability and generalisability of the results, 
+as the model is more likely to learn the characteristics of the majority classes than those with limited representation.
+Since the scenarios were artificially created, it is easy to increase and balance the dataset. 
+This opportunity was not fully utilised. A more representative and balanced dataset is required 
+to provide confidence that the model performs consistently across all networking issue types. 
+The knowledge base itself also exhibited imbalance, with some categories containing very few examples. 
+This introduces retrieval bias, whereby certain issue types are underrepresented during retrieval and 
+response generation. The knowledge repository should be expanded so that all supported categories are 
+adequately represented. Although several evaluation metrics were reported, their interpretation requires 
+greater consideration. During the viva examination, it became evident that there was some misunderstanding
+regarding the relative importance of evaluation metrics. It was stated that precision was more important than recall;
+however, for a diagnostic system whose primary objective is to identify abnormal networking issues, 
+recall is typically the more critical metric, as failing to detect genuine faults (false negatives) 
+can have more significant consequences than investigating additional false positives. 
+A stronger understanding and justification of the chosen evaluation metrics is therefore expected. 
+Focus should be on: Expanding the dataset substantially. Producing a more balanced 
+distribution of networking issue categories. Increasing the diversity of scenarios through appropriate augmentation. 
+Expanding the knowledge base so that each issue category is sufficiently represented. 
+Re-running all experiments using the improved dataset. Updating all evaluation metrics and discussing 
+how the revised results compare with the original findings. Strengthening the discussion of threats to 
+validity and remaining limitations. More subsections could help the document's structure.
+
+
+
