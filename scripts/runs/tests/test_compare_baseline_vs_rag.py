@@ -335,9 +335,39 @@ def test_evaluator_has_no_ollama_or_network_dependency():
 
 
 # --------------------------------------------------------------------------- #
-# 14. Frozen raw-output hashes remain unchanged                                #
+# 14. Frozen raw-output hashes remain unchanged (portable ledger)              #
 # --------------------------------------------------------------------------- #
+def _canonical_text_sha256(raw: bytes) -> str:
+    return hashlib.sha256(raw.replace(b"\r\n", b"\n").replace(b"\r", b"\n")).hexdigest()
+
+
+def test_frozen_ledger_uses_forward_slash_repo_relative_paths():
+    hashes_csv = REPO_ROOT / "docs" / "final_audit" / "FROZEN_ARTIFACT_HASHES.csv"
+    if not hashes_csv.exists():
+        return  # audit not present in this checkout; skip silently
+    with hashes_csv.open(encoding="utf-8") as fh:
+        rows = list(csv.DictReader(fh))
+    assert rows, "portable ledger has no data rows"
+    expected_cols = {"category", "path", "repository_sha256", "canonical_text_sha256",
+                     "original_windows_crlf_sha256", "size_bytes", "line_count",
+                     "newline_style"}
+    assert expected_cols.issubset(rows[0].keys())
+    for row in rows:
+        assert "\\" not in row["path"], f"non-portable backslash path: {row['path']}"
+
+
 def test_frozen_raw_output_hashes_unchanged():
+    """Content-drift check, robust to line-ending conversion.
+
+    Compares the CURRENT on-disk file's line-ending-normalised (canonical)
+    text hash against the ledger's `canonical_text_sha256`. A file whose bytes
+    changed only because of CRLF<->LF conversion (e.g. checked out on a
+    different platform, or after .gitattributes normalisation) must NOT be
+    reported as drift -- only a genuine content change may fail this test.
+    The raw, un-normalised hash is also compared against
+    `original_windows_crlf_sha256` purely to CLASSIFY a mismatch (as
+    line-ending-only vs real drift), never to fail the test by itself.
+    """
     hashes_csv = REPO_ROOT / "docs" / "final_audit" / "FROZEN_ARTIFACT_HASHES.csv"
     if not hashes_csv.exists():
         return  # audit not present in this checkout; skip silently
@@ -352,14 +382,19 @@ def test_frozen_raw_output_hashes_unchanged():
     for row in rows:
         if row["category"] not in frozen_categories:
             continue
-        path = REPO_ROOT / row["path"]
-        if row["sha256"] == "MISSING":
+        if row["canonical_text_sha256"] == "MISSING":
             continue
-        h = hashlib.sha256()
-        with path.open("rb") as f:
-            for chunk in iter(lambda: f.read(65536), b""):
-                h.update(chunk)
-        assert h.hexdigest() == row["sha256"], f"HASH DRIFT: {row['path']}"
+        path = REPO_ROOT / row["path"]  # forward-slash, portable on every OS
+        raw = path.read_bytes()
+        current_raw_sha = hashlib.sha256(raw).hexdigest()
+        current_canonical_sha = _canonical_text_sha256(raw)
+        line_ending_only = (
+            current_raw_sha != row["original_windows_crlf_sha256"]
+            and current_canonical_sha == row["canonical_text_sha256"]
+        )
+        assert current_canonical_sha == row["canonical_text_sha256"], (
+            f"CONTENT DRIFT (not just line-ending conversion): {row['path']}")
+        assert line_ending_only or current_raw_sha == row["original_windows_crlf_sha256"]
         checked += 1
     assert checked > 0
 

@@ -13,7 +13,7 @@ T4.9,OTRF reliability metrics,4,thesis_writeup/excel_source/otrf_reliability.csv
 T4.9b,OTRF abnormal detection (recall/FN),4,external_validation/evaluation/abnormal_detection_results.csv,all 18 scenarios abnormal; recall CIs wide (n=18)
 T4.9c,OTRF source verification certificate,4,external_validation/evaluation/source_verification_certificate.json,verdict PASS; 18/18 source + neutral hashes; no absolute paths stored
 T4.10,Latency comparison across primary and consistency studies,4,thesis_writeup/excel_source/latency_comparison.csv,combines results/comparison + results/consistency/reports latency columns
-T4.11,Indicator alignment comparison across primary and consistency studies,4,thesis_writeup/excel_source/indicator_comparison.csv,primary indicator_overlap vs consistency Jaccard/vocab-compliance
+T4.11,Indicator alignment comparison across primary and consistency studies,4,thesis_writeup/excel_source/indicator_comparison.csv,primary exact_indicator_overlap_all_scenarios (PRIMARY) / exact_indicator_overlap_valid_outputs (secondary) vs consistency Jaccard/vocab-compliance
 T4.12,Scenario-level error analysis (what changed baseline->RAG per scenario),4,results/comparison/scenario_level_changes.csv,600 rows (5 models x 120 scenarios); includes RAG-retrieved doc IDs
 T4.13,Prototype single live validation run detail,4,prototype/validation_results.csv,n=1 completed run; 0 LLM calls -- report with the caveats in 05_CHAPTER_4_PROTOTYPE_RESULTS.md
 F4.1,All-scenario accuracy: baseline vs RAG per model (bar/paired chart),4,thesis_writeup/excel_source/primary_model_condition_metrics.csv,columns model/condition/all_scenario_accuracy

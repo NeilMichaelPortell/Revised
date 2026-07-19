@@ -137,7 +137,9 @@ REQUIRED_COLUMNS = [
     "coverage_adjusted_recall", "coverage_adjusted_false_negative_rate",
     "coverage_adjusted_specificity", "coverage_adjusted_balanced_accuracy",
     "coverage_adjusted_f1",
-    "risk_accuracy_all_scenarios", "indicator_overlap", "mean_latency_seconds",
+    "risk_accuracy_all_scenarios",
+    "exact_indicator_overlap_all_scenarios", "exact_indicator_overlap_valid_outputs",
+    "mean_latency_seconds",
     "accuracy_ci_low", "accuracy_ci_high", "cohens_kappa_valid_outputs",
 ]
 
@@ -300,6 +302,10 @@ def aggregate_metrics(scenario_ids: list[str], gt: dict[str, dict[str, str]],
             # EXACT canonical-token indicator overlap recomputed from the frozen
             # model response, replacing the runner's substring heuristic. Uses
             # the scenario's ground-truth expected indicators as the reference.
+            # Only valid_correct/valid_incorrect rows ever produce a non-committal
+            # overlap value; invalid/missing/fallback rows implicitly contribute 0
+            # to the all-scenario metric below (they are simply absent from this
+            # list, so they cannot inflate either denominator).
             expected_inds = gt_row.get("expected_indicators", "")
             overlaps.append(exact_indicator_overlap(
                 row.get("predicted_indicators", ""), expected_inds))
@@ -368,7 +374,15 @@ def aggregate_metrics(scenario_ids: list[str], gt: dict[str, dict[str, str]],
         "coverage_adjusted_balanced_accuracy": coverage_adjusted_bal_acc,
         "coverage_adjusted_f1": coverage_adjusted_f1,
         "risk_accuracy_all_scenarios": risk_correct_all / n if n else 0.0,
-        "indicator_overlap": sum(overlaps) / len(overlaps) if overlaps else 0.0,
+        # PRIMARY (dissertation headline value): every invalid/missing/fallback
+        # scenario receives 0 in this denominator (n = all expected scenarios),
+        # so a model cannot inflate its apparent indicator grounding by simply
+        # refusing to commit to a classification.
+        "exact_indicator_overlap_all_scenarios": sum(overlaps) / n if n else 0.0,
+        # SECONDARY diagnostic: mean overlap over valid (committed) outputs only
+        # -- "how well does the model ground its indicators when it does answer".
+        "exact_indicator_overlap_valid_outputs": (
+            sum(overlaps) / len(overlaps) if overlaps else 0.0),
         "mean_latency_seconds": sum(latencies) / len(latencies) if latencies else 0.0,
         "accuracy_ci_low": ci_low, "accuracy_ci_high": ci_high,
         "cohens_kappa_valid_outputs": kappa,
@@ -700,6 +714,10 @@ def deepseek_acceptance_check(results: dict[str, Any]) -> dict[str, Any]:
         ("True-positive abnormal detections", "29", r["TP"]),
         ("Ground-truth abnormal scenarios", "58", r["ground_truth_abnormal"]),
         ("Coverage-adjusted abnormal recall", "0.500", fmt(r["coverage_adjusted_recall"])),
+        ("Exact indicator overlap (all-scenario, PRIMARY)", "~0.1042",
+         fmt(r["exact_indicator_overlap_all_scenarios"])),
+        ("Exact indicator overlap (valid-outputs-only, secondary)", "~0.1524",
+         fmt(r["exact_indicator_overlap_valid_outputs"])),
     ]
     ok = (r["_raw_correct"] == 75 and r["invalid_classification_outputs"] == 38
          and r["invalid_abnormal"] == 24 and r["TP"] == 29

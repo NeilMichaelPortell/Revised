@@ -44,14 +44,23 @@ Qwen3:8b 0.850 -> 0.833 (Holm p=1.000, not significant). Source:
 ## 6. Indicator alignment improved more consistently than classification
 
 Indicator overlap (primary study), now measured by **exact** canonical-token
-matching, improved for **all five models** under RAG, including the two with no
-significant classification change and even DeepSeek on its still-valid outputs.
+matching, improved for **all five models** under RAG using the PRIMARY,
+all-scenario metric (`exact_indicator_overlap_all_scenarios` — invalid/
+missing/fallback outputs count as 0), including the two models with no
+significant classification change: llama3 0.004 -> 0.247, gemma3:12b 0.053 ->
+0.317, qwen3:8b 0.069 -> 0.213, gpt-oss:20b 0.004 -> 0.181, DeepSeek-R1:8B
+0.000 -> **0.104**. DeepSeek's figure must be read alongside its secondary,
+valid-outputs-only metric (`exact_indicator_overlap_valid_outputs`) of 0.152 —
+on the 82 scenarios it still committed to, its indicator grounding improved by
+about as much as the other models; the gap between 0.104 and 0.152 is the same
+output-reliability collapse described in point 3, not a separate finding.
 Indicator-vocabulary compliance (consistency study) improved **significantly
 for all five models** (Holm p from < 0.001 to 0.007), and OTRF in-vocabulary
 rate rose sharply under RAG for all five models on independent public telemetry
 — the single most consistent effect of knowledge augmentation measured anywhere
 in this dissertation, stronger than the classification-accuracy effect. Source:
-`results/comparison/overall_comparison.csv` (`indicator_overlap`);
+`results/comparison/overall_comparison.csv`
+(`exact_indicator_overlap_all_scenarios`, `exact_indicator_overlap_valid_outputs`);
 `results/consistency/reports/baseline_vs_rag_consistency.csv`
 (`indicator_vocabulary_compliance_rate`); `external_validation/evaluation/
 indicator_results.csv` (`in_vocabulary_rate`).

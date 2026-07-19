@@ -177,16 +177,23 @@ def test_evaluator_does_not_call_ollama():
 # --------------------------------------------------------------------------- #
 # 7. Frozen raw-output hash + record-order preservation                        #
 # --------------------------------------------------------------------------- #
+def _canonical_text_sha256(path: Path) -> str:
+    raw = path.read_bytes()
+    return hashlib.sha256(raw.replace(b"\r\n", b"\n").replace(b"\r", b"\n")).hexdigest()
+
+
 def test_frozen_otrf_outputs_hash_and_order_preserved():
-    """Every OTRF raw output file must (a) hash-match the recorded baseline and
-    (b) preserve the exact EXT_001..EXT_018 record order per model."""
+    """Every OTRF raw output file must (a) content-hash-match the recorded
+    baseline (line-ending-conversion-tolerant: compared on the canonical,
+    LF-normalised text, never the raw platform-specific bytes) and (b)
+    preserve the exact EXT_001..EXT_018 record order per model."""
     hashes_csv = REPO_ROOT / "docs" / "final_audit" / "FROZEN_ARTIFACT_HASHES.csv"
     frozen = {}
     if hashes_csv.exists():
         with hashes_csv.open(encoding="utf-8") as fh:
             for r in csv.DictReader(fh):
                 if r["category"] in ("otrf_baseline_raw", "otrf_rag_raw"):
-                    frozen[r["path"].replace("\\", "/")] = r["sha256"]
+                    frozen[r["path"]] = r["canonical_text_sha256"]
     import json
     checked = 0
     for cond in ("outputs_baseline", "outputs_rag"):
@@ -203,7 +210,8 @@ def test_frozen_otrf_outputs_hash_and_order_preserved():
             assert ids == [f"EXT_{i:03d}" for i in range(1, 19)], f"order/completeness drift in {raw.name}"
             rel = str(raw.relative_to(REPO_ROOT)).replace("\\", "/")
             if rel in frozen:
-                assert _sha256(raw) == frozen[rel], f"HASH DRIFT: {rel}"
+                assert _canonical_text_sha256(raw) == frozen[rel], (
+                    f"CONTENT DRIFT (not just line-ending conversion): {rel}")
                 checked += 1
     if frozen:
         assert checked == 10, f"expected 10 frozen OTRF raw files, checked {checked}"

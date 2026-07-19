@@ -587,13 +587,22 @@ def normalise_class(value: Any) -> str:
 # Scoring helpers (identical to baseline)                                      #
 # --------------------------------------------------------------------------- #
 def indicator_overlap(predicted: Any, expected_field: str) -> float:
-    expected = [e.strip().lower() for e in re.split(r"[;,]", expected_field) if e.strip()]
+    """
+    Proportion of expected indicators that appear as an EXACT, case-insensitive
+    token among the model's returned indicators.
+
+    Corrected 2026-07-19: tokens are normalised by case-folding and trimming
+    outer whitespace ONLY -- no substring matching, no space/hyphen ->
+    underscore folding, no synonym mapping. 0.0 if no indicators are expected.
+    """
+    expected = {e.strip().casefold() for e in re.split(r"[;,]", expected_field) if e.strip()}
     if not expected:
         return 0.0
-    pred_text = (" ".join(str(p).lower() for p in predicted)
-                 if isinstance(predicted, list) else str(predicted).lower())
-    hits = sum(1 for e in expected if e in pred_text)
-    return round(hits / len(expected), 3)
+    if isinstance(predicted, list):
+        pred_tokens = {str(p).strip().casefold() for p in predicted if str(p).strip()}
+    else:
+        pred_tokens = {t.strip().casefold() for t in re.split(r"[;,]", str(predicted)) if t.strip()}
+    return round(len(expected & pred_tokens) / len(expected), 3)
 
 
 def classify_outcome(pred_class: str, truth_class: str) -> str:

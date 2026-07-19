@@ -1,27 +1,49 @@
 # Canonical Artefact Paths
 
-Generated during the final evidence-integrity pass (2026-07-19). This document
-resolves the "duplicate-looking" directories the task flagged: which copy is
-authoritative, which is legacy, and why nothing was deleted.
+Generated during the final evidence-integrity pass (2026-07-19); updated the
+same day during a follow-up code-correction pass (indicator-overlap metric
+split, portable hash ledger, stale-folder cleanup). This document resolves
+the "duplicate-looking" directories the task flagged: which copy is
+authoritative, which is legacy, and what happened to each.
 
 ## Method
 
 Every root-level directory that shadows a path under `results/` or
-`external_validation/` was byte-compared (`diff -q`) against its canonical
-counterpart before being classified below. Root-level copies were found to be
-**exact byte-for-byte duplicates** of the canonical tree (see spot-checks in
-the table). No divergent, unique evidence was found in any legacy directory.
+`external_validation/` was byte-compared (`diff -rq`) against its canonical
+counterpart. **Raw-output** duplicates (unchanged since Phase 0) were found
+to be exact byte-for-byte copies. **Derived-report** duplicates
+(`comparison/`, `consistency_results/`) were re-checked after the
+indicator-overlap metric correction and other Phase-1 fixes regenerated their
+canonical counterparts under `results/` — at that point they were **no
+longer identical**: `comparison/` still held the single-column
+`indicator_overlap` metric and pre-correction McNemar/scenario-change output
+(and two files, `confusion_matrices.txt` / `indicator_overlap_note.txt`, that
+never existed under `results/comparison/` at all); `consistency_results/`
+still held the pre-Ollama-probe-fix `run_manifest.json` and pre-`fmt_p`
+`baseline_vs_rag_consistency.csv`/`baseline_vs_rag_summary.txt`. These two
+stale derived-report folders were archived in full (with their nested
+`baseline/`/`rag/` per-model-condition subfolders) to
+`results/archive/stale_root_comparison_<timestamp>/` and
+`results/archive/stale_root_consistency_results_<timestamp>/`, then removed
+from the working tree and from version control (`git rm -r`) — do not claim
+in any dissertation text that these two folders were byte-identical to the
+canonical tree; they were not, by the time of removal.
 
-| Legacy path (root-level) | Canonical path | Spot-check result |
+| Legacy path (root-level) | Canonical path | Status |
 |---|---|---|
-| `outputs_rag/` | `results/rag/` | `outputs_rag/llama3/llama3_rag_raw.jsonl` identical to `results/rag/llama3/llama3_rag_raw.jsonl` |
-| `outputs_consistency_baseline/` | `results/consistency/baseline/` | `.../llama3_baseline_consistency_raw.jsonl` identical |
-| `outputs_consistency_rag/` | `results/consistency/rag/` | identical (spot-checked llama3) |
-| `comparison/` | `results/comparison/` | `overall_comparison.csv` identical |
-| `consistency_results/` | `results/consistency/reports/` | `per_model_consistency.csv` (baseline) identical |
+| `outputs_rag/` | `results/rag/` | Retained; raw output, spot-checked byte-identical (`llama3_rag_raw.jsonl`) |
+| `outputs_consistency_baseline/` | `results/consistency/baseline/` | Retained; raw output, spot-checked byte-identical |
+| `outputs_consistency_rag/` | `results/consistency/rag/` | Retained; raw output, spot-checked byte-identical |
+| `comparison/` | `results/comparison/` | **Removed 2026-07-19** (was stale/diverged, not identical); archived under `results/archive/stale_root_comparison_<timestamp>/` |
+| `consistency_results/` | `results/consistency/reports/` | **Removed 2026-07-19** (was stale/diverged, not identical); archived under `results/archive/stale_root_consistency_results_<timestamp>/` |
 
 No root-level `baseline/` directory exists (i.e. `results/baseline/` has no
-legacy shadow copy).
+legacy shadow copy). The raw-output duplicates (`outputs_rag/`,
+`outputs_consistency_baseline/`, `outputs_consistency_rag/`) were left in
+place: unlike the two derived-report folders above, nothing in this pass
+regenerated their canonical counterparts, so their prior byte-identical
+spot-check still holds. They remain candidates for a future manual
+housekeeping pass.
 
 ## Canonical paths for all downstream work
 
@@ -47,24 +69,42 @@ knowledge_base/{AUTH,NET,NORMAL,PERSIST,PROC,SEC,USB}/   34 active knowledge-bas
 
 ## Non-canonical (legacy) paths — retained, not authoritative
 
-These directories are **not deleted** (per instruction: "do not delete them
-automatically"). They are stale copies, most likely left over from an earlier
-output-path convention before results were consolidated under `results/` and
-`external_validation/`. Nothing downstream (evaluators, tests, thesis
-write-up) reads from them. They should be considered for manual removal in a
-future housekeeping pass, once the dissertation is filed, but that decision is
-left to the author.
+These raw-output directories are **not deleted**. They are stale copies, most
+likely left over from an earlier output-path convention before results were
+consolidated under `results/` and `external_validation/`. Nothing downstream
+(evaluators, tests, thesis write-up) reads from them. They should be
+considered for manual removal in a future housekeeping pass, once the
+dissertation is filed, but that decision is left to the author.
 
 ```
 outputs_rag/                     legacy duplicate of results/rag/
 outputs_consistency_baseline/    legacy duplicate of results/consistency/baseline/
 outputs_consistency_rag/         legacy duplicate of results/consistency/rag/
-comparison/                      legacy duplicate of results/comparison/ (pre-correction copy)
-consistency_results/             legacy duplicate of results/consistency/reports/ (includes
-                                  consistency_results/consistency_selection.csv, which matches
-                                  results/consistency/reports/consistency_selection.csv; a
-                                  further-legacy selection file already lives at
-                                  results/consistency/archive/legacy_consistency_selection.csv)
+```
+
+## Removed (2026-07-19, follow-up code-correction pass)
+
+Unlike the raw-output duplicates above, these two **derived-report**
+directories were diverging (not identical) from their canonical counterpart
+once the indicator-overlap metric split and other Phase-1 fixes regenerated
+`results/comparison/` and were previously regenerated under
+`results/consistency/reports/`. They were archived in full, then removed from
+the working tree and from version control (`git rm -r`) rather than left in
+place stale:
+
+```
+comparison/               was: legacy duplicate of results/comparison/ (pre-correction copy;
+                          diverged after the indicator-overlap metric correction). Archived to
+                          results/archive/stale_root_comparison_<timestamp>/, then removed.
+consistency_results/      was: legacy duplicate of results/consistency/reports/ (diverged after
+                          the p-value-formatting / Ollama-probe fixes to 7-evaluate_consistency.py).
+                          Included a nested consistency_results/{baseline,rag}/ per-model-condition
+                          report subfolder. Archived to
+                          results/archive/stale_root_consistency_results_<timestamp>/, then removed.
+                          (consistency_results/consistency_selection.csv had matched
+                          results/consistency/reports/consistency_selection.csv; a further-legacy
+                          selection file remains at
+                          results/consistency/archive/legacy_consistency_selection.csv.)
 ```
 
 ## Also present, not part of the evaluation evidence chain

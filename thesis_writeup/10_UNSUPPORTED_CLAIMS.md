@@ -64,7 +64,7 @@ change was detected at this sample size" (10–18 discordant pairs each) — not
 
 ## 8. Precision, specificity, balanced accuracy, or benign false-positive rate for OTRF
 
-**Not estimable even once the evaluation is unblocked.** The OTRF sample is
+**Not estimable, even though the strict OTRF evaluation has completed.** The OTRF sample is
 100% ground-truth abnormal by construction; there is no defensible benign
 subset. This is a structural property of the sample, not a fixable gap. See
 `04_CHAPTER_4_EXTERNAL_VALIDATION_RESULTS.md`.
@@ -85,10 +85,16 @@ validity 0.95 -> 0.60, Holm p=0.041) — cite that specific corroboration, not
 a general "confirms the primary findings" statement. See
 `03_CHAPTER_4_CONSISTENCY_RESULTS.md`.
 
-## 11. Any claim about the two legacy/duplicate result directories (`outputs_rag/`, `comparison/`, `consistency_results/`, etc.)
+## 11. Any claim about the legacy/duplicate raw-output directories (`outputs_rag/`, `outputs_consistency_baseline/`, `outputs_consistency_rag/`)
 
-**Do not cite these as a separate or additional evidence source.** They were
-confirmed byte-for-byte identical to the canonical `results/` tree at the
-time of this audit and are documented as legacy in `docs/final_audit/
+**Do not cite these as a separate or additional evidence source.** They are
+raw-output duplicates confirmed byte-for-byte identical to the canonical
+`results/` tree and are documented as legacy in `docs/final_audit/
 CANONICAL_ARTIFACT_PATHS.md`. All dissertation numbers must cite the
-canonical paths only.
+canonical paths only. (Two further duplicate **derived-report** directories,
+`comparison/` and `consistency_results/`, existed at an earlier point in this
+audit but had diverged from the canonical tree by the time of the 2026-07-19
+indicator-overlap correction pass — they were archived under
+`results/archive/` and removed rather than left in place stale; see
+`CANONICAL_ARTIFACT_PATHS.md` for the removal record. They no longer exist in
+the working tree and must not be cited at all.)

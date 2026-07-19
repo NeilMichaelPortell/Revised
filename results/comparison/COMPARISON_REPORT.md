@@ -48,6 +48,8 @@ Status: **PASSED**
 | True-positive abnormal detections | 29 | 29 |
 | Ground-truth abnormal scenarios | 58 | 58 |
 | Coverage-adjusted abnormal recall | 0.500 | 0.5000 |
+| Exact indicator overlap (all-scenario, PRIMARY) | ~0.1042 | 0.1042 |
+| Exact indicator overlap (valid-outputs-only, secondary) | ~0.1524 | 0.1524 |
 
 ## Per-model notes
 

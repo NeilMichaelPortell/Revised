@@ -42,10 +42,14 @@ scripts.
 `Dataset/controlled_indicator_vocabulary.csv` — 62 canonical indicator
 tokens. Every "Expected indicators" entry in the active knowledge base is
 drawn from this vocabulary (`knowledge_base/README.md`); model-produced
-indicators are canonicalised (lower-case, whitespace/hyphens to underscore)
-and matched by **exact token membership**, never substring matching, so
-in-vocabulary vs out-of-vocabulary indicator use is a well-defined, exact
-measurement rather than a fuzzy heuristic.
+indicators are canonicalised by **case-folding and trimming outer whitespace
+ONLY** — no space-to-underscore folding, no hyphen-to-underscore folding, and
+no synonym mapping — and matched by **exact token membership**, never
+substring matching. A token that only matches after some other normalisation
+(e.g. `"failed login"` or `"failed-login"` against the canonical
+`failed_login`) is retained as **out-of-vocabulary**, not silently credited.
+This makes in-vocabulary vs out-of-vocabulary indicator use a well-defined,
+exact measurement rather than a fuzzy heuristic.
 
 ## Active knowledge-base documents
 
@@ -175,8 +179,18 @@ value sentinel needed for the OTRF telemetry-availability marker). A frozen
 manifest records the SHA-256 of every source file and every derived neutral
 input; the evaluator fails by default on any hash drift (`--allow-hash-drift`
 exists only to produce an explicitly separate diagnostic report, never the
-final evaluation). **As of 2026-07-19 this study is blocked**: two of the 18
-source captures are missing from disk. See
+final evaluation). **As of 2026-07-19 this study is COMPLETE**: all 18/18
+source captures and all 18/18 neutral-input hashes are verified against the
+frozen manifest (two of the eighteen, EXT_010 and EXT_014, resolve from a
+local, untracked OTRF clone via `--source-root` / `OTRF_SOURCE_ROOT` rather
+than the tracked `external_validation/source/` tree; both are byte-verified
+against the manifest hash before use). The strict evaluation ran with no
+override flag (no `--allow-hash-drift`, no `--allow-duplicates`); the
+certificate verdict is `PASS`
+(`external_validation/evaluation/source_verification_certificate.json`). Raw
+OTRF source archives remain **local and untracked** — they are gitignored and
+are never committed, staged, or pushed to GitHub; see
+`external_validation/source/README.md`. See
 `04_CHAPTER_4_EXTERNAL_VALIDATION_RESULTS.md`.
 
 ## Prototype validation

@@ -98,18 +98,37 @@ efficiency gain, it is an artefact of the model giving up early.
 
 ## 6. Indicator alignment (EXACT canonical-token matching)
 
-Table source: `overall_comparison.csv` (`indicator_overlap`, over valid
-outputs only). **Corrected 2026-07-19**: this is now the proportion of a
-scenario's expected (controlled-vocabulary) indicators that appear **verbatim**
-among the model's predicted indicators — exact matching after case-folding and
-outer-whitespace trimming only, with **no** substring credit, **no**
-space/hyphen -> underscore folding, and **no** synonym mapping (recomputed from
-the frozen model responses; the previous substring heuristic is retired).
-Under this stricter rule, indicator overlap still improves for every model
-under RAG, and generally by a larger relative margin than classification
-accuracy moved: llama3 0.004 -> 0.247, gemma3:12b 0.053 -> 0.317, qwen3:8b
-0.069 -> 0.213, gpt-oss:20b 0.004 -> 0.181, and DeepSeek (on the 82 scenarios
-it still committed to) 0.000 -> 0.152. Indicator alignment is a distinct
+Table source: `overall_comparison.csv`
+(`exact_indicator_overlap_all_scenarios`, `exact_indicator_overlap_valid_outputs`).
+**Corrected 2026-07-19 (two-metric split)**: the underlying per-scenario
+overlap is the proportion of a scenario's expected (controlled-vocabulary)
+indicators that appear **verbatim** among the model's predicted indicators —
+exact matching after case-folding and outer-whitespace trimming only, with
+**no** substring credit, **no** space/hyphen -> underscore folding, and **no**
+synonym mapping (recomputed from the frozen model responses; the previous
+substring heuristic is retired). This is now reported as two separate,
+named metrics rather than one blended number:
+
+- **`exact_indicator_overlap_all_scenarios` (PRIMARY, the dissertation
+  headline value)** — averaged over all 120 expected scenarios; every
+  invalid/missing/fallback output receives **0** in this average, so a model
+  cannot inflate its apparent indicator grounding by refusing to commit to a
+  classification.
+- **`exact_indicator_overlap_valid_outputs` (secondary diagnostic)** —
+  averaged over valid (committed) outputs only, i.e. "how well does the model
+  ground its indicators on the scenarios it actually answered".
+
+For every model except DeepSeek-R1:8B RAG the two values are identical,
+because that model/condition is the only one with any invalid outputs in the
+primary comparison (see §3). Values (baseline -> RAG, all-scenario/PRIMARY):
+llama3 0.004 -> 0.247, gemma3:12b 0.053 -> 0.317, qwen3:8b 0.069 -> 0.213,
+gpt-oss:20b 0.004 -> 0.181, DeepSeek-R1:8B 0.000 -> **0.104** (all-scenario,
+primary; the 38 invalid RAG outputs count as 0 in this average) vs **0.152**
+(valid-outputs-only, secondary; computed over just the 82 scenarios it still
+committed to). Report the all-scenario value as *the* result; the
+valid-outputs-only value is a diagnostic for explaining the gap, not a
+substitute headline number. Under the primary metric, indicator overlap still
+improves for every model under RAG. Indicator alignment is a distinct
 dimension from classification correctness — see
 `06_CHAPTER_5_DISCUSSION_POINTS.md`.
 
