@@ -411,6 +411,13 @@ def holm(pvals):
     return out
 
 
+def fmt_p(p) -> str:
+    """Never render p = 0.000: report '< 0.001' instead (2026-07-19 fix)."""
+    if p is None:
+        return "n/a"
+    return "< 0.001" if p < 0.001 else f"{p:.3f}"
+
+
 def compare(base_ps, rag_ps):
     b_idx = {(r["model"], r["scenario_id"]): r for r in base_ps}
     r_idx = {(r["model"], r["scenario_id"]): r for r in rag_ps}
@@ -465,6 +472,9 @@ def compare(base_ps, rag_ps):
         adj = holm(pvals)  # Holm PER METRIC across models
         for mr in metric_rows:
             mr["holm_adjusted_p_value"] = adj.get(mr["model"], mr["raw_p_value"])
+            # Display-formatted columns: never "0.000" (2026-07-19 fix).
+            mr["raw_p_value_display"] = fmt_p(mr["raw_p_value"])
+            mr["holm_adjusted_p_value_display"] = fmt_p(mr["holm_adjusted_p_value"])
         rows.extend(metric_rows)
     return rows
 
@@ -585,8 +595,13 @@ def write_run_manifest(per_cond, expected_reps, selected_count) -> None:
                         _hash_file(scripts / "6-run_consistency_rag.py"))
     manifest["evaluator_hash"] = _hash_file(scripts / "7-evaluate_consistency.py")
     manifest["prompt_hashes"] = prompt_hashes
-    manifest.setdefault("Ollama_version", _probe(["ollama", "--version"]))
-    manifest.setdefault("installed_model_versions", _probe(["ollama", "list"]))
+    # Never shell out to `ollama` from an evaluator: this script only reads
+    # already-frozen raw outputs and must not depend on (or wait on) a local
+    # Ollama install/service being present. Only fill these if a REAL prior
+    # run already recorded them (setdefault preserves genuine history);
+    # otherwise leave an explicit, honest placeholder rather than probing.
+    manifest.setdefault("Ollama_version", "not_available (evaluator does not invoke Ollama)")
+    manifest.setdefault("installed_model_versions", "not_available (evaluator does not invoke Ollama)")
     manifest.setdefault("operating_system", _probe(["uname", "-a"]))
     manifest.setdefault("CPU", "not_available")
     manifest.setdefault("RAM", "not_available")
@@ -695,7 +710,7 @@ def main() -> None:
                              f"diff={r['mean_difference']:+.3f} CI[{r['bootstrap_95_ci_low']:+.3f},"
                              f"{r['bootstrap_95_ci_high']:+.3f}] +/-/= "
                              f"{r['scenarios_improved']}/{r['scenarios_worsened']}/{r['scenarios_unchanged']} "
-                             f"p={r['raw_p_value']:.3f} holm={r['holm_adjusted_p_value']:.3f}")
+                             f"p={fmt_p(r['raw_p_value'])} holm={fmt_p(r['holm_adjusted_p_value'])}")
             lines.append("")
         lines.append("Report practical differences (improved/worsened, CI) alongside p-values.")
         (RESULTS_DIR / "baseline_vs_rag_summary.txt").write_text("\n".join(lines) + "\n", encoding="utf-8")

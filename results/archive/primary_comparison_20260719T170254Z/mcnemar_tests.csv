@@ -1,0 +1,6 @@
+model,both_correct,both_wrong,baseline_only_correct,rag_only_correct,discordant_pairs,p_value,significant_at_0.05,direction
+deepseek-r1_8b,74,17,28,1,29,0.000,YES,baseline better
+gemma3_12b,94,8,6,12,18,0.238,no,RAG better
+gpt-oss_20b,93,14,5,8,13,0.581,no,RAG better
+llama3,85,9,6,20,26,0.009,YES,RAG better
+qwen3_8b,96,14,6,4,10,0.754,no,baseline better

@@ -1,11 +1,11 @@
 BASELINE vs RAG CONSISTENCY COMPARISON
 ============================================================
-Test: sign test (SciPy not installed)
+Test: Wilcoxon signed-rank
 Bootstrap: 10000 iters, seed 2026. Holm per metric across models.
 
 [classification_agreement_rate]
   deepseek-r1:8b   base=1.000 rag=1.000 diff=+0.000 CI[+0.000,+0.000] +/-/= 0/0/20 p=1.000 holm=1.000
-  gemma3:12b       base=0.990 rag=1.000 diff=+0.010 CI[+0.000,+0.030] +/-/= 1/0/19 p=1.000 holm=1.000
+  gemma3:12b       base=0.990 rag=1.000 diff=+0.010 CI[+0.000,+0.030] +/-/= 1/0/19 p=0.317 holm=1.000
   gpt-oss:20b      base=1.000 rag=1.000 diff=+0.000 CI[+0.000,+0.000] +/-/= 0/0/20 p=1.000 holm=1.000
   llama3           base=1.000 rag=1.000 diff=+0.000 CI[+0.000,+0.000] +/-/= 0/0/20 p=1.000 holm=1.000
   qwen3:8b         base=1.000 rag=1.000 diff=+0.000 CI[+0.000,+0.000] +/-/= 0/0/20 p=1.000 holm=1.000
@@ -13,23 +13,23 @@ Bootstrap: 10000 iters, seed 2026. Holm per metric across models.
 [risk_agreement_rate]
   deepseek-r1:8b   base=1.000 rag=1.000 diff=+0.000 CI[+0.000,+0.000] +/-/= 0/0/20 p=1.000 holm=1.000
   gemma3:12b       base=1.000 rag=1.000 diff=+0.000 CI[+0.000,+0.000] +/-/= 0/0/20 p=1.000 holm=1.000
-  gpt-oss:20b      base=0.960 rag=0.950 diff=-0.010 CI[-0.100,+0.060] +/-/= 4/2/14 p=0.688 holm=1.000
-  llama3           base=1.000 rag=0.990 diff=-0.010 CI[-0.030,+0.000] +/-/= 0/1/19 p=1.000 holm=1.000
+  gpt-oss:20b      base=0.960 rag=0.950 diff=-0.010 CI[-0.100,+0.060] +/-/= 4/2/14 p=0.914 holm=1.000
+  llama3           base=1.000 rag=0.990 diff=-0.010 CI[-0.030,+0.000] +/-/= 0/1/19 p=0.317 holm=1.000
   qwen3:8b         base=1.000 rag=1.000 diff=+0.000 CI[+0.000,+0.000] +/-/= 0/0/20 p=1.000 holm=1.000
 
 [mean_pairwise_indicator_jaccard]
-  deepseek-r1:8b   base=0.872 rag=0.967 diff=+0.095 CI[+0.003,+0.182] +/-/= 9/2/9 p=0.065 holm=0.262
-  gemma3:12b       base=0.970 rag=0.980 diff=+0.010 CI[-0.040,+0.067] +/-/= 2/2/16 p=1.000 holm=1.000
-  gpt-oss:20b      base=0.775 rag=0.782 diff=+0.007 CI[-0.142,+0.142] +/-/= 8/5/7 p=0.581 holm=1.000
-  llama3           base=0.823 rag=0.987 diff=+0.163 CI[+0.073,+0.253] +/-/= 10/1/9 p=0.012 holm=0.059
-  qwen3:8b         base=0.953 rag=1.000 diff=+0.047 CI[+0.010,+0.090] +/-/= 4/0/16 p=0.125 holm=0.375
+  deepseek-r1:8b   base=0.872 rag=0.967 diff=+0.095 CI[+0.003,+0.182] +/-/= 9/2/9 p=0.105 holm=0.315
+  gemma3:12b       base=0.970 rag=0.980 diff=+0.010 CI[-0.040,+0.067] +/-/= 2/2/16 p=0.715 holm=1.000
+  gpt-oss:20b      base=0.775 rag=0.782 diff=+0.007 CI[-0.142,+0.142] +/-/= 8/5/7 p=0.833 holm=1.000
+  llama3           base=0.823 rag=0.987 diff=+0.163 CI[+0.073,+0.253] +/-/= 10/1/9 p=0.006 holm=0.030
+  qwen3:8b         base=0.953 rag=1.000 diff=+0.047 CI[+0.010,+0.090] +/-/= 4/0/16 p=0.063 holm=0.253
 
 [mean_pairwise_explanation_similarity]
-  deepseek-r1:8b   base=0.840 rag=0.959 diff=+0.119 CI[+0.033,+0.194] +/-/= 15/2/3 p=0.002 holm=0.012
-  gemma3:12b       base=0.901 rag=0.971 diff=+0.070 CI[+0.001,+0.139] +/-/= 8/4/8 p=0.388 holm=1.000
-  gpt-oss:20b      base=0.800 rag=0.723 diff=-0.077 CI[-0.153,-0.004] +/-/= 7/12/1 p=0.359 holm=1.000
-  llama3           base=0.825 rag=0.915 diff=+0.090 CI[+0.014,+0.167] +/-/= 11/6/3 p=0.332 holm=1.000
-  qwen3:8b         base=0.970 rag=0.961 diff=-0.008 CI[-0.060,+0.041] +/-/= 4/5/11 p=1.000 holm=1.000
+  deepseek-r1:8b   base=0.840 rag=0.959 diff=+0.119 CI[+0.033,+0.194] +/-/= 15/2/3 p=0.022 holm=0.108
+  gemma3:12b       base=0.901 rag=0.971 diff=+0.070 CI[+0.001,+0.139] +/-/= 8/4/8 p=0.084 holm=0.253
+  gpt-oss:20b      base=0.800 rag=0.723 diff=-0.077 CI[-0.153,-0.004] +/-/= 7/12/1 p=0.091 holm=0.253
+  llama3           base=0.825 rag=0.915 diff=+0.090 CI[+0.014,+0.167] +/-/= 11/6/3 p=0.037 holm=0.149
+  qwen3:8b         base=0.970 rag=0.961 diff=-0.008 CI[-0.060,+0.041] +/-/= 4/5/11 p=0.767 holm=0.767
 
 [json_parse_validity_rate]
   deepseek-r1:8b   base=1.000 rag=1.000 diff=+0.000 CI[+0.000,+0.000] +/-/= 0/0/20 p=1.000 holm=1.000
@@ -46,66 +46,66 @@ Bootstrap: 10000 iters, seed 2026. Holm per metric across models.
   qwen3:8b         base=1.000 rag=1.000 diff=+0.000 CI[+0.000,+0.000] +/-/= 0/0/20 p=1.000 holm=1.000
 
 [strict_schema_validity_rate]
-  deepseek-r1:8b   base=0.950 rag=0.600 diff=-0.350 CI[-0.550,-0.150] +/-/= 0/7/13 p=0.016 holm=0.078
+  deepseek-r1:8b   base=0.950 rag=0.600 diff=-0.350 CI[-0.550,-0.150] +/-/= 0/7/13 p=0.008 holm=0.041
   gemma3:12b       base=1.000 rag=1.000 diff=+0.000 CI[+0.000,+0.000] +/-/= 0/0/20 p=1.000 holm=1.000
   gpt-oss:20b      base=1.000 rag=1.000 diff=+0.000 CI[+0.000,+0.000] +/-/= 0/0/20 p=1.000 holm=1.000
   llama3           base=1.000 rag=1.000 diff=+0.000 CI[+0.000,+0.000] +/-/= 0/0/20 p=1.000 holm=1.000
   qwen3:8b         base=1.000 rag=1.000 diff=+0.000 CI[+0.000,+0.000] +/-/= 0/0/20 p=1.000 holm=1.000
 
 [indicator_vocabulary_compliance_rate]
-  deepseek-r1:8b   base=0.000 rag=0.440 diff=+0.440 CI[+0.240,+0.650] +/-/= 9/0/11 p=0.004 holm=0.004
-  gemma3:12b       base=0.000 rag=0.840 diff=+0.840 CI[+0.680,+0.990] +/-/= 17/0/3 p=0.000 holm=0.000
-  gpt-oss:20b      base=0.000 rag=0.450 diff=+0.450 CI[+0.240,+0.660] +/-/= 10/0/10 p=0.002 holm=0.004
-  llama3           base=0.000 rag=0.510 diff=+0.510 CI[+0.300,+0.720] +/-/= 11/0/9 p=0.001 holm=0.003
-  qwen3:8b         base=0.000 rag=0.750 diff=+0.750 CI[+0.550,+0.900] +/-/= 15/0/5 p=0.000 holm=0.000
+  deepseek-r1:8b   base=0.000 rag=0.440 diff=+0.440 CI[+0.240,+0.650] +/-/= 9/0/11 p=0.004 holm=0.007
+  gemma3:12b       base=0.000 rag=0.840 diff=+0.840 CI[+0.680,+0.990] +/-/= 17/0/3 p=< 0.001 holm=< 0.001
+  gpt-oss:20b      base=0.000 rag=0.450 diff=+0.450 CI[+0.240,+0.660] +/-/= 10/0/10 p=0.004 holm=0.007
+  llama3           base=0.000 rag=0.510 diff=+0.510 CI[+0.300,+0.720] +/-/= 11/0/9 p=0.001 holm=0.004
+  qwen3:8b         base=0.000 rag=0.750 diff=+0.750 CI[+0.550,+0.900] +/-/= 15/0/5 p=< 0.001 holm=< 0.001
 
 [classification_accuracy_across_repetitions]
-  deepseek-r1:8b   base=0.750 rag=0.550 diff=-0.200 CI[-0.400,-0.050] +/-/= 0/4/16 p=0.125 holm=0.625
-  gemma3:12b       base=0.790 rag=0.800 diff=+0.010 CI[-0.140,+0.160] +/-/= 2/1/17 p=1.000 holm=1.000
-  gpt-oss:20b      base=0.800 rag=0.900 diff=+0.100 CI[-0.100,+0.300] +/-/= 3/1/16 p=0.625 holm=1.000
-  llama3           base=0.700 rag=0.850 diff=+0.150 CI[-0.050,+0.350] +/-/= 4/1/15 p=0.375 holm=1.000
-  qwen3:8b         base=0.850 rag=0.800 diff=-0.050 CI[-0.150,+0.000] +/-/= 0/1/19 p=1.000 holm=1.000
+  deepseek-r1:8b   base=0.750 rag=0.550 diff=-0.200 CI[-0.400,-0.050] +/-/= 0/4/16 p=0.045 holm=0.228
+  gemma3:12b       base=0.790 rag=0.800 diff=+0.010 CI[-0.140,+0.160] +/-/= 2/1/17 p=0.785 holm=0.952
+  gpt-oss:20b      base=0.800 rag=0.900 diff=+0.100 CI[-0.100,+0.300] +/-/= 3/1/16 p=0.317 holm=0.952
+  llama3           base=0.700 rag=0.850 diff=+0.150 CI[-0.050,+0.350] +/-/= 4/1/15 p=0.180 holm=0.719
+  qwen3:8b         base=0.850 rag=0.800 diff=-0.050 CI[-0.150,+0.000] +/-/= 0/1/19 p=0.317 holm=0.952
 
 [risk_accuracy_across_repetitions]
-  deepseek-r1:8b   base=0.550 rag=0.400 diff=-0.150 CI[-0.300,+0.000] +/-/= 0/3/17 p=0.250 holm=1.000
-  gemma3:12b       base=0.450 rag=0.600 diff=+0.150 CI[-0.050,+0.350] +/-/= 4/1/15 p=0.375 holm=1.000
-  gpt-oss:20b      base=0.710 rag=0.650 diff=-0.060 CI[-0.340,+0.230] +/-/= 5/7/8 p=0.774 holm=1.000
-  llama3           base=0.400 rag=0.550 diff=+0.150 CI[-0.150,+0.450] +/-/= 7/4/9 p=0.549 holm=1.000
-  qwen3:8b         base=0.600 rag=0.650 diff=+0.050 CI[-0.100,+0.200] +/-/= 2/1/17 p=1.000 holm=1.000
+  deepseek-r1:8b   base=0.550 rag=0.400 diff=-0.150 CI[-0.300,+0.000] +/-/= 0/3/17 p=0.083 holm=0.416
+  gemma3:12b       base=0.450 rag=0.600 diff=+0.150 CI[-0.050,+0.350] +/-/= 4/1/15 p=0.180 holm=0.719
+  gpt-oss:20b      base=0.710 rag=0.650 diff=-0.060 CI[-0.340,+0.230] +/-/= 5/7/8 p=1.000 holm=1.000
+  llama3           base=0.400 rag=0.550 diff=+0.150 CI[-0.150,+0.450] +/-/= 7/4/9 p=0.366 holm=1.000
+  qwen3:8b         base=0.600 rag=0.650 diff=+0.050 CI[-0.100,+0.200] +/-/= 2/1/17 p=0.564 holm=1.000
 
 [mean_ground_truth_indicator_precision]
-  deepseek-r1:8b   base=0.000 rag=0.130 diff=+0.130 CI[+0.000,+0.280] +/-/= 3/0/17 p=0.250 holm=0.500
-  gemma3:12b       base=0.060 rag=0.200 diff=+0.140 CI[+0.030,+0.273] +/-/= 7/1/12 p=0.070 holm=0.211
-  gpt-oss:20b      base=0.010 rag=0.165 diff=+0.155 CI[+0.040,+0.295] +/-/= 6/0/14 p=0.031 holm=0.125
-  llama3           base=0.000 rag=0.275 diff=+0.275 CI[+0.108,+0.475] +/-/= 7/0/13 p=0.016 holm=0.078
-  qwen3:8b         base=0.100 rag=0.200 diff=+0.100 CI[-0.025,+0.250] +/-/= 3/1/16 p=0.625 holm=0.625
+  deepseek-r1:8b   base=0.000 rag=0.130 diff=+0.130 CI[+0.000,+0.280] +/-/= 3/0/17 p=0.102 holm=0.205
+  gemma3:12b       base=0.060 rag=0.200 diff=+0.140 CI[+0.030,+0.273] +/-/= 7/1/12 p=0.068 holm=0.204
+  gpt-oss:20b      base=0.010 rag=0.165 diff=+0.155 CI[+0.040,+0.295] +/-/= 6/0/14 p=0.027 holm=0.109
+  llama3           base=0.000 rag=0.275 diff=+0.275 CI[+0.108,+0.475] +/-/= 7/0/13 p=0.014 holm=0.070
+  qwen3:8b         base=0.100 rag=0.200 diff=+0.100 CI[-0.025,+0.250] +/-/= 3/1/16 p=0.194 holm=0.205
 
 [mean_ground_truth_indicator_recall]
-  deepseek-r1:8b   base=0.000 rag=0.075 diff=+0.075 CI[+0.000,+0.150] +/-/= 3/0/17 p=0.250 holm=0.500
-  gemma3:12b       base=0.030 rag=0.242 diff=+0.212 CI[+0.095,+0.342] +/-/= 8/0/12 p=0.008 holm=0.039
-  gpt-oss:20b      base=0.005 rag=0.133 diff=+0.128 CI[+0.030,+0.250] +/-/= 6/0/14 p=0.031 holm=0.094
-  llama3           base=0.000 rag=0.200 diff=+0.200 CI[+0.075,+0.325] +/-/= 7/0/13 p=0.016 holm=0.062
-  qwen3:8b         base=0.050 rag=0.125 diff=+0.075 CI[+0.000,+0.150] +/-/= 3/0/17 p=0.250 holm=0.500
+  deepseek-r1:8b   base=0.000 rag=0.075 diff=+0.075 CI[+0.000,+0.150] +/-/= 3/0/17 p=0.083 holm=0.167
+  gemma3:12b       base=0.030 rag=0.242 diff=+0.212 CI[+0.095,+0.342] +/-/= 8/0/12 p=0.010 holm=0.049
+  gpt-oss:20b      base=0.005 rag=0.133 diff=+0.128 CI[+0.030,+0.250] +/-/= 6/0/14 p=0.027 holm=0.082
+  llama3           base=0.000 rag=0.200 diff=+0.200 CI[+0.075,+0.325] +/-/= 7/0/13 p=0.011 holm=0.049
+  qwen3:8b         base=0.050 rag=0.125 diff=+0.075 CI[+0.000,+0.150] +/-/= 3/0/17 p=0.083 holm=0.167
 
 [mean_ground_truth_indicator_f1]
-  deepseek-r1:8b   base=0.000 rag=0.093 diff=+0.093 CI[+0.000,+0.193] +/-/= 3/0/17 p=0.250 holm=0.500
-  gemma3:12b       base=0.040 rag=0.204 diff=+0.164 CI[+0.072,+0.269] +/-/= 8/0/12 p=0.008 holm=0.039
-  gpt-oss:20b      base=0.007 rag=0.135 diff=+0.128 CI[+0.035,+0.237] +/-/= 6/0/14 p=0.031 holm=0.094
-  llama3           base=0.000 rag=0.204 diff=+0.204 CI[+0.079,+0.338] +/-/= 7/0/13 p=0.016 holm=0.062
-  qwen3:8b         base=0.067 rag=0.150 diff=+0.083 CI[-0.008,+0.192] +/-/= 3/1/16 p=0.625 holm=0.625
+  deepseek-r1:8b   base=0.000 rag=0.093 diff=+0.093 CI[+0.000,+0.193] +/-/= 3/0/17 p=0.102 holm=0.205
+  gemma3:12b       base=0.040 rag=0.204 diff=+0.164 CI[+0.072,+0.269] +/-/= 8/0/12 p=0.011 holm=0.056
+  gpt-oss:20b      base=0.007 rag=0.135 diff=+0.128 CI[+0.035,+0.237] +/-/= 6/0/14 p=0.027 holm=0.082
+  llama3           base=0.000 rag=0.204 diff=+0.204 CI[+0.079,+0.338] +/-/= 7/0/13 p=0.014 holm=0.056
+  qwen3:8b         base=0.067 rag=0.150 diff=+0.083 CI[-0.008,+0.192] +/-/= 3/1/16 p=0.141 holm=0.205
 
 [mean_latency]
-  deepseek-r1:8b   base=5.850 rag=5.049 diff=-0.801 CI[-1.127,-0.495] +/-/= 3/17/0 p=0.003 holm=0.013
-  gemma3:12b       base=10.843 rag=11.155 diff=+0.313 CI[-0.261,+0.749] +/-/= 15/5/0 p=0.041 holm=0.124
-  gpt-oss:20b      base=12.219 rag=17.487 diff=+5.268 CI[+3.258,+7.320] +/-/= 15/5/0 p=0.041 holm=0.124
-  llama3           base=5.007 rag=5.270 diff=+0.263 CI[+0.139,+0.391] +/-/= 17/3/0 p=0.003 holm=0.013
-  qwen3:8b         base=4.754 rag=4.830 diff=+0.076 CI[-0.009,+0.158] +/-/= 12/8/0 p=0.503 holm=0.503
+  deepseek-r1:8b   base=5.850 rag=5.049 diff=-0.801 CI[-1.127,-0.495] +/-/= 3/17/0 p=< 0.001 holm=0.001
+  gemma3:12b       base=10.843 rag=11.155 diff=+0.313 CI[-0.261,+0.749] +/-/= 15/5/0 p=0.036 holm=0.072
+  gpt-oss:20b      base=12.219 rag=17.487 diff=+5.268 CI[+3.258,+7.320] +/-/= 15/5/0 p=< 0.001 holm=0.001
+  llama3           base=5.007 rag=5.270 diff=+0.263 CI[+0.139,+0.391] +/-/= 17/3/0 p=< 0.001 holm=0.001
+  qwen3:8b         base=4.754 rag=4.830 diff=+0.076 CI[-0.009,+0.158] +/-/= 12/8/0 p=0.083 holm=0.083
 
 [latency_coefficient_of_variation]
-  deepseek-r1:8b   base=0.045 rag=0.068 diff=+0.022 CI[+0.010,+0.035] +/-/= 15/5/0 p=0.041 holm=0.041
-  gemma3:12b       base=0.048 rag=0.115 diff=+0.067 CI[+0.055,+0.076] +/-/= 19/1/0 p=0.000 holm=0.000
-  gpt-oss:20b      base=0.060 rag=0.121 diff=+0.061 CI[+0.038,+0.086] +/-/= 18/2/0 p=0.000 holm=0.002
-  llama3           base=0.054 rag=0.061 diff=+0.007 CI[-0.007,+0.018] +/-/= 16/4/0 p=0.012 holm=0.024
-  qwen3:8b         base=0.044 rag=0.078 diff=+0.034 CI[+0.020,+0.050] +/-/= 17/3/0 p=0.003 holm=0.008
+  deepseek-r1:8b   base=0.045 rag=0.068 diff=+0.022 CI[+0.010,+0.035] +/-/= 15/5/0 p=0.003 holm=0.006
+  gemma3:12b       base=0.048 rag=0.115 diff=+0.067 CI[+0.055,+0.076] +/-/= 19/1/0 p=< 0.001 holm=< 0.001
+  gpt-oss:20b      base=0.060 rag=0.121 diff=+0.061 CI[+0.038,+0.086] +/-/= 18/2/0 p=< 0.001 holm=< 0.001
+  llama3           base=0.054 rag=0.061 diff=+0.007 CI[-0.007,+0.018] +/-/= 16/4/0 p=0.040 holm=0.040
+  qwen3:8b         base=0.044 rag=0.078 diff=+0.034 CI[+0.020,+0.050] +/-/= 17/3/0 p=< 0.001 holm=0.001
 
 Report practical differences (improved/worsened, CI) alongside p-values.

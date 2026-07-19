@@ -1,0 +1,55 @@
+{
+  "context_state": {
+    "collector_is_admin": "not_available",
+    "defender": {
+      "realtime_protection_enabled": "not_available"
+    },
+    "network_profile": "not_available",
+    "removable_drives": [],
+    "running_monitored_processes": []
+  },
+  "event_summary": {
+    "failed_logins": 0,
+    "failed_login_activity": false,
+    "failed_login_count_band": "none",
+    "defender_disabled": "not_available",
+    "defender_config_changed": "not_available",
+    "malware_detected": "not_available",
+    "defender_events": [],
+    "firewall_changed": "not_available",
+    "firewall_events": [],
+    "usb_connection_count": 0,
+    "removable_drive_details": [],
+    "risky_processes": [],
+    "process_details": [],
+    "scheduled_task_change": false,
+    "scheduled_task_details": [],
+    "service_change": true,
+    "service_change_details": [],
+    "startup_item_change": false,
+    "startup_item_details": [],
+    "file_downloaded": false,
+    "download_details": [],
+    "network_profile": "not_available",
+    "web_domains": [],
+    "verified_activity_context": {
+      "command_activity": "powershell",
+      "script_execution": true,
+      "successful_login": true,
+      "lsass_access_detected": false,
+      "verified_commands": []
+    }
+  },
+  "telemetry_availability": {
+    "authentication": true,
+    "process_execution": true,
+    "script_execution": true,
+    "defender": false,
+    "firewall": false,
+    "scheduled_task": true,
+    "service": true,
+    "startup_persistence": true,
+    "file_download": true,
+    "usb": true
+  }
+}

@@ -1,0 +1,9 @@
+category,total_scenarios,normal,abnormal,collector_supported,augmented
+NORMAL,18,18,0,18,0
+AUTH,17,7,10,17,0
+USB,17,7,10,17,0
+SEC,17,7,10,17,0
+PROC,17,7,10,13,4
+NET,17,8,9,13,4
+PERSIST,17,8,9,13,4
+TOTAL,120,62,58,108,12

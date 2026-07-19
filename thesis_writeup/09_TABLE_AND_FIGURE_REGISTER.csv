@@ -1,0 +1,21 @@
+table_id,title,chapter,source_csv,notes
+T3.1,Dataset composition by category (normal/abnormal, collected/augmented),3,thesis_writeup/excel_source/dataset_composition.csv,120 total; 62 normal / 58 abnormal; 108 collected / 12 augmented
+T3.2,Active knowledge-base documents by category,3,thesis_writeup/excel_source/knowledge_base_composition.csv,34 total across 7 categories; GLOBAL and _archive_not_indexed excluded
+T4.1,Primary model x condition metrics (full required column set),4,thesis_writeup/excel_source/primary_model_condition_metrics.csv,also results/comparison/overall_comparison.csv; 10 rows (5 models x 2 conditions)
+T4.2,Primary output reliability (invalid/missing/fallback breakdown),4,thesis_writeup/excel_source/primary_reliability_metrics.csv,also results/comparison/output_reliability.csv
+T4.3,Primary McNemar + Holm-Bonferroni results,4,thesis_writeup/excel_source/primary_mcnemar_holm.csv,also results/comparison/mcnemar_tests.csv; p-values never displayed as 0.000
+T4.4,Primary per-category all-scenario accuracy (baseline vs RAG),4,thesis_writeup/excel_source/primary_per_category.csv,also results/comparison/per_category_comparison.csv; 35 rows (5 models x 7 categories)
+T4.5,Consistency model x condition metrics,4,thesis_writeup/excel_source/consistency_model_condition_metrics.csv,also results/consistency/reports/{baseline,rag}/per_model_consistency.csv
+T4.6,Consistency reliability subset (parse/schema/retry/timeout rates),4,thesis_writeup/excel_source/consistency_reliability.csv,derived subset of T4.5
+T4.7,Consistency baseline-vs-RAG paired comparison (15 metrics x 5 models),4,results/consistency/reports/baseline_vs_rag_consistency.csv,Holm correction applied per metric family across models
+T4.8,OTRF model x condition metrics,4,thesis_writeup/excel_source/otrf_model_condition_metrics.csv,PLACEHOLDER ONLY -- BLOCKED pending EXT_010/EXT_014 recovery; see 04_CHAPTER_4_EXTERNAL_VALIDATION_RESULTS.md
+T4.9,OTRF reliability metrics,4,thesis_writeup/excel_source/otrf_reliability.csv,PLACEHOLDER ONLY -- BLOCKED, same as T4.8
+T4.10,Latency comparison across primary and consistency studies,4,thesis_writeup/excel_source/latency_comparison.csv,combines results/comparison + results/consistency/reports latency columns
+T4.11,Indicator alignment comparison across primary and consistency studies,4,thesis_writeup/excel_source/indicator_comparison.csv,primary indicator_overlap vs consistency Jaccard/vocab-compliance
+T4.12,Scenario-level error analysis (what changed baseline->RAG per scenario),4,results/comparison/scenario_level_changes.csv,600 rows (5 models x 120 scenarios); includes RAG-retrieved doc IDs
+T4.13,Prototype single live validation run detail,4,prototype/validation_results.csv,n=1 completed run; 0 LLM calls -- report with the caveats in 05_CHAPTER_4_PROTOTYPE_RESULTS.md
+F4.1,All-scenario accuracy: baseline vs RAG per model (bar/paired chart),4,thesis_writeup/excel_source/primary_model_condition_metrics.csv,columns model/condition/all_scenario_accuracy
+F4.2,Coverage-adjusted recall vs specificity per model x condition (scatter),4,thesis_writeup/excel_source/primary_model_condition_metrics.csv,columns coverage_adjusted_recall/coverage_adjusted_specificity
+F4.3,McNemar discordant-pair direction per model (diverging bar),4,thesis_writeup/excel_source/primary_mcnemar_holm.csv,columns baseline_only_correct/rag_only_correct
+F4.4,Mean latency baseline vs RAG per model (paired bar),4,thesis_writeup/excel_source/latency_comparison.csv,filter study=primary_120_scenario
+F4.5,Indicator vocabulary compliance baseline vs RAG per model (paired bar),4,thesis_writeup/excel_source/indicator_comparison.csv,filter study=consistency_1000_record

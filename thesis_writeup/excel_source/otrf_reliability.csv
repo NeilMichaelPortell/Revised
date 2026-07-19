@@ -1,0 +1,8 @@
+# OTRF external validation is BLOCKED as of 2026-07-19: two of eighteen
+# raw source captures (EXT_010, EXT_014) are missing from
+# external_validation/source/, so scripts/runs_otrf/11-evaluate-otrf-external.py
+# fails its integrity gate by design and no certified metrics exist.
+# See docs/final_audit/MISSING_EVIDENCE.csv and
+# external_validation/evaluation/README_BLOCKED.md. No numbers are
+# fabricated here. Populate this file by re-running the evaluator once
+# both source files are recovered and hash-verified.

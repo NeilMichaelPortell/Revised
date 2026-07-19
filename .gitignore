@@ -16,7 +16,15 @@ __pycache__/
 # and "safe to gitignore" (this file): evaluation/, outputs_baseline/,
 # outputs_rag/ and retrieval/ hold run evidence and dissertation-relevant
 # summaries and are deliberately tracked, not ignored.
-external_validation/prepared/neutral_inputs/
+#
+# external_validation/prepared/neutral_inputs/ was PREVIOUSLY ignored here.
+# As of the 2026-07-19 evidence-integrity pass, all 18 EXT_001-EXT_018
+# neutral-input files were confirmed present on disk and byte-for-byte
+# hash-verified against external_validation/prepared/frozen_external_manifest.csv
+# (neutral_input_hash column, 18/18 match). They are the leakage-safe
+# reproducibility artefact for the OTRF supplementary validation and are now
+# deliberately tracked, not ignored, so the OTRF run is reproducible from the
+# repository alone.
 external_validation/logs/
 external_validation/archive/
 external_validation/tests/tmp/
