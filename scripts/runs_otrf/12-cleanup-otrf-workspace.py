@@ -5,7 +5,7 @@
 
 Safe cleanup for the SUPPLEMENTARY OTRF external-validation workspace only.
 Never touches the frozen 120-scenario primary experiment, Dataset/,
-knowledge_base/, outputs*/, or anything outside a small, explicit allowlist of
+knowledge_base/, results/, or anything outside a small, explicit allowlist of
 OTRF-generated paths.
 
 Hard rules enforced by this script (see README section "Safe folder cleanup"):
@@ -75,10 +75,7 @@ PROTECTED_PATHS = [
     oc.CONFIG_DIR,
     oc.ROOT_DIR / "Dataset",
     oc.ROOT_DIR / "knowledge_base",
-    oc.ROOT_DIR / "outputs",
-    oc.ROOT_DIR / "outputs_rag",
-    oc.ROOT_DIR / "outputs_consistency_baseline",
-    oc.ROOT_DIR / "outputs_consistency_rag",
+    oc.ROOT_DIR / "results",
 ]
 
 FROZEN_ARTEFACTS = {

@@ -1,4 +1,12 @@
 # --------------------------------------------------------------------------- #
+# Local Python environments and generated interpreter/test caches
+# --------------------------------------------------------------------------- #
+/venv/
+/.venv/
+__pycache__/
+*.py[cod]
+
+# --------------------------------------------------------------------------- #
 # OTRF external-validation workspace (external_validation/): generated,       #
 # caches and temporary artefacts ONLY. Manifests, configuration, source       #
 # documentation (README.md), and evaluation summaries/reports intended for    #
@@ -20,10 +28,8 @@ external_validation/tests/_tmp/
 # meant for version control.
 /Security-Datasets-master/
 
-# Python caches for the OTRF external-validation code only. Scoped
-# deliberately: this task's remit is the OTRF workspace, so caches elsewhere
-# in the repository (e.g. scripts/runs/__pycache__, prototype/) are left
-# untouched rather than swept by a broad top-level __pycache__/ rule.
+# Explicit OTRF cache paths are retained for readability; the broad Python
+# cache rules above also cover these directories.
 scripts/runs_otrf/__pycache__/
 external_validation/tests/__pycache__/
 .pytest_cache/

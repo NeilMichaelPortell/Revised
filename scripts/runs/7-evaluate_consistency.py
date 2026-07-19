@@ -6,7 +6,7 @@
 Evaluator for the standalone consistency experiment produced by
 5-run_consistency_baseline.py and 6-run_consistency_rag.py.
 
-Reads raw JSONL from outputs_consistency_baseline/ and outputs_consistency_rag/
+Reads raw JSONL from results/consistency/baseline/ and results/consistency/rag/
 and computes, per model / condition / scenario: classification, risk, indicator
 and explanation consistency; reliability (six validity fields, retry, timeout,
 empty, vocabulary compliance); latency; and correctness across repetitions
@@ -69,11 +69,12 @@ ROOT_DIR = _resolve_root()
 DATASET_DIR = ROOT_DIR / "Dataset"
 GROUND_TRUTH_PATH = DATASET_DIR / "ground_truth_FINAL.csv"
 VOCAB_PATH = DATASET_DIR / "controlled_indicator_vocabulary.csv"
-OUT_BASELINE = ROOT_DIR / "outputs_consistency_baseline"
-OUT_RAG = ROOT_DIR / "outputs_consistency_rag"
-RESULTS_DIR = ROOT_DIR / "consistency_results"
+CONSISTENCY_DIR = ROOT_DIR / "results" / "consistency"
+OUT_BASELINE = CONSISTENCY_DIR / "baseline"
+OUT_RAG = CONSISTENCY_DIR / "rag"
+RESULTS_DIR = CONSISTENCY_DIR / "reports"
 SELECTION_PATH = RESULTS_DIR / "consistency_selection.csv"
-FROZEN_PLAN_PATH = ROOT_DIR / "outputs_rag" / "retrieval_plan.json"
+FROZEN_PLAN_PATH = ROOT_DIR / "results" / "rag" / "retrieval_plan.json"
 
 EXPECTED_MODELS = ["llama3", "deepseek-r1:8b", "gemma3:12b", "qwen3:8b", "gpt-oss:20b"]
 BOOTSTRAP_ITERS = 10000
@@ -575,7 +576,7 @@ def write_run_manifest(per_cond, expected_reps, selected_count) -> None:
     manifest["knowledge_base_hash"] = _hash_dir(ROOT_DIR / "knowledge_base")
     manifest.setdefault("consistency_selection_hash", _hash_file(SELECTION_PATH))
     manifest.setdefault("frozen_retrieval_plan_hash",
-                        _hash_file(ROOT_DIR / "outputs_rag" / "retrieval_plan.json"))
+                        _hash_file(ROOT_DIR / "results" / "rag" / "retrieval_plan.json"))
     manifest.setdefault("baseline_runner_hash", "not_available")
     manifest.setdefault("rag_runner_hash", "not_available")
     manifest.setdefault("baseline_consistency_script_hash",

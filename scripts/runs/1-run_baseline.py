@@ -17,7 +17,7 @@ WHAT THIS SCRIPT DOES
 * It is LEAKAGE-SAFE. Models only ever see llm_inputs/R###.json (context_state +
   event_summary). Ground-truth labels are joined in AFTERWARDS, purely for scoring
   and for the review columns, never inside the prompt.
-* Output is written per model into outputs/<model>/ as:
+* Output is written per model into results/baseline/<model>/ as:
       - a human-readable review CSV (one row per scenario)
       - a raw JSONL audit trail (full prompt-free record of each call)
       - a summary text block with the headline metrics
@@ -72,7 +72,8 @@ DATASET_DIR = ROOT_DIR / "Dataset"
 LLM_INPUTS_DIR = DATASET_DIR / "llm_inputs"
 RUNNER_MAPPING_PATH = DATASET_DIR / "runner_mapping.csv"
 GROUND_TRUTH_PATH = DATASET_DIR / "ground_truth_FINAL.csv"
-OUTPUTS_DIR = ROOT_DIR / "outputs"
+RESULTS_DIR = ROOT_DIR / "results"
+OUTPUTS_DIR = RESULTS_DIR / "baseline"
 
 
 # --------------------------------------------------------------------------- #

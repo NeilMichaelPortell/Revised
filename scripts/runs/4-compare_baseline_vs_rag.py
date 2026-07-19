@@ -3,14 +3,14 @@
 4-compare_baseline_vs_rag.py
 ============================
 
-Detailed paired comparison of the BASELINE condition (outputs/) against the
-KNOWLEDGE-AUGMENTED / RAG condition (outputs_rag/), across all five models on
+Detailed paired comparison of the BASELINE condition (results/baseline/) against
+the KNOWLEDGE-AUGMENTED / RAG condition (results/rag/), across all five models on
 the identical 120 scenarios.
 
 This script is SEPARATE from 2-evaluate_results.py and does not modify it, the
 baseline outputs, or the RAG outputs. It only READS the per-model review CSVs
 that 1-run_baseline.py and 3-run_rag.py produced, and writes new comparison
-tables + a written report to a fresh folder (comparison/).
+tables + a written report to results/comparison/.
 
 WHY RECOMPUTE FROM THE REVIEW CSVs
 ----------------------------------
@@ -38,7 +38,7 @@ STATISTICS
 - Cohen's kappa vs ground truth (chance-corrected agreement), per condition.
 - Wilson 95% confidence interval on primary accuracy, per condition.
 
-OUTPUTS (written to ROOT/comparison/)
+OUTPUTS (written to ROOT/results/comparison/)
 -------------------------------------
 - overall_comparison.csv       : every metric, both conditions, all models
 - per_category_comparison.csv  : all-120 accuracy per category, baseline vs RAG
@@ -50,7 +50,7 @@ OUTPUTS (written to ROOT/comparison/)
 USAGE
 -----
     python 4-compare_baseline_vs_rag.py
-    python 4-compare_baseline_vs_rag.py --baseline-dir outputs --rag-dir outputs_rag
+    python 4-compare_baseline_vs_rag.py
 """
 from __future__ import annotations
 
@@ -425,9 +425,10 @@ def write_report(results: dict[str, Any], path: Path, models: list[str]) -> None
 # --------------------------------------------------------------------------- #
 def main() -> None:
     ap = argparse.ArgumentParser(description="Detailed baseline-vs-RAG comparison.")
-    ap.add_argument("--baseline-dir", default=str(ROOT_DIR / "outputs"))
-    ap.add_argument("--rag-dir", default=str(ROOT_DIR / "outputs_rag"))
-    ap.add_argument("--out-dir", default=str(ROOT_DIR / "comparison"))
+    results_dir = ROOT_DIR / "results"
+    ap.add_argument("--baseline-dir", default=str(results_dir / "baseline"))
+    ap.add_argument("--rag-dir", default=str(results_dir / "rag"))
+    ap.add_argument("--out-dir", default=str(results_dir / "comparison"))
     args = ap.parse_args()
 
     base_dir = Path(args.baseline_dir)

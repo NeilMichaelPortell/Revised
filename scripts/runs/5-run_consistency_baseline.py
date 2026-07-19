@@ -11,8 +11,8 @@ it does not import or require any shared consistency engine. It imports only
 stable configuration and prompt construction from the completed baseline runner
 (1-run_baseline.py), which it never modifies.
 
-It writes ONLY to outputs_consistency_baseline/ and consistency_results/.
-It never touches outputs/ or outputs_rag/.
+It writes only to results/consistency/baseline/ and
+results/consistency/reports/. It never touches results/baseline/ or results/rag/.
 
 USAGE
 -----
@@ -85,8 +85,9 @@ DATASET_DIR = BR.DATASET_DIR
 GROUND_TRUTH_PATH = BR.GROUND_TRUTH_PATH
 RUNNER_MAPPING_PATH = BR.RUNNER_MAPPING_PATH
 
-OUT_DIR = ROOT_DIR / "outputs_consistency_baseline"
-RESULTS_DIR = ROOT_DIR / "consistency_results"
+CONSISTENCY_DIR = ROOT_DIR / "results" / "consistency"
+OUT_DIR = CONSISTENCY_DIR / "baseline"
+RESULTS_DIR = CONSISTENCY_DIR / "reports"
 SELECTION_PATH = RESULTS_DIR / "consistency_selection.csv"
 CONDITION = "baseline"
 

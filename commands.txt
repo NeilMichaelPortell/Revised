@@ -11,9 +11,6 @@ python 1-run_baseline.py
 python 2-evaluate_results.py
 python 3-run_rag.py
 python 4-compare_baseline_vs_rag.py
-
-# Consistency experiment (20 fixed scenarios x 5 repetitions x 5 models)
-# Run baseline and RAG separately; each command makes 500 model calls.
 python 5-run_consistency_baseline.py
 python 6-run_consistency_rag.py
 python 7-evaluate_consistency.py
@@ -21,3 +18,6 @@ python 7-evaluate_consistency.py
 
 cd prototype
 python main.py
+
+
+cd scripts\runs_otrf

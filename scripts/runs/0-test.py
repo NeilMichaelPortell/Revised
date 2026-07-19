@@ -12,7 +12,8 @@ baseline mode, then inspects the output folders to confirm each model produced:
   - a summary file
 
 This is deliberately small so you can confirm end to end that Ollama responds,
-JSON parses, files land in outputs/<model>/, and the review columns look right.
+JSON parses, files land in results/baseline/<model>/, and the review columns
+look right.
 It does NOT touch the dataset and uses the same leakage-safe path as the real run.
 
 USAGE
@@ -34,7 +35,7 @@ from pathlib import Path
 
 ROOT_DIR = Path(__file__).resolve().parents[2]   # scripts\runs\ -> revised\
 MAIN_SCRIPT = Path(__file__).resolve().parent / "1-run_baseline.py"
-OUTPUTS_DIR = ROOT_DIR / "outputs"
+OUTPUTS_DIR = ROOT_DIR / "results" / "baseline"
 
 # Same five models, main three first (matches the real runner).
 MODELS = ["llama3", "deepseek-r1:8b", "gemma3:12b", "qwen3:8b", "gpt-oss:20b"]

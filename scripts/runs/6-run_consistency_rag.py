@@ -14,9 +14,9 @@ modifies.
 
 It REQUIRES the frozen retrieval plan produced by the completed RAG experiment
 and reuses it unchanged (identical documents/order/scores across all
-repetitions and models). It writes ONLY to outputs_consistency_rag/ and
-consistency_results/. It never touches outputs/ or outputs_rag/ contents other
-than reading the frozen retrieval_plan.json.
+repetitions and models). It writes only to results/consistency/rag/ and
+results/consistency/reports/. It never modifies results/baseline/ or results/rag/;
+it only reads the frozen retrieval_plan.json from the latter.
 
 It NEVER creates the consistency selection; it reuses the one created by the
 baseline consistency script.
@@ -87,8 +87,9 @@ KNOWLEDGE_BASE_DIR = RR.KNOWLEDGE_BASE_DIR
 RAG_OUTPUTS_DIR = RR.OUTPUTS_DIR                      # completed RAG outputs (read-only)
 FROZEN_PLAN_PATH = RAG_OUTPUTS_DIR / "retrieval_plan.json"
 
-OUT_DIR = ROOT_DIR / "outputs_consistency_rag"
-RESULTS_DIR = ROOT_DIR / "consistency_results"
+CONSISTENCY_DIR = ROOT_DIR / "results" / "consistency"
+OUT_DIR = CONSISTENCY_DIR / "rag"
+RESULTS_DIR = CONSISTENCY_DIR / "reports"
 SELECTION_PATH = RESULTS_DIR / "consistency_selection.csv"
 CONDITION = "rag"
 
@@ -281,7 +282,7 @@ def main() -> None:
         raise SystemExit(
             f"RAG consistency outputs already exist in {OUT_DIR}.\n"
             f"Use --resume to continue, or --overwrite to replace them. "
-            f"(Completed outputs_rag/ is never modified.)")
+            f"(Completed results/rag/ is never modified.)")
     if args.overwrite:
         for m in args.models:
             md = OUT_DIR / safe_model_dir(m)

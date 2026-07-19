@@ -6,7 +6,8 @@
 Knowledge-augmented (RAG) experiment runner for the revised MCAST dissertation.
 
 This is a SEPARATE script from 1-run_baseline.py. It does not modify or read the
-baseline script, the baseline outputs/ folder, 0-test.py, or 2-evaluate_results.py.
+baseline script, the results/baseline/ folder, 0-test.py, or
+2-evaluate_results.py.
 
 CONDITION
 ---------
@@ -39,8 +40,8 @@ localhost. Nothing is sent externally.
 
 OUTPUT
 ------
-Writes to outputs_rag/<model>/ : review CSV, raw JSONL (with full retrieval log),
-and summary. Never touches outputs/.
+Writes to results/rag/<model>/ : review CSV, raw JSONL (with full retrieval log),
+and summary. Never touches results/baseline/.
 
 USAGE
 -----
@@ -74,7 +75,8 @@ LLM_INPUTS_DIR = DATASET_DIR / "llm_inputs"
 RUNNER_MAPPING_PATH = DATASET_DIR / "runner_mapping.csv"
 GROUND_TRUTH_PATH = DATASET_DIR / "ground_truth_FINAL.csv"
 KNOWLEDGE_BASE_DIR = ROOT_DIR / "knowledge_base"
-OUTPUTS_DIR = ROOT_DIR / "outputs_rag"          # SEPARATE from baseline outputs/
+RESULTS_DIR = ROOT_DIR / "results"
+OUTPUTS_DIR = RESULTS_DIR / "rag"               # Separate from baseline results
 
 # Retrieval reads the seven category folders; GLOBAL is intentionally excluded.
 CATEGORY_FOLDERS = ["NORMAL", "AUTH", "USB", "SEC", "PROC", "NET", "PERSIST"]

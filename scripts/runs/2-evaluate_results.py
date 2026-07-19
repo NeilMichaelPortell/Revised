@@ -10,14 +10,15 @@ INPUTS (read-only)
 ------------------
 * Dataset/ground_truth_FINAL.csv   - the FROZEN authoritative labels (single
                                      source of truth for class, risk, indicators).
-* outputs/<model>/<model>_baseline_review.csv  - one row per scenario per model,
+* results/baseline/<model>/<model>_baseline_review.csv
+                                     - one row per scenario per model,
                                      produced by 1-run_baseline.py.
 
 The ground truth is joined by scenario_id. We deliberately re-join to the frozen
 file rather than trusting any label copied into the review CSV, so the scoring
 has one authoritative source that cannot drift.
 
-OUTPUTS (written to results/)
+OUTPUTS (written to results/baseline/evaluation/)
 -----------------------------
 * overall_metrics.csv        - one row per model: accuracy, precision, recall,
                                F1, risk-level accuracy, indicator overlap
@@ -58,8 +59,9 @@ from typing import Any
 # --------------------------------------------------------------------------- #
 ROOT_DIR = Path(__file__).resolve().parents[2]   # scripts\runs\ -> revised\
 GROUND_TRUTH_PATH = ROOT_DIR / "Dataset" / "ground_truth_FINAL.csv"
-OUTPUTS_DIR = ROOT_DIR / "outputs"
-RESULTS_DIR = ROOT_DIR / "results"
+RESULTS_ROOT = ROOT_DIR / "results"
+OUTPUTS_DIR = RESULTS_ROOT / "baseline"
+RESULTS_DIR = OUTPUTS_DIR / "evaluation"
 
 # All five models. The evaluator auto-detects which are present, so this list
 # just fixes the reporting order (main three first).
