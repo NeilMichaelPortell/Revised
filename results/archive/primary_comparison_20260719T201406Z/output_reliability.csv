@@ -1,0 +1,11 @@
+model,condition,expected_scenarios,observed_outputs,valid_classification_outputs,invalid_classification_outputs,missing_outputs,fallback_outputs,output_coverage,invalid_normal,invalid_abnormal,missing_normal,missing_abnormal,fallback_normal,fallback_abnormal
+llama3,baseline,120,120,120,0,0,0,1.0000,0,0,0,0,0,0
+llama3,rag,120,120,120,0,0,0,1.0000,0,0,0,0,0,0
+deepseek-r1_8b,baseline,120,120,119,1,0,0,1.0000,1,0,0,0,0,0
+deepseek-r1_8b,rag,120,120,82,38,0,0,1.0000,14,24,0,0,0,0
+gemma3_12b,baseline,120,120,120,0,0,0,1.0000,0,0,0,0,0,0
+gemma3_12b,rag,120,120,120,0,0,0,1.0000,0,0,0,0,0,0
+qwen3_8b,baseline,120,120,120,0,0,0,1.0000,0,0,0,0,0,0
+qwen3_8b,rag,120,120,120,0,0,0,1.0000,0,0,0,0,0,0
+gpt-oss_20b,baseline,120,120,120,0,0,0,1.0000,0,0,0,0,0,0
+gpt-oss_20b,rag,120,120,120,0,0,0,1.0000,0,0,0,0,0,0

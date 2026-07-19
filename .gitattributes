@@ -1,0 +1,25 @@
+# Stable, platform-independent line-ending behaviour for evidence files.
+#
+# Every frozen/derived evidence file (raw model-output JSONL, review/report
+# CSVs) is stored in the git object database with LF line endings and is
+# checked out with LF on every platform, regardless of a contributor's local
+# core.autocrlf setting. This does NOT change any record's content or order --
+# it only pins the newline byte sequence so that a SHA-256 taken from a Linux
+# clone and a SHA-256 taken from a Windows clone of the same commit are
+# comparable without a line-ending-conversion false positive. See
+# docs/final_audit/FROZEN_ARTIFACT_HASHES.csv (repository_sha256 vs
+# canonical_text_sha256 vs original_windows_crlf_sha256) for how this is
+# reconciled against pre-existing Windows-checked-out working trees.
+*.jsonl text eol=lf
+*.csv text eol=lf
+
+# Everything else: let Git auto-detect text vs binary, normalise text files to
+# LF in the repository, but do not force a particular checkout line ending.
+* text=auto
+
+# Explicitly binary: never apply any line-ending or diff conversion.
+*.zip binary
+*.exe binary
+*.dll binary
+*.7z binary
+*.rar binary
