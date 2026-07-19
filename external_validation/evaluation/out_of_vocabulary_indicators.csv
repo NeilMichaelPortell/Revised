@@ -1,0 +1,228 @@
+model,condition,external_scenario_id,oov_indicator
+llama3,baseline,EXT_002,lsass_access_detected
+llama3,baseline,EXT_003,powershell command activity
+llama3,baseline,EXT_004,psexec.exe
+llama3,baseline,EXT_005,service_change
+llama3,baseline,EXT_007,startup_item_change
+llama3,baseline,EXT_008,startup_item_change
+llama3,baseline,EXT_010,scheduled_task_change
+llama3,baseline,EXT_011,startup_item_change
+llama3,baseline,EXT_012,failed_logins
+llama3,baseline,EXT_012,startup_item_change
+llama3,baseline,EXT_014,service_change
+llama3,baseline,EXT_016,startup_item_change
+llama3,baseline,EXT_018,startup_item_change
+llama3,baseline,EXT_018,file_downloaded
+llama3,rag,EXT_004,service_change
+llama3,rag,EXT_004,psexec.exe
+llama3,rag,EXT_011,startup_item_change
+llama3,rag,EXT_012,failed_login_activity
+llama3,rag,EXT_012,failed_login_count_band
+llama3,rag,EXT_017,scheduled_task_change
+deepseek-r1:8b,baseline,EXT_001,successful_login detected
+deepseek-r1:8b,baseline,EXT_002,lsass_access_detected
+deepseek-r1:8b,baseline,EXT_003,successful_login: true
+deepseek-r1:8b,baseline,EXT_003,script_execution: true
+deepseek-r1:8b,baseline,EXT_004,service change detected without context
+deepseek-r1:8b,baseline,EXT_005,script_execution detected with powershell command activity
+deepseek-r1:8b,baseline,EXT_006,scheduled task change detected without details
+deepseek-r1:8b,baseline,EXT_007,startup item change detected without details.
+deepseek-r1:8b,baseline,EXT_007,powershell command execution with lsass access.
+deepseek-r1:8b,baseline,EXT_008,startup item change detected without details.
+deepseek-r1:8b,baseline,EXT_008,powershell command execution was verified but no specific commands were listed.
+deepseek-r1:8b,baseline,EXT_009,no failed login attempts detected.
+deepseek-r1:8b,baseline,EXT_009,no risky processes or malware detection reported.
+deepseek-r1:8b,baseline,EXT_010,scheduled task change detected without details.
+deepseek-r1:8b,baseline,EXT_010,script execution was verified but no specific commands were listed.
+deepseek-r1:8b,baseline,EXT_011,no failed login attempts detected.
+deepseek-r1:8b,baseline,EXT_011,no risky processes running or malware detected.
+deepseek-r1:8b,baseline,EXT_012,failed_login_activity detected with low band count
+deepseek-r1:8b,baseline,EXT_013,no failed login attempts detected.
+deepseek-r1:8b,baseline,EXT_013,no risky processes or malware detection reported.
+deepseek-r1:8b,baseline,EXT_014,service change detected without context
+deepseek-r1:8b,baseline,EXT_015,no failed login attempts detected.
+deepseek-r1:8b,baseline,EXT_015,no risky processes or malware detection reported.
+deepseek-r1:8b,baseline,EXT_016,startup item change detected without details.
+deepseek-r1:8b,baseline,EXT_016,verified script execution in powershell.
+deepseek-r1:8b,baseline,EXT_017,scheduled task change detected without details.
+deepseek-r1:8b,baseline,EXT_017,"lsass access was detected, which could indicate credential theft."
+deepseek-r1:8b,baseline,EXT_018,startup item change detected without details.
+deepseek-r1:8b,baseline,EXT_018,script execution was verified but no specific commands were listed.
+deepseek-r1:8b,rag,EXT_002,verified_activity_context.command_activity: 'rundll32' which is often associated with advanced or malicious activities
+deepseek-r1:8b,rag,EXT_004,service_change
+deepseek-r1:8b,rag,EXT_006,scheduled_task_change
+deepseek-r1:8b,rag,EXT_009,no failed login attempts detected.
+deepseek-r1:8b,rag,EXT_009,no risky processes running or executed.
+deepseek-r1:8b,rag,EXT_011,startup_item_change
+deepseek-r1:8b,rag,EXT_012,failed_login_activity = true
+deepseek-r1:8b,rag,EXT_013,no failed login attempts detected.
+deepseek-r1:8b,rag,EXT_013,no risky processes running or executed.
+deepseek-r1:8b,rag,EXT_015,no failed login attempts detected.
+deepseek-r1:8b,rag,EXT_015,no risky processes running or executed.
+deepseek-r1:8b,rag,EXT_017,scheduled_task_change
+gemma3:12b,baseline,EXT_001,lsass_access_detected
+gemma3:12b,baseline,EXT_002,lsass_access_detected
+gemma3:12b,baseline,EXT_003,lsass_access_detected
+gemma3:12b,baseline,EXT_003,powershell_script_execution
+gemma3:12b,baseline,EXT_004,psexec.exe detected
+gemma3:12b,baseline,EXT_004,service_change: true
+gemma3:12b,baseline,EXT_005,lsass_access_detected
+gemma3:12b,baseline,EXT_005,powershell_script_execution
+gemma3:12b,baseline,EXT_006,scheduled_task_change
+gemma3:12b,baseline,EXT_007,startup_item_change
+gemma3:12b,baseline,EXT_007,lsass_access_detected
+gemma3:12b,baseline,EXT_008,startup_item_change
+gemma3:12b,baseline,EXT_010,scheduled_task_change
+gemma3:12b,baseline,EXT_011,startup_item_change
+gemma3:12b,baseline,EXT_012,failed_logins
+gemma3:12b,baseline,EXT_012,lsass_access_detected
+gemma3:12b,baseline,EXT_012,startup_item_change
+gemma3:12b,baseline,EXT_014,service_change: true
+gemma3:12b,baseline,EXT_014,script_execution: true
+gemma3:12b,baseline,EXT_016,startup_item_change
+gemma3:12b,baseline,EXT_016,lsass_access_detected
+gemma3:12b,baseline,EXT_017,scheduled_task_change
+gemma3:12b,baseline,EXT_017,lsass_access_detected
+gemma3:12b,baseline,EXT_018,lsass_access_detected
+gemma3:12b,baseline,EXT_018,startup_item_change
+gemma3:12b,baseline,EXT_018,file_downloaded
+gemma3:12b,rag,EXT_001,lsass_access_detected
+gemma3:12b,rag,EXT_002,lsass_access_detected
+gemma3:12b,rag,EXT_002,command_activity
+gemma3:12b,rag,EXT_003,lsass_access_detected
+gemma3:12b,rag,EXT_004,service_change
+gemma3:12b,rag,EXT_004,risky_processes
+gemma3:12b,rag,EXT_005,service_change
+gemma3:12b,rag,EXT_005,lsass_access_detected
+gemma3:12b,rag,EXT_006,scheduled_task_change
+gemma3:12b,rag,EXT_006,script_host
+gemma3:12b,rag,EXT_007,lsass_access_detected
+gemma3:12b,rag,EXT_011,startup_item_change
+gemma3:12b,rag,EXT_014,service_change
+gemma3:12b,rag,EXT_016,lsass_access_detected
+gemma3:12b,rag,EXT_017,scheduled_task_change
+gemma3:12b,rag,EXT_018,lsass_access_detected
+qwen3:8b,baseline,EXT_001,lsass_access_detected
+qwen3:8b,baseline,EXT_002,no_failed_logins
+qwen3:8b,baseline,EXT_002,no_malware_detected
+qwen3:8b,baseline,EXT_002,no_risky_processes
+qwen3:8b,baseline,EXT_003,lsass_access_detected
+qwen3:8b,baseline,EXT_004,risky_processes
+qwen3:8b,baseline,EXT_004,service_change
+qwen3:8b,baseline,EXT_005,lsass_access_detected
+qwen3:8b,baseline,EXT_006,no failed logins
+qwen3:8b,baseline,EXT_006,no malware detected
+qwen3:8b,baseline,EXT_006,no suspicious processes
+qwen3:8b,baseline,EXT_007,startup_item_change
+qwen3:8b,baseline,EXT_007,lsass_access_detected
+qwen3:8b,baseline,EXT_008,no failed logins
+qwen3:8b,baseline,EXT_008,no malware detected
+qwen3:8b,baseline,EXT_009,no_failed_logins
+qwen3:8b,baseline,EXT_009,no_risky_processes
+qwen3:8b,baseline,EXT_009,no_malware_detected
+qwen3:8b,baseline,EXT_010,no failed logins
+qwen3:8b,baseline,EXT_010,no malware detected
+qwen3:8b,baseline,EXT_010,no suspicious processes
+qwen3:8b,baseline,EXT_011,no failed logins
+qwen3:8b,baseline,EXT_011,no malware detected
+qwen3:8b,baseline,EXT_012,startup_item_change
+qwen3:8b,baseline,EXT_012,lsass_access_detected
+qwen3:8b,baseline,EXT_013,no_failed_logins
+qwen3:8b,baseline,EXT_013,no_risky_processes
+qwen3:8b,baseline,EXT_013,no_malware_detected
+qwen3:8b,baseline,EXT_014,no failed logins
+qwen3:8b,baseline,EXT_014,no malware detected
+qwen3:8b,baseline,EXT_014,no risky processes
+qwen3:8b,baseline,EXT_015,no_failed_logins
+qwen3:8b,baseline,EXT_015,no_risky_processes
+qwen3:8b,baseline,EXT_015,no_malware_detected
+qwen3:8b,baseline,EXT_016,startup_item_change
+qwen3:8b,baseline,EXT_016,lsass_access_detected
+qwen3:8b,baseline,EXT_017,no failed logins
+qwen3:8b,baseline,EXT_017,no malware detected
+qwen3:8b,baseline,EXT_018,startup_item_change
+qwen3:8b,baseline,EXT_018,file_downloaded
+qwen3:8b,baseline,EXT_018,lsass_access_detected
+qwen3:8b,rag,EXT_001,lsass_access_detected
+qwen3:8b,rag,EXT_002,lsass_access_detected
+qwen3:8b,rag,EXT_003,lsass_access_detected
+qwen3:8b,rag,EXT_004,risky_processes
+qwen3:8b,rag,EXT_005,service_change
+qwen3:8b,rag,EXT_006,scheduled_task_change
+qwen3:8b,rag,EXT_007,lsass_access_detected
+qwen3:8b,rag,EXT_008,startup_item_change
+qwen3:8b,rag,EXT_009,no_failed_logins
+qwen3:8b,rag,EXT_009,no_risky_processes
+qwen3:8b,rag,EXT_009,no_usb_activity
+qwen3:8b,rag,EXT_011,startup_item_change
+qwen3:8b,rag,EXT_013,no_failed_logins
+qwen3:8b,rag,EXT_013,no_risky_processes
+qwen3:8b,rag,EXT_013,no_usb_activity
+qwen3:8b,rag,EXT_014,service_change
+qwen3:8b,rag,EXT_015,no_failed_logins
+qwen3:8b,rag,EXT_015,no_risky_processes
+qwen3:8b,rag,EXT_015,no_usb_activity
+qwen3:8b,rag,EXT_016,lsass_access_detected
+qwen3:8b,rag,EXT_017,scheduled_task_change
+qwen3:8b,rag,EXT_017,lsass_access_detected
+gpt-oss:20b,baseline,EXT_001,lsass_access_detected
+gpt-oss:20b,baseline,EXT_002,lsass_access_detected
+gpt-oss:20b,baseline,EXT_002,rundll32 command activity
+gpt-oss:20b,baseline,EXT_003,powershell script execution
+gpt-oss:20b,baseline,EXT_003,lsass access detected
+gpt-oss:20b,baseline,EXT_004,psexec.exe execution detected
+gpt-oss:20b,baseline,EXT_004,service configuration changed
+gpt-oss:20b,baseline,EXT_005,lsass_access_detected
+gpt-oss:20b,baseline,EXT_005,service_change
+gpt-oss:20b,baseline,EXT_006,scheduled_task_change
+gpt-oss:20b,baseline,EXT_007,powershell script executed with lsass access
+gpt-oss:20b,baseline,EXT_007,startup item added
+gpt-oss:20b,baseline,EXT_008,startup_item_change
+gpt-oss:20b,baseline,EXT_008,powershell_script_execution
+gpt-oss:20b,baseline,EXT_009,no failed logins or malware detected
+gpt-oss:20b,baseline,EXT_009,"no changes to startup items, services, or scheduled tasks"
+gpt-oss:20b,baseline,EXT_010,scheduled_task_change
+gpt-oss:20b,baseline,EXT_011,startup_item_change_detected
+gpt-oss:20b,baseline,EXT_011,no_other_suspicious_events
+gpt-oss:20b,baseline,EXT_012,lsass_access_detected
+gpt-oss:20b,baseline,EXT_012,startup_item_change
+gpt-oss:20b,baseline,EXT_013,no failed logins or malware detected
+gpt-oss:20b,baseline,EXT_013,"no changes to startup items, services, or scheduled tasks"
+gpt-oss:20b,baseline,EXT_014,service_change_detected
+gpt-oss:20b,baseline,EXT_014,powershell_script_execution
+gpt-oss:20b,baseline,EXT_015,no failed logins or authentication failures
+gpt-oss:20b,baseline,EXT_015,"no malware, process, or network activity detected"
+gpt-oss:20b,baseline,EXT_016,powershell script executed with lsass access
+gpt-oss:20b,baseline,EXT_016,startup item added
+gpt-oss:20b,baseline,EXT_017,lsass access detected
+gpt-oss:20b,baseline,EXT_017,scheduled task modification
+gpt-oss:20b,baseline,EXT_018,powershell script executed with lsass access
+gpt-oss:20b,baseline,EXT_018,startup item added
+gpt-oss:20b,rag,EXT_001,lsass_access_detected
+gpt-oss:20b,rag,EXT_002,lsass_access_detected
+gpt-oss:20b,rag,EXT_002,rundll32_usage
+gpt-oss:20b,rag,EXT_003,lsass_access_detected
+gpt-oss:20b,rag,EXT_004,service_change
+gpt-oss:20b,rag,EXT_004,risky_processes_psexec
+gpt-oss:20b,rag,EXT_005,service_change
+gpt-oss:20b,rag,EXT_005,lsass_access_detected
+gpt-oss:20b,rag,EXT_006,no_failed_logins
+gpt-oss:20b,rag,EXT_007,lsass_access_detected
+gpt-oss:20b,rag,EXT_008,startup_persistence
+gpt-oss:20b,rag,EXT_009,no anomalous activity detected
+gpt-oss:20b,rag,EXT_009,defender status unknown but no malware reported
+gpt-oss:20b,rag,EXT_010,scheduled_task_change
+gpt-oss:20b,rag,EXT_011,startup_item_change
+gpt-oss:20b,rag,EXT_011,no_additional_persistence_changes
+gpt-oss:20b,rag,EXT_012,lsass_access_detected
+gpt-oss:20b,rag,EXT_012,startup_item_change
+gpt-oss:20b,rag,EXT_013,no failed logins
+gpt-oss:20b,rag,EXT_013,no malware detected
+gpt-oss:20b,rag,EXT_014,service_change
+gpt-oss:20b,rag,EXT_015,no failed logins
+gpt-oss:20b,rag,EXT_015,no malware detected
+gpt-oss:20b,rag,EXT_016,lsass_access_detected
+gpt-oss:20b,rag,EXT_017,scheduled_task_change
+gpt-oss:20b,rag,EXT_017,lsass_access_detected
+gpt-oss:20b,rag,EXT_018,lsass_access_detected
+gpt-oss:20b,rag,EXT_018,startup_item_change

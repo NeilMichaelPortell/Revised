@@ -1,0 +1,11 @@
+model,condition,n_abnormal,abnormal_true_positives,abnormal_false_negatives,abnormal_recall,recall_ci_low,recall_ci_high,false_negative_rate
+llama3,baseline,18,12,6,0.6667,0.4444,0.8889,0.3333
+llama3,rag,18,14,4,0.7778,0.5556,0.9444,0.2222
+deepseek-r1:8b,baseline,18,12,6,0.6667,0.4444,0.8889,0.3333
+deepseek-r1:8b,rag,18,13,5,0.7222,0.5,0.8889,0.2778
+gemma3:12b,baseline,18,15,3,0.8333,0.6667,1.0,0.1667
+gemma3:12b,rag,18,14,4,0.7778,0.5556,0.9444,0.2222
+qwen3:8b,baseline,18,8,10,0.4444,0.2222,0.6667,0.5556
+qwen3:8b,rag,18,13,5,0.7222,0.5,0.8889,0.2778
+gpt-oss:20b,baseline,18,12,6,0.6667,0.4444,0.8889,0.3333
+gpt-oss:20b,rag,18,15,3,0.8333,0.6667,1.0,0.1667

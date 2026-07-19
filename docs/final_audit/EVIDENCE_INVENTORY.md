@@ -25,7 +25,7 @@ modified during this audit.
 | OTRF baseline raw (5 models x 18 scenarios) | 90 | 90 (18 x 5, exact per model) | OK |
 | OTRF RAG raw (5 models x 18 scenarios) | 90 | 90 (18 x 5, exact per model) | OK |
 | OTRF neutral inputs (EXT_001-EXT_018) | 18 | 18 present on disk | OK |
-| OTRF selected source datasets (EXT_001-EXT_018 zips) | 18 | **16 present, 2 missing** (EXT_010, EXT_014) | **GAP — see MISSING_EVIDENCE.csv** |
+| OTRF selected source datasets (EXT_001-EXT_018 zips) | 18 | 18 hash-verified (16 in tracked source dir; EXT_010, EXT_014 recovered 2026-07-19 from a local untracked OTRF clone) | RESOLVED — all 18 SHA-256 match the frozen manifest; raw archives kept local + untracked (see MISSING_EVIDENCE.csv, source/README.md) |
 
 No file in any of the eight raw-output categories contained fewer or more
 records than the counts above.
@@ -118,6 +118,11 @@ except for the one OTRF fallback noted above.
 The frozen evidence base for the primary 120-scenario study, the 1,000-record
 consistency study, and the OTRF model-output side are **complete and
 internally consistent** — no malformed, duplicate, missing, or misattributed
-records anywhere. The only unresolved gap is the two OTRF **source** capture
-files (EXT_010, EXT_014), which blocks strict end-to-end OTRF reproducibility
-verification (see `MISSING_EVIDENCE.csv` and Phase 7 of the final report).
+records anywhere. The two OTRF **source** capture files (EXT_010, EXT_014)
+that were missing from the tracked tree at preflight were subsequently
+recovered from a local untracked OTRF clone and hash-verified against the
+frozen manifest (18/18 source hashes now match), enabling the strict OTRF
+evaluation to complete without any override flag. The raw source archives are
+kept local and untracked (not committed to GitHub); see `MISSING_EVIDENCE.csv`,
+`external_validation/source/README.md`, and
+`../../thesis_writeup/04_CHAPTER_4_EXTERNAL_VALIDATION_RESULTS.md`.

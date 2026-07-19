@@ -1,0 +1,2 @@
+model,condition,external_scenario_id,reason
+deepseek-r1:8b,rag,EXT_010,strict_schema_invalid

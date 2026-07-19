@@ -36,6 +36,29 @@ external_validation/tests/_tmp/
 # meant for version control.
 /Security-Datasets-master/
 
+# Raw third-party OTRF SOURCE CAPTURES under external_validation/source/ are
+# NOT authored content: they are static security-event evidence archives that
+# trip malware/heuristic scanners on GitHub and are large. They are kept LOCAL
+# and untracked; their official source URLs and expected SHA-256 hashes are
+# preserved in external_validation/prepared/frozen_external_manifest.csv, and
+# the evaluator resolves them from a user-provided local source directory
+# (--source-root / OTRF_SOURCE_ROOT). Only external_validation/source/README.md
+# is tracked. This deliberately ignores ONLY the raw archives, NOT the tracked
+# dissertation artefacts under external_validation/ (prepared/, retrieval/,
+# outputs_baseline/, outputs_rag/, evaluation/, config/).
+external_validation/source/**/*.zip
+external_validation/source/**/*.gz
+external_validation/source/**/*.tgz
+external_validation/source/**/*.tar
+external_validation/source/**/*.7z
+external_validation/source/**/*.rar
+external_validation/source/**/*.exe
+external_validation/source/**/*.dll
+external_validation/source/**/*.js
+external_validation/source/**/*.ps1
+external_validation/source/**/*.vbs
+external_validation/source/**/*.bat
+
 # Explicit OTRF cache paths are retained for readability; the broad Python
 # cache rules above also cover these directories.
 scripts/runs_otrf/__pycache__/

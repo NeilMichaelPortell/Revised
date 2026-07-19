@@ -19,3 +19,13 @@ consistency_1000_record,gemma3:12b,rag,11.1555,0.1149
 consistency_1000_record,gpt-oss:20b,rag,17.4869,0.1214
 consistency_1000_record,llama3,rag,5.2698,0.0609
 consistency_1000_record,qwen3:8b,rag,4.8304,0.0778
+otrf_external,llama3,baseline,4.0807,
+otrf_external,llama3,rag,4.6066,
+otrf_external,deepseek-r1:8b,baseline,4.7834,
+otrf_external,deepseek-r1:8b,rag,5.5811,
+otrf_external,gemma3:12b,baseline,10.5579,
+otrf_external,gemma3:12b,rag,13.8567,
+otrf_external,qwen3:8b,baseline,4.2927,
+otrf_external,qwen3:8b,rag,4.9209,
+otrf_external,gpt-oss:20b,baseline,14.4776,
+otrf_external,gpt-oss:20b,rag,22.2321,

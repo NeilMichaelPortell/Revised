@@ -305,6 +305,26 @@ def test_deepseek_acceptance_values_real_frozen_data():
 
 
 # --------------------------------------------------------------------------- #
+# 12b. Primary indicator overlap uses EXACT canonical-token matching           #
+# --------------------------------------------------------------------------- #
+def test_primary_indicator_overlap_is_exact_not_substring():
+    # exact token overlap: 1 of 2 expected tokens present verbatim
+    assert cmp.exact_indicator_overlap(
+        "network_profile_viewed; no_additional_risky_activity",
+        "network_profile_viewed;network_profile_unchanged") == 0.5
+    # substring must NOT be credited: 'authorised_usb' is a substring of the
+    # predicted 'authorised_usb_device' but is a DIFFERENT token -> no credit.
+    assert cmp.exact_indicator_overlap("authorised_usb_device", "authorised_usb") == 0.0
+    # space / hyphen variants are not folded to the underscored token
+    assert cmp.exact_indicator_overlap("failed login", "failed_login") == 0.0
+    assert cmp.exact_indicator_overlap("failed-login", "failed_login") == 0.0
+    # exact match earns full credit; case-insensitive
+    assert cmp.exact_indicator_overlap("FAILED_LOGIN", "failed_login") == 1.0
+    # empty expected -> 0.0, never a divide-by-zero
+    assert cmp.exact_indicator_overlap("anything", "") == 0.0
+
+
+# --------------------------------------------------------------------------- #
 # 13. Evaluators run without Ollama                                            #
 # --------------------------------------------------------------------------- #
 def test_evaluator_has_no_ollama_or_network_dependency():

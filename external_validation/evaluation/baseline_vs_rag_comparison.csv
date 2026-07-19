@@ -1,0 +1,6 @@
+model,baseline_only_correct,rag_only_correct,both_correct,both_wrong,discordant,raw_p_value,holm_adjusted_p,note
+llama3,0,2,12,4,2,0.500,1.000,descriptive only; discordant pairs small
+deepseek-r1:8b,2,3,10,3,5,1.000,1.000,descriptive only; discordant pairs small
+gemma3:12b,1,0,14,3,1,1.000,1.000,descriptive only; discordant pairs small
+qwen3:8b,1,6,7,4,7,0.125,0.625,descriptive only; discordant pairs small
+gpt-oss:20b,0,3,12,3,3,0.250,1.000,descriptive only; discordant pairs small

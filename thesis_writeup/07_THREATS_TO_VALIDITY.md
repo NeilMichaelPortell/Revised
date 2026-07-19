@@ -53,14 +53,15 @@ disclaimer.
 
 ## External validity
 
-- **OTRF external validation is currently blocked** (two of eighteen source
-  captures missing — `docs/final_audit/MISSING_EVIDENCE.csv`,
-  `04_CHAPTER_4_EXTERNAL_VALIDATION_RESULTS.md`) and, even once unblocked,
-  supports only technical transportability, not organisational
+- **OTRF external validation completed in strict mode** (all 18 sources
+  hash-verified, no override flags — `04_CHAPTER_4_EXTERNAL_VALIDATION_
+  RESULTS.md`) but supports only technical transportability, not organisational
   generalisability: the OTRF sample is 100% abnormal by construction (public
   atomic-technique emulations), so precision, specificity, balanced accuracy
-  and benign false-positive rate are not estimable, and there is no
-  defensible external severity key.
+  and benign false-positive rate are **not estimable** and are marked as such
+  in every output table, and there is no defensible external severity key.
+  Recall CIs are wide (n=18) and the baseline-vs-RAG McNemar comparisons are
+  descriptive only (discordant pairs 1–7, no Holm significance).
 - **The prototype's live validation evidence is a single run with zero LLM
   calls** (`prototype/validation_results.csv`) — it demonstrates harness
   feasibility, not live detection or live LLM-reliability performance, and
@@ -96,14 +97,18 @@ disclaimer.
 
 ## Reproducibility / evidence-integrity threats specific to this pass
 
-- **Two OTRF source captures (EXT_010, EXT_014) are missing from the working
-  tree** (removed by a committed change, `79b8c0d "Removing Harmful Files"` —
-  see `docs/final_audit/MISSING_EVIDENCE.csv`), blocking end-to-end OTRF
-  reproducibility certification until recovered and hash-verified.
-- **All other frozen artefacts audited in this pass are hash-stable and
-  complete**: zero malformed JSONL lines, zero duplicate or missing scenario
-  records, correct model names, across all primary (600+600), consistency
-  (500+500) and OTRF (90+90) raw output files
+- **The raw OTRF source captures are third-party and kept LOCAL + UNTRACKED**
+  (`.gitignore`, `external_validation/source/README.md`): they are not
+  published to GitHub (they trip malware scanners and are not authored
+  content). Reproducibility is preserved by the frozen manifest's official
+  URLs + SHA-256 hashes and the evaluator's `--source-root` resolution, which
+  hash-checks every file. All 18 sources (including EXT_010/EXT_014, recovered
+  from the local clone) were hash-verified against the manifest during the
+  strict evaluation.
+- **All frozen artefacts audited in this pass are hash-stable and complete**:
+  zero malformed JSONL lines, zero duplicate or missing scenario records,
+  correct model names, correct EXT_001..EXT_018 record order, across all
+  primary (600+600), consistency (500+500) and OTRF (90+90) raw output files
   (`docs/final_audit/EVIDENCE_INVENTORY.md`).
 
 ## Privacy / ethics

@@ -401,9 +401,26 @@ def test_out_of_vocabulary_retained():
 
 
 def test_canonicalise_surface_only():
-    # surface normalisation (case/space/hyphen) but never synonym mapping
-    assert oc.canonicalise_indicator("Failed-Login") == "failed_login"
-    assert oc.canonicalise_indicator("  DEFENDER disabled ") == "defender_disabled"
+    # Corrected 2026-07-19 exact-match rule: case-fold + trim OUTER whitespace
+    # ONLY. Spaces and hyphens are NOT folded to underscores; inner punctuation
+    # is not stripped; synonyms are never mapped.
+    assert oc.canonicalise_indicator("Failed_Login") == "failed_login"       # case-fold only
+    assert oc.canonicalise_indicator("  DEFENDER_disabled ") == "defender_disabled"  # outer trim + fold
+    # space / hyphen variants must NOT collapse to the underscored token
+    assert oc.canonicalise_indicator("failed login") == "failed login"
+    assert oc.canonicalise_indicator("failed-login") == "failed-login"
+    assert oc.canonicalise_indicator("failed login") != "failed_login"
+    assert oc.canonicalise_indicator("failed-login") != "failed_login"
+
+
+def test_space_and_hyphen_variants_are_out_of_vocabulary():
+    # The exact rule means only the verbatim underscored token earns credit;
+    # space/hyphen phrasings of the same concept are retained as OOV, not folded.
+    vocab = {"failed_login"}
+    out = oc.classify_indicators(["failed login", "failed-login", "failed_login"], vocab)
+    assert out["canonical"] == ["failed_login"]
+    assert "failed login" in out["out_of_vocabulary"]
+    assert "failed-login" in out["out_of_vocabulary"]
 
 
 # --------------------------------------------------------------------------- #

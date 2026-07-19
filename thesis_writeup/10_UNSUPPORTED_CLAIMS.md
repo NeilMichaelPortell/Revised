@@ -11,13 +11,20 @@ significantly (llama3); 1 deteriorated significantly (deepseek-r1:8b); 3
 showed no significant change. Write the model-dependent finding instead (see
 `06_CHAPTER_5_DISCUSSION_POINTS.md` point 1).
 
-## 2. Any numeric OTRF result (recall, coverage, validity rate, latency, etc.)
+## 2. OTRF numeric results — now AVAILABLE, but only with the correct framing
 
-**Unsupported — the evaluation is blocked.** `scripts/runs_otrf/
-11-evaluate-otrf-external.py` fails its integrity gate because 2 of 18 source
-captures (EXT_010, EXT_014) are missing from disk. No certified OTRF metric
-exists as of 2026-07-19. See `04_CHAPTER_4_EXTERNAL_VALIDATION_RESULTS.md`
-and `docs/final_audit/MISSING_EVIDENCE.csv`.
+The strict OTRF evaluation completed on 2026-07-19 (18/18 source + neutral
+hashes verified, no override flags), so abnormal recall, false-negative rate,
+output coverage, JSON/field/classification/risk/indicator/strict-schema
+validity, retry/timeout/fallback counts, latency, in-vocabulary indicator rate
+and exact McNemar/Holm results ARE reportable — see
+`04_CHAPTER_4_EXTERNAL_VALIDATION_RESULTS.md`. What remains **unsupported**:
+(a) any OTRF **precision / specificity / balanced accuracy / benign
+false-positive rate / severity accuracy** — structurally `not_estimable`
+(100%-abnormal sample, no benign or severity key); (b) any claim that OTRF
+demonstrates **organisational real-world** performance — it demonstrates
+technical **transportability** only; (c) treating the small-n baseline-vs-RAG
+McNemar results as anything but **descriptive** (discordant pairs 1–7).
 
 ## 3. "The prototype demonstrates real-time detection performance / live LLM reliability"
 

@@ -43,15 +43,18 @@ Qwen3:8b 0.850 -> 0.833 (Holm p=1.000, not significant). Source:
 
 ## 6. Indicator alignment improved more consistently than classification
 
-Indicator overlap (primary study) improved for **all five models** under RAG,
-including the two with no significant classification change and even
-DeepSeek on its still-valid outputs. Indicator-vocabulary compliance
-(consistency study) improved **significantly for all five models** (Holm p
-from < 0.001 to 0.007) — the single most consistent effect of knowledge
-augmentation measured anywhere in this dissertation, stronger than the
-classification-accuracy effect. Source: `results/comparison/
-overall_comparison.csv` (`indicator_overlap`); `results/consistency/reports/
-baseline_vs_rag_consistency.csv` (`indicator_vocabulary_compliance_rate`).
+Indicator overlap (primary study), now measured by **exact** canonical-token
+matching, improved for **all five models** under RAG, including the two with no
+significant classification change and even DeepSeek on its still-valid outputs.
+Indicator-vocabulary compliance (consistency study) improved **significantly
+for all five models** (Holm p from < 0.001 to 0.007), and OTRF in-vocabulary
+rate rose sharply under RAG for all five models on independent public telemetry
+— the single most consistent effect of knowledge augmentation measured anywhere
+in this dissertation, stronger than the classification-accuracy effect. Source:
+`results/comparison/overall_comparison.csv` (`indicator_overlap`);
+`results/consistency/reports/baseline_vs_rag_consistency.csv`
+(`indicator_vocabulary_compliance_rate`); `external_validation/evaluation/
+indicator_results.csv` (`in_vocabulary_rate`).
 
 ## 7. Additional context generally increased latency
 
@@ -95,13 +98,18 @@ rate` stayed near-1.0 for every model regardless of what happened to
 
 ## 12. OTRF demonstrates technical transportability but not production generalisability
 
-Even once the two missing source files are recovered and the evaluation is
-re-certified, the framing must stay limited: an abnormal-dominated public
-research corpus supports a transportability claim (the pipeline processes
-independently sourced telemetry), not an organisational real-world
-generalisability claim (no benign subset, no organisation-specific
-telemetry, no defensible severity key). Source: `04_CHAPTER_4_EXTERNAL_
-VALIDATION_RESULTS.md`; `scripts/runs_otrf/11-evaluate-otrf-external.py`.
+The strict OTRF evaluation completed (18/18 sources hash-verified, no override
+flags): abnormal recall improved under RAG for 4 of 5 models (largest gain
+qwen3:8b 0.444 -> 0.722), output reliability stayed at 1.000 for every model
+except deepseek-r1:8b under RAG (0.944, one fallback) — echoing the primary
+finding on independent public telemetry — and in-vocabulary indicator use rose
+sharply under RAG for all five models. But the framing stays limited: an
+abnormal-dominated public research corpus supports a **transportability** claim
+(the pipeline processes independently sourced telemetry), not an organisational
+real-world generalisability claim (no benign subset, no organisation-specific
+telemetry, no defensible severity key; precision/specificity/balanced-accuracy/
+severity all `not_estimable`). Source: `04_CHAPTER_4_EXTERNAL_VALIDATION_
+RESULTS.md`; `external_validation/evaluation/`.
 
 ## 13. The controlled prototype demonstrates feasibility but not independent organisational validation
 

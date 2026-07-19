@@ -1,0 +1,164 @@
+{
+  "generated_utc": "2026-07-19T18:13:16.694746+00:00",
+  "adapter_version": "otrf-adapter-1.2.0",
+  "manifest_version": "otrf-manifest-1.1.0",
+  "retrieval_implementation_version": "otrf-retrieval-1.1.0",
+  "source_resolution_mode": "tracked source dir, with local untracked OTRF source directory fallback",
+  "n_scenarios": 18,
+  "all_source_hashes_match": true,
+  "all_neutral_input_hashes_match": true,
+  "frozen_retrieval_plan": {
+    "path": "external_validation\\retrieval\\frozen_otrf_retrieval_plan.jsonl",
+    "present": true,
+    "sha256": "bfa44593eb8cd8d3b638c3a535bb1a766629a1bc12af570e7a2acd7e25d900fb",
+    "records": 19
+  },
+  "scenarios": [
+    {
+      "external_scenario_id": "EXT_001",
+      "expected_source_sha256": "4633882ab1e9eadd156b29a89a5a6e24b680ead1b11ee259fdbe0d19ddbf77cf",
+      "observed_source_sha256": "4633882ab1e9eadd156b29a89a5a6e24b680ead1b11ee259fdbe0d19ddbf77cf",
+      "source_hash_match": true,
+      "neutral_input_hash_match": true,
+      "resolved_from": "tracked_source_dir"
+    },
+    {
+      "external_scenario_id": "EXT_002",
+      "expected_source_sha256": "0af9e920220d746432f0972be83ad057629695540aecd68c15869d190786e1ae",
+      "observed_source_sha256": "0af9e920220d746432f0972be83ad057629695540aecd68c15869d190786e1ae",
+      "source_hash_match": true,
+      "neutral_input_hash_match": true,
+      "resolved_from": "tracked_source_dir"
+    },
+    {
+      "external_scenario_id": "EXT_003",
+      "expected_source_sha256": "bb4c057b62d781be5426e011872ba1a15070c07afbb24848a14458f4b22b06fb",
+      "observed_source_sha256": "bb4c057b62d781be5426e011872ba1a15070c07afbb24848a14458f4b22b06fb",
+      "source_hash_match": true,
+      "neutral_input_hash_match": true,
+      "resolved_from": "tracked_source_dir"
+    },
+    {
+      "external_scenario_id": "EXT_004",
+      "expected_source_sha256": "c52e6145fefe37373a5274e2976ccf6d62e4d33e13c55dc1a2ce17f00506d1a6",
+      "observed_source_sha256": "c52e6145fefe37373a5274e2976ccf6d62e4d33e13c55dc1a2ce17f00506d1a6",
+      "source_hash_match": true,
+      "neutral_input_hash_match": true,
+      "resolved_from": "tracked_source_dir"
+    },
+    {
+      "external_scenario_id": "EXT_005",
+      "expected_source_sha256": "8f40e7fc86bbbf31ebd50b3ba537cf0f4378392ae3e74de84bee00aeb0de1fa5",
+      "observed_source_sha256": "8f40e7fc86bbbf31ebd50b3ba537cf0f4378392ae3e74de84bee00aeb0de1fa5",
+      "source_hash_match": true,
+      "neutral_input_hash_match": true,
+      "resolved_from": "tracked_source_dir"
+    },
+    {
+      "external_scenario_id": "EXT_006",
+      "expected_source_sha256": "74394c64b660d5b229936d00ea8b3ceb900126cd9e261f58fa2be766579ec5de",
+      "observed_source_sha256": "74394c64b660d5b229936d00ea8b3ceb900126cd9e261f58fa2be766579ec5de",
+      "source_hash_match": true,
+      "neutral_input_hash_match": true,
+      "resolved_from": "tracked_source_dir"
+    },
+    {
+      "external_scenario_id": "EXT_007",
+      "expected_source_sha256": "6167815b2f1901a267d965335251dc035b211f2b6e0d2063903d764305b80415",
+      "observed_source_sha256": "6167815b2f1901a267d965335251dc035b211f2b6e0d2063903d764305b80415",
+      "source_hash_match": true,
+      "neutral_input_hash_match": true,
+      "resolved_from": "tracked_source_dir"
+    },
+    {
+      "external_scenario_id": "EXT_008",
+      "expected_source_sha256": "2809354d679025859d723be3ceb1e2c9f9e5dde2ebec5bbea7c398e165a9b67d",
+      "observed_source_sha256": "2809354d679025859d723be3ceb1e2c9f9e5dde2ebec5bbea7c398e165a9b67d",
+      "source_hash_match": true,
+      "neutral_input_hash_match": true,
+      "resolved_from": "tracked_source_dir"
+    },
+    {
+      "external_scenario_id": "EXT_009",
+      "expected_source_sha256": "53a01d6976b7567a2464628d850c51cc48b1a91a932cd2b0e110a510bcedf858",
+      "observed_source_sha256": "53a01d6976b7567a2464628d850c51cc48b1a91a932cd2b0e110a510bcedf858",
+      "source_hash_match": true,
+      "neutral_input_hash_match": true,
+      "resolved_from": "tracked_source_dir"
+    },
+    {
+      "external_scenario_id": "EXT_010",
+      "expected_source_sha256": "b073a18420c90394cd2b6ad7589c78d90eba32dc155ed04b12ac824a8fc591b4",
+      "observed_source_sha256": "b073a18420c90394cd2b6ad7589c78d90eba32dc155ed04b12ac824a8fc591b4",
+      "source_hash_match": true,
+      "neutral_input_hash_match": true,
+      "resolved_from": "local_untracked_otrf_source_directory"
+    },
+    {
+      "external_scenario_id": "EXT_011",
+      "expected_source_sha256": "3d887b38c6a92892f950029f40114fe4598a798ad20453671dbe3d111b9ce4a2",
+      "observed_source_sha256": "3d887b38c6a92892f950029f40114fe4598a798ad20453671dbe3d111b9ce4a2",
+      "source_hash_match": true,
+      "neutral_input_hash_match": true,
+      "resolved_from": "tracked_source_dir"
+    },
+    {
+      "external_scenario_id": "EXT_012",
+      "expected_source_sha256": "4312946d5bb0883e691da3b1130d4179b951a413278b450a75c05d56a2858a1a",
+      "observed_source_sha256": "4312946d5bb0883e691da3b1130d4179b951a413278b450a75c05d56a2858a1a",
+      "source_hash_match": true,
+      "neutral_input_hash_match": true,
+      "resolved_from": "tracked_source_dir"
+    },
+    {
+      "external_scenario_id": "EXT_013",
+      "expected_source_sha256": "262680222316edb2dc0d7dca380dfe75191fb96779b8dacc8aac8a1d8bdc046b",
+      "observed_source_sha256": "262680222316edb2dc0d7dca380dfe75191fb96779b8dacc8aac8a1d8bdc046b",
+      "source_hash_match": true,
+      "neutral_input_hash_match": true,
+      "resolved_from": "tracked_source_dir"
+    },
+    {
+      "external_scenario_id": "EXT_014",
+      "expected_source_sha256": "b37c022ce7aa5fed3ad7087e2ec1f37d7b1089ec9bfe7b196f974295d255506b",
+      "observed_source_sha256": "b37c022ce7aa5fed3ad7087e2ec1f37d7b1089ec9bfe7b196f974295d255506b",
+      "source_hash_match": true,
+      "neutral_input_hash_match": true,
+      "resolved_from": "local_untracked_otrf_source_directory"
+    },
+    {
+      "external_scenario_id": "EXT_015",
+      "expected_source_sha256": "506ba862fd76e0f8d43396e705ec6eebb7a01a5a2954bd70c9f47802d32f4843",
+      "observed_source_sha256": "506ba862fd76e0f8d43396e705ec6eebb7a01a5a2954bd70c9f47802d32f4843",
+      "source_hash_match": true,
+      "neutral_input_hash_match": true,
+      "resolved_from": "tracked_source_dir"
+    },
+    {
+      "external_scenario_id": "EXT_016",
+      "expected_source_sha256": "b8cc7aae826f5e4aea3ea47b2b6db69b062c39201de8de9621d5081622d3c504",
+      "observed_source_sha256": "b8cc7aae826f5e4aea3ea47b2b6db69b062c39201de8de9621d5081622d3c504",
+      "source_hash_match": true,
+      "neutral_input_hash_match": true,
+      "resolved_from": "tracked_source_dir"
+    },
+    {
+      "external_scenario_id": "EXT_017",
+      "expected_source_sha256": "5ea8ac17aceb7a83273019235fcdee67dd0b21cdce6b5d00b2d7e1665444de9e",
+      "observed_source_sha256": "5ea8ac17aceb7a83273019235fcdee67dd0b21cdce6b5d00b2d7e1665444de9e",
+      "source_hash_match": true,
+      "neutral_input_hash_match": true,
+      "resolved_from": "tracked_source_dir"
+    },
+    {
+      "external_scenario_id": "EXT_018",
+      "expected_source_sha256": "97a834cd72b0803d544c62cc45a41b18a4cc04a605735096be4bc5dad5e9fe7b",
+      "observed_source_sha256": "97a834cd72b0803d544c62cc45a41b18a4cc04a605735096be4bc5dad5e9fe7b",
+      "source_hash_match": true,
+      "neutral_input_hash_match": true,
+      "resolved_from": "tracked_source_dir"
+    }
+  ],
+  "verdict": "PASS",
+  "note": "Raw OTRF source ZIPs are third-party, kept LOCAL and UNTRACKED; the local source directory path is intentionally omitted from this certificate. Official source URLs and expected hashes live in the frozen manifest."
+}

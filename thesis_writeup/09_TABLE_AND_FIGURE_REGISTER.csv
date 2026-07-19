@@ -8,8 +8,10 @@ T4.4,Primary per-category all-scenario accuracy (baseline vs RAG),4,thesis_write
 T4.5,Consistency model x condition metrics,4,thesis_writeup/excel_source/consistency_model_condition_metrics.csv,also results/consistency/reports/{baseline,rag}/per_model_consistency.csv
 T4.6,Consistency reliability subset (parse/schema/retry/timeout rates),4,thesis_writeup/excel_source/consistency_reliability.csv,derived subset of T4.5
 T4.7,Consistency baseline-vs-RAG paired comparison (15 metrics x 5 models),4,results/consistency/reports/baseline_vs_rag_consistency.csv,Holm correction applied per metric family across models
-T4.8,OTRF model x condition metrics,4,thesis_writeup/excel_source/otrf_model_condition_metrics.csv,PLACEHOLDER ONLY -- BLOCKED pending EXT_010/EXT_014 recovery; see 04_CHAPTER_4_EXTERNAL_VALIDATION_RESULTS.md
-T4.9,OTRF reliability metrics,4,thesis_writeup/excel_source/otrf_reliability.csv,PLACEHOLDER ONLY -- BLOCKED, same as T4.8
+T4.8,OTRF model x condition metrics,4,thesis_writeup/excel_source/otrf_model_condition_metrics.csv,from external_validation/evaluation/model_condition_metrics.csv (strict run); precision/specificity/balanced_accuracy = not_estimable
+T4.9,OTRF reliability metrics,4,thesis_writeup/excel_source/otrf_reliability.csv,from external_validation/evaluation/output_reliability.csv (strict run)
+T4.9b,OTRF abnormal detection (recall/FN),4,external_validation/evaluation/abnormal_detection_results.csv,all 18 scenarios abnormal; recall CIs wide (n=18)
+T4.9c,OTRF source verification certificate,4,external_validation/evaluation/source_verification_certificate.json,verdict PASS; 18/18 source + neutral hashes; no absolute paths stored
 T4.10,Latency comparison across primary and consistency studies,4,thesis_writeup/excel_source/latency_comparison.csv,combines results/comparison + results/consistency/reports latency columns
 T4.11,Indicator alignment comparison across primary and consistency studies,4,thesis_writeup/excel_source/indicator_comparison.csv,primary indicator_overlap vs consistency Jaccard/vocab-compliance
 T4.12,Scenario-level error analysis (what changed baseline->RAG per scenario),4,results/comparison/scenario_level_changes.csv,600 rows (5 models x 120 scenarios); includes RAG-retrieved doc IDs

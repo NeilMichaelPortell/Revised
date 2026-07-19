@@ -32,7 +32,8 @@ artefact rather than a number typed into prose.
 | Consistency derived reports (CORRECTED 2026-07-19) | `results/consistency/reports/*.csv`, `*.txt` | `scripts/runs/7-evaluate_consistency.py` |
 | Consistency reports, pre-correction snapshot | `results/consistency/archive/consistency_reports_20260719T170351Z/` | (archived, not authoritative) |
 | OTRF raw outputs (180 records, hash-verified) | `external_validation/outputs_baseline/`, `external_validation/outputs_rag/` | frozen; never regenerated |
-| OTRF external evaluation | **BLOCKED** — see `external_validation/evaluation/README_BLOCKED.md` | `scripts/runs_otrf/11-evaluate-otrf-external.py` (fails its integrity gate on EXT_010/EXT_014) |
+| OTRF external evaluation (COMPLETED strict mode 2026-07-19) | `external_validation/evaluation/*.csv`, `external_validation_report.md`, `source_verification_certificate.json` | `scripts/runs_otrf/11-evaluate-otrf-external.py --source-root <local OTRF dir>` |
+| Raw OTRF source captures (18) | LOCAL + UNTRACKED (`.gitignore`); URLs + SHA-256 in `external_validation/prepared/frozen_external_manifest.csv`; see `external_validation/source/README.md` | not committed |
 | Prototype supplementary validation | `prototype/validation_results.csv`, `prototype/validation_summary.txt`, `prototype/validation_implementation_report.txt` | prototype tooling; 1 completed live run |
 | Evidence-integrity audit (this pass) | `docs/final_audit/FROZEN_ARTIFACT_HASHES.csv`, `EVIDENCE_INVENTORY.md`, `MISSING_EVIDENCE.csv`, `CANONICAL_ARTIFACT_PATHS.md` | one-off audit, 2026-07-19 |
 | Offline test suite for the corrected evaluator | `scripts/runs/tests/test_compare_baseline_vs_rag.py` (15/15 passing) | — |
@@ -48,6 +49,11 @@ fallback outputs into coverage-adjusted recall/specificity/F1 as failures.
 The consistency evaluator's p-value display bug (`p = 0.000` instead of
 `p < 0.001`) was fixed, and a hang caused by the evaluator shelling out to the
 `ollama` CLI for version metadata was removed (evaluators must never invoke
-Ollama). The OTRF external evaluation could not be certified this pass: two
-of its eighteen raw source captures are missing from disk. See
-`04_CHAPTER_4_EXTERNAL_VALIDATION_RESULTS.md` for the full status.
+Ollama). Indicator scoring was corrected to **exact** controlled-vocabulary-
+token matching (case-fold + trim only; no substring, no underscore folding, no
+synonym mapping) in the primary and OTRF evaluators. The OTRF external
+evaluation is now **completed in strict mode**: all 18 raw source captures were
+located in a local untracked OTRF clone and hash-verified (18/18 source +
+18/18 neutral), the raw archives were removed from Git tracking and ignored,
+and the evaluator ran clean without any override flag. See
+`04_CHAPTER_4_EXTERNAL_VALIDATION_RESULTS.md`.

@@ -26,6 +26,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -58,6 +59,11 @@ def main(argv: list[str] | None = None) -> None:
                          "the manifest is deleted.")
     ap.add_argument("--dry-run", action="store_true",
                     help="Report what would be prepared/removed without writing anything.")
+    ap.add_argument("--source-root", default=os.environ.get("OTRF_SOURCE_ROOT"),
+                    help="Path to a LOCAL, UNTRACKED OTRF source directory (e.g. a "
+                         "Security-Datasets clone). Used to resolve raw source files not "
+                         "present under the tracked source_dir; may also be supplied via "
+                         "the OTRF_SOURCE_ROOT environment variable. Never persisted.")
     args = ap.parse_args(argv)
 
     cfg = load_config(Path(args.config))
@@ -109,7 +115,7 @@ def main(argv: list[str] | None = None) -> None:
                                "detail": "manifest row not filled in"})
             continue
 
-        src = oc.resolve_source_path(rel_path, source_dir)
+        src = oc.resolve_source_file(row, source_dir=source_dir, source_root=args.source_root)
         if not src.exists():
             skipped_count += 1
             unsupported_rows.append({"external_scenario_id": ext_id, "source_path": str(src),

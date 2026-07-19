@@ -94,6 +94,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import re
 from math import comb, sqrt
 from pathlib import Path
 from typing import Any
@@ -102,6 +103,24 @@ ROOT_DIR = Path(__file__).resolve().parents[2]
 MODELS = ["llama3", "deepseek-r1_8b", "gemma3_12b", "qwen3_8b", "gpt-oss_20b"]
 CATEGORIES = ["NORMAL", "AUTH", "USB", "SEC", "PROC", "NET", "PERSIST"]
 VALID_CLASSES = {"normal", "abnormal"}
+
+
+def exact_indicator_overlap(predicted_field: str, expected_field: str) -> float:
+    """Exact canonical-token overlap of a scenario's expected indicators.
+
+    Corrected 2026-07-19: uses EXACT matching, not the runner's substring
+    heuristic. Each indicator token is normalised by case-folding and trimming
+    outer whitespace ONLY -- no substring matching, no space/hyphen ->
+    underscore folding, no synonym mapping. Returns the proportion of the
+    scenario's expected (controlled-vocabulary) indicators that appear
+    verbatim among the model's predicted indicators. Both fields are the frozen
+    model response's / ground truth's ';'- or ','-delimited token lists."""
+    def toks(field: str) -> set[str]:
+        return {t.strip().casefold() for t in re.split(r"[;,]", field or "") if t.strip()}
+    exp = toks(expected_field)
+    if not exp:
+        return 0.0
+    return len(exp & toks(predicted_field)) / len(exp)
 
 # The exact required-column order for overall_comparison.csv (task spec).
 REQUIRED_COLUMNS = [
@@ -278,9 +297,12 @@ def aggregate_metrics(scenario_ids: list[str], gt: dict[str, dict[str, str]],
             cell = confusion_cell(pred, gt_class)
             counts[cell] += 1
             kappa_pairs.append((pred, gt_class))
-            ov = row.get("indicator_overlap", "")
-            if ov not in ("", None, "None"):
-                overlaps.append(float(ov))
+            # EXACT canonical-token indicator overlap recomputed from the frozen
+            # model response, replacing the runner's substring heuristic. Uses
+            # the scenario's ground-truth expected indicators as the reference.
+            expected_inds = gt_row.get("expected_indicators", "")
+            overlaps.append(exact_indicator_overlap(
+                row.get("predicted_indicators", ""), expected_inds))
             if row.get("risk_match", "").strip().upper() == "TRUE":
                 risk_correct_all += 1
         elif category in ("invalid", "fallback", "missing"):

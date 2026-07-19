@@ -85,6 +85,66 @@ def resolve_source_path(rel: str, source_dir: Path | None = None) -> Path:
     return base / rel
 
 
+def otrf_relpath_from_url(url: str) -> str | None:
+    """Reconstruct the OTRF-clone-relative path from the raw.githubusercontent
+    source URL recorded in the frozen manifest, e.g.
+    '.../OTRF/Security-Datasets/master/datasets/atomic/.../file.zip' ->
+    'datasets/atomic/.../file.zip'. Returns None when the URL has no '/master/'
+    segment. This is authoritative (it comes from the manifest itself), so it
+    deterministically disambiguates a basename that occurs in more than one
+    OTRF folder (e.g. the discovery/host vs discovery/network copies)."""
+    if not url:
+        return None
+    marker = "/master/"
+    i = url.find(marker)
+    if i == -1:
+        return None
+    return url[i + len(marker):]
+
+
+def resolve_source_file(row: dict[str, str], source_dir: Path | None = None,
+                        source_root: str | Path | None = None) -> Path:
+    """Locate a manifest row's raw source ZIP without ever copying or modifying
+    it. Resolution order:
+
+      1. the tracked per-EXT source dir (external_validation/source/ by
+         default, or an explicit `source_dir`) using the manifest `source_path`
+         column -- this finds sources already present in the repo layout;
+      2. if a local, untracked OTRF `source_root` is supplied: the same
+         per-EXT layout under that root;
+      3. the manifest-URL-reconstructed OTRF path under that root
+         (authoritative -- resolves basename ambiguity deterministically);
+      4. a hash-verified recursive basename search under that root, which
+         accepts a match ONLY when its SHA-256 equals the manifest
+         `source_hash` (so an ambiguous basename can never resolve to the
+         wrong file).
+
+    Returns the first existing candidate; if none exists, returns the primary
+    (tracked) path so the caller can report it as missing. The `source_root`
+    is never persisted anywhere by this function."""
+    rel = row.get("source_path", "") or row.get("source_relative_path", "")
+    primary = resolve_source_path(rel, source_dir)
+    if primary.exists():
+        return primary
+    if source_root:
+        root = Path(source_root)
+        cand = root / rel
+        if cand.exists():
+            return cand
+        url_rel = otrf_relpath_from_url(row.get("source_url_if_known", ""))
+        if url_rel:
+            cand = root / url_rel
+            if cand.exists():
+                return cand
+        expected = row.get("source_hash", "")
+        base = Path(rel).name
+        if base and expected and expected != "not_available":
+            for p in root.rglob(base):
+                if p.is_file() and sha256_file(p) == expected:
+                    return p
+    return primary
+
+
 # --------------------------------------------------------------------------- #
 # Documented retrieval-implementation version and divergence from primary     #
 # --------------------------------------------------------------------------- #
@@ -194,20 +254,26 @@ class IntegrityError(RuntimeError):
 
 
 def verify_manifest_integrity(manifest_rows: list[dict[str, str]],
-                              source_dir: Path | None = None) -> list[str]:
+                              source_dir: Path | None = None,
+                              source_root: str | Path | None = None) -> list[str]:
     """Recompute source_hash and neutral_input_hash for every frozen manifest
     row and return a list of human-readable violations (empty == clean).
-    Does not raise; callers decide whether to treat violations as fatal."""
+    Does not raise; callers decide whether to treat violations as fatal.
+
+    When `source_root` is supplied, a source file that is not present in the
+    tracked per-EXT layout is looked up in that local, untracked OTRF root
+    (see resolve_source_file); it is still hash-checked against the frozen
+    manifest, so drift or substitution is still caught."""
     violations: list[str] = []
     for row in manifest_rows:
         ext_id = row.get("external_scenario_id", "(unknown)")
-        src = resolve_source_path(row.get("source_path", ""), source_dir)
+        src = resolve_source_file(row, source_dir, source_root)
         expected_src_hash = row.get("source_hash", "")
         if expected_src_hash and expected_src_hash != "not_available":
             current_src_hash = sha256_file(src)
             if current_src_hash != expected_src_hash:
                 violations.append(
-                    f"{ext_id}: source file hash drift ({src})")
+                    f"{ext_id}: source file hash drift or missing ({src})")
         neutral_path = NEUTRAL_INPUTS_DIR / f"{ext_id}.json"
         expected_neutral_hash = row.get("neutral_input_hash", "")
         if not neutral_path.exists():
@@ -606,23 +672,28 @@ def load_controlled_vocabulary() -> set[str]:
     vocab: set[str] = set()
     with VOCAB_PATH.open("r", newline="", encoding="utf-8-sig") as fh:
         for row in csv.DictReader(fh):
-            tok = (row.get("indicator_token") or "").strip().lower()
+            tok = (row.get("indicator_token") or "").strip().casefold()
             if tok:
                 vocab.add(tok)
     return vocab
 
 
 def canonicalise_indicator(raw: Any) -> str:
-    """Normalise a single model-produced indicator to a canonical token FORM
-    (lowercase, spaces/hyphens -> underscore, trimmed). This is a deterministic
-    surface normalisation only; it does NOT map synonyms. Whether the result is
-    an accepted indicator is decided by exact set membership against the frozen
-    controlled vocabulary - never by substring matching."""
-    t = str(raw).strip().lower()
-    t = re.sub(r"[\s\-]+", "_", t)
-    t = re.sub(r"[^a-z0-9_]", "", t)
-    t = re.sub(r"_+", "_", t).strip("_")
-    return t
+    """Normalise a single model-produced indicator for EXACT-match scoring:
+    case-fold and trim outer whitespace ONLY.
+
+    Deliberately does NOT (per the corrected 2026-07-19 indicator rule):
+      * replace spaces with underscores;
+      * replace hyphens with underscores;
+      * strip inner punctuation;
+      * map synonyms.
+
+    A predicted token earns credit only when, after this surface-only
+    normalisation, it is byte-for-byte equal to a controlled-vocabulary token
+    (decided by exact set membership in classify_indicators -- never by
+    substring, underscore-folding, or synonym mapping). Anything else is
+    retained as out-of-vocabulary, never silently discarded."""
+    return str(raw).strip().casefold()
 
 
 def classify_indicators(predicted: Any, vocab: set[str]) -> dict[str, list[str]]:

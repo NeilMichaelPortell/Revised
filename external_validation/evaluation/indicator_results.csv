@@ -1,0 +1,11 @@
+model,condition,canonical_indicator_count,out_of_vocabulary_count,total_indicators_emitted,out_of_vocabulary_rate,in_vocabulary_rate,grounded_against_expected_indicators
+llama3,baseline,0,14,14,1.0,0.0,not_estimable
+llama3,rag,13,6,19,0.3158,0.6842,not_estimable
+deepseek-r1:8b,baseline,0,29,29,1.0,0.0,not_estimable
+deepseek-r1:8b,rag,8,12,20,0.6,0.4,not_estimable
+gemma3:12b,baseline,5,26,31,0.8387,0.1613,not_estimable
+gemma3:12b,rag,19,16,35,0.4571,0.5429,not_estimable
+qwen3:8b,baseline,7,41,48,0.8542,0.1458,not_estimable
+qwen3:8b,rag,17,22,39,0.5641,0.4359,not_estimable
+gpt-oss:20b,baseline,2,33,35,0.9429,0.0571,not_estimable
+gpt-oss:20b,rag,11,28,39,0.7179,0.2821,not_estimable

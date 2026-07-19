@@ -96,15 +96,22 @@ read alongside its 38 short, non-committal outputs, which take less time to
 generate than a fully reasoned answer; the lower latency is not evidence of
 efficiency gain, it is an artefact of the model giving up early.
 
-## 6. Indicator alignment
+## 6. Indicator alignment (EXACT canonical-token matching)
 
 Table source: `overall_comparison.csv` (`indicator_overlap`, over valid
-outputs only). Indicator overlap improved for every model under RAG, and
-generally by a larger relative margin than classification accuracy moved:
-llama3 0.032 -> 0.301, gemma3:12b 0.104 -> 0.354, qwen3:8b 0.117 -> 0.258,
-gpt-oss:20b 0.040 -> 0.249, and even DeepSeek (on the 82 scenarios it still
-committed to) 0.080 -> 0.209. Indicator alignment is a distinct dimension
-from classification correctness — see `06_CHAPTER_5_DISCUSSION_POINTS.md`.
+outputs only). **Corrected 2026-07-19**: this is now the proportion of a
+scenario's expected (controlled-vocabulary) indicators that appear **verbatim**
+among the model's predicted indicators — exact matching after case-folding and
+outer-whitespace trimming only, with **no** substring credit, **no**
+space/hyphen -> underscore folding, and **no** synonym mapping (recomputed from
+the frozen model responses; the previous substring heuristic is retired).
+Under this stricter rule, indicator overlap still improves for every model
+under RAG, and generally by a larger relative margin than classification
+accuracy moved: llama3 0.004 -> 0.247, gemma3:12b 0.053 -> 0.317, qwen3:8b
+0.069 -> 0.213, gpt-oss:20b 0.004 -> 0.181, and DeepSeek (on the 82 scenarios
+it still committed to) 0.000 -> 0.152. Indicator alignment is a distinct
+dimension from classification correctness — see
+`06_CHAPTER_5_DISCUSSION_POINTS.md`.
 
 ## 7. Scenario-level error analysis
 

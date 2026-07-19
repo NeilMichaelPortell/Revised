@@ -1,0 +1,15 @@
+{
+  "generated_utc": "2026-07-19T18:13:17.469699+00:00",
+  "n_external_scenarios": 18,
+  "n_abnormal": 18,
+  "n_defensibly_benign": 0,
+  "n_unknown_ground_truth": 0,
+  "has_benign_subset": false,
+  "has_severity_answer_key": false,
+  "precision_specificity_balanced_accuracy": "not_estimable",
+  "severity_accuracy": "not_estimable",
+  "missing_output_count": 0,
+  "duplicate_output_count": 0,
+  "manifest_hash_mismatches": 0,
+  "note": "OTRF is controlled public adversary-simulation telemetry; results demonstrate technical transportability of the pipeline, not organisational real-world performance."
+}

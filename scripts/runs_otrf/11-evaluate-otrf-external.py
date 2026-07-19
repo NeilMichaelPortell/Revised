@@ -42,6 +42,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -91,6 +92,14 @@ def main(argv: list[str] | None = None) -> None:
     ap.add_argument("--allow-hash-drift", action="store_true",
                     help="Proceed even if manifest source/neutral-input hashes have "
                          "drifted since preparation. Off by default: drift fails evaluation.")
+    ap.add_argument("--source-root", default=os.environ.get("OTRF_SOURCE_ROOT"),
+                    help="Path to a LOCAL, UNTRACKED OTRF source directory (e.g. a "
+                         "Security-Datasets clone). Used to resolve raw source ZIPs "
+                         "that are not present in the tracked external_validation/source/ "
+                         "layout; every resolved file is still hash-checked against the "
+                         "frozen manifest. May also be supplied via the OTRF_SOURCE_ROOT "
+                         "environment variable. The path itself is never written into any "
+                         "report or certificate.")
     args = ap.parse_args(argv)
     cfg = json.loads(Path(args.config).read_text(encoding="utf-8"))
     models = cfg.get("models", oc.MODELS)
@@ -104,7 +113,7 @@ def main(argv: list[str] | None = None) -> None:
         raise SystemExit("No external answer key found. Run 8-prepare-otrf-external.py first.")
 
     # ---- SHA-256 enforcement: fail by default on manifest drift --------------
-    integrity_violations = oc.verify_manifest_integrity(manifest)
+    integrity_violations = oc.verify_manifest_integrity(manifest, source_root=args.source_root)
     try:
         oc.require_no_violations(integrity_violations,
                                  "frozen manifest vs. current source/neutral inputs",
@@ -129,25 +138,75 @@ def main(argv: list[str] | None = None) -> None:
     # ---- manifest hash re-verification (reported, in addition to the fail-by-
     # default gate above) -----------------------------------------------------
     hash_rows = []
+    cert_scenarios = []
     for row in manifest:
         ext_id = row["external_scenario_id"]
         neutral_path = oc.NEUTRAL_INPUTS_DIR / f"{ext_id}.json"
         current = oc.sha256_text(neutral_path.read_text(encoding="utf-8")) if neutral_path.exists() else "missing"
-        source_path = oc.resolve_source_path(row.get("source_path", ""))
+        source_path = oc.resolve_source_file(row, source_root=args.source_root)
         current_source = oc.sha256_file(source_path)
+        neutral_match = current == row.get("neutral_input_hash", "")
+        source_match = current_source == row.get("source_hash", "")
+        # Categorise WHERE the source resolved from, WITHOUT recording the
+        # (potentially private) absolute path anywhere.
+        try:
+            source_path.relative_to(oc.SOURCE_DIR)
+            resolved_from = "tracked_source_dir"
+        except ValueError:
+            resolved_from = "local_untracked_otrf_source_directory"
         hash_rows.append({
             "external_scenario_id": ext_id,
             "manifest_neutral_hash": row.get("neutral_input_hash", ""),
             "current_neutral_hash": current,
-            "neutral_match": str(current == row.get("neutral_input_hash", "")).upper(),
+            "neutral_match": str(neutral_match).upper(),
             "manifest_source_hash": row.get("source_hash", ""),
             "current_source_hash": current_source,
-            "source_match": str(current_source == row.get("source_hash", "")).upper(),
+            "source_match": str(source_match).upper(),
+        })
+        cert_scenarios.append({
+            "external_scenario_id": ext_id,
+            "expected_source_sha256": row.get("source_hash", ""),
+            "observed_source_sha256": current_source,
+            "source_hash_match": bool(source_match),
+            "neutral_input_hash_match": bool(neutral_match),
+            "resolved_from": resolved_from,
         })
     oc.write_csv(oc.EVALUATION_DIR / "manifest_hash_check.csv",
                  ["external_scenario_id", "manifest_neutral_hash", "current_neutral_hash",
                   "neutral_match", "manifest_source_hash", "current_source_hash", "source_match"],
                  hash_rows)
+
+    # ---- source verification certificate (no absolute paths) ----------------
+    plan_path = oc.FROZEN_RETRIEVAL_PLAN_PATH
+    plan_lines = sum(1 for _ in plan_path.open(encoding="utf-8")) if plan_path.exists() else 0
+    certificate = {
+        "generated_utc": oc.utc_now(),
+        "adapter_version": oc.ADAPTER_VERSION,
+        "manifest_version": oc.MANIFEST_VERSION,
+        "retrieval_implementation_version": oc.RETRIEVAL_IMPLEMENTATION_VERSION,
+        "source_resolution_mode": ("tracked source dir, with local untracked OTRF "
+                                   "source directory fallback"
+                                   if args.source_root else "tracked source dir only"),
+        "n_scenarios": len(manifest),
+        "all_source_hashes_match": all(s["source_hash_match"] for s in cert_scenarios),
+        "all_neutral_input_hashes_match": all(s["neutral_input_hash_match"] for s in cert_scenarios),
+        "frozen_retrieval_plan": {
+            "path": str(plan_path.relative_to(oc.ROOT_DIR)),
+            "present": plan_path.exists(),
+            "sha256": oc.sha256_file(plan_path),
+            "records": plan_lines,
+        },
+        "scenarios": cert_scenarios,
+        "verdict": ("PASS" if (all(s["source_hash_match"] for s in cert_scenarios)
+                    and all(s["neutral_input_hash_match"] for s in cert_scenarios))
+                    else "FAIL"),
+        "note": ("Raw OTRF source ZIPs are third-party, kept LOCAL and UNTRACKED; the "
+                 "local source directory path is intentionally omitted from this "
+                 "certificate. Official source URLs and expected hashes live in the "
+                 "frozen manifest."),
+    }
+    (oc.EVALUATION_DIR / "source_verification_certificate.json").write_text(
+        json.dumps(certificate, indent=2), encoding="utf-8")
 
     outputs = {c: load_condition_outputs(c) for c in CONDITIONS}
 
