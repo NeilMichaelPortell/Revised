@@ -1,0 +1,22 @@
+CONFUSION MATRICES (positive class = abnormal/risky)
+Invalid = json invalid or non-committal class (e.g. template echo)
+
+### deepseek-r1_8b
+  baseline  TP= 51 FP= 10 FN=  7 TN= 51 Invalid=  1
+  rag       TP= 29 FP=  2 FN=  5 TN= 46 Invalid= 38
+
+### gemma3_12b
+  baseline  TP= 58 FP= 20 FN=  0 TN= 42 Invalid=  0
+  rag       TP= 52 FP=  8 FN=  6 TN= 54 Invalid=  0
+
+### gpt-oss_20b
+  baseline  TP= 41 FP=  5 FN= 17 TN= 57 Invalid=  0
+  rag       TP= 47 FP=  8 FN= 11 TN= 54 Invalid=  0
+
+### llama3
+  baseline  TP= 49 FP= 20 FN=  9 TN= 42 Invalid=  0
+  rag       TP= 56 FP= 13 FN=  2 TN= 49 Invalid=  0
+
+### qwen3_8b
+  baseline  TP= 44 FP=  4 FN= 14 TN= 58 Invalid=  0
+  rag       TP= 41 FP=  3 FN= 17 TN= 59 Invalid=  0
