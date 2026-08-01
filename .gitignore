@@ -74,6 +74,14 @@ desktop.ini
 /external_validation/source/*
 !/external_validation/source/README.md
 
+# Belt-and-braces: raw OTRF archives are never tracked, at any depth, even if
+# the directory rule above is ever relaxed. Asserted by
+# external_validation/tests/test_otrf_source_root.py.
+external_validation/source/**/*.zip
+external_validation/source/**/*.gz
+external_validation/source/**/*.json
+external_validation/source/**/*.jsonl
+
 # --------------------------------------------------------------------------- #
 # OTRF generated logs, backups and test workspaces
 #
@@ -95,8 +103,13 @@ desktop.ini
 # These folders may contain local usernames, machine paths, running processes
 # and other workstation-specific activity.
 # --------------------------------------------------------------------------- #
+# NOTE: the tracked directory is lower-case `prototype/`. The upper-case rules
+# below never matched it, so both cases are listed. These rules only stop NEW
+# files being added; files already committed stay tracked until `git rm --cached`.
 /PROTOTYPE/outputs/
 /PROTOTYPE/validation_outputs/
+/prototype/outputs/
+/prototype/validation_outputs/
 
 # --------------------------------------------------------------------------- #
 # Legacy duplicate experiment-output directories
