@@ -1,6 +1,0 @@
-model,condition,scenarios,classification_agreement_rate,risk_agreement_rate,mean_pairwise_indicator_jaccard,mean_pairwise_explanation_similarity,json_parse_validity_rate,required_fields_validity_rate,strict_schema_validity_rate,first_attempt_strict_schema_success_rate,indicator_vocabulary_compliance_rate,retry_rate,timeout_rate,empty_response_rate,classification_accuracy_across_repetitions,risk_accuracy_across_repetitions,mean_ground_truth_indicator_precision,mean_ground_truth_indicator_recall,mean_ground_truth_indicator_f1,mean_latency,latency_coefficient_of_variation,pct_scenarios_all_reps_classification_identical,pct_scenarios_all_reps_risk_identical
-deepseek-r1:8b,baseline,20,1.0,1.0,0.8717,0.8398,1.0,1.0,0.95,0.95,0.0,0.0,0.0,0.0,0.75,0.55,0.0,0.0,0.0,5.8499,0.0454,1.0,1.0
-gemma3:12b,baseline,20,0.99,1.0,0.97,0.9012,1.0,1.0,1.0,1.0,0.0,0.0,0.0,0.0,0.79,0.45,0.06,0.03,0.04,10.8429,0.0482,0.95,1.0
-gpt-oss:20b,baseline,20,1.0,0.96,0.775,0.8001,1.0,1.0,1.0,1.0,0.0,0.0,0.0,0.0,0.8,0.71,0.01,0.005,0.0067,12.2192,0.0603,1.0,0.8
-llama3,baseline,20,1.0,1.0,0.8233,0.8247,1.0,1.0,1.0,1.0,0.0,0.0,0.0,0.0,0.7,0.4,0.0,0.0,0.0,5.0066,0.0539,1.0,1.0
-qwen3:8b,baseline,20,1.0,1.0,0.9533,0.9695,1.0,1.0,1.0,1.0,0.0,0.0,0.0,0.0,0.85,0.6,0.1,0.05,0.0667,4.754,0.0443,1.0,1.0

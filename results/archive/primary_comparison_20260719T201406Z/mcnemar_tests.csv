@@ -1,6 +1,0 @@
-model,both_correct,both_wrong,baseline_only_correct,rag_only_correct,discordant_pairs,exact_mcnemar_raw_p,holm_adjusted_p,significant_at_0.05_holm,change_in_correct_predictions,change_in_abnormal_failures,change_in_normal_failures,direction
-llama3,85,9,6,20,26,0.009,0.037,YES,14,-7,-7,RAG significantly better
-deepseek-r1_8b,74,17,28,1,29,< 0.001,< 0.001,YES,-27,22,5,baseline significantly better
-gemma3_12b,94,8,6,12,18,0.238,0.714,no,6,6,-12,no significant difference
-qwen3_8b,96,14,6,4,10,0.754,1.000,no,-2,3,-1,no significant difference
-gpt-oss_20b,93,14,5,8,13,0.581,1.000,no,3,-6,3,no significant difference

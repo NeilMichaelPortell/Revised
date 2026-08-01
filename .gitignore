@@ -1,68 +1,156 @@
 # --------------------------------------------------------------------------- #
-# Local Python environments and generated interpreter/test caches
+# Python environments and generated caches
 # --------------------------------------------------------------------------- #
 /venv/
 /.venv/
+/env/
+
 __pycache__/
 *.py[cod]
+*$py.class
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
 
 # --------------------------------------------------------------------------- #
-# OTRF external-validation workspace (external_validation/): generated,       #
-# caches and temporary artefacts ONLY. Manifests, configuration, source       #
-# documentation (README.md), and evaluation summaries/reports intended for    #
-# version control are intentionally NOT listed here -- see external_validation/
-# README.md "Safe folder cleanup" for the distinction between "safe to delete
-# and regenerate" (handled by scripts/runs_otrf/12-cleanup-otrf-workspace.py)
-# and "safe to gitignore" (this file): evaluation/, outputs_baseline/,
-# outputs_rag/ and retrieval/ hold run evidence and dissertation-relevant
-# summaries and are deliberately tracked, not ignored.
-#
-# external_validation/prepared/neutral_inputs/ was PREVIOUSLY ignored here.
-# As of the 2026-07-19 evidence-integrity pass, all 18 EXT_001-EXT_018
-# neutral-input files were confirmed present on disk and byte-for-byte
-# hash-verified against external_validation/prepared/frozen_external_manifest.csv
-# (neutral_input_hash column, 18/18 match). They are the leakage-safe
-# reproducibility artefact for the OTRF supplementary validation and are now
-# deliberately tracked, not ignored, so the OTRF run is reproducible from the
-# repository alone.
-external_validation/logs/
-external_validation/archive/
-external_validation/tests/tmp/
-external_validation/tests/_tmp/
+# IDE and editor configuration
+# --------------------------------------------------------------------------- #
+.vscode/
+.idea/
+*.code-workspace
 
-# Raw third-party OTRF Security-Datasets clone (a ~600MB download, not
-# authored content). Kept on disk at the repo root as the source pool that
-# scenarios are selected/copied from into external_validation/source/; not
-# meant for version control.
+# Temporary Microsoft Office files
+~$*.docx
+~$*.xlsx
+~$*.pptx
+
+# --------------------------------------------------------------------------- #
+# Operating-system files
+# --------------------------------------------------------------------------- #
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --------------------------------------------------------------------------- #
+# Local environment and secret configuration
+# --------------------------------------------------------------------------- #
+.env
+.env.*
+!.env.example
+
+*.key
+*.pem
+
+# --------------------------------------------------------------------------- #
+# Logs and temporary files
+# --------------------------------------------------------------------------- #
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+/tmp/
+/temp/
+
+# --------------------------------------------------------------------------- #
+# Raw third-party OTRF Security-Datasets repository
+#
+# This is downloaded locally and is not authored project content.
+# --------------------------------------------------------------------------- #
 /Security-Datasets-master/
 
-# Raw third-party OTRF SOURCE CAPTURES under external_validation/source/ are
-# NOT authored content: they are static security-event evidence archives that
-# trip malware/heuristic scanners on GitHub and are large. They are kept LOCAL
-# and untracked; their official source URLs and expected SHA-256 hashes are
-# preserved in external_validation/prepared/frozen_external_manifest.csv, and
-# the evaluator resolves them from a user-provided local source directory
-# (--source-root / OTRF_SOURCE_ROOT). Only external_validation/source/README.md
-# is tracked. This deliberately ignores ONLY the raw archives, NOT the tracked
-# dissertation artefacts under external_validation/ (prepared/, retrieval/,
-# outputs_baseline/, outputs_rag/, evaluation/, config/).
-external_validation/source/**/*.zip
-external_validation/source/**/*.gz
-external_validation/source/**/*.tgz
-external_validation/source/**/*.tar
-external_validation/source/**/*.7z
-external_validation/source/**/*.rar
-external_validation/source/**/*.exe
-external_validation/source/**/*.dll
-external_validation/source/**/*.js
-external_validation/source/**/*.ps1
-external_validation/source/**/*.vbs
-external_validation/source/**/*.bat
+# --------------------------------------------------------------------------- #
+# OTRF external-validation raw source captures
+#
+# Only source/README.md is retained. Raw archives and extracted source evidence
+# remain local. Source URLs and hashes are recorded in the frozen manifest.
+# --------------------------------------------------------------------------- #
+/external_validation/source/*
+!/external_validation/source/README.md
 
-# Explicit OTRF cache paths are retained for readability; the broad Python
-# cache rules above also cover these directories.
-scripts/runs_otrf/__pycache__/
-external_validation/tests/__pycache__/
-.pytest_cache/
-external_validation/.pytest_cache/
-external_validation/tests/.pytest_cache/
+# --------------------------------------------------------------------------- #
+# OTRF generated logs, backups and test workspaces
+#
+# Dissertation-relevant evidence under prepared/, retrieval/, evaluation/,
+# outputs_baseline/ and outputs_rag/ remains tracked.
+# --------------------------------------------------------------------------- #
+/external_validation/logs/
+/external_validation/archive/
+/external_validation/tests/tmp/
+/external_validation/tests/_tmp/
+/external_validation/.pytest_cache/
+/external_validation/tests/.pytest_cache/
+/external_validation/tests/__pycache__/
+/scripts/runs_otrf/__pycache__/
+
+# --------------------------------------------------------------------------- #
+# Private and generated prototype evidence
+#
+# These folders may contain local usernames, machine paths, running processes
+# and other workstation-specific activity.
+# --------------------------------------------------------------------------- #
+/PROTOTYPE/outputs/
+/PROTOTYPE/validation_outputs/
+
+# --------------------------------------------------------------------------- #
+# Legacy duplicate experiment-output directories
+#
+# Canonical experiment evidence is retained under /results/.
+# --------------------------------------------------------------------------- #
+/outputs_rag/
+/outputs_consistency_baseline/
+/outputs_consistency_rag/
+
+# --------------------------------------------------------------------------- #
+# Dissertation writing and local packaging files
+#
+# These are working documents rather than source-code repository content.
+# --------------------------------------------------------------------------- #
+/chapter 4/
+
+# --------------------------------------------------------------------------- #
+# Superseded audit material and private examiner feedback
+# --------------------------------------------------------------------------- #
+/docs/final_audit/archive/
+/docs/review/feedback.txt
+
+# --------------------------------------------------------------------------- #
+# Build, distribution and packaging outputs
+# --------------------------------------------------------------------------- #
+build/
+dist/
+*.egg-info/
+.eggs/
+wheels/
+pip-wheel-metadata/
+
+# --------------------------------------------------------------------------- #
+# Jupyter notebook checkpoints
+# --------------------------------------------------------------------------- #
+.ipynb_checkpoints/
+
+# --------------------------------------------------------------------------- #
+# Local database files
+# --------------------------------------------------------------------------- #
+*.db
+*.sqlite
+*.sqlite3
+
+# --------------------------------------------------------------------------- #
+# Compressed local backups and temporary repository packages
+#
+# Remove a specific rule below if an archive is intentionally part of the
+# repository.
+# --------------------------------------------------------------------------- #
+*.zip
+*.7z
+*.rar
+*.tar
+*.tgz
+*.tar.gz
