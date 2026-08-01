@@ -6,8 +6,9 @@ from structured, privacy-preserving activity summaries, and whether adding a
 curated knowledge base to the prompt changes that behaviour.
 
 All model inference runs **entirely on the local machine** through
-[Ollama](https://ollama.com). No endpoint data, prompt or scenario is ever sent
-to a cloud or external service.
+[Ollama](https://ollama.com). During model inference, prompts and
+endpoint-behaviour summaries were processed only by the locally hosted Ollama
+models and were not sent to an external model or inference service.
 
 ---
 
@@ -58,7 +59,7 @@ results are directly comparable per scenario.
 | Scenarios | 120 (`R001`–`R120`) |
 | Models | 5, all local via Ollama |
 | Conditions | `baseline`, `rag` (knowledge-augmented) |
-| Temperature | 0 (deterministic decoding) |
+| Temperature | 0, fixed across all runs to minimise sampling variability |
 | Context window | 4096 (8192 for `gpt-oss:20b`) |
 | Output budget | 1024–4096 tokens, per model |
 | Per-call timeout | 300 s |
@@ -85,7 +86,8 @@ Windows test machine using [scripts/dataset/1-endpoint_collector.py](scripts/dat
 then segmented into per-scenario summaries by
 [scripts/dataset/2-segment_logs.py](scripts/dataset/2-segment_logs.py).
 
-* **120 scenarios**, balanced between classes: **62 normal / 58 abnormal**.
+* **120 scenarios**, with a near-balanced class distribution: **62 normal** and
+  **58 abnormal**.
 * Provenance: 108 collected live, 12 augmented (constructed rather than
   captured); recorded in `provenance_report.csv`.
 * Seven categories:
@@ -129,11 +131,12 @@ Five locally deployed models, pulled with `ollama pull`:
 | GPT-OSS 20B | `gpt-oss:20b` |
 | Qwen 3 8B | `qwen3:8b` |
 
-Reasoning-heavy models (`deepseek-r1:8b`, `qwen3:8b`, `gpt-oss:20b`) are given a
-larger output budget so their chain-of-thought can complete *and* still reach a
-closing JSON object. `gpt-oss:20b` is deliberately **not** constrained with
-Ollama's `format: json`, because that constraint corrupts its output; its JSON is
-extracted from surrounding prose instead.
+Reasoning-oriented models (`deepseek-r1:8b`, `qwen3:8b`, `gpt-oss:20b`) were
+assigned larger output budgets to reduce the risk of long-form responses being
+truncated before a complete JSON object was generated. `gpt-oss:20b` is
+deliberately **not** constrained with Ollama's `format: json`, because that
+constraint corrupts its output; its JSON is extracted from surrounding prose
+instead.
 
 The runs recorded in this repository were executed on Windows with an NVIDIA
 GeForce RTX 4060 Laptop GPU (see `results/consistency/reports/run_manifest.json`).
@@ -304,7 +307,7 @@ ollama pull gpt-oss:20b
 Ollama is reached at `http://localhost:11434`; override with the `OLLAMA_HOST`
 environment variable. `localhost` is this computer only and is not reachable
 from the internet — the runs work with the network disconnected, which can be
-used to verify the privacy claim.
+used to verify that inference reaches no external model or inference service.
 
 ## 10. Running the main experiments
 
@@ -425,7 +428,10 @@ implementation.
 
 ## 13. Reproducibility and frozen artefacts
 
-* **Deterministic decoding.** Temperature 0 for every model, every run.
+* **Controlled decoding.** Temperature was fixed at 0 for every model and
+  condition to minimise sampling variability. Identical outputs were not
+  assumed; output stability was assessed separately through the repeated-run
+  consistency experiment.
 * **Seeded selection and statistics.** Selection seed 2026; bootstrap seed 2026;
   dataset shuffle seed 20260710.
 * **Frozen retrieval.** `results/rag/retrieval_plan.json` and
@@ -453,8 +459,13 @@ and no third-party packages: run steps 2, 4, 7 and 11 above.
 ## 14. Privacy, ethics and safety
 
 * **Fully local inference.** Every model runs on the local machine via Ollama at
-  `http://localhost:11434`. No scenario, prompt or endpoint observation leaves
-  the device. The pipeline works with the network disconnected.
+  `http://localhost:11434`. During model inference, prompts and
+  endpoint-behaviour summaries were processed only by the locally hosted Ollama
+  models and were not sent to an external model or inference service. The
+  inference workflow runs with the network disconnected. This claim is about the
+  inference workflow specifically: the reproducibility artefacts in this
+  repository (dataset inputs, model outputs, evaluation tables) are published
+  publicly on GitHub by design.
 * **Observe-only collection.** The collector reads state and writes logs. It
   never disables Defender, changes services or scheduled tasks, or edits files.
 * **Never collected.** Keystrokes, screenshots, passwords, clipboard contents,
